@@ -1,0 +1,60 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - docker_network_name is defined
+      - loki_url is defined
+      - bazarr_movies_folder is defined
+      - bazarr_tv_folder is defined
+      - backup_day is defined
+
+- name: Create the dockernetwork
+  docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create the config directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/config"
+    state: directory
+    mode: "0755"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}-app"
+    image: "linuxserver/bazarr:1.4.1"
+    restart_policy: "always"
+    pull: true
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    networks:
+      - name: "{{ docker_network_name }}"
+    ports:
+      - 6767:6767
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/config:/config"
+      - "{{ bazarr_movies_folder }}:/movies"
+      - "{{ bazarr_tv_folder }}:/tv"
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "Europe/Madrid"
+
+- name: Setup file backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-file-backups
+
+- name: Setup S3 backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-s3-backups
+
+- name: Setup restic backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-restic-backups
+  vars:
+    file_path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/config"

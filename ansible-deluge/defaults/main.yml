@@ -1,0 +1,3 @@
+---
+docker_network_name: deluge_network
+application_name: deluge

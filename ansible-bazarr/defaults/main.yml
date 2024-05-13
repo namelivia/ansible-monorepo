@@ -1,0 +1,3 @@
+---
+docker_network_name: bazarr_network
+application_name: bazarr
