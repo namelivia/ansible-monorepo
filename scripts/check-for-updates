@@ -14,7 +14,7 @@ for IMAGE in $DOCKER_IMAGES; do
         #echo "$NAMESPACE/$NAME is using the 'latest' tag. Skipping..."
         continue
     else
-        REMOTE_TAGS=$(wget -q -O - "https://hub.docker.com/v2/namespaces/$NAMESPACE/repositories/$NAME/tags?page_size=100" | grep -o '"name": *"[^"]*' | grep -o '[^"]*$')
+        REMOTE_TAGS=$(wget -q -O - "https://hub.docker.com/v2/namespaces/$NAMESPACE/repositories/$NAME/tags?page_size=100" 2> /dev/null | grep -o '"name": *"[^"]*' | grep -o '[^"]*$')
         # If REMOTE_TAGS is empty, report it
         if [ -z "$REMOTE_TAGS" ]; then
             #echo "No remote tags found for $NAMESPACE/$NAME"
