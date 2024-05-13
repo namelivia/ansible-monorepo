@@ -33,7 +33,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/movie-quote-twitter-bot:latest"
     pull: true
     cleanup: true
     restart_policy: "always"

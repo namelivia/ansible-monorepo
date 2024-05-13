@@ -17,7 +17,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "minimalcompact/{{ application_name }}:latest"
+    image: "minimalcompact/thumbor:latest"
     cleanup: true
     restart_policy: "always"
     memory: "500MB"

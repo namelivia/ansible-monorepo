@@ -13,7 +13,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/gtd-caldav-report:latest"
     pull: true
     cleanup: true
     memory: "200MB"

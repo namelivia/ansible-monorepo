@@ -24,7 +24,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/itemtree-server:latest"
     memory: "200MB"
     cleanup: true
     pull: true

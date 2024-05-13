@@ -13,7 +13,6 @@
       - admin_pass is defined
       - mysql_root_password is defined
       - loki_url is defined
-      - version is defined
 
 - name: Create the dockernetwork
   docker_network:
@@ -69,7 +68,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}-app"
-    image: "kimai/kimai2:{{ version }}"
+    image: "kimai/kimai2:fpm-2.16.1-prod"
     restart_policy: "always"
     cleanup: true
     log_driver: "loki"

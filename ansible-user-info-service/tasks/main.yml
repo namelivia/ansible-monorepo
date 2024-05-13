@@ -14,7 +14,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/user-info-service:latest"
     memory: "200MB"
     pull: true
     restart_policy: "always"

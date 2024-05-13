@@ -20,7 +20,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "caronc/{{ application_name }}:latest"
+    image: "caronc/apprise:latest"
     pull: true
     cleanup: true
     exposed_ports: 8000

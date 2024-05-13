@@ -14,7 +14,7 @@
 - name: Create database container
   docker_container:
     name: "postgres-database"
-    image: "{{ application_name }}:latest"
+    image: "postgres:latest"
     restart_policy: "always"
     cleanup: true
     exposed_ports:

@@ -19,7 +19,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/journaling-service:latest"
     memory: "200MB"
     pull: true
     cleanup: true

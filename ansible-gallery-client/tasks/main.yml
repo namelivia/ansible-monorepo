@@ -6,14 +6,13 @@
       - loki_url is defined
       - gallery_api_endpoint is defined
       - host_port is defined
-      - version is defined
 
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
     pull: true
     cleanup: true
-    image: "namelivia/{{ application_name }}:{{ version }}"
+    image: "namelivia/gallery-client:latest"
     memory: "10MB"
     restart_policy: "always"
     log_driver: "loki"

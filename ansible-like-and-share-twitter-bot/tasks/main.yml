@@ -18,7 +18,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/like-and-share-twitter-bot:latest"
     restart_policy: "always"
     pull: true
     cleanup: true

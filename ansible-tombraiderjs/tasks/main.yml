@@ -10,7 +10,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/tombraiderjs:latest"
     pull: true
     cleanup: true
     memory: "10MB"

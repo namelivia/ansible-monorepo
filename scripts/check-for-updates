@@ -1,0 +1,30 @@
+#!/bin/bash
+EXCLUSIONS="ansible-pleroma" # This image is directly built from the source code
+BASE_DIR=$(cd $(dirname $0)/..; pwd)
+cd $BASE_DIR
+DOCKER_IMAGES=$(grep --exclude-dir=$EXCLUSIONS -R "image:" **/tasks/main.yml | sed 's/.*image: "\(.*\)".*/\1/')
+for IMAGE in $DOCKER_IMAGES; do
+    NAMESPACE=$(echo "$IMAGE" | cut -d/ -f1)
+    if [ "$NAMESPACE" == "$IMAGE" ]; then
+        NAMESPACE="library"
+    fi
+    NAME=$(echo "$IMAGE" | cut -d/ -f2 | cut -d: -f1)
+    TAG=$(echo "$IMAGE" | cut -d: -f2)
+    if [ "$TAG" == "latest" ]; then
+        #echo "$NAMESPACE/$NAME is using the 'latest' tag. Skipping..."
+        continue
+    else
+        REMOTE_TAGS=$(wget -q -O - "https://hub.docker.com/v2/namespaces/$NAMESPACE/repositories/$NAME/tags?page_size=100" | grep -o '"name": *"[^"]*' | grep -o '[^"]*$')
+        # If REMOTE_TAGS is empty, report it
+        if [ -z "$REMOTE_TAGS" ]; then
+            #echo "No remote tags found for $NAMESPACE/$NAME"
+            continue
+        else
+            echo "---------$NAME: $TAG---------"
+            echo $REMOTE_TAGS
+            
+        fi
+    fi
+done
+
+

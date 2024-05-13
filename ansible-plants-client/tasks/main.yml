@@ -13,7 +13,7 @@
     name: "{{ application_name }}"
     pull: true
     cleanup: true
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/plants-client:latest"
     memory: "10MB"
     restart_policy: "always"
     log_driver: "loki"

@@ -12,7 +12,7 @@
 - name: Create app container
   docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/{{ application_name }}:latest"
+    image: "namelivia/mealie_discord:latest"
     pull: true
     cleanup: true
     restart_policy: "always"

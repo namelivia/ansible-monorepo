@@ -8,7 +8,7 @@
 - name: Create container
   docker_container:
     name: "redis"
-    image: "redis:alpine"
+    image: "redis:7.2.4-alpine"
     restart_policy: "always"
     cleanup: true
     memory: "100MB"
