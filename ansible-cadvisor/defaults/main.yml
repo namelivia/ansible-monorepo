@@ -1,0 +1,3 @@
+---
+application_name: cadvisor
+enable_load_reader: true

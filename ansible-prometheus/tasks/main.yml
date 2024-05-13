@@ -1,0 +1,68 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - host_port is defined
+      - docker_network_name is defined
+      - loki_url is defined
+      - prometheus_config_path is defined
+      - uid
+      - gid
+
+- name: Create the dockernetwork
+  docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create the files directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: "0755"
+
+- name: Create the data directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: "0755"
+
+
+- name: Copy prometheus config
+  copy:
+    src: "{{ prometheus_config_path }}"
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.yml"
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "prom/prometheus:latest"
+    restart_policy: "always"
+    cleanup: true
+    user: "{{ uid }}:{{ gid }}"
+    exposed_ports:
+      - "9090"
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:9090"
+    networks:
+      - name: "{{ docker_network_name }}"
+      - name: "grafana_network"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/prometheus"
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.yml:/etc/prometheus/prometheus.yml"
+
+# Restart the app container, sometimes needed for upgrades
+- name: Restart prometheus
+  command: docker restart prometheus
+  register: restart_prometheus_result
+  changed_when: restart_prometheus_result.rc != 0

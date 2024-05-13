@@ -1,0 +1,26 @@
+---
+- name: Install aptitude using apt
+  apt:
+    name: aptitude
+    state: latest
+    update_cache: true
+    force_apt_get: true
+
+- name: Install required system packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  loop:
+    - 'apt-transport-https'
+    - 'vim'
+    - 'ca-certificates'
+    - 'curl'
+    - 'software-properties-common'
+    - 'python3-pip'
+    - 'virtualenv'
+    - 'python3-setuptools'
+    - 'awscli'
+    - 'cron'
+    - 'containerd'
+    - 'python3-docker'

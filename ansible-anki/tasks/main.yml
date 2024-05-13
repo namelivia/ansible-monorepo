@@ -1,0 +1,50 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - host_port is defined
+      - backup_day is defined
+
+- name: Create the data directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
+    state: directory
+    mode: "0700"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}-app"
+    image: "kuklinistvan/anki-sync-server:latest"
+    restart_policy: "always"
+    cleanup: true
+    memory: "100MB"
+    exposed_ports:
+      - "27701"
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app/data"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:27701"
+
+- name: Setup file backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-file-backups
+
+- name: Setup S3 backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-s3-backups
+
+- name: Setup restic backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-restic-backups
+  vars:
+    file_path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"

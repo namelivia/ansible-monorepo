@@ -1,0 +1,127 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - docker_network_name is defined
+      - domain_name is defined
+      - database_name is defined
+      - database_user is defined
+      - database_password is defined
+      - loki_url is defined
+      - dump_day is defined
+      - backup_day is defined
+      - mysql_root_password is defined
+
+- name: Create the dockernetwork
+  docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create the files directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+    state: directory
+    mode: "0775"
+
+- name: Create the ghost data volumne
+  docker_volume:
+    name: ghost-data
+
+- name: Create database container
+  docker_container:
+    name: "{{ application_name }}-database"
+    image: "mariadb:latest"
+    restart_policy: "always"
+    memory: "500MB"
+    cleanup: true
+    exposed_ports:
+      - "3306"
+    networks:
+      - name: "{{ docker_network_name }}"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    volumes:
+      - ghost-database:/var/lib/mysql
+    env:
+      MYSQL_ROOT_PASSWORD: "{{ mysql_root_password }}"
+      MYSQL_DATABASE: "{{ database_name }}"
+      MYSQL_USER: "{{ database_user }}"
+      MYSQL_PASSWORD: "{{ database_password }}"
+
+- name: Create the content directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/content"
+    state: directory
+    mode: "0775"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}-app"
+    image: "ghost:5.79.0-alpine"
+    restart_policy: "always"
+    cleanup: true
+    memory: "500MB"
+    exposed_ports:
+      - "2368"
+    networks:
+      - name: "{{ docker_network_name }}"
+      - name: "bridge"
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/content:/var/lib/ghost/content"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+      loki-pipeline-stages: "- multiline:\n    firstline: '^\\[\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}]'\n"
+
+
+    env:
+      VIRTUAL_HOST: "{{ domain_name }}"
+      LETSENCRYPT_HOST: "{{ domain_name }}"
+      VIRTUAL_PORT: "2368"
+      NODE_ENV: "production"
+      url: "https://{{ domain_name }}"
+      database__client: "mysql"
+      database__connection__host: "{{ application_name }}-database"
+      database__connection__port: "3306"
+      database__connection__database: "{{ database_name }}"
+      database__connection__user: "{{ database_user }}"
+      database__connection__password: "{{ database_password }}"
+
+- name: Setup database backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-mariadb-database-backups
+  vars:
+    database_container_name: "{{ application_name }}-database"
+
+- name: Setup file backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-file-backups
+
+- name: Setup S3 backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-s3-backups
+
+- name: Setup restic file backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-restic-backups
+  vars:
+    file_path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+
+- name: Setup restic database backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-restic-backups
+  vars:
+    file_path: "/var/lib/docker/volumes/ghost-database"
+
+- name: Restart proxy
+  command: docker restart proxy
+  register: restart_proxy_result
+  changed_when: restart_proxy_result.rc != 0

@@ -1,0 +1,56 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - database_url is defined
+      - database_container_name is defined
+      - database_user is defined
+      - database_password is defined
+      - dump_day is defined
+
+- name: Create the files directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+    state: directory
+    mode: "0700"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "namelivia/{{ application_name }}:latest"
+    memory: "200MB"
+    pull: true
+    cleanup: true
+    restart_policy: "always"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    networks:
+      - name: "pomerium"
+    exposed_ports:
+      - "80"
+    env:
+      DATABASE_URL: "{{ database_url }}"
+
+- name: Create database
+  include_role:
+    name: ansible-postgres
+    tasks_from: create-postgres-database-if-not-exists
+
+- name: Upgrade alembic
+  include_role:
+    name: ansible-fastapi
+    tasks_from: upgrade-alembic
+
+- name: Setup database backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-postgres-database-backups
+
+- name: Setup S3 backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-s3-backups

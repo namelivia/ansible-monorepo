@@ -1,0 +1,4 @@
+---
+application_name: postgres
+network_name: pomerium
+should_publish_ports: false

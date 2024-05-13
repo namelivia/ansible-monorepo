@@ -1,0 +1,26 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - database_container_name is defined
+      - database_user is defined
+      - database_password is defined
+      - database_name is defined
+      - postgres_root_user is defined
+
+- name: Create the script
+  template:
+    src: create_database_if_not_exists.j2
+    dest: "/tmp/create_database_if_not_exists.sh"
+    owner: root
+    group: root
+    mode: '755'
+
+- name: Execute script
+  command: /tmp/create_database_if_not_exists.sh
+  changed_when: false
+
+- name: Remove script
+  file:
+    path: /tmp/create_database_if_not_exists.sh
+    state: absent

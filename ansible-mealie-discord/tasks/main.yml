@@ -1,0 +1,26 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - discord_token is defined
+      - mealie_token is defined
+      - mealie_url is defined
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "namelivia/{{ application_name }}:latest"
+    pull: true
+    cleanup: true
+    restart_policy: "always"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    env:
+      DISCORD_TOKEN: "{{ discord_token }}"
+      MEALIE_TOKEN: "{{ mealie_token }}"
+      MEALIE_URL: "{{ mealie_url }}"

@@ -1,0 +1,11 @@
+galaxy_info:
+  role_name: iptables
+  author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+  description: Ansible role I use to configure iptables
+  license: GPLv2
+  min_ansible_version: 2.5.1
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal

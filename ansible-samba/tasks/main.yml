@@ -1,0 +1,87 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - target_path is defined
+      - share_name is defined
+      - samba_username is defined
+      - samba_password is defined
+      - samba_group is defined
+      - home_username is defined
+
+- name: Install required system packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  loop:
+    - "samba"
+    - "samba-common-bin"
+
+- name: Check that target folder exists
+  stat:
+    path: "{{ target_path }}"
+
+- name: Configure samba
+  template:
+    src: smb.j2
+    dest: "/etc/samba/smb.conf"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Create user
+  ansible.builtin.user:
+    name: "{{ samba_username }}"
+
+- name: Create group for the users that can write on the volume
+  ansible.builtin.group:
+    name: "{{ samba_group }}"
+    state: present
+
+- name: Add samba user to group
+  user:
+    name: '{{ samba_username }}'
+    groups: "{{ samba_group }}"
+    append: true
+
+- name: Add home user to group
+  user:
+    name: '{{ home_username }}'
+    groups: "{{ samba_group }}"
+    append: true
+
+- name: Assign the target path to the group
+  ansible.builtin.file:
+    path: "{{ target_path }}"
+    state: directory
+    recurse: true
+    owner: '{{ home_username }}'
+    group: '{{ samba_group }}'
+
+- name: Create samba user
+  shell: >
+    set -e -o pipefail
+    && (pdbedit --user={{ samba_username }} 2>&1 > /dev/null)
+    || (echo '{{ samba_password }}'; echo '{{ samba_password }}')
+    | smbpasswd -s -a {{ samba_username }}
+  args:
+    executable: /bin/bash
+  register: samba_create_users
+  changed_when: "'Added user' in samba_create_users.stdout"
+
+- name: Set samba password
+  shell: >
+    set -e -o pipefail
+    && (smbclient -U {{ samba_username }}%{{ samba_password }} -L 127.0.0.1 2>&1 > /dev/null)
+    || (echo '{{ samba_password }}'; echo '{{ samba_password }}')
+    | smbpasswd {{ samba_username }}
+  args:
+    executable: /bin/bash
+  register: samba_verify_users
+  changed_when: "'New SMB password' in samba_verify_users.stdout"
+
+- name: Restart samba service
+  ansible.builtin.service:
+    name: smbd
+    state: restarted

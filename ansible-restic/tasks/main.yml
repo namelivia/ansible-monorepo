@@ -1,0 +1,63 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - restic_repository is defined
+      - restic_password is defined
+      - aws_access_key_id is defined
+      - aws_secret_access_key is defined
+      - loki_url is defined
+
+- name: Create the restic directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}/restic"
+    state: directory
+    mode: "0755"
+
+- name: Create the backup script
+  template:
+    src: backup.j2
+    dest: "{{ hostvars[inventory_hostname].working_directory }}/restic/backup"
+    owner: root
+    group: root
+    mode: '755'
+
+- name: Create the list-snapshots script
+  template:
+    src: list-snapshots.j2
+    dest: "{{ hostvars[inventory_hostname].working_directory }}/restic/list-snapshots"
+    owner: root
+    group: root
+    mode: '755'
+
+- name: Create the restore script
+  template:
+    src: restore.j2
+    dest: "{{ hostvars[inventory_hostname].working_directory }}/restic/restore"
+    owner: root
+    group: root
+    mode: '755'
+
+- name: Copy inital targets file
+  copy:
+    src: "{{ initial_targets_file_path }}"
+    dest: "{{ hostvars[inventory_hostname].working_directory }}/restic/initial_targets"
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+  when: initial_targets_file_path is defined
+
+- name: Create an empty backup_targets file if it does not exist
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}/restic/backup_targets"
+    state: touch
+    mode: "0644"
+
+- name: Create a backup every day
+  cron:
+    name: "backup"
+    weekday: "*"
+    minute: "3"
+    hour: "0"
+    job: "{{ hostvars[inventory_hostname].working_directory }}/restic/backup"
+    user: root

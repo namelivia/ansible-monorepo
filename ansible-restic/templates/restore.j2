@@ -1,0 +1,33 @@
+#!/bin/bash
+# Set the Restic repository and AWS credentials
+export RESTIC_REPOSITORY="{{ restic_repository }}"
+export RESTIC_PASSWORD="{{ restic_password }}"
+export AWS_ACCESS_KEY_ID="{{ aws_access_key_id }}"
+export AWS_SECRET_ACCESS_KEY="{{ aws_secret_access_key }}"
+
+# Check if two parameters are provided
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <destination_path> <snapshot_id>"
+    exit 1
+fi
+
+# Assign parameters to variables for clarity
+destination_path="$1"
+snapshot_id="$2"
+
+# Check if snapshot_id is not empty
+if [ -z "$snapshot_id" ]; then
+    echo "Error: Snapshot ID is required."
+    exit 1
+fi
+
+docker run --rm -v "$destination_path":/restore/"$destination_path" \
+        -e RESTIC_REPOSITORY="$RESTIC_REPOSITORY" \
+        -e RESTIC_PASSWORD="$RESTIC_PASSWORD" \
+        -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" \
+        -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
+        --name="restic-restore" \
+        --log-driver="loki" \
+        --log-opt loki-url="{{ loki_url }}" \
+        --log-opt loki-batch-size="400" \
+        instrumentisto/restic restore --host {{ inventory_hostname }} --target /restore "$snapshot_id"

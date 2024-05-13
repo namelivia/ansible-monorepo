@@ -1,0 +1,22 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - exposed_ports is defined
+
+- name: "Allow port for VPN addresses only"
+  ansible.builtin.iptables:
+    chain: DOCKER-USER
+    protocol: tcp
+    source_port: "{{ item }}"
+    src_range: 192.168.254.1-192.168.254.255
+    jump: ACCEPT
+  with_items: "{{ exposed_ports }}"
+
+- name: "Disallow port for other addresses"
+  ansible.builtin.iptables:
+    chain: DOCKER-USER
+    source_port: "{{ item }}"
+    protocol: tcp
+    jump: DROP
+  with_items: "{{ exposed_ports }}"

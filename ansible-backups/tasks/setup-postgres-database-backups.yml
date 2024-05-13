@@ -1,0 +1,45 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - database_container_name is defined
+      - database_user is defined
+      - backups_notifications_endpoint is defined
+      - database_password is defined
+      - gpg_recipient is defined
+
+- name: Backup debug
+  debug:
+    msg: "Database name: {{ database_name }}"
+
+- name: Create the dumps backup directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/backup"
+    state: directory
+    mode: "0700"
+
+- name: Create the dump script
+  template:
+    src: postgres_dump.j2
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/dump.sh"
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Create a database dump every week
+  cron:
+    name: "backup {{ application_name }} database"
+    weekday: "{{ dump_day }}"
+    minute: "0"
+    hour: "0"
+    job: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/dump.sh"
+    user: root
+
+- name: Create the restore script
+  template:
+    src: postgres_restore.j2
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/restore_database.sh"
+    owner: root
+    group: root
+    mode: "0755"

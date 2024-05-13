@@ -1,0 +1,40 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - vpn_endpoint is defined
+      - client_private_key is defined
+      - client_certificate is defined
+      - server_ca is defined
+      - openvpn_static_key is defined
+
+- name: Install required system packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  loop:
+    - openvpn
+
+- name: Set autostart on openvpn
+  copy:
+    src: ../templates/openvpn
+    dest: /etc/default/openvpn
+    owner: root
+    group: root
+    mode: "0600"
+
+- name: Create vpn config
+  template:
+    src: config.j2
+    dest: "/etc/openvpn/{{ inventory_hostname }}.conf"
+    owner: root
+    group: root
+    mode: "0600"
+    lstrip_blocks: true  # To avoid auto indent
+
+# TODO: Seems this is not enough? I always have to reboot clients for them to connect
+- name: Restart the openvpn service
+  service:
+    name: openvpn
+    state: restarted

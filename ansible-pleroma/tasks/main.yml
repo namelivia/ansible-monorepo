@@ -1,0 +1,149 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - docker_network_name is defined
+      - domain_name is defined
+      - loki_url is defined
+      - instance_name is defined
+      - admin_mail is defined
+      - notify_mail is defined
+      - database_container_name is defined
+      - database_user is defined
+      - database_password is defined
+      - database_name is defined
+      - uid is defined
+      - gid is defined
+      - user is defined
+      - group is defined
+      - host_port is defined
+      - pleroma_config_path
+      - relay_list_path is defined
+
+- name: Create the files directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+    state: directory
+    mode: "0700"
+
+- name: Create the docker-pleroma directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/docker-pleroma"
+    state: directory
+    mode: "0700"
+
+- name: Create the uploads directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/uploads"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    state: directory
+    mode: "0755"
+
+- name: Create the static directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/static"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    state: directory
+    mode: "0755"
+
+- name: Create database
+  include_role:
+    name: ansible-postgres
+    tasks_from: create-postgres-database-if-not-exists
+
+- name: Copy pleroma config
+  copy:
+    src: "{{ pleroma_config_path }}"
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.exs"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: '0600'
+
+- name: Copy relay list
+  copy:
+    src: "{{ relay_list_path }}"
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/relay_list"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: "0644"
+
+- name: Create relay import script
+  template:
+    src: add_relays.j2
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/add_relays.sh"
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Clone docker pleroma
+  git:
+    repo: 'https://github.com/angristan/docker-pleroma.git'
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/docker-pleroma"
+    version: master
+
+- name: Build docker image
+  docker_image:
+    name: pleroma
+    build:
+      path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/docker-pleroma"
+      cache_from:
+        - pleroma:latest
+      args:
+        UID: "{{ uid }}"
+        GID: "{{ gid }}"
+        PLEROMA_VER: "develop"
+    source: build
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "pleroma:latest"
+    restart_policy: "always"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    exposed_ports:
+      - "4000"
+    networks:
+      - name: "{{ docker_network_name }}"
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:4000"
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/uploads:/var/lib/pleroma/uploads"
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/static:/var/lib/pleroma/static"
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.exs:/etc/pleroma/config.exs:ro"
+    env:
+      DB_HOST: "{{ database_container_name }}"
+      DOMAIN: "{{ domain_name }}"
+      INSTANCE_NAME: "{{ instance_name }}"
+      ADMIN_EMAIL: "{{ admin_mail }}"
+      NOTIFY_EMAIL: "{{ notify_mail }}"
+      DB_USER: "{{ database_user }}"
+      DB_PASS: "{{ database_password }}"
+      DB_NAME: "{{ database_name }}"
+
+- name: Setup database backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-postgres-database-backups
+
+- name: Setup file backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-file-backups
+
+- name: Setup S3 backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-s3-backups
+
+- name: Setup restic backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-restic-backups
+  vars:
+    file_path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"

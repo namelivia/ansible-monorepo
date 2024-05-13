@@ -1,0 +1,58 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - host_port is defined
+      - tink_client_id is defined
+      - tink_client_secret is defined
+      - tink_callback_uri is defined
+      - csv_path is defined
+      - notifications_service_endpoint is defined
+      - firefly_personal_access_token is defined
+      - app_url is defined
+      - firefly_url is defined
+
+- name: Create the files directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+    state: directory
+    mode: "0700"
+
+- name: Create the csv directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/csv"
+    state: directory
+    mode: "0700"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "namelivia/{{ application_name }}:latest"
+    memory: "200MB"
+    pull: true
+    restart_policy: "always"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/csv:/csv"
+    networks:
+      - name: "bridge"
+      - name: "firefly_network"
+    exposed_ports:
+      - "80"
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:80"
+    env:
+      TINK_CLIENT_ID: "{{ tink_client_id }}"
+      TINK_CLIENT_SECRET: "{{ tink_client_secret }}"
+      TINK_CALLBACK_URI: "{{ tink_callback_uri }}"
+      CSV_PATH: "{{ csv_path }}"
+      NOTIFICATIONS_SERVICE_ENDPOINT: "{{ notifications_service_endpoint }}"
+      FIREFLY_PERSONAL_ACCESS_TOKEN: "{{ firefly_personal_access_token }}"
+      FIREFLY_URL: "{{ firefly_url }}"
+      APP_URL: "{{ app_url }}"

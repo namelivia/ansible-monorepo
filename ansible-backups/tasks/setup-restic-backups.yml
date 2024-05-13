@@ -1,0 +1,12 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - file_path is defined
+
+- name: Add path to restic targets file
+  lineinfile:
+    path: "{{ hostvars[inventory_hostname].working_directory }}/restic/backup_targets"
+    line: "{{ file_path }}"
+    create: true
+    mode: "0644"

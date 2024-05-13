@@ -1,0 +1,67 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - twitter_enabled is defined
+      - twitter_consumer_key is defined
+      - twitter_consumer_secret is defined
+      - twitter_access_token_key is defined
+      - twitter_access_token_secret is defined
+      - mastodon_enabled is defined
+      - mastodon_client_id is defined
+      - mastodon_client_secret is defined
+      - mastodon_api_base_url is defined
+      - mastodon_login is defined
+      - mastodon_password is defined
+      - subs_uri is defined
+      - subs_encoding is defined
+      - video_uri is defined
+      - output_uri is defined
+      - text_color is defined
+      - text_size is defined
+      - text_font is defined
+      - idle_period is defined
+
+- name: Create the movie directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}/movies"
+    state: directory
+    mode: "0700"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "namelivia/{{ application_name }}:latest"
+    pull: true
+    cleanup: true
+    restart_policy: "always"
+    memory: "200MB"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}movies:/movies"
+    env:
+      TWITTER_ENABLED: "{{ twitter_enabled }}"
+      TWITTER_CONSUMER_KEY: "{{ twitter_consumer_key }}"
+      TWITTER_CONSUMER_SECRET: "{{ twitter_consumer_secret }}"
+      TWITTER_ACCESS_TOKEN_KEY: "{{ twitter_access_token_key }}"
+      TWITTER_ACCESS_TOKEN_SECRET: "{{ twitter_access_token_secret }}"
+      MASTODON_ENABLED: "{{ mastodon_enabled }}"
+      MASTODON_CLIENT_ID: "{{ mastodon_client_id }}"
+      MASTODON_CLIENT_SECRET: "{{ mastodon_client_secret }}"
+      MASTODON_API_BASE_URL: "{{ mastodon_api_base_url }}"
+      MASTODON_LOGIN: "{{ mastodon_login }}"
+      MASTODON_PASSWORD: "{{ mastodon_password }}"
+      SUBS_URI: "{{ subs_uri }}"
+      SUBS_ENCODING: "{{ subs_encoding }}"
+      VIDEO_URI: "{{ video_uri }}"
+      OUTPUT_URI: "{{ output_uri }}"
+      TEXT_COLOR: "{{ text_color }}"
+      TEXT_SIZE: "{{ text_size }}"
+      TEXT_FONT: "{{ text_font }}"
+      IDLE_PERIOD: "{{ idle_period }}"
+      SENTRY_URL: "{{ sentry_url }}"

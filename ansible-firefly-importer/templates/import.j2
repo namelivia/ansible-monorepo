@@ -1,0 +1,24 @@
+#!/bin/bash
+IMPORT_FILES_DIR="{{ import_files_dir }}"
+ERRORED_FILES_DIR="{{ hostvars[inventory_hostname]['working_directory'] }}{{ application_name }}/error"
+
+# If the dir is empty, exit
+if [ -z "$(ls -A $IMPORT_FILES_DIR)" ]; then
+    exit 0
+fi
+
+docker run --rm --network="{{ docker_network_name }}" --name="firefly-importer" --log-driver=loki --log-opt loki-url="{{ loki_url }}" --log-opt loki-batch-size=400 -v "$IMPORT_FILES_DIR:/import" -e FIREFLY_III_ACCESS_TOKEN={{ firefly_3_access_token }} -e IMPORT_DIR_ALLOWLIST=/import -e FIREFLY_III_URL={{ firefly_3_url }} -e WEB_SERVER=false -e LOG_LEVEL=info fireflyiii/data-importer:latest
+
+RESULT=$?
+
+if [ $RESULT -ne 0 ]; then
+    mv $IMPORT_FILES_DIR/*.csv $ERRORED_FILES_DIR
+    mv $IMPORT_FILES_DIR/*.json $ERRORED_FILES_DIR
+    curl -X POST -d "{\"body\":\"Firefly import failed\"}" -H "Content-Type: application/json" {{ notifications_endpoint }}
+    exit 1
+fi
+
+CSV_COUNT=$(ls -1 $IMPORT_FILES_DIR/*.csv 2>/dev/null | wc -l)
+curl -X POST -d "{\"body\":\"$CSV_COUNT firefly files imported\"}" -H "Content-Type: application/json" {{ notifications_endpoint }}
+rm $IMPORT_FILES_DIR/*.csv $IMPORT_FILES_DIR/*.json
+exit 0

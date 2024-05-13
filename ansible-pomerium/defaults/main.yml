@@ -1,0 +1,3 @@
+---
+application_name: pomerium
+docker_network_name: pomerium

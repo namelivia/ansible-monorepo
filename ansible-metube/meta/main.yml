@@ -1,0 +1,12 @@
+galaxy_info:
+  role_name: metube
+  namespace: namelivia
+  author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+  description: Ansible role I use to install and configure metube
+  license: GPLv2
+  min_ansible_version: 2.5.1
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal

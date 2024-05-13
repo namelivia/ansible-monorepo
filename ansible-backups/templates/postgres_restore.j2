@@ -1,0 +1,9 @@
+#!/bin/bash
+eval "$(sentry-cli bash-hook)"
+aws s3 cp s3://{{ backups_bucket_name }}/{{ application_name }}_latest_dump.tgz.xz /tmp/backup.tgz.xz
+gpg -o /tmp/backup_decrypted.tgz.xz --decrypt /tmp/backup.tgz.xz
+unxz /tmp/backup_decrypted.tgz.xz
+gunzip /tmp/backup_decrypted.tgz
+cat /tmp/backup_decrypted.tar | docker exec -e PGPASSWORD={{ database_password }} -i {{ database_container_name }} psql -U {{ database_user }} -d {{ database_name }}
+rm /tmp/backup.tgz.xz
+rm /tmp/backup_decrypted.tar

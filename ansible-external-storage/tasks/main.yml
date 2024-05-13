@@ -1,0 +1,13 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - external_storage_device_id is defined
+      - target_directory is defined
+
+- name: Mount up device by UUID
+  ansible.posix.mount:
+    path: "{{ target_directory }}"
+    src: "UUID={{ external_storage_device_id }}"
+    fstype: ext4
+    state: mounted

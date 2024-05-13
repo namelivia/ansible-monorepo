@@ -1,0 +1,29 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - docker_network_name is defined
+      - loki_url is defined
+      - metube_downloads_folder is defined
+
+- name: Create the dockernetwork
+  docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}-app"
+    image: "ghcr.io/alexta69/metube:latest"
+    restart_policy: "always"
+    pull: true
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    networks:
+      - name: "{{ docker_network_name }}"
+    ports:
+      - 8081:8081
+    volumes:
+      - "{{ metube_downloads_folder }}:/downloads"

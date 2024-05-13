@@ -1,0 +1,66 @@
+#!/bin/bash
+# Set the Restic repository and AWS credentials
+export RESTIC_REPOSITORY="{{ restic_repository }}"
+export RESTIC_PASSWORD="{{ restic_password }}"
+export AWS_ACCESS_KEY_ID="{{ aws_access_key_id }}"
+export AWS_SECRET_ACCESS_KEY="{{ aws_secret_access_key }}"
+
+# Initialize the repository if needed
+docker run --rm \
+        -e RESTIC_REPOSITORY="$RESTIC_REPOSITORY" \
+        -e RESTIC_PASSWORD="$RESTIC_PASSWORD" \
+        -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" \
+        -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
+        --name="restic-initialize-repo" \
+        --log-driver="loki" \
+        --log-opt loki-url="{{ loki_url }}" \
+        --log-opt loki-batch-size="400" \
+        instrumentisto/restic init
+
+# Function to perform the backup for a given target file
+perform_backup() {
+    local target_file="$1"
+
+    # Loop through each line in the target file
+    while IFS= read -r folder_path; do
+        echo "Backing up $folder_path"
+
+        # Generate the volume mount and perform the backup
+        docker run --rm -v "$folder_path:$folder_path" \
+            -e RESTIC_REPOSITORY="$RESTIC_REPOSITORY" \
+            -e RESTIC_PASSWORD="$RESTIC_PASSWORD" \
+            -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" \
+            -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
+            --name="restic-backup" \
+            --log-driver="loki" \
+            --log-opt loki-url="{{ loki_url }}" \
+            --log-opt loki-batch-size="400" \
+            instrumentisto/restic backup --host {{ inventory_hostname }} "$folder_path"
+    done < "$target_file"
+}
+
+# Run the backup for backup_targets
+if [ -f "backup_targets" ]; then
+    perform_backup "backup_targets"
+else
+    echo "backup_targets file not found."
+fi
+
+# Run the backup for initial_targets if it exists
+if [ -f "initial_targets" ]; then
+    perform_backup "initial_targets"
+fi
+
+# Cleanup old snapshots
+docker run --rm \
+        -e RESTIC_REPOSITORY="$RESTIC_REPOSITORY" \
+        -e RESTIC_PASSWORD="$RESTIC_PASSWORD" \
+        -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" \
+        -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
+        --name="restic-initialize-repo" \
+        --log-driver="loki" \
+        --log-opt loki-url="{{ loki_url }}" \
+        --log-opt loki-batch-size="400" \
+        instrumentisto/restic forget --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --keep-yearly 1 --host {{ inventory_hostname }}
+
+curl -X POST -d '{"body":"**{{ inventory_hostname }}** successfully backed up using restic"}' -H "Content-Type: application/json" {{ backups_notifications_endpoint }}

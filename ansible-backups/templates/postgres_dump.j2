@@ -1,0 +1,15 @@
+#!/bin/bash
+eval "$(sentry-cli bash-hook)"
+if dump=$(docker exec -e PGPASSWORD={{database_password}} -t {{ database_container_name }} pg_dump -c -U {{ database_user }} {{ database_name }}); then
+        echo "$dump" |
+        gzip -c |
+        xz -c - |
+        gpg --always-trust --recipient {{gpg_recipient}} --encrypt -o {{ hostvars[inventory_hostname].working_directory
+    }}{{ application_name }}/backup/{{ application_name }}_"$(date '+%Y%m%d%H%M%S')"_dump.tgz.xz
+    cd {{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/backup && rm `ls -t | awk 'NR>5'`
+    curl -X POST -d '{"body":"{{ application_name }} postgres database backed up"}' -H "Content-Type: application/json" {{ backups_notifications_endpoint }}
+        exit 0
+else
+    curl -X POST -d '{"body":"error doing {{ application_name }} postgres database back up"}' -H "Content-Type: application/json" {{ backups_notifications_endpoint }}
+    exit 1
+fi

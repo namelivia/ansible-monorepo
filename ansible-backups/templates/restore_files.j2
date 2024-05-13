@@ -1,0 +1,8 @@
+#!/bin/bash
+eval "$(sentry-cli bash-hook)"
+aws s3 cp s3://{{ backups_bucket_name }}/{{ application_name }}_latest_files.tgz.xz /tmp/backup.tgz.xz
+gpg -o /tmp/backup_decrypted.tgz.xz --decrypt /tmp/backup.tgz.xz
+unxz /tmp/backup_decrypted.tgz.xz
+tar -xvf /tmp/backup_decrypted.tgz -C /
+rm /tmp/backup.tgz.xz
+rm /tmp/backup_decrypted.tgz

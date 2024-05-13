@@ -1,0 +1,120 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - docker_network_name is defined
+      - host_port is defined
+      - loki_url is defined
+      - database_user is defined
+      - database_password is defined
+      - database_name is defined
+      - redis_hostname is defined
+      - immich_upload_path is defined
+      - immich_external_path is defined
+
+- name: Create the dockernetwork
+  docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create the immich-postgres data volumne
+  docker_volume:
+    name: immich-postgres-data
+
+- name: Create the model-cache volumne
+  docker_volume:
+    name: model-cache
+
+# TODO: Redis container missing
+- name: Create database container
+  docker_container:
+    name: "{{ application_name }}-database"
+    image: "tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:90724186f0a3517cf6914295b5ab410db9ce23190a2d9d0b9dd6463e3fa298f0"
+    restart_policy: "always"
+    cleanup: true
+    exposed_ports:
+      - "5432"
+    networks:
+      - name: "{{ docker_network_name }}"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    volumes:
+      - immich-postgres-data:/var/lib/postgresql/data
+    env:
+      POSTGRES_USER: "{{ database_user }}"
+      POSTGRES_PASSWORD: "{{ database_password }}"
+      POSTGRES_DB: "{{ database_name }}"
+
+- name: Create server container
+  docker_container:
+    name: "{{ application_name }}-server"
+    image: "ghcr.io/immich-app/immich-server:v1.99.0"
+    pull: true
+    command: ["start.sh", "immich"]
+    cleanup: true
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    restart_policy: "always"
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:3001"
+    networks:
+      - name: "{{ docker_network_name }}"
+    volumes:
+      - "{{ immich_upload_path }}:/usr/src/app/upload"
+      - "{{ immich_external_path }}:/mnt/media:ro"
+      - /etc/localtime:/etc/localtime:ro
+    env:
+      NODE_ENV: "production"
+      DB_HOSTNAME: "{{ application_name }}-database"
+      DB_USERNAME: "{{ database_user }}"
+      DB_PASSWORD: "{{ database_password }}"
+      DB_DATABASE_NAME: "{{ database_name }}"
+      REDIS_HOSTNAME: "{{ redis_hostname }}"
+
+- name: Create microservices container
+  docker_container:
+    name: "{{ application_name }}-microservices"
+    image: "ghcr.io/immich-app/immich-server:v1.99.0"
+    pull: true
+    command: ["start.sh", "microservices"]
+    cleanup: true
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    restart_policy: "always"
+    networks:
+      - name: "{{ docker_network_name }}"
+    volumes:
+      - "{{ immich_upload_path }}:/usr/src/app/upload"
+      - "{{ immich_external_path }}:/mnt/media:ro"
+      - /etc/localtime:/etc/localtime:ro
+    env:
+      NODE_ENV: "production"
+      DB_HOSTNAME: "{{ application_name }}-database"
+      DB_USERNAME: "{{ database_user }}"
+      DB_PASSWORD: "{{ database_password }}"
+      DB_DATABASE_NAME: "{{ database_name }}"
+      REDIS_HOSTNAME: "{{ redis_hostname }}"
+
+- name: Create machine learning container
+  docker_container:
+    name: "{{ application_name }}-machine-learning"
+    image: "ghcr.io/immich-app/immich-machine-learning:v1.99.0"
+    pull: true
+    cleanup: true
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    restart_policy: "always"
+    networks:
+      - name: "{{ docker_network_name }}"
+    volumes:
+      - model-cache:/cache
+    env:
+      NODE_ENV: "production"

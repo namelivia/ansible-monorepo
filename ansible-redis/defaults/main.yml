@@ -1,0 +1,3 @@
+---
+application_name: redis
+network_name: pomerium

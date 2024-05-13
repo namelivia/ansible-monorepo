@@ -1,0 +1,22 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - loki_url is defined
+
+- name: Create container
+  docker_container:
+    name: "redis"
+    image: "redis:alpine"
+    restart_policy: "always"
+    cleanup: true
+    memory: "100MB"
+    exposed_ports:
+      - "6379"
+    networks:
+      - name: "{{ network_name }}"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"

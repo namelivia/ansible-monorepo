@@ -1,0 +1,37 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - loki_url is defined
+      - docker_network_name is defined
+      - firefly_3_access_token is defined
+      - firefly_3_url is defined
+      - import_files_dir is defined
+      - notifications_endpoint is defined
+
+- name: Create the importer directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}"
+    state: directory
+    mode: "0755"
+
+- name: Create the errored files dir
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/error"
+    state: directory
+    mode: "0755"
+
+- name: Create the import script
+  template:
+    src: import.j2
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/import"
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Run every 5 minutes
+  cron:
+    name: "Check for pending imports every 5 minutes"
+    minute: "*/5"
+    job: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/import"
+    user: root

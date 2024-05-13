@@ -1,0 +1,40 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - consumer_key is defined
+      - consumer_secret is defined
+      - access_token_key is defined
+      - access_token_secret is defined
+      - search_string is defined
+      - chance_to_act is defined
+      - chance_to_favorite is defined
+      - chance_to_follow is defined
+      - language is defined
+      - idle_period is defined
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "namelivia/{{ application_name }}:latest"
+    restart_policy: "always"
+    pull: true
+    cleanup: true
+    memory: "50MB"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    env:
+      CONSUMER_KEY: "{{ consumer_key }}"
+      CONSUMER_SECRET: "{{ consumer_secret }}"
+      ACCESS_TOKEN_KEY: "{{ access_token_key }}"
+      ACCESS_TOKEN_SECRET: "{{ access_token_secret }}"
+      SEARCH_STRING: "{{ search_string }}"
+      CHANCE_TO_ACT: "{{ chance_to_act }}"
+      CHANCE_TO_FAVORITE: "{{ chance_to_favorite }}"
+      CHANCE_TO_FOLLOW: "{{ chance_to_follow }}"
+      LANGUAGE: "{{ language }}"
+      IDLE_PERIOD: "{{ idle_period }}"

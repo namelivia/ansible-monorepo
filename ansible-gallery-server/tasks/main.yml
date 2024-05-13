@@ -1,0 +1,48 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - user_info_service_endpoint is defined
+      - domain_name is defined
+      - aws_bucket is defined
+      - aws_default_region is defined
+      - aws_secret_access_key is defined
+      - aws_access_key_id is defined
+      - aws_dynamo_table is defined
+      - host_port is defined
+
+- name: Create the files directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+    state: directory
+    mode: "0700"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "namelivia/{{ application_name }}:latest"
+    memory: "200MB"
+    pull: true
+    cleanup: true
+    restart_policy: "always"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    networks:
+      - name: "pomerium"
+    exposed_ports:
+      - "80"
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:80"
+    env:
+      USER_INFO_SERVICE_ENDPOINT: "{{ user_info_service_endpoint }}"
+      AWS_ACCESS_KEY_ID: "{{ aws_access_key_id }}"
+      AWS_SECRET_ACCESS_KEY: "{{ aws_secret_access_key }}"
+      AWS_DEFAULT_REGION: "{{ aws_default_region }}"
+      AWS_BUCKET: "{{ aws_bucket }}"
+      DYNAMO_TABLE: "{{ aws_dynamo_table }}"
+      DOMAIN_NAME: "{{ domain_name }}"

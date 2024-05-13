@@ -1,0 +1,24 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - notifications_service_endpoint is defined
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "namelivia/{{ application_name }}:latest"
+    pull: true
+    cleanup: true
+    memory: "200MB"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    networks:
+      - name: "pomerium"
+    env:
+      NOTIFICATIONS_SERVICE_ENDPOINT: "{{ notifications_service_endpoint }}"

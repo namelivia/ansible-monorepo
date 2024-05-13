@@ -1,0 +1,50 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - host_port is defined
+
+- name: Create data volume
+  docker_volume:
+    name: "data"
+
+- name: Create log volume
+  docker_volume:
+    name: "log"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "minimalcompact/{{ application_name }}:latest"
+    cleanup: true
+    restart_policy: "always"
+    memory: "500MB"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:80"
+    exposed_ports:
+      - "80"
+    volumes:
+      - data:/data
+      - logs:/logs
+    env:
+      # THUMBOR_NUM_PROCESSES control how many processes run inside the container
+      # Normally this is set in connection with the number of CPU cores
+      # Note however that you can also use the docker-compose scale option to dynamically
+      # scale your thumbor instances
+      # THUMBOR_NUM_PROCESSES: "4"
+      # this would allow CORS from any origin (you can restrict to specific origins if you want)
+      CORS_ALLOW_ORIGIN: "*"
+      # returns a webp image if browser Accept headers match
+      AUTO_WEBP: "True"
+      # nginx-proxy does caching automatically, so no need to store the result storage cache
+      # (this greatly speeds up and saves on CPU)
+      RESULT_STORAGE: "thumbor.result_storages.file_storage"
+      RESULT_STORAGE_STORES_UNSAFE: "True"
+      STORAGE: "thumbor.storages.file_storage"
+      UPLOAD_PHOTO_STORAGE: "thumbor.result_storages.file_storage"

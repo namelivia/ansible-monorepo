@@ -1,0 +1,34 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - host_port is defined
+      - docker_network_name is defined
+      - cloudwatch_region is defined
+      - cloudwatch_log_group is defined
+      - host_port is defined
+
+- name: Create the dockernetwork
+  docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create app container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "grafana/loki:latest"
+    restart_policy: "always"
+    cleanup: true
+    pull: true
+    exposed_ports:
+      - 3100
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:3100"
+    networks:
+      - name: "{{ docker_network_name }}"
+      - name: "grafana_network"
+    log_driver: "awslogs"
+    log_options:
+      awslogs-region: "{{ cloudwatch_region }}"
+      awslogs-group: "{{ cloudwatch_log_group }}"
+      awslogs-stream: "{{ application_name }}-{{ inventory_hostname }}"

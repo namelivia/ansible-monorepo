@@ -1,0 +1,42 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - samba_username is defined
+      - samba_password is defined
+      - samba_host_ip is defined
+      - samba_mounts is defined
+      - gid is defined
+      - uid is defined
+
+- name: Install required system packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  loop:
+    - cifs-utils
+
+- name: Create the local folders
+  file:
+    path: "{{ item.local_folder }}"
+    state: directory
+    mode: "0755"
+  with_items: "{{ samba_mounts }}"
+
+- name: Create credentials_file
+  template:
+    src: smb.j2
+    dest: "{{ hostvars[inventory_hostname].working_directory }}.smb"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Mount shared folder
+  mount:
+    state: "mounted"
+    fstype: "cifs"
+    name: "{{ item.local_folder }}"
+    src: "//{{ samba_host_ip }}/{{ item.remote_folder }}"
+    opts: "credentials={{ hostvars[inventory_hostname].working_directory }}.smb,_netdev,file_mode=0660,dir_mode=0770,gid={{ gid }},uid={{ uid }}"
+  with_items: "{{ samba_mounts }}"
