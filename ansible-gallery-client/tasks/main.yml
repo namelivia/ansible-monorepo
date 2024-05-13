@@ -6,6 +6,7 @@
       - loki_url is defined
       - gallery_api_endpoint is defined
       - host_port is defined
+      - version is defined
 
 - name: Create app container
   docker_container:
