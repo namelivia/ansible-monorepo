@@ -1,8 +1,8 @@
 #!/bin/bash
-EXCLUSIONS="ansible-pleroma" # This image is directly built from the source code
+EXCLUSIONS="roles/ansible-pleroma" # This image is directly built from the source code
 BASE_DIR=$(cd $(dirname $0)/..; pwd)
 cd $BASE_DIR
-DOCKER_IMAGES=$(grep --exclude-dir=$EXCLUSIONS -R "image:" **/tasks/main.yml | sed 's/.*image: "\(.*\)".*/\1/')
+DOCKER_IMAGES=$(grep --exclude-dir=$EXCLUSIONS -R "image:" roles/**/tasks/main.yml | sed 's/.*image: "\(.*\)".*/\1/')
 for IMAGE in $DOCKER_IMAGES; do
     NAMESPACE=$(echo "$IMAGE" | cut -d/ -f1)
     if [ "$NAMESPACE" == "$IMAGE" ]; then

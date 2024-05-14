@@ -4,12 +4,14 @@ version: 0.4.2
 readme: README.md
 authors:
 - José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
-description: Monorepo for all the Ansible roles for my personal infrastructure  
+description: Monorepo for all the Ansible roles for my personal infrastructure
 license:
-- GPL-2.0-or-later
+  - GPL-2.0-or-later
 license_file: ''
 tags: []
-dependencies: {}
+dependencies:
+  community.docker: '>=1.0.0'
+  ansible.posix: '>=1.0.0'
 repository: http://example.com/repository
 documentation: http://docs.example.com
 homepage: http://example.com
