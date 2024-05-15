@@ -35,12 +35,28 @@ class UpdateProposal:
         line = self.image_declaration.line
         old_content = self.image_declaration.content
         new_content = old_content.replace(str(self.current_version), str(self.latest_version))
-        print(f"In file {file} at line {line}")
-        print(f"Old content: {old_content}")
-        print(f"New content: {new_content}")
-
-
+        with open(file, "r") as f:
+            lines = f.readlines()
+        lines[line] = new_content
+        with open(file, "w") as f:
+            f.writelines(lines)
+        print(f"Updated {self.image_declaration.image} from {self.current_version} to {self.latest_version.tag}")
+        
 class Tag:
+    def __init__(self, tag):
+        self.flavors = ["nightly", "alpine"]
+        self.tag = semver.VersionInfo.parse(tag)
+        prerelease = self.tag.prerelease
+        self.flavor = prerelease if prerelease in self.flavors else None
+
+    def __lt__(self, other):
+        return self.tag < other.tag
+
+    def __gt__(self, other):
+        return self.tag > other.tag
+
+
+class ParsedTag:
     def __init__(
         self,
         creator,
@@ -93,7 +109,6 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 os.chdir(BASE_DIR)
 
 up_to_date = []
-outdated = []
 cant_check = []
 
 def find_image_declarations():
@@ -115,7 +130,7 @@ proposals = []
 for image_declaration in image_declarations:
     namespace, name, current_tag = parse_docker_image(image_declaration.image)
     try:
-        current_tag = semver.VersionInfo.parse(current_tag)
+        current_tag = Tag(current_tag)
     except ValueError:
         #print(f"Skipping {image} as it is not a valid semver tag")
         cant_check.append(image_declaration.image)
@@ -123,18 +138,19 @@ for image_declaration in image_declarations:
     response = requests.get(f"https://hub.docker.com/v2/namespaces/{namespace}/repositories/{name}/tags?page_size=100")
     if response.ok:
         response = TagsRequestResponse(**response.json())
-        tags = [Tag(**tag) for tag in response.results]
+        tags = [ParsedTag(**tag) for tag in response.results]
         parsed_tags = []
         for tag in tags:
             try:
-                parsed_tags.append(semver.VersionInfo.parse(tag.name))
+                parsed_tags.append(Tag(tag.name))
             except ValueError:
                 continue
+        if current_tag.flavor is not None: # If the current tag has a flavor, only consider tags with the same flavor
+            parsed_tags = [tag for tag in parsed_tags if tag.flavor == current_tag.flavor]
         latest_tag = max(parsed_tags)
         if latest_tag > current_tag:
-            proposal = UpdateProposal(image_declaration, current_tag, latest_tag)
+            proposal = UpdateProposal(image_declaration, current_tag.tag, latest_tag)
             proposals.append(proposal)
-            outdated.append(image_declaration.image)
         else:
             #print(f"{namespace}/{name} is up to date")
             up_to_date.append(image_declaration.image)
@@ -145,3 +161,5 @@ for image_declaration in image_declarations:
 
 for proposal in proposals:
     proposal.apply()
+print(f"{len(up_to_date)} roles are up to date")
+print(f"{len(cant_check)} roles could not be checked")
