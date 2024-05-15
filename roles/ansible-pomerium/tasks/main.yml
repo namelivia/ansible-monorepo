@@ -16,11 +16,11 @@
       - pomerium_config_path is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create pomerium
-  docker_container:
+  community.docker.docker_container:
     name: "pomerium"
     image: "pomerium/pomerium:v0.25.2"
     restart_policy: "always"

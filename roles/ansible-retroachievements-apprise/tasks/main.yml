@@ -10,7 +10,7 @@
       - retroachievements_key is defined
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}"
     image: "namelivia/retroachievements-apprise:latest"
     pull: true

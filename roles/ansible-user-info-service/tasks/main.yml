@@ -12,7 +12,7 @@
       - dump_day is defined
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}"
     image: "namelivia/user-info-service:latest"
     memory: "200MB"

@@ -13,7 +13,7 @@
       - app_key is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create the files directory
@@ -35,9 +35,9 @@
     mode: "0755"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "fireflyiii/core:latest"
+    image: "fireflyiii/core:version-6.1.15"
     restart_policy: "always"
     cleanup: true
     pull: true

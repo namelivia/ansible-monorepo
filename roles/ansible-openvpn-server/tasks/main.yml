@@ -11,11 +11,11 @@
       - domain_name is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-app"
     image: "kylemanna/openvpn:2.4"
     capabilities: ["NET_ADMIN"]

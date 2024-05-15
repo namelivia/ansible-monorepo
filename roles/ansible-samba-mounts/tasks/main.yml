@@ -33,7 +33,7 @@
     mode: '0644'
 
 - name: Mount shared folder
-  mount:
+  ansible.posix.mount:
     state: "mounted"
     fstype: "cifs"
     name: "{{ item.local_folder }}"

@@ -7,17 +7,17 @@
       - host_port is defined
 
 - name: Create data volume
-  docker_volume:
+  community.docker.docker_volume:
     name: "data"
 
 - name: Create log volume
-  docker_volume:
+  community.docker.docker_volume:
     name: "log"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "minimalcompact/thumbor:latest"
+    image: "minimalcompact/thumbor:6.7.5"
     cleanup: true
     restart_policy: "always"
     memory: "500MB"

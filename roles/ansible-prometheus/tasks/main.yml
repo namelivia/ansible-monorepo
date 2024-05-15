@@ -11,7 +11,7 @@
       - gid
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create the files directory
@@ -40,9 +40,9 @@
     mode: '0644'
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "prom/prometheus:latest"
+    image: "prom/prometheus:v2.52.0"
     restart_policy: "always"
     cleanup: true
     user: "{{ uid }}:{{ gid }}"

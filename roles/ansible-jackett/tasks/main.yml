@@ -8,7 +8,7 @@
       - backup_day is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create the config directory
@@ -18,7 +18,7 @@
     mode: "0755"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-app"
     image: "linuxserver/jackett:0.21.2592"
     restart_policy: "always"

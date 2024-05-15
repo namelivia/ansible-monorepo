@@ -1,14 +1,14 @@
 namespace: namelivia
 name: monorepo
-version: 0.4.2
+version: 1.0.0
 readme: README.md
 authors:
-- José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+  - José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
 description: Monorepo for all the Ansible roles for my personal infrastructure
 license:
   - GPL-2.0-or-later
 license_file: ''
-tags: []
+tags: ['infrastructure', 'ansible']
 dependencies:
   community.docker: '>=1.0.0'
   ansible.posix: '>=1.0.0'

@@ -15,19 +15,19 @@
       - loki_url is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create the public folder volume
-  docker_volume:
+  community.docker.docker_volume:
     name: public-folder
 
 - name: Create the var folder volume
-  docker_volume:
+  community.docker.docker_volume:
     name: var-folder
 
 - name: Create the mysql data volumne
-  docker_volume:
+  community.docker.docker_volume:
     name: mysql-data
 
 - name: Create the files directory
@@ -43,7 +43,7 @@
     mode: "0700"
 
 - name: Create database container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-database"
     image: "mariadb:latest" # TODO: Use a specific version
     restart_policy: "always"
@@ -66,7 +66,7 @@
       MYSQL_PASSWORD: "{{ database_password }}"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-app"
     image: "kimai/kimai2:fpm-2.16.1-prod"
     restart_policy: "always"
@@ -88,7 +88,7 @@
       DATABASE_URL: "mysql://{{ database_user }}:{{ database_password | urlencode() }}@{{ application_name }}-database:3306/{{ database_name }}"
 
 - name: Create nginx container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-nginx"
     image: "nginx:latest" # TODO: Use a specific version
     cleanup: true

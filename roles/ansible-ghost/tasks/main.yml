@@ -14,7 +14,7 @@
       - mysql_root_password is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create the files directory
@@ -24,11 +24,11 @@
     mode: "0775"
 
 - name: Create the ghost data volumne
-  docker_volume:
+  community.docker.docker_volume:
     name: ghost-data
 
 - name: Create database container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-database"
     image: "mariadb:latest"
     restart_policy: "always"
@@ -57,7 +57,7 @@
     mode: "0775"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-app"
     image: "ghost:5.82.2-alpine"
     restart_policy: "always"

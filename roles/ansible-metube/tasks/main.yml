@@ -8,11 +8,11 @@
       - metube_downloads_folder is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-app"
     image: "ghcr.io/alexta69/metube:latest"
     restart_policy: "always"

@@ -41,7 +41,7 @@
   when: client_max_body_sizes is defined
 
 - name: Create nginx-proxy container
-  docker_container:
+  community.docker.docker_container:
     name: "proxy"
     image: "nginxproxy/nginx-proxy:1.5.2-alpine"
     restart_policy: "always"

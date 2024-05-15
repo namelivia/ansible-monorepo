@@ -10,7 +10,7 @@
       - host_port is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create the files directory
@@ -26,7 +26,7 @@
     mode: "0755"
 
 - name: Create frontend container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-frontend"
     image: "namelivia/mealie:frontend-nightly"
     restart_policy: "always"
@@ -48,7 +48,7 @@
       API_URL: "http://mealie-backend:9000"
 
 - name: Create backend container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-backend"
     image: "namelivia/mealie:api-nightly"
     restart_policy: "always"

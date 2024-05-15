@@ -14,20 +14,20 @@
       - immich_external_path is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create the immich-postgres data volumne
-  docker_volume:
+  community.docker.docker_volume:
     name: immich-postgres-data
 
 - name: Create the model-cache volumne
-  docker_volume:
+  community.docker.docker_volume:
     name: model-cache
 
 # TODO: Redis container missing
 - name: Create database container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-database"
     image: "tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:90724186f0a3517cf6914295b5ab410db9ce23190a2d9d0b9dd6463e3fa298f0"
     restart_policy: "always"
@@ -48,7 +48,7 @@
       POSTGRES_DB: "{{ database_name }}"
 
 - name: Create server container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-server"
     image: "ghcr.io/immich-app/immich-server:v1.99.0"
     pull: true
@@ -76,7 +76,7 @@
       REDIS_HOSTNAME: "{{ redis_hostname }}"
 
 - name: Create microservices container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-microservices"
     image: "ghcr.io/immich-app/immich-server:v1.99.0"
     pull: true
@@ -102,7 +102,7 @@
       REDIS_HOSTNAME: "{{ redis_hostname }}"
 
 - name: Create machine learning container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-machine-learning"
     image: "ghcr.io/immich-app/immich-machine-learning:v1.99.0"
     pull: true

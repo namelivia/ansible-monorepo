@@ -85,7 +85,7 @@
     version: master
 
 - name: Build docker image
-  docker_image:
+  community.docker.docker_image:
     name: pleroma
     build:
       path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/docker-pleroma"
@@ -98,7 +98,7 @@
     source: build
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}"
     image: "pleroma:latest"
     restart_policy: "always"

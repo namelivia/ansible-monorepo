@@ -17,7 +17,7 @@
     mode: "0700"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}"
     image: "namelivia/journaling-service:latest"
     memory: "200MB"

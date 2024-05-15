@@ -11,7 +11,7 @@
       - gid is defined
 
 - name: Create the dockernetwork
-  docker_network:
+  community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
 - name: Create the files directory
@@ -47,9 +47,9 @@
     group: "{{ group }}"
 
 - name: Create app container
-  docker_container:
+  community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "linuxserver/lidarr:latest"
+    image: "linuxserver/lidarr:2.4.0"
     restart_policy: "always"
     pull: true
     log_driver: "loki"
