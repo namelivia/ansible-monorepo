@@ -94,7 +94,7 @@
       args:
         UID: "{{ uid }}"
         GID: "{{ gid }}"
-        PLEROMA_VER: "develop"
+        PLEROMA_VER: "stable"
     source: build
 
 - name: Create app container
