@@ -64,6 +64,6 @@ docker run --rm \
         --log-opt loki-batch-size="400" \
         instrumentisto/restic forget --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --keep-yearly 1 --host {{ inventory_hostname }} >> /tmp/backup.log
 
-curl -X POST -d '{"body":"**{{ inventory_hostname }}** backed up using restic"}' -F attach=@/tmp/backup.log -H "Content-Type: application/json" {{ backups_notifications_endpoint }}
+curl -X POST -F 'body=**{{ inventory_hostname }}** backed up using restic' -F attach=@/tmp/backup.log {{ backups_notifications_endpoint }}
 
 rm /tmp/backup.log
