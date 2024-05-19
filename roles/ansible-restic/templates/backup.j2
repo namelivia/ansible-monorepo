@@ -63,4 +63,8 @@ docker run --rm \
         --log-opt loki-batch-size="400" \
         instrumentisto/restic forget --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --keep-yearly 1 --host {{ inventory_hostname }}
 
-curl -X POST -d '{"body":"**{{ inventory_hostname }}** successfully backed up using restic"}' -H "Content-Type: application/json" {{ backups_notifications_endpoint }}
+# Run the list-snapshots bash script in the same folder and store the output in a variable
+snapshots=$(./list-snapshots.sh)
+
+
+curl -X POST -d '{"body":"**{{ inventory_hostname }}** $snapshots"}' -H "Content-Type: application/json" {{ backups_notifications_endpoint }}
