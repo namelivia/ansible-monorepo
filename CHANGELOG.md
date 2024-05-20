@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2024-05-20
+
+### Changed
+
+ - Upgrade Firefly from 6.1.15 to 6.1.16
+ - Upgrade Jackett from 0.21.2628 to 0.21.2644
+
+## [1.2.2] - 2024-05-19
+
+### Changed
+
+ - Improve restic observability
+
 ## [1.2.1] - 2024-05-18
 
 ### Changed
