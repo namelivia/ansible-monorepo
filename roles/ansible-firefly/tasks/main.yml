@@ -85,7 +85,7 @@
     tasks_from: setup-s3-backups
 
 - name: Migrate
-  command: docker exec {{ application_name }} php artisan migrate --seed
+  command: docker exec {{ application_name }} php artisan migrate --seed --force
   register: result
   changed_when: result.rc != 0
 
