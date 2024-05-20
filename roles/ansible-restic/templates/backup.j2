@@ -1,5 +1,7 @@
 #!/bin/bash
 touch /tmp/backup.log
+
+
 # Set the Restic repository and AWS credentials
 export RESTIC_REPOSITORY="{{ restic_repository }}"
 export RESTIC_PASSWORD="{{ restic_password }}"
@@ -41,15 +43,17 @@ perform_backup() {
 }
 
 # Run the backup for backup_targets
-if [ -f "backup_targets" ]; then
-    perform_backup "backup_targets" >> /tmp/backup.log
+backup_targets=$(dirname $0)/backup_targets
+if [ -f "$backup_targets" ]; then
+    perform_backup "$backup_targets" >> /tmp/backup.log
 else
-    echo "backup_targets file not found." >> /tmp/backup.log
+    echo "$backup_targets file not found." >> /tmp/backup.log
 fi
 
 # Run the backup for initial_targets if it exists
-if [ -f "initial_targets" ]; then
-    perform_backup "initial_targets" >> /tmp/backup.log
+initial_targets=$(dirname $0)/initial_targets
+if [ -f "$initial_targets" ]; then
+    perform_backup "$initial_targets" >> /tmp/backup.log
 fi
 
 # Cleanup old snapshots
