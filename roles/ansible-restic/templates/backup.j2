@@ -18,7 +18,7 @@ docker run --rm \
         --log-driver="loki" \
         --log-opt loki-url="{{ loki_url }}" \
         --log-opt loki-batch-size="400" \
-        instrumentisto/restic init >> /tmp/backup.log
+        instrumentisto/restic init --retry-lock 5m >> /tmp/backup.log
 
 # Function to perform the backup for a given target file
 perform_backup() {
@@ -38,7 +38,7 @@ perform_backup() {
             --log-driver="loki" \
             --log-opt loki-url="{{ loki_url }}" \
             --log-opt loki-batch-size="400" \
-            instrumentisto/restic backup --host {{ inventory_hostname }} "$folder_path"
+            instrumentisto/restic backup --retry-lock 5m --host {{ inventory_hostname }} "$folder_path"
     done < "$target_file"
 }
 
@@ -66,7 +66,7 @@ docker run --rm \
         --log-driver="loki" \
         --log-opt loki-url="{{ loki_url }}" \
         --log-opt loki-batch-size="400" \
-        instrumentisto/restic forget --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --keep-yearly 1 --host {{ inventory_hostname }} >> /tmp/backup.log
+        instrumentisto/restic forget --retry-lock 5m --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --keep-yearly 1 --host {{ inventory_hostname }} >> /tmp/backup.log
 
 curl -X POST -F 'body=**{{ inventory_hostname }}** backed up using restic' -F attach=@/tmp/backup.log {{ backups_notifications_endpoint }}
 
