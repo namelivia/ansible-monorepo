@@ -68,7 +68,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "kimai/kimai2:fpm-2.16.1-prod"
+    image: "kimai/kimai2:fpm-2.17.0-prod"
     restart_policy: "always"
     cleanup: true
     log_driver: "loki"
