@@ -126,21 +126,6 @@
       DB_PASS: "{{ database_password }}"
       DB_NAME: "{{ database_name }}"
 
-- name: Setup database backups
-  include_role:
-    name: ansible-backups
-    tasks_from: setup-postgres-database-backups
-
-- name: Setup file backups
-  include_role:
-    name: ansible-backups
-    tasks_from: setup-file-backups
-
-- name: Setup S3 backups
-  include_role:
-    name: ansible-backups
-    tasks_from: setup-s3-backups
-
 - name: Setup restic backups
   include_role:
     name: ansible-backups
