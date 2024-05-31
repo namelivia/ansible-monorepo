@@ -5,12 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 2024-05-31
+
+### Changed
+
+ - Upgrade Amule from 2.3.3-17 to 2.3.3-18
+ - Upgrade Ghost from 5.82.11 to 5.82.12
+ - Upgrade Jackett from 0.21.2710 to 0.21.2855
+ - Upgrade Ofelia from 0.3.12 to 3.0.8
+ - Upgrade Sonarr from 4.0.4 to 4.0.5
+
 ## [1.6.0] - 2024-05-26
 
 ### Changed
 
  - Fix Ofelia role
- - Upgrade Jackett from 0.21.2652 to 0.21.2709
+ - Upgrade Jackett from 0.21.2652 to 0.21.2710
 
 ## [1.5.2] - 2024-05-23
 
