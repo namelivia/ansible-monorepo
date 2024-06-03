@@ -59,7 +59,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "ghost:5.82.12-alpine"
+    image: "ghost:5.83.0-alpine"
     restart_policy: "always"
     cleanup: true
     memory: "500MB"
