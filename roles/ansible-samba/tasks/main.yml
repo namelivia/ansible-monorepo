@@ -2,8 +2,7 @@
 - name: 'Check mandatory variables are defined'
   assert:
     that:
-      - target_path is defined
-      - share_name is defined
+      - shares is defined
       - samba_username is defined
       - samba_password is defined
       - samba_group is defined
@@ -20,7 +19,8 @@
 
 - name: Check that target folder exists
   stat:
-    path: "{{ target_path }}"
+    path: "{{ item.target_path }}"
+  with_items: "{{ shares }}"
 
 - name: Configure samba
   template:
@@ -53,11 +53,12 @@
 
 - name: Assign the target path to the group
   ansible.builtin.file:
-    path: "{{ target_path }}"
+    path: "{{ item.target_path }}"
     state: directory
     recurse: true
     owner: '{{ home_username }}'
     group: '{{ samba_group }}'
+  with_items: "{{ shares }}"
 
 - name: Create samba user
   shell: >
