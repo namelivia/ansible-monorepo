@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2024-06-07 
+
+### Changed
+
+ - Upgrade Jackett from 0.22.43 to 0.22.76
+ - Upgrade Nginx Proxy from 1.5.2 to 1.6.0
+ - Upgrade Prometheus from 2.52.0 to 2.53.0-rc.0
+ - Upgrade Ghost from 5.83.0 to 5.84.1
+
 ## [2.0.0] - 2024-06-05
 
 ### Changed
