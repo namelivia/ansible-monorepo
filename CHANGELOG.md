@@ -5,19 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.6.0] - 2024-06-09
+## [2.7.0] - 2024-06-10
+
+### Changed
+
+ - Set Garments Client tag to 1.0.0
+
+## [2.6.0] - 2024-06-10
 
 ### Changed
 
  - Upgrade Garments Server from 1.2.0 to 1.4.0
 
-## [2.5.0] - 2024-06-09
+## [2.5.0] - 2024-06-10
 
 ### Changed
 
  - Upgrade Garments Server from 1.1.0 to 1.2.0
 
-## [2.4.1] - 2024-06-09
+## [2.4.0] - 2024-06-09
 
 ### Changed
 
