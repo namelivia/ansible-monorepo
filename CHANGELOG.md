@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+ - Upgrade Garments Server from 1.5.0 to 1.6.0
+
+
+## [2.9.0] - 2024-06-13
+
+### Changed
+
  - Upgrade Immich from 1.99.0 to 1.106.3
 
 ## [2.8.0] - 2024-06-13
