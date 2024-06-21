@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.14.0] - 2024-06-21
+
+### Changed
+
+ - Upgrade Jackett from 0.22.179 to 0.22.180
+ - Upgrade Radarr from 5.7.0 to 5.8.0
+ - Upgrade Ghost from 5.85.1 to 5.85.2
+
 ## [2.13.0] - 2024-06-20
 
 ### Changed
@@ -15,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Upgrade Prometheus from 2.53.0-rc.1 to 2.53.0
  - Upgrade Ghost from 5.85.0 to 5.85.1
 
-## [2.11.0] - 2024-06-17
+## [2.12.0] - 2024-06-17
 
 ### Changed
 
