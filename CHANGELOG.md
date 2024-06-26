@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.15.0] - 2024-06-26
+
+### Changed
+
+ - Upgrade Jackett from 0.22.180 to 0.22.209
+ - Upgrade Grafana from 11.0.0 to 11.1.0
+ - Upgrade Ghost from 5.85.2 to 5.86.2
+
 ## [2.14.0] - 2024-06-21
 
 ### Changed
