@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.16.0] - 2024-06-27
+
+### Changed
+
+ - Upgrade Jackett from 0.22.209 to 0.22.217
+ - Upgrade Nextcloud from 29.0.2 to 29.0.3
+
 ## [2.15.0] - 2024-06-26
 
 ### Changed
