@@ -9,7 +9,7 @@
 
 - name: Create the files directory
   file:
-    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ container_name }}/files"
     state: directory
     mode: '0755'
 
@@ -21,7 +21,7 @@
     cleanup: true
     memory: "10MB"
     volumes:
-      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files:/usr/share/nginx/html"
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ container_name }}/files:/usr/share/nginx/html"
     restart_policy: "always"
     log_driver: "loki"
     log_options:
