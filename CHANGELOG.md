@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.18.0] - 2024-06-30
+
+### Changed
+
+ - Upgrade Apprise from 1.1.3 to 1.1.4
+ - Upgrade Jackett from 0.22.217 to 0.22.233
+ - Upgrade Radarr from 5.8.0 to 5.8.1
+ - Upgrade Ghost from 5.86.2 to 5.87.0
+
+
 ## [2.17.1] - 2024-06-29
 
 ### Fixed
