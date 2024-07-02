@@ -13,7 +13,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/gtd-caldav-report:latest"
+    image: "namelivia/gtd-caldav-report:1.1.0"
     pull: true
     cleanup: true
     memory: "200MB"

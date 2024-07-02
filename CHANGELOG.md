@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.19.0] - 2024-07-02
+
+### Changed
+
+ - Set GTD Caldav Report tag to 1.1.0
+ - Upgrade Jackett from 0.22.233 to 0.22.263
+ - Upgrade Pomerium from 0.26.0 to 0.26.1
+ - Upgrade Sonarr from 4.0.5 to 4.0.6
+
 ## [2.18.0] - 2024-06-30
 
 ### Changed
