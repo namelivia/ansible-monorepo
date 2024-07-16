@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.22.0] - 2024-07-013
+## [2.23.0] - 2024-07-16
+
+### Changed
+
+ - Upgrade Jackett from 0.22.326 to 0.22.336
+ - Upgrade Radarr from 5.8.2 to 5.8.3
+ - Upgrade Sonarr from 4.0.6 to 4.0.8
+
+## [2.22.0] - 2024-07-13
 
 ### Changed
 
