@@ -3,16 +3,16 @@ name: monorepo
 version: 2.23.0
 readme: README.md
 authors:
-  - José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+ - José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
 description: Monorepo for all the Ansible roles for my personal infrastructure
 license:
-  - GPL-2.0-or-later
+ - GPL-2.0-or-later
 license_file: ''
 tags: ['infrastructure', 'ansible']
 dependencies:
-  community.docker: '>=1.0.0'
-  ansible.posix: '>=1.0.0'
-  prometheus.prometheus: '>=0.5.0'
+ community.docker: '>=1.0.0'
+ ansible.posix: '>=1.0.0'
+ prometheus.prometheus: '>=0.5.0'
 repository: http://example.com/repository
 documentation: http://docs.example.com
 homepage: http://example.com
