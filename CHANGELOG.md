@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.24.0] - 2024-07-19
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.336 to 0.22.344
+ - Upgrade mcuadros/ofelia from 0.3.12 to 0.3.13
+ - Upgrade ghost from 5.87.2-alpine to 5.87.3-alpine
+
 ## [2.23.0] - 2024-07-16
 
 ### Changed
