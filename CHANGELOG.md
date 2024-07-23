@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.27.0] - 2024-07-23
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.353 to 0.22.361
+ - Upgrade fireflyiii/core from 6.1.18 to 6.1.19
+ - Upgrade linuxserver/radarr from 5.8.3-nightly to 5.9.0-nightly
+ - Upgrade library/nextcloud from 29.0.3 to 29.0.4-fpm
+ - Upgrade linuxserver/lidarr from 2.4.3 to 2.5.0-develop
+ - Upgrade library/ghost from 5.87.3-alpine to 5.88.1-alpine
+
 ## [2.26.0] - 2024-07-21
 
 ### Changed
