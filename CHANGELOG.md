@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.31.0] - 2024-07-30
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.391 to 0.22.393
+ - Upgrade library/redis from 7.2.5-alpine to 7.4.0-alpine
+ - Upgrade library/ghost from 5.88.1-alpine to 5.88.2-alpine
+
 ## [2.30.0] - 2024-07-29
 
 ### Changed
