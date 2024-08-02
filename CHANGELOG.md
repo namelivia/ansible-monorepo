@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.32.0] - 2024-08-03
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.393 to 0.22.402
+ - Upgrade kimai/kimai2 from 2.18.0 to 2.19.1
+ - Upgrade library/ghost from 5.88.2 to 5.88.3
+
 ## [2.31.1] - 2024-08-03
 
 ### Changed
