@@ -14,7 +14,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "ghcr.io/alexta69/metube:latest"
+    image: "ghcr.io/alexta69/metube:2024-08-02"
     restart_policy: "always"
     pull: true
     log_driver: "loki"
