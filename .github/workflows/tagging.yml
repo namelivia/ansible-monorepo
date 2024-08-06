@@ -1,0 +1,24 @@
+name: Read Version
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  read-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Read version from galaxy.yml
+        id: read_version
+        run: |
+          VERSION=$(grep '^version:' galaxy.yml | awk '{print $2}')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Output the version
+        run: echo "The version is ${{ env.VERSION }}"
