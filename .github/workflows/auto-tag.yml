@@ -1,0 +1,43 @@
+name: Tag PR on Merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tag-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Get PR Number
+        id: get_pr_number
+        run: |
+          PR_NUMBER=$(jq -r '.[0].number' <<< "$(gh pr list --state merged --head main --limit 1 --json number)")
+          echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
+
+      - name: Get PR Title
+        id: get_pr_title
+        run: |
+          PR_TITLE=$(gh pr view $PR_NUMBER --json title --jq .title)
+          echo "PR_TITLE=$PR_TITLE" >> $GITHUB_ENV
+
+      - name: Extract version from PR title
+        id: extract_version
+        run: |
+          VERSION=$(echo "$PR_TITLE" | grep -oP '\d+\.\d+\.\d+')
+          if [ -z "$VERSION" ]; then
+            echo "No version found in PR title"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Create tag
+        env:
+          VERSION: ${{ env.VERSION }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git tag $VERSION
+          git push origin $VERSION
