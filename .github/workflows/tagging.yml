@@ -1,13 +1,9 @@
-name: Read Version
+name: Create Tag
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
 
 jobs:
   read-version:
@@ -27,7 +23,7 @@ jobs:
         run: echo "The version is ${{ env.VERSION }}"
 
       - name: Create Git tag
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
