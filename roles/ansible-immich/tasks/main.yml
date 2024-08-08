@@ -50,7 +50,7 @@
 - name: Create server container
   community.docker.docker_container:
     name: "{{ application_name }}-server"
-    image: "ghcr.io/immich-app/immich-server:v1.107.2"
+    image: "ghcr.io/immich-app/immich-server:v1.108.0"
     pull: true
     command: ["start.sh", "immich"]
     cleanup: true
@@ -78,7 +78,7 @@
 - name: Create microservices container
   community.docker.docker_container:
     name: "{{ application_name }}-microservices"
-    image: "ghcr.io/immich-app/immich-server:v1.107.2"
+    image: "ghcr.io/immich-app/immich-server:v1.108.0"
     pull: true
     command: ["start.sh", "microservices"]
     cleanup: true
@@ -104,7 +104,7 @@
 - name: Create machine learning container
   community.docker.docker_container:
     name: "{{ application_name }}-machine-learning"
-    image: "ghcr.io/immich-app/immich-machine-learning:v1.107.2"
+    image: "ghcr.io/immich-app/immich-machine-learning:v1.108.0"
     pull: true
     cleanup: true
     log_driver: "loki"
