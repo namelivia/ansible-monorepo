@@ -1,4 +1,4 @@
 ---
 application_name: postgres
-network_name: pomerium
+dokcer_network_name: database_network
 should_publish_ports: false

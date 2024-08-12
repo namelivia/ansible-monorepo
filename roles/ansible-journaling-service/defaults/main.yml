@@ -1,2 +1,3 @@
 ---
 application_name: journaling-service
+docker_network_name: journaling_service_network

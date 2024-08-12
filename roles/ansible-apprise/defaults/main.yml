@@ -1,2 +1,3 @@
 ---
 application_name: apprise
+docker_network_name: apprise_network

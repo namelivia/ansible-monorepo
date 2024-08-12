@@ -6,6 +6,11 @@
       - application_name is defined
       - loki_url is defined
       - backup_day is defined
+      - docker_network_name is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
 
 - name: Create the files directory
   file:
@@ -31,7 +36,7 @@
     restart_policy: "always"
     memory: "100MB"
     networks:
-      - name: "pomerium"
+      - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
       loki-url: "{{ loki_url }}"
