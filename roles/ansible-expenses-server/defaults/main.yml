@@ -1,2 +1,3 @@
 ---
 application_name: expenses-server
+docker_network_name: expenses_server_network
