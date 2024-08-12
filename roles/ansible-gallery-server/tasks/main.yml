@@ -13,6 +13,7 @@
       - aws_access_key_id is defined
       - aws_dynamo_table is defined
       - host_port is defined
+      - docker_network_name is defined
 
 - name: Create the files directory
   file:
@@ -33,7 +34,7 @@
       loki-url: "{{ loki_url }}"
       loki-batch-size: "400"
     networks:
-      - name: "pomerium"
+      - name: "{{ docker_network_name }}"
     exposed_ports:
       - "80"
     published_ports:

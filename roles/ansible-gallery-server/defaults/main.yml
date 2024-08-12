@@ -1,2 +1,3 @@
 ---
 application_name: gallery-server
+docker_network_name: gallery_server_network
