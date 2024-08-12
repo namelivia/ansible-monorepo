@@ -16,6 +16,7 @@
       - host_port is defined
       - docker_network_name is defined
       - images_service_network_name is defined
+      - user_info_service_network_name is defined
       - database_network_name is defined
       - journaling_service_network_name is defined
 
@@ -46,6 +47,7 @@
       - name: "{{ images_service_network_name }}"
       - name: "{{ database_network_name }}"
       - name: "{{ journaling_service_network_name }}"
+      - name: "{{ user_info_service_network_name }}"
     exposed_ports:
       - "80"
     published_ports:
