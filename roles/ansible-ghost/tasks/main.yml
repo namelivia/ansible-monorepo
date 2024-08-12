@@ -12,6 +12,7 @@
       - dump_day is defined
       - backup_day is defined
       - mysql_root_password is defined
+      - reverse_proxy_network_name is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -67,7 +68,7 @@
       - "2368"
     networks:
       - name: "{{ docker_network_name }}"
-      - name: "bridge"
+      - name: "{{ reverse_proxy_network_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/content:/var/lib/ghost/content"
     log_driver: "loki"
