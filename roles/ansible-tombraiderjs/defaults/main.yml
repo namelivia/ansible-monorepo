@@ -1,2 +1,3 @@
 ---
 application_name: tombraiderjs
+docker_network_name: tombriderjs_network

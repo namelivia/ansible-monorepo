@@ -4,8 +4,13 @@
   assert:
     that:
       - application_name is defined
+      - docker_network_name is defined
       - loki_url is defined
       - host_port is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
 
 - name: Create app container
   community.docker.docker_container:
@@ -19,6 +24,8 @@
     log_options:
       loki-url: "{{ loki_url }}"
       loki-batch-size: "400"
+    networks:
+      - name: "{{ docker_network_name }}"
     exposed_ports:
       - "80"
     published_ports:
