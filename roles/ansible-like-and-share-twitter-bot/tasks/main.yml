@@ -3,6 +3,7 @@
   assert:
     that:
       - application_name is defined
+      - docker_network_name is defined
       - loki_url is defined
       - consumer_key is defined
       - consumer_secret is defined
@@ -15,6 +16,10 @@
       - language is defined
       - idle_period is defined
 
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
+
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
@@ -23,6 +28,8 @@
     pull: true
     cleanup: true
     memory: "50MB"
+    networks:
+      - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
       loki-url: "{{ loki_url }}"

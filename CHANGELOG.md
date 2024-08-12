@@ -5,17 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.49.3] - 2024-08-12
+
+### Fixed
+
+ - Add networks for applications that do not have one
+
 ## [2.49.2] - 2024-08-12
 
 ### Fixed
 
- - Add missing network parameter.
+ - Add missing network parameter
 
 ## [2.49.1] - 2024-08-12
 
 ### Fixed
 
- - Fix networking configuration for ghost and reverse proxy.
+ - Fix networking configuration for ghost and reverse proxy
 
 ## [2.49.0] - 2024-08-11
 

@@ -4,6 +4,7 @@
   assert:
     that:
       - application_name is defined
+      - docker_network_name is defined
       - twitter_enabled is defined
       - twitter_consumer_key is defined
       - twitter_consumer_secret is defined
@@ -24,6 +25,10 @@
       - text_font is defined
       - idle_period is defined
 
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
+
 - name: Create the movie directory
   file:
     path: "{{ hostvars[inventory_hostname].working_directory }}/movies"
@@ -38,6 +43,8 @@
     cleanup: true
     restart_policy: "always"
     memory: "200MB"
+    networks:
+      - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
       loki-url: "{{ loki_url }}"
