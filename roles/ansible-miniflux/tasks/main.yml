@@ -5,6 +5,7 @@
     that:
       - application_name is defined
       - loki_url is defined
+      - docker_network_name
       - database_url is defined
       - admin_username is defined
       - admin_password is defined
@@ -13,7 +14,11 @@
       - database_user is defined
       - database_password is defined
       - dump_day is defined
+      - database_network_name is defined
 
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
 
 - name: Create the files directory
   file:
@@ -33,7 +38,8 @@
       loki-url: "{{ loki_url }}"
       loki-batch-size: "400"
     networks:
-      - name: "pomerium"
+      - name: "{{ docker_network_name }}"
+      - name: "{{ database_network_name }}"
     exposed_ports:
       - "80"
       - "8080"

@@ -1,2 +1,3 @@
 ---
 application_name: itemtree-client
+docker_network_name: itemtree_client_network

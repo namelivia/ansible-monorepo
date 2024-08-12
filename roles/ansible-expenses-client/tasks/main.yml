@@ -8,6 +8,10 @@
       - expenses_api_endpoint is defined
       - host_port is defined
 
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
+
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
@@ -25,6 +29,6 @@
     published_ports:
       - "0.0.0.0:{{ host_port }}:80"
     networks:
-      - name: "pomerium"
+      - name: "{{ docker_network_name }}"
     env:
       VUE_APP_API_ENDPOINT: "{{ expenses_api_endpoint }}"

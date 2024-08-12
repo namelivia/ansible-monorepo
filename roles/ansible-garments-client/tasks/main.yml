@@ -7,6 +7,11 @@
       - loki_url is defined
       - garments_api_endpoint is defined
       - host_port is defined
+      - docker_network_name is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
 
 - name: Create app container
   community.docker.docker_container:
@@ -25,6 +30,6 @@
     published_ports:
       - "0.0.0.0:{{ host_port }}:80"
     networks:
-      - name: "pomerium"
+      - name: "{{ docker_network_name }}"
     env:
       VUE_APP_API_ENDPOINT: "{{ garments_api_endpoint }}"
