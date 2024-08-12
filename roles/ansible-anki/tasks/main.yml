@@ -7,6 +7,11 @@
       - loki_url is defined
       - host_port is defined
       - backup_day is defined
+      - docker_network_name is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
 
 - name: Create the data directory
   file:
@@ -21,6 +26,8 @@
     restart_policy: "always"
     cleanup: true
     memory: "100MB"
+    networks:
+      - name: "{{ docker_network_name }}"
     exposed_ports:
       - "27701"
     volumes:
