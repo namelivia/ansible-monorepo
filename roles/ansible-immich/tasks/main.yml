@@ -12,6 +12,7 @@
       - redis_hostname is defined
       - immich_upload_path is defined
       - immich_external_path is defined
+      - redis_network_name is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -63,6 +64,7 @@
       - "0.0.0.0:{{ host_port }}:3001"
     networks:
       - name: "{{ docker_network_name }}"
+      - name: "{{ redis_network_name }}"
     volumes:
       - "{{ immich_upload_path }}:/usr/src/app/upload"
       - "{{ immich_external_path }}:/mnt/media:ro"
@@ -89,6 +91,7 @@
     restart_policy: "always"
     networks:
       - name: "{{ docker_network_name }}"
+      - name: "{{ redis_network_name }}"
     volumes:
       - "{{ immich_upload_path }}:/usr/src/app/upload"
       - "{{ immich_external_path }}:/mnt/media:ro"
