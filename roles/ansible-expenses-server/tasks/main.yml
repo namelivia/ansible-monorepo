@@ -18,6 +18,7 @@
       - database_network_name is defined
       - journaling_service_network_name is defined
       - user_info_service_network_name is defined
+      - notifications_service_network_name is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -47,6 +48,7 @@
       - name: "{{ database_network_name }}"
       - name: "{{ journaling_service_network_name }}"
       - name: "{{ user_info_service_network_name }}"
+      - name: "{{ notifications_service_network_name }}"
     exposed_ports:
       - "80"
     published_ports:
