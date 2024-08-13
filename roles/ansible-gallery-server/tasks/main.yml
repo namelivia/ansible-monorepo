@@ -14,6 +14,7 @@
       - aws_dynamo_table is defined
       - host_port is defined
       - docker_network_name is defined
+      - user_info_service_network_name is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -39,6 +40,7 @@
       loki-batch-size: "400"
     networks:
       - name: "{{ docker_network_name }}"
+      - name: "{{ user_info_service_network_name }}"
     exposed_ports:
       - "80"
     published_ports:
