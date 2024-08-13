@@ -12,6 +12,7 @@
       - uid is defined
       - gid is defined
       - grafana_config_folder is defined
+      - database_network_name is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -76,6 +77,7 @@
       - "0.0.0.0:{{ host_port }}:3000"
     networks:
       - name: "{{ docker_network_name }}"
+      - name: "{{ database_network_name }}"
     log_driver: "loki"
     log_options:
       loki-url: "{{ loki_url }}"
