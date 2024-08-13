@@ -26,7 +26,6 @@
       - "0.0.0.0:{{ host_port }}:3100"
     networks:
       - name: "{{ docker_network_name }}"
-      - name: "grafana_network"
     log_driver: "awslogs"
     log_options:
       awslogs-region: "{{ cloudwatch_region }}"
