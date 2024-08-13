@@ -15,6 +15,7 @@
       - database_user is defined
       - database_password is defined
       - database_name is defined
+      - database_network_name is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -35,7 +36,7 @@
       - "0.0.0.0:{{ host_port }}:8000"
     networks:
       - name: "{{ docker_network_name }}"
-      - name: "immich_network" # temp
+      - name: "{{ database_network_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}babybuddy:/config"
     env:
