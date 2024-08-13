@@ -41,7 +41,6 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/csv:/csv"
     networks:
-      - name: "bridge"
       - name: "firefly_network"
     exposed_ports:
       - "80"

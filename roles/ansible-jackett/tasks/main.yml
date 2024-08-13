@@ -29,7 +29,6 @@
       loki-batch-size: "400"
     networks:
       - name: "{{ docker_network_name }}"
-      - name: "bridge"
     ports:
       - 9117:9117
     volumes:
