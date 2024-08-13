@@ -1,2 +1,3 @@
 ---
 application_name: recipe-suggestions
+docker_network_name: recipe_suggestions_network

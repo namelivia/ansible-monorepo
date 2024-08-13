@@ -9,6 +9,11 @@
       - notifications_service_endpoint is defined
       - username is defined
       - password is defined
+      - docker_network_name is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
 
 - name: Create app container
   community.docker.docker_container:
@@ -22,7 +27,7 @@
       loki-url: "{{ loki_url }}"
       loki-batch-size: "400"
     networks:
-      - name: "pomerium"
+      - name: "{{ docker_network_name }}"
     env:
       CALDAV_URL: "{{ caldav_url }}"
       NOTIFICATIONS_SERVICE_ENDPOINT: "{{ notifications_service_endpoint }}"

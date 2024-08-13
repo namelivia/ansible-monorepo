@@ -6,6 +6,11 @@
       - application_name is defined
       - loki_url is defined
       - notifications_service_endpoint is defined
+      - docker_network_name is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
 
 - name: Create app container
   community.docker.docker_container:
@@ -19,6 +24,6 @@
       loki-url: "{{ loki_url }}"
       loki-batch-size: "400"
     networks:
-      - name: "pomerium"
+      - name: "{{ docker_network_name }}"
     env:
       NOTIFICATIONS_SERVICE_ENDPOINT: "{{ notifications_service_endpoint }}"
