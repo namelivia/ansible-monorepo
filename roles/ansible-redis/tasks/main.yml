@@ -20,7 +20,7 @@
     exposed_ports:
       - "6379"
     networks:
-      - name: "{{ network_name }}"
+      - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
       loki-url: "{{ loki_url }}"
