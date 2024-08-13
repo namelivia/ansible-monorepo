@@ -22,6 +22,10 @@
       - pleroma_config_path
       - relay_list_path is defined
 
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
+
 - name: Create the files directory
   file:
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
