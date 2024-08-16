@@ -87,7 +87,7 @@
   git:
     repo: 'https://github.com/namelivia/docker-pleroma.git'
     dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/docker-pleroma"
-    version: master
+    version: install_openssl
 
 - name: Build docker image
   community.docker.docker_image:
