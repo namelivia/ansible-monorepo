@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.57.0] - 2024-08-22
+
+### Changed
+
+ - Upgrade library/nextcloud from 29.0.4 to 29.0.5
+ - Upgrade library/ghost from 5.89.5 to 5.89.6
+
 ## [2.56.0] - 2024-08-21
 
 ### Changed
