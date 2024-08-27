@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.61.0] - 2024-08-27
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.517 to 0.22.526
+ - Upgrade grafana/grafana from 11.1.4 to 11.2.0
+ - Upgrade prom/prometheus from 2.53.2 to 2.54.1
+
 ## [2.60.0] - 2024-08-26
 
 ### Changed
