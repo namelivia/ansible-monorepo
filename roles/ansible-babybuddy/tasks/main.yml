@@ -24,7 +24,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "lscr.io/linuxserver/babybuddy:amd64-2.5.0"
+    image: "lscr.io/linuxserver/babybuddy:amd64-2.6.0"
     restart_policy: "always"
     cleanup: true
     pull: true

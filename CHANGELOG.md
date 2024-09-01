@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.65.0] - 2024-09-01
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.540 to 0.22.545
+ - Upgrade lscr.io/linuxserver/babybuddy from 2.5.0 to 2.6.0
+
 ## [2.64.0] - 2024-08-31
 
 ### Changed
