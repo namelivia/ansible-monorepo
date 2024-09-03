@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.66.0] - 2024-09-03
+
+### Changed
+
+ - Upgrade caronc/apprise from 1.1.5 to 1.1.6
+ - Upgrade linuxserver/jackett from 0.22.545 to 0.22.554
+ - Upgrade linuxserver/radarr from 5.10.1 to 5.10.2
+ - Upgrade linuxserver/lidarr from 2.4.3 to 2.5.3
+
 ## [2.65.0] - 2024-09-01
 
 ### Changed
