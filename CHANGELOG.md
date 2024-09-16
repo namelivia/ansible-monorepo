@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.75.0] - 2024-09-16
+
+### Changed
+
+ - Upgrade linuxserver/bazarr from 1.4.3 to 1.4.4
+ - Upgrade linuxserver/jackett from 0.22.604 to 0.22.618
+
 ## [2.74.0] - 2024-09-15
 
 ### Changed
