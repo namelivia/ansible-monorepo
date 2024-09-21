@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.78.0] - 2024-09-21
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.655 to 0.22.656
+ - Upgrade linuxserver/radarr from 5.10.4 to 5.11.0
+
 ## [2.77.0] - 2024-09-20
 
 ### Changed
