@@ -12,7 +12,7 @@
       - password is defined
       - uid is defined
       - gid is defined
-      - user is defined
+      - owner is defined
       - group is defined
 
 - name: Create the dockernetwork
@@ -24,7 +24,7 @@
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
     state: directory
     mode: "0755"
-    owner: "{{ user }}"
+    owner: "{{ owner }}"
     group: "{{ group }}"
 
 - name: Create app container
