@@ -1,4 +1,0 @@
----
-application_name: ankirust
-backup_day: 1
-docker_network_name: ankirust_network

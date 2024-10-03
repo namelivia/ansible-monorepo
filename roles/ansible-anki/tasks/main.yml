@@ -8,6 +8,10 @@
       - host_port is defined
       - backup_day is defined
       - docker_network_name is defined
+      - user is defined
+      - password is defined
+      - uid
+      - gid
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -17,37 +21,31 @@
   file:
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
     state: directory
-    mode: "0700"
+    mode: "0755"
 
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "kuklinistvan/anki-sync-server:latest"
+    image: "ghcr.io/luckyturtledev/anki:latest"
     restart_policy: "always"
     cleanup: true
     memory: "100MB"
     networks:
       - name: "{{ docker_network_name }}"
     exposed_ports:
-      - "27701"
+      - "8080"
     volumes:
-      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app/data"
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/data"
+    env:
+      SYNC_USER1: "{{ user }}:{{ password }}"
+      RUST_LOG: "info"
     log_driver: "loki"
+    user: "{{ uid }}:{{ gid }}"
     log_options:
       loki-url: "{{ loki_url }}"
       loki-batch-size: "400"
     published_ports:
-      - "0.0.0.0:{{ host_port }}:27701"
-
-- name: Setup file backups
-  include_role:
-    name: ansible-backups
-    tasks_from: setup-file-backups
-
-- name: Setup S3 backups
-  include_role:
-    name: ansible-backups
-    tasks_from: setup-s3-backups
+      - "0.0.0.0:{{ host_port }}:8080"
 
 - name: Setup restic backups
   include_role:
