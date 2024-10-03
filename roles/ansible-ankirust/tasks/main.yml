@@ -36,9 +36,9 @@
       - "10080"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app/data"
-    environment:
-      - "SYNC_USER1={{ user }}:{{ password }}"
-      - "RUST_LOG=info"
+    env:
+      SYNC_USER1: "{{ user }}:{{ password }}"
+      RUST_LOG: "info"
     log_driver: "loki"
     user: "{{ uid }}:{{ gid }}"
     log_options:
