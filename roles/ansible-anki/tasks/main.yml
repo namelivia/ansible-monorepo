@@ -10,8 +10,10 @@
       - docker_network_name is defined
       - user is defined
       - password is defined
-      - uid
-      - gid
+      - uid is defined
+      - gid is defined
+      - user is defined
+      - group is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -22,6 +24,8 @@
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
     state: directory
     mode: "0755"
+    owner: "{{ user }}"
+    group: "{{ group }}"
 
 - name: Create app container
   community.docker.docker_container:
