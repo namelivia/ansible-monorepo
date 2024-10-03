@@ -21,7 +21,7 @@
   file:
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
     state: directory
-    mode: "0700"
+    mode: "0755"
 
 - name: Create app container
   community.docker.docker_container:
@@ -33,7 +33,7 @@
     networks:
       - name: "{{ docker_network_name }}"
     exposed_ports:
-      - "10080"
+      - "8080"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/data"
     env:
@@ -45,7 +45,7 @@
       loki-url: "{{ loki_url }}"
       loki-batch-size: "400"
     published_ports:
-      - "0.0.0.0:{{ host_port }}:10080"
+      - "0.0.0.0:{{ host_port }}:8080"
 
 - name: Setup restic backups
   include_role:
