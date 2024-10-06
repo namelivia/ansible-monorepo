@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.89.0] - 2024-10-06
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.704 to 0.22.716
+ - Upgrade fireflyiii/core from 6.1.20 to 6.1.21
+
 ## [2.88.2] - 2024-10-03
 
 ### Fixed
