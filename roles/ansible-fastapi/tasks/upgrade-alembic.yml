@@ -3,8 +3,9 @@
   assert:
     that:
       - application_name is defined
+      - manager is defined
 
 - name: Upgrade alembic
-  command: docker exec -u root -e PYTHONPATH=. {{ application_name }} pipenv run alembic upgrade head
+  command: docker exec -u root -e PYTHONPATH=. {{ application_name }} {{ manager }} run alembic upgrade head
   register: command_output
   changed_when: command_output.rc != 0
