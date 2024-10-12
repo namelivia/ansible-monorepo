@@ -13,9 +13,6 @@
 
 - name: Install docker loki plugin
   import_tasks: install-loki-plugin.yml
-
-- name: Install docker loki plugin
-  import_tasks: install-loki-plugin.yml
   when: ansible_architecture == "x86_64"
 
 - name: Install docker loki plugin (ARM)
