@@ -16,6 +16,7 @@
     - 'vim'
     - 'ca-certificates'
     - 'curl'
+    - 'unzip'
     - 'software-properties-common'
     - 'python3-pip'
     - 'virtualenv'
