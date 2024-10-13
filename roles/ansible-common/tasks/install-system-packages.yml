@@ -20,7 +20,6 @@
     - 'python3-pip'
     - 'virtualenv'
     - 'python3-setuptools'
-    - 'awscli'
     - 'cron'
     - 'containerd'
     - 'python3-docker'

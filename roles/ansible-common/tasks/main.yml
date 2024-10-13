@@ -2,6 +2,9 @@
 - name: Install common system packages
   import_tasks: install-system-packages.yml
 
+- name: Install AWS Client
+  import_tasks: install-aws-cli.yml
+
 - name: Install docker
   import_tasks: install-docker.yml
 
