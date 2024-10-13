@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.95.0] - 2024-10-13
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.772 to 0.22.779
+ - Upgrade linuxserver/radarr from 5.12.2 to 5.13.0
+
+## [2.94.3] - 2024-10-12
+
+### Fixed
+
+ - Fix docker install for newer Ubuntu versions
+
+## [2.94.2] - 2024-10-12
+
+### Fixed
+
+ - Remove awscli
+
 ## [2.94.1] - 2024-10-12
 
 ### Fixed
