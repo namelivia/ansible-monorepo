@@ -2,4 +2,4 @@
 - name: Install Loki plugin
   command: docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
   register: result
-  changed_when: result.rc !== 0
+  changed_when: result.rc != 0
