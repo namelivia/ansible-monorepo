@@ -6,6 +6,8 @@
       - application_name is defined
       - docker_network_name is defined
       - apprise_config_folder is defined
+      - apprise_user is defined
+      - apprise_group is defined
       - loki_url is defined
 
 - name: Create the dockernetwork
@@ -16,8 +18,8 @@
   copy:
     src: "{{ apprise_config_folder }}"
     dest: "{{ hostvars[inventory_hostname].working_directory }}"
-    owner: ubuntu
-    group: ubuntu
+    owner: "{{ apprise_user }}"
+    group: "{{ apprise_group }}"
     force: true
     mode: "0644"
     directory_mode: "0775"
