@@ -1,2 +1,3 @@
 ---
 application_name: retroachievements-apprise
+docker_network_name: retroachievements_apprise_network
