@@ -9,6 +9,8 @@
       - cloudwatch_log_group is defined
       - openvpn_config_folder is defined
       - domain_name is defined
+      - openvpn_server_user is defined
+      - openvpn_server_group is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -42,8 +44,8 @@
   copy:
     src: "{{ openvpn_config_folder }}"
     dest: "{{ hostvars[inventory_hostname].working_directory }}"
-    owner: ubuntu
-    group: ubuntu
+    owner: "{{ openvpn_server_user }}"
+    group: "{{ openvpn_server_group }}"
     force: true
     mode: "0644"
     directory_mode: "0775"
