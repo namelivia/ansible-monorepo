@@ -35,7 +35,7 @@
     exposed_ports: 8000
     published_ports:
       - "0.0.0.0:9000:8000"  # map the port to the host's 9000 port
-    memory: "200MB"
+    memory: "400MB"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}:/config"
     log_driver: "loki"
