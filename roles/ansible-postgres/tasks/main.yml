@@ -19,7 +19,7 @@
 - name: Create database container
   community.docker.docker_container:
     name: "postgres-database"
-    image: "postgres:latest"
+    image: "postgres:14.13"
     restart_policy: "always"
     cleanup: true
     exposed_ports:
