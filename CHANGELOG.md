@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.99.0] - 2024-10-21
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.812 to 0.22.820
+ - Upgrade linuxserver/radarr from 5.13.0 to 5.13.1
+ - Upgrade library/nextcloud from 30.0.0 to 30.0.1
+ - Upgrade library/ghost from 5.96.2 to 5.97.0
+
 ## [2.98.0] - 2024-10-18
 
 ### Changed
