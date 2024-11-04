@@ -35,7 +35,7 @@
   community.docker.docker_container:
     name: "{{ application_name }}"
     image: "namelivia/garments-server:2.0.0"
-    memory: "200MB"
+    memory: "400MB"
     pull: true
     cleanup: true
     restart_policy: "always"
