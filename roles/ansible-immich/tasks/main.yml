@@ -51,7 +51,7 @@
 - name: Create server container
   community.docker.docker_container:
     name: "{{ application_name }}-server"
-    image: "ghcr.io/immich-app/immich-server:v1.120.0"
+    image: "ghcr.io/immich-app/immich-server:v1.120.1"
     pull: true
     cleanup: true
     log_driver: "loki"
@@ -79,7 +79,7 @@
 - name: Create machine learning container
   community.docker.docker_container:
     name: "{{ application_name }}-machine-learning"
-    image: "ghcr.io/immich-app/immich-machine-learning:v1.120.0"
+    image: "ghcr.io/immich-app/immich-machine-learning:v1.120.1"
     pull: true
     cleanup: true
     log_driver: "loki"
