@@ -34,7 +34,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/garments-server:2.0.1"
+    image: "namelivia/garments-server:1.6.0"
     memory: "400MB"
     pull: true
     cleanup: true
