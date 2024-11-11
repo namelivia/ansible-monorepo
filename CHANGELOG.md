@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.111.0] - 2024-11-11
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.902 to 0.22.903
+ - Upgrade miniflux/miniflux from 2.2.2 to 2.2.3
+
 ## [2.110.0] - 2024-11-10
 
 ### Changed
