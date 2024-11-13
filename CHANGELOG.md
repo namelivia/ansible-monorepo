@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.112.0] - 2024-11-13
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.903 to 0.22.910
+ - Upgrade pomerium/pomerium from 0.27.2 to 0.28.0
+ - Upgrade ghcr.io/immich-app/immich-server from 1.120.1 to 1.120.2
+ - Upgrade ghcr.io/immich-app/immich-machine-learning from 1.120.1 to 1.120.2
+
 ## [2.111.1] - 2024-11-11
 
 ### Changed
