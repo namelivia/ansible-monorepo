@@ -5,10 +5,11 @@
       - exposed_ports is defined
 
 - name: "Remove RETURN rule from DOCKER-USER chain"
-  ansible.builtin.command: iptables -D DOCKER-USER -j RETURN
-  failed_when: "'No chain/target/match by that name' not in result.stderr"
-  changed_when: "'No chain/target/match by that name' not in result.stderr"
-
+  ansible.builtin.command:
+    cmd: iptables -D DOCKER-USER -j RETURN
+  register: iptables_result
+  failed_when: "'No chain/target/match by that name' not in iptables_result.stderr and iptables_result.rc != 0"
+  changed_when: "'No chain/target/match by that name' not in iptables_result.stderr"
 
 - name: "Allow port for VPN addresses only"
   ansible.builtin.iptables:
