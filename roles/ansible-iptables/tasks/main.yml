@@ -16,7 +16,6 @@
 
 - name: "Disallow port for other addresses"
   ansible.builtin.iptables:
-    action: "insert"
     chain: DOCKER-USER
     source_port: "{{ item }}"
     protocol: tcp
