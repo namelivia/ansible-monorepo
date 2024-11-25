@@ -24,7 +24,7 @@
     cleanup: true
     exposed_ports:
       - "5432"
-    published_ports: "{{ ['0.0.0.0:5432:5432'] if should_publish_ports else [] }}"
+    published_ports: "{{ ['127.0.0.1:5432:5432'] if should_publish_ports else [] }}"
     networks:
       - name: "{{ docker_network_name }}"
     log_driver: "loki"
