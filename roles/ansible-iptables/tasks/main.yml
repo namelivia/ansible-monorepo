@@ -6,6 +6,7 @@
 
 - name: "Allow port for VPN addresses only"
   ansible.builtin.iptables:
+    action: "insert"
     chain: DOCKER-USER
     protocol: tcp
     source_port: "{{ item }}"
@@ -15,6 +16,7 @@
 
 - name: "Disallow port for other addresses"
   ansible.builtin.iptables:
+    action: "insert"
     chain: DOCKER-USER
     source_port: "{{ item }}"
     protocol: tcp
