@@ -4,33 +4,13 @@
     that:
       - exposed_ports is defined
 
-- name: "Remove RETURN rule from DOCKER-USER chain"
-  ansible.builtin.command:
-    cmd: iptables -D DOCKER-USER -j RETURN
-  register: iptables_result
-  failed_when: "'No chain/target/match by that name' not in iptables_result.stderr and iptables_result.rc != 0"
-  changed_when: "'No chain/target/match by that name' not in iptables_result.stderr"
-
 - name: "Allow port for VPN addresses only"
   ansible.builtin.iptables:
     action: "insert"
     chain: DOCKER-USER
-    protocol: tcp
-    source_port: "{{ item }}"
-    src_range: 192.168.254.1-192.168.254.255
-    jump: ACCEPT
-  with_items: "{{ exposed_ports }}"
-
-- name: "Disallow port for other addresses"
-  ansible.builtin.iptables:
-    chain: DOCKER-USER
-    source_port: "{{ item }}"
-    protocol: tcp
+    protocol: all
+    in_interface: eth0
+    destination_port: "{{ item }}"
+    source: '!192.168.254.0/24'
     jump: DROP
   with_items: "{{ exposed_ports }}"
-
-- name: "Re-add RETURN rule to the end of the DOCKER-USER chain"
-  ansible.builtin.iptables:
-    chain: DOCKER-USER
-    jump: RETURN
-    action: "append"
