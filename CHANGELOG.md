@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.122.0] - 2024-11-27
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1003 to 0.22.1012
+ - Upgrade lscr.io/linuxserver/babybuddy from 2.6.3 to 2.7.0
+ - Upgrade library/ghost from 5.101.3 to 5.101.4
+ - Upgrade linuxserver/sonarr from 4.0.10 to 4.0.11
+
 ## [2.121.7] - 2024-11-26
 
 ### Fixed
