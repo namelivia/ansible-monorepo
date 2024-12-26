@@ -5,11 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.144.3] - 2024-12-27
+
+### Changed
+
+ - Upgrade fireflyiii/core from 6.1.22 to 6.1.25
+
 ## [2.144.2] - 2024-12-27
 
 ### Changed
 
- - Dectivate tink-firefly-endpoint debug mode
+ - Deactivate tink-firefly-endpoint debug mode
  - Downgrade fireflyiii/core from 6.1.25 to 6.1.22
 
 ## [2.144.1] - 2024-12-27
