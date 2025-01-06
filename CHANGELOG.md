@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.149.0] - 2025-01-06
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1188 to 0.22.1211
+ - Upgrade linuxserver/radarr from 5.17.2 to 5.18.0
+ - Upgrade library/redis from 7.4.1 to 7.4.2
+ - Upgrade linuxserver/sonarr from 4.0.11 to 4.0.12
+
 ## [2.148.0] - 2025-01-03
 
 ### Changed
