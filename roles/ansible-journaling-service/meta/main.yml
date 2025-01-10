@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: journaling_service
-  author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+  author: José Ignacio Amelivia Santiago <hello@namelivia.com>
   description: Ansible role I use to install and configure namelivia/journaling-service
   license: GPLv2
   min_ansible_version: 2.5.1

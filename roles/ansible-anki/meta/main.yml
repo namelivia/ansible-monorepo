@@ -1,7 +1,7 @@
 galaxy_info:
   role_name: anki
   namespace: namelivia
-  author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+  author: José Ignacio Amelivia Santiago <hello@namelivia.com>
   description: Ansible role I use to install and configure luckyturtledev/anki
   license: GPLv2
   min_ansible_version: 2.5.1
