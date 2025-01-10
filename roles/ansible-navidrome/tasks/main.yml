@@ -8,6 +8,8 @@
       - host_port is defined
       - docker_network_name is defined
       - music_folder is defined
+      - owner is defined
+      - group is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
