@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: samba
-  author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+  author: José Ignacio Amelivia Santiago <hello@namelivia.com>
   description: Ansible role to install and configure a shared samba volume
   license: GPLv2
   min_ansible_version: 2.5.1

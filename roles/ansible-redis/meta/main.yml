@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: redis
-  author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+  author: José Ignacio Amelivia Santiago <hello@namelivia.com>
   description: Ansible role I use to deploy a redis instance
   license: GPLv2
   min_ansible_version: 2.5.1

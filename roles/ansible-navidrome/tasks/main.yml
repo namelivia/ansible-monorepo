@@ -1,0 +1,57 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - host_port is defined
+      - docker_network_name is defined
+      - music_folder is defined
+      - owner is defined
+      - group is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create the data directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
+    state: directory
+    mode: "0755"
+    owner: "{{ owner }}"
+    group: "{{ group }}"
+
+- name: Create app container
+  community.docker.docker_container:
+    name: "{{ application_name }}-app"
+    image: "deluan/navidrome:0.54.3"
+    restart_policy: "always"
+    cleanup: true
+    # memory: "100MB"
+    networks:
+      - name: "{{ docker_network_name }}"
+    exposed_ports:
+      - "4533"
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/data"
+      - "{{ music_folder}}:/music:ro"
+    env:
+      ND_SCANSCHEDULE: 1h
+      ND_LOGLEVEL: info
+      ND_SESSIONTIMEOUT: 24h
+      ND_BASEURL: ""
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:4533"
+
+- name: Setup restic backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-restic-backups
+  vars:
+    file_path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
