@@ -48,7 +48,7 @@
 - name: Create nginx-proxy container
   community.docker.docker_container:
     name: "proxy"
-    image: "nginxproxy/nginx-proxy:1.6.4-alpine"
+    image: "nginxproxy/nginx-proxy:1.7.0-alpine"
     restart_policy: "always"
     memory: "50MB"
     cleanup: true
