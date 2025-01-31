@@ -1,0 +1,3 @@
+---
+application_name: slskd
+docker_network_name: slskd_network
