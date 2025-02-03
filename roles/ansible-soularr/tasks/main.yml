@@ -5,7 +5,6 @@
     that:
       - application_name is defined
       - loki_url is defined
-      - host_port is defined
       - docker_network_name is defined
       - owner is defined
       - group is defined
