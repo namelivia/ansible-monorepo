@@ -47,3 +47,10 @@
       PGID: "1000"
       TZ: "Europe/Madrid"
       SCRIPT_INTERVAL: "300"
+
+- name: Setup restic backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-restic-backups
+  vars:
+    file_path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
