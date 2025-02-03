@@ -1,0 +1,55 @@
+---
+
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - loki_url is defined
+      - docker_network_name is defined
+      - owner is defined
+      - group is defined
+      - slskd_network_name is defined
+      - slskd_downloads_folder is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create the data directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
+    state: directory
+    mode: "0755"
+    owner: "{{ owner }}"
+    group: "{{ group }}"
+
+- name: Create app container
+  community.docker.docker_container:
+    name: "{{ application_name }}-app"
+    image: "mrusse08/soularr:latest"
+    restart_policy: "always"
+    cleanup: true
+    # memory: "100MB"
+    networks:
+      - name: "{{ docker_network_name }}"
+      - name: "{{ slskd_network_name }}"
+    user: "{{ owner }}:{{ group }}"
+    volumes:
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/data"
+      - "{{ slskd_downloads_folder }}:/downloads"
+    log_driver: "loki"
+    log_options:
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "Europe/Madrid"
+      SCRIPT_INTERVAL: "300"
+
+- name: Setup restic backups
+  include_role:
+    name: ansible-backups
+    tasks_from: setup-restic-backups
+  vars:
+    file_path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
