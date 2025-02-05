@@ -38,7 +38,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "fireflyiii/core:version-6.2.2"
+    image: "fireflyiii/core:version-6.2.4"
     restart_policy: "always"
     cleanup: true
     pull: true
