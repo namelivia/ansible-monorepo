@@ -26,4 +26,4 @@
 - name: "Persist iptables rules"
   command: "iptables-save > /etc/iptables/rules.v4"
   register: iptables_save
-  changed_when: iptables_save.stdout != ""
+  changed_when: iptables_save.rc != 0
