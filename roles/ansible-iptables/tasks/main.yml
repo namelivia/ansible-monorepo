@@ -23,7 +23,7 @@
     jump: DROP
   with_items: "{{ exposed_ports }}"
 
-- name: "Persist iptables rules"
-  command: "iptables-save > /etc/iptables/rules.v4"
-  register: iptables_save
-  changed_when: iptables_save.rc != 0
+- name: "Save current state of the firewall in system file"
+  community.general.iptables_state:
+    state: saved
+    path: /etc/iptables/rules.v4
