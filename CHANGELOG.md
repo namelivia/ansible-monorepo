@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.176.0] - 2025-02-10
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1377 to 0.22.1393
+ - Upgrade fireflyiii/core from 6.2.4 to 6.2.5
+ - Upgrade linuxserver/radarr from 5.19.0 to 5.19.1
+ - Upgrade slskd/slskd from 0.22.1 to 0.22.2
+
 ## [2.175.1] - 2025-02-06
 
 ### Fixed
