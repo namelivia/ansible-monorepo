@@ -4,6 +4,14 @@
     that:
       - exposed_ports is defined
 
+- name: Install required system packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  loop:
+    - 'iptables-persistent'
+
 - name: "Allow port for VPN addresses only"
   ansible.builtin.iptables:
     action: "insert"
@@ -14,3 +22,8 @@
     source: '!192.168.254.0/24'
     jump: DROP
   with_items: "{{ exposed_ports }}"
+
+- name: "Save current state of the firewall in system file"
+  community.general.iptables_state:
+    state: saved
+    path: /etc/iptables/rules.v4
