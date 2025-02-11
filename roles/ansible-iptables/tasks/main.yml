@@ -15,7 +15,7 @@
 - name: "Flush the DOCKER-USER chain in the iptables firewall"
   ansible.builtin.iptables:
     chain: DOCKER-USER
-    state: flush
+    flush: true
 
 - name: "Allow port for VPN addresses only"
   ansible.builtin.iptables:
