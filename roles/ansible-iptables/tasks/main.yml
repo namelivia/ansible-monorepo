@@ -17,6 +17,12 @@
     chain: DOCKER-USER
     flush: true
 
+- name: "Add rule to allow traffic to the exposed ports"
+  ansible.builtin.iptables:
+    action: "insert"
+    chain: DOCKER-USER
+    jump: RETURN
+
 - name: "Allow port for VPN addresses only"
   ansible.builtin.iptables:
     action: "insert"
@@ -27,12 +33,6 @@
     source: '!192.168.254.0/24'
     jump: DROP
   with_items: "{{ exposed_ports }}"
-
-- name: "Add rule to allow traffic to the exposed ports"
-  ansible.builtin.iptables:
-    action: "insert"
-    chain: DOCKER-USER
-    jump: RETURN
 
 - name: "Save current state of the firewall in system file"
   community.general.iptables_state:
