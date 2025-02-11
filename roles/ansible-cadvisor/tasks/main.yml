@@ -5,6 +5,10 @@
       - application_name is defined
       - loki_url is defined
 
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
+
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
@@ -12,8 +16,6 @@
     restart_policy: "always"
     cleanup: true
     privileged: true
-    ports:
-      - 8080:8080
     exposed_ports:
       - 8080
       - 9100
@@ -21,7 +23,7 @@
       - "0.0.0.0:8080:8080"
       - "0.0.0.0:9100:9100"
     networks:
-      - name: "host"
+      - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
       loki-url: "{{ loki_url }}"
