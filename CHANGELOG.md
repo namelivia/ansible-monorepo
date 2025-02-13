@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.178.0] - 2025-02-13
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1404 to 0.22.1421
+ - Upgrade fireflyiii/core from 6.2.5 to 6.2.6
+ - Upgrade grafana/loki from 3.3.2 to 3.4.1
+ - Upgrade library/ghost from 5.109.3 to 5.109.4
+ - Upgrade linuxserver/sonarr from 4.0.12 to 4.0.13
+
 ## [2.177.1] - 2025-02-11
 
 ### Fixed
