@@ -12,6 +12,17 @@
   loop:
     - 'iptables-persistent'
 
+# TODO: This could be more configurable
+- name: "Allow node exporter port for VPN addresses only"
+  ansible.builtin.iptables:
+    action: "insert"
+    chain: INPUT
+    protocol: tcp
+    in_interface: eth0
+    destination_port: "9100"
+    source: '!192.168.254.0/24'
+    jump: DROP
+
 - name: "Allow port for VPN addresses only"
   ansible.builtin.iptables:
     action: "insert"
