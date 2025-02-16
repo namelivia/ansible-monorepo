@@ -10,12 +10,15 @@
       - database_user is defined
       - database_password is defined
       - docker_network_name is defined
+      - docker_network_subnet is defined
       - database_network_name is defined
       - dump_day is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
     name: "{{ docker_network_name }}"
+    ipam_config:
+      - subnet: "{{ docker_network_subnet }}"
 
 - name: Create app container
   community.docker.docker_container:

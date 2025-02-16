@@ -4,6 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
+      - docker_network_subnet is defined
       - host_port is defined
       - loki_url is defined
       - dump_day is defined
@@ -24,6 +25,8 @@
 - name: Create the dockernetwork
   community.docker.docker_network:
     name: "{{ docker_network_name }}"
+    ipam_config:
+      - subnet: "{{ docker_network_subnet }}"
 
 - name: Create the nextcloud data volumne
   community.docker.docker_volume:

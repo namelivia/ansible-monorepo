@@ -14,6 +14,7 @@
       - database_password is defined
       - dump_day is defined
       - docker_network_name is defined
+      - docker_network_subnet is defined
       - images_service_network_name is defined
       - database_network_name is defined
       - journaling_service_network_name is defined
@@ -23,6 +24,8 @@
 - name: Create the dockernetwork
   community.docker.docker_network:
     name: "{{ docker_network_name }}"
+    ipam_config:
+      - subnet: "{{ docker_network_subnet }}"
 
 - name: Create the files directory
   file:
