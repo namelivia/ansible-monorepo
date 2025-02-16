@@ -24,7 +24,7 @@
 - name: Create the dockernetwork
   community.docker.docker_network:
     name: "{{ docker_network_name }}"
-    imap_config:
+    ipam_config:
       - subnet: "{{ docker_network_subnet }}"
 
 - name: Create the files directory
