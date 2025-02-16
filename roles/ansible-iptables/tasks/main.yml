@@ -17,7 +17,6 @@
     action: "insert"
     chain: DOCKER-USER
     protocol: tcp
-    in_interface: eth0
     source: '172.16.0.0/12'
     jump: RETURN
 
