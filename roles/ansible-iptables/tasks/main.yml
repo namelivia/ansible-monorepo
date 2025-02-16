@@ -12,6 +12,15 @@
   loop:
     - 'iptables-persistent'
 
+- name: "Allow docker to docker communication"
+  ansible.builtin.iptables:
+    action: "insert"
+    chain: DOCKER-USER
+    protocol: tcp
+    in_interface: eth0
+    source: '!172.16.0.0/12'
+    jump: RETURN
+
 # TODO: This could be more configurable
 - name: "Allow node exporter port for VPN addresses only"
   ansible.builtin.iptables:
