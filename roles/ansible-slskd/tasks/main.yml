@@ -9,6 +9,8 @@
       - docker_network_name is defined
       - owner is defined
       - group is defined
+      - slskd_incomplete_folder is defined
+      - slskd_downloads_folder is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -36,6 +38,8 @@
       - "50300"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app"
+      - "{{ slskd_incomplete_folder }}:/incomplete"
+      - "{{ slskd_downloads_folder }}:/downloads"
     log_driver: "loki"
     log_options:
       loki-url: "{{ loki_url }}"
