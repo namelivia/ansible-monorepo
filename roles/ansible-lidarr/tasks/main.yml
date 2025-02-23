@@ -65,7 +65,7 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config:/config"
       - "{{ lidarr_downloads_folder }}:/downloads"
-      - "{{ lidarr_music_folder }}{{ application_name }}/files/music:/music"
+      - "{{ lidarr_music_folder }}:/music"
     env:
       PUID: "{{ uid }}"
       PGID: "{{ gid }}"

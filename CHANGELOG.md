@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.186.1] - 2025-02-23
 
+### Fixed
+
+ - Fix lidarr path.
+
+## [2.186.1] - 2025-02-23
+
 ### Changed
 
  - Change lidarr configuration.
