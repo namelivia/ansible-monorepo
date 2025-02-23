@@ -9,6 +9,8 @@
       - group is defined
       - uid is defined
       - gid is defined
+      - lidarr_downloads_folder is defined
+      - lidarr_music_folder is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -62,8 +64,8 @@
       - 8686:8686
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config:/config"
-      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/downloads:/downloads"
-      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/music:/music"
+      - "{{ lidarr_downloads_folder }}:/downloads"
+      - "{{ lidarr_music_folder }}{{ application_name }}/files/music:/music"
     env:
       PUID: "{{ uid }}"
       PGID: "{{ gid }}"
