@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.189.0] - 2025-02-26
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1458 to 0.22.1459
+ - Upgrade linuxserver/radarr from 5.19.3 to 5.20.0
+ - Upgrade library/nextcloud from 30.0.6 to 31.0.0
+ - Upgrade prom/prometheus from 3.2.0 to 3.2.1
+ - Upgrade ghcr.io/immich-app/immich-server from 1.126.1 to 1.127.0
+ - Upgrade ghcr.io/immich-app/immich-machine-learning from 1.126.1 to 1.127.0
+
 ## [2.188.1] - 2025-02-26
 
 ### Changed
