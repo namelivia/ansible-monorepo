@@ -11,7 +11,7 @@
       - database_name is defined
       - redis_hostname is defined
       - immich_upload_path is defined
-      - immich_external_path is defined
+      - immich_external_volumes
       - redis_network_name is defined
 
 - name: Create the dockernetwork
@@ -64,10 +64,8 @@
     networks:
       - name: "{{ docker_network_name }}"
       - name: "{{ redis_network_name }}"
-    volumes:
-      - "{{ immich_upload_path }}:/usr/src/app/upload"
-      - "{{ immich_external_path }}:/mnt/media"
-      - /etc/localtime:/etc/localtime:ro
+    volumes: "{{ immich_external_volumes + [ immich_upload_path ~ ':/usr/src/app/upload', '/etc/localtime:/etc/localtime:ro' ] }}"
+
     env:
       NODE_ENV: "production"
       DB_HOSTNAME: "{{ application_name }}-database"
