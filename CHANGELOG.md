@@ -10,7 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
  - Upgrade linuxserver/jackett from 0.22.1564 to 0.22.1570
- - Upgrade linuxserver/radarr from 5.20.0 to 5.20.1
  - Upgrade deluan/navidrome from 0.54.5 to 0.55.0
 
 ## [2.194.0] - 2025-03-09
