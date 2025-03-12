@@ -92,6 +92,16 @@
       NEXTCLOUD_ADMIN_PASSWORD: "{{ admin_password }}"
       NEXTCLOUD_TRUSTED_DOMAINS: "{{ trusted_domains }}"
 
+- name: Install the calendar app
+  command: docker exec -u {{ uid }}:{{ gid }} {{ app_container_name }} ./occ app:install calendar
+  register: result
+  changed_when: result.rc != 0
+
+- name: Install the tasks app
+  command: docker exec -u {{ uid }}:{{ gid }} {{ app_container_name }} ./occ app:install tasks
+  register: result
+  changed_when: result.rc != 0
+
 - name: Setup file backups
   include_role:
     name: ansible-backups
