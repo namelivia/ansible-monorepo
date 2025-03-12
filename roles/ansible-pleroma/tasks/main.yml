@@ -78,7 +78,7 @@
 - name: Create relay import script
   template:
     src: add_relays.j2
-    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/add_relays.sh"
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/add_relays"
     owner: root
     group: root
     mode: "0755"
@@ -131,6 +131,10 @@
       DB_USER: "{{ database_user }}"
       DB_PASS: "{{ database_password }}"
       DB_NAME: "{{ database_name }}"
+
+- name: Run the relay import script
+  command: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/add_relays"
+  changed_when: false
 
 - name: Setup restic backups
   include_role:
