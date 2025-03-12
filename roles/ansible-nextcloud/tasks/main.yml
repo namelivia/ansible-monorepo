@@ -95,12 +95,14 @@
 - name: Install the calendar app
   command: docker exec -u {{ uid }}:{{ gid }} {{ app_container_name }} ./occ app:install calendar
   register: result
-  changed_when: result.rc != 0
+  failed_when: result.rc != 0 and "already installed" not in result.stdout
+  changed_when: "'already installed' not in result.stdout"
 
 - name: Install the tasks app
   command: docker exec -u {{ uid }}:{{ gid }} {{ app_container_name }} ./occ app:install tasks
   register: result
-  changed_when: result.rc != 0
+  failed_when: result.rc != 0 and "already installed" not in result.stdout
+  changed_when: "'already installed' not in result.stdout"
 
 - name: Setup file backups
   include_role:
