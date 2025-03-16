@@ -26,7 +26,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "deluan/navidrome:0.55.0"
+    image: "deluan/navidrome:0.55.1"
     restart_policy: "always"
     cleanup: true
     # memory: "100MB"
