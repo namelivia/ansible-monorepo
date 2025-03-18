@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.200.0] - 2025-03-18
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1634 to 0.22.1660
+ - Upgrade linuxserver/sonarr from 4.0.13 to 4.0.14
+
 ## [2.199.0] - 2025-03-16
 
 ### Changed
