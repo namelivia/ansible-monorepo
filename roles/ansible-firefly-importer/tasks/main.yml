@@ -8,6 +8,8 @@
       - firefly_3_url is defined
       - import_files_dir is defined
       - notifications_endpoint is defined
+      - user is defined
+      - group is defined
 
 - name: Create the importer directory
   file:

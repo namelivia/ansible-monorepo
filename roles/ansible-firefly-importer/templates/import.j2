@@ -7,7 +7,7 @@ if [ -z "$(ls -A $IMPORT_FILES_DIR)" ]; then
     exit 0
 fi
 
-docker run --rm --network="{{ docker_network_name }}" --name="firefly-importer" --log-driver=loki --log-opt loki-url="{{ loki_url }}" --log-opt loki-batch-size=400 -v "$IMPORT_FILES_DIR:/import" -e FIREFLY_III_ACCESS_TOKEN={{ firefly_3_access_token }} -e IMPORT_DIR_ALLOWLIST=/import -e FIREFLY_III_URL={{ firefly_3_url }} -e WEB_SERVER=false -e LOG_LEVEL=info fireflyiii/data-importer:latest
+docker run --rm --network="{{ docker_network_name }}" --user "{{ user }}:{{ group }}" "--name="firefly-importer" --log-driver=loki --log-opt loki-url="{{ loki_url }}" --log-opt loki-batch-size=400 -v "$IMPORT_FILES_DIR:/import" -e FIREFLY_III_ACCESS_TOKEN={{ firefly_3_access_token }} -e IMPORT_DIR_ALLOWLIST=/import -e FIREFLY_III_URL={{ firefly_3_url }} -e WEB_SERVER=false -e LOG_LEVEL=info fireflyiii/data-importer:latest
 
 RESULT=$?
 
