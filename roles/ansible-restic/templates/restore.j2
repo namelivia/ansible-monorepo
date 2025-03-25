@@ -21,7 +21,7 @@ if [ -z "$snapshot_id" ]; then
     exit 1
 fi
 
-docker run --rm -v "$destination_path":/restore/"$destination_path" \
+docker run --rm -v "$destination_path":/restore \
         -e RESTIC_REPOSITORY="$RESTIC_REPOSITORY" \
         -e RESTIC_PASSWORD="$RESTIC_PASSWORD" \
         -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" \
