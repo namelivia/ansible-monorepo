@@ -73,6 +73,8 @@
   include_role:
     name: ansible-fastapi
     tasks_from: upgrade-alembic
+  vars:
+    manager: "poetry"
 
 - name: Setup database backups
   include_role:
