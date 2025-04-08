@@ -6,6 +6,7 @@
       - application_name is defined
       - loki_url is defined
       - notifications_service_endpoint is defined
+      - notifications_service_network_name is defined
       - docker_network_name is defined
 
 - name: Create the dockernetwork
@@ -25,5 +26,6 @@
       loki-batch-size: "400"
     networks:
       - name: "{{ docker_network_name }}"
+      - name: "{{ notifications_service_network_name }}"
     env:
       NOTIFICATIONS_SERVICE_ENDPOINT: "{{ notifications_service_endpoint }}"
