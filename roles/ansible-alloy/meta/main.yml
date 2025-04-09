@@ -1,8 +1,8 @@
 galaxy_info:
-  role_name: promtail
+  role_name: alloy
   namespace: namelivia
   author: José Ignacio Amelivia Santiago <hello@namelivia.com>
-  description: Ansible role I use to install and configure promtail
+  description: Ansible role I use to install and configure alloy
   license: GPLv2
   min_ansible_version: 2.5.1
   platforms:
