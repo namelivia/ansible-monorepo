@@ -55,7 +55,7 @@
       - name: "{{ docker_network_name }}"
     log_driver: "syslog"
     log_options:
-      syslog-address: "tcp://{{ alloy_host }}:51983"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
     volumes:
       - mysql-data:/var/lib/mysql
     env:
