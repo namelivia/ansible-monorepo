@@ -16,10 +16,18 @@
   community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
-- name: Copy config
+- name: Create the files directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: "0755"
+
+- name: Copy alloy config
   copy:
     src: "{{ alloy_config_path }}"
-    dest: "{{ hostvars[inventory_hostname].working_directory }}alloy/config.alloy"
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.alloy"
     owner: "{{ alloy_user }}"
     group: "{{ alloy_group }}"
     mode: '0644'
@@ -38,7 +46,7 @@
     networks:
       - name: "{{ docker_network_name }}"
     volumes:
-      - "{{ hostvars[inventory_hostname].working_directory }}alloy/config.alloy:/etc/alloy/config.alloy"
+      - "{{ hostvars[inventory_hostname].working_directory }}alloy/files/config.alloy:/etc/alloy/config.alloy"
     log_driver: "awslogs"
     log_options:
       awslogs-region: "{{ cloudwatch_region }}"
