@@ -7,10 +7,10 @@
       - docker_network_name is defined
       - cloudwatch_region is defined
       - cloudwatch_log_group is defined
-      - host_port is defined
       - alloy_config_path is defined
       - alloy_user is defined
       - alloy_group is defined
+      - loki_service_network_name is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -41,10 +41,13 @@
     pull: true
     exposed_ports:
       - 12345
+      - 51893
     published_ports:
       - "0.0.0.0:{{ host_port }}:12345"
+      - "0.0.0.0:51893:51893"
     networks:
       - name: "{{ docker_network_name }}"
+      - name: "{{ loki_service_network_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}alloy/files/config.alloy:/etc/alloy/config.alloy"
     log_driver: "awslogs"
