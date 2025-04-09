@@ -55,7 +55,7 @@
       - name: "{{ docker_network_name }}"
     log_driver: "syslog"
     log_options:
-      syslog-address: "tcp://{{ alloy_host }}:1514"
+      syslog-address: "tcp://{{ alloy_host }}:51983"
     volumes:
       - mysql-data:/var/lib/mysql
     env:
@@ -72,7 +72,7 @@
     cleanup: true
     log_driver: "syslog"
     log_options:
-      syslog-address: "tcp://{{ alloy_host }}:1514"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
     networks:
       - name: "{{ docker_network_name }}"
     volumes:
@@ -92,7 +92,7 @@
     cleanup: true
     log_driver: "syslog"
     log_options:
-      syslog-address: "tcp://{{ alloy_host }}:1514"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
     restart_policy: "always"
     exposed_ports:
       - "80"
