@@ -1,3 +1,0 @@
----
-application_name: promtail
-docker_network_name: promtail_network
