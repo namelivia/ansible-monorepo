@@ -59,3 +59,9 @@
       run --server.http.listen-addr=0.0.0.0:12345
           --storage.path=/var/lib/alloy/data
           /etc/alloy/config.alloy
+
+# Restart alloy
+- name: Restart alloy
+  command: docker restart alloy
+  register: restart_alloy_result
+  changed_when: restart_alloy_result.rc != 0
