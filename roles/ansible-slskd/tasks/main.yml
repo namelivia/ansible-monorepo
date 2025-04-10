@@ -27,7 +27,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "slskd/slskd:0.22.2"
+    image: "slskd/slskd:0.22.3"
     restart_policy: "always"
     cleanup: true
     # memory: "100MB"
