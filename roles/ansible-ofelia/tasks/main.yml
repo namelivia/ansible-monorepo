@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - ofelia_config_path is defined
       - ofelia_user
       - ofelia_group
@@ -20,10 +20,9 @@
     restart_policy: "always"
     cleanup: true
     pull: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}ofelia:/etc/ofelia"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
