@@ -12,7 +12,7 @@
       - admin_mail is defined
       - admin_pass is defined
       - mysql_root_password is defined
-      - loki_url is defined
+      - alloy_host is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -53,10 +53,9 @@
     published_ports: "{{ ['0.0.0.0:3306:3306'] if should_publish_ports else [] }}"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
     volumes:
       - mysql-data:/var/lib/mysql
     env:
@@ -71,10 +70,9 @@
     image: "kimai/kimai2:fpm-2.19.1-prod"
     restart_policy: "always"
     cleanup: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
     networks:
       - name: "{{ docker_network_name }}"
     volumes:
@@ -92,10 +90,9 @@
     name: "{{ application_name }}-nginx"
     image: "nginx:latest" # TODO: Use a specific version
     cleanup: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
     restart_policy: "always"
     exposed_ports:
       - "80"
