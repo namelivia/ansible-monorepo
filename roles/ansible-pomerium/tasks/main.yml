@@ -5,7 +5,7 @@
     that:
       - docker_network_name is defined
       - application_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - shared_secret is defined
       - cookie_secret is defined
       - idp_client_id is defined
@@ -33,10 +33,9 @@
       - 443:443
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}pomerium:/pomerium"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
     networks:
       - name: "{{ docker_network_name }}"
       - name: "{{ vpn_network_name }}"
