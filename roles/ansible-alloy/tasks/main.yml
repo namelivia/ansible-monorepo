@@ -24,13 +24,14 @@
     group: ubuntu
     mode: "0755"
 
-- name: Copy alloy config
+- name: Copy alloy config folder
   copy:
     src: "{{ alloy_config_path }}"
-    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.alloy"
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
     owner: "{{ alloy_user }}"
     group: "{{ alloy_group }}"
-    mode: '0644'
+    mode: "0644"
+    directory_mode: "0775"
 
 - name: Create app container
   community.docker.docker_container:
@@ -49,7 +50,7 @@
       - name: "{{ docker_network_name }}"
       - name: "{{ loki_network_name }}"
     volumes:
-      - "{{ hostvars[inventory_hostname].working_directory }}alloy/files/config.alloy:/etc/alloy/config.alloy"
+      - "{{ hostvars[inventory_hostname].working_directory }}alloy/files:/etc/alloy"
     log_driver: "awslogs"
     log_options:
       awslogs-region: "{{ cloudwatch_region }}"
