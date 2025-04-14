@@ -54,7 +54,7 @@
     image: "linuxserver/lidarr:2.10.3"
     restart_policy: "always"
     pull: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

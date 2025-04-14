@@ -39,7 +39,7 @@
       - "3306"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
@@ -71,7 +71,7 @@
       - name: "{{ reverse_proxy_network_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/content:/var/lib/ghost/content"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

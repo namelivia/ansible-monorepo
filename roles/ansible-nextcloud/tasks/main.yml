@@ -79,7 +79,7 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config:/var/www/html/config"
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/var/www/html/data"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

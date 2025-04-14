@@ -16,7 +16,7 @@
       - 8080:8080
     networks:
       - name: "host"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

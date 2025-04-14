@@ -37,7 +37,7 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/data"
       - "{{ slskd_downloads_folder }}:/downloads"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

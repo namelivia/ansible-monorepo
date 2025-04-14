@@ -43,7 +43,7 @@
     env:
       SYNC_USER1: "{{ user }}:{{ password }}"
       RUST_LOG: "info"
-    log_driver: "loki"
+    log_driver: "syslog"
     user: "{{ uid }}:{{ gid }}"
     log_options:
       loki-url: "{{ alloy_host }}"

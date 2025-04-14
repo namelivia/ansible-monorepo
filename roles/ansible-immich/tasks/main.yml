@@ -37,7 +37,7 @@
       - "5432"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
@@ -54,7 +54,7 @@
     image: "ghcr.io/immich-app/immich-server:v1.131.3"
     pull: true
     cleanup: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
@@ -80,7 +80,7 @@
     image: "ghcr.io/immich-app/immich-machine-learning:v1.131.3"
     pull: true
     cleanup: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

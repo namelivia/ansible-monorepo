@@ -25,7 +25,7 @@
     image: "linuxserver/radarr:5.22.3-nightly"
     restart_policy: "always"
     pull: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

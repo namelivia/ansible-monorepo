@@ -16,7 +16,7 @@
     pull: true
     cleanup: true
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

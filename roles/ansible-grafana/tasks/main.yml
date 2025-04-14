@@ -82,7 +82,7 @@
       - name: "{{ database_network_name }}"
       - name: "{{ loki_network_name }}"
       - name: "{{ prometheus_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

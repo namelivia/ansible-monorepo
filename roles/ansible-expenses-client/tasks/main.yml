@@ -20,7 +20,7 @@
     image: "namelivia/expenses-client:latest"
     memory: "10MB"
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

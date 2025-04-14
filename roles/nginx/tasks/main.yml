@@ -23,7 +23,7 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ container_name }}/files:/usr/share/nginx/html"
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
       loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"

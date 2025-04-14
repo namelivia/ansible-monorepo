@@ -33,7 +33,7 @@
     cleanup: true
     image: "lissy93/dashy:3.1.0"
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}dashy/conf.yml:/app/user-data/conf.yml"
     log_options:
