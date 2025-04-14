@@ -13,11 +13,3 @@
 
 - name: Install backup script capabilities
   import_tasks: install-backup-script.yml
-
-- name: Install docker loki plugin
-  import_tasks: install-loki-plugin.yml
-  when: ansible_architecture == "x86_64"
-
-- name: Install docker loki plugin (ARM)
-  import_tasks: install-loki-plugin-arm.yml
-  when: ansible_architecture == "armv7l"
