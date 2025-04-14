@@ -29,7 +29,7 @@
       - name: "{{ docker_network_name }}"
     log_driver: "syslog"
     log_options:
-      loki-url: "{{ alloy_host }}"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
       loki-batch-size: "400"
     volumes:
       - postgres-data:/var/lib/postgresql/data

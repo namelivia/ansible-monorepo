@@ -81,7 +81,7 @@
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/var/www/html/data"
     log_driver: "syslog"
     log_options:
-      loki-url: "{{ alloy_host }}"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
       loki-batch-size: "400"
     env:
       POSTGRES_DB: "{{ database_name }}"

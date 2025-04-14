@@ -44,7 +44,7 @@
     pull: true
     log_driver: "syslog"
     log_options:
-      loki-url: "{{ alloy_host }}"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
       loki-batch-size: "400"
     published_ports:
       - "0.0.0.0:{{ host_port }}:8080"

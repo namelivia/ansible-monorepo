@@ -18,7 +18,7 @@
     restart_policy: "always"
     log_driver: "syslog"
     log_options:
-      loki-url: "{{ alloy_host }}"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
       loki-batch-size: "400"
     env:
       DISCORD_TOKEN: "{{ discord_token }}"
