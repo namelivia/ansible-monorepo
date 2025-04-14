@@ -56,6 +56,8 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-database"
     volumes:
       - mysql-data:/var/lib/mysql
     env:
@@ -73,6 +75,8 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-app"
     networks:
       - name: "{{ docker_network_name }}"
     volumes:
@@ -93,6 +97,8 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-nginx"
     restart_policy: "always"
     exposed_ports:
       - "80"

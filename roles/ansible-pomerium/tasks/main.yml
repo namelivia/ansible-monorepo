@@ -36,6 +36,8 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "pomerium"
     networks:
       - name: "{{ docker_network_name }}"
       - name: "{{ vpn_network_name }}"
