@@ -5,7 +5,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - backup_day is defined
       - host_port is defined
 
@@ -31,7 +31,7 @@
     image: "mvertes/alpine-mongo:latest"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     restart_policy: "always"
     memory: "70MB"
@@ -52,7 +52,7 @@
     memory: "100MB"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     exposed_ports:
       - "60000"

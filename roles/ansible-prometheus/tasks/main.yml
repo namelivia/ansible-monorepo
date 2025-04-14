@@ -5,7 +5,7 @@
       - application_name is defined
       - host_port is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - prometheus_config_path is defined
       - uid
       - gid
@@ -54,7 +54,7 @@
       - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/prometheus"

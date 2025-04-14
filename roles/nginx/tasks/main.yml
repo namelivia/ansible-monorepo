@@ -4,7 +4,7 @@
   assert:
     that:
       - container_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - host_port is defined
 
 - name: Create the files directory
@@ -25,7 +25,7 @@
     restart_policy: "always"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     exposed_ports:
       - "80"

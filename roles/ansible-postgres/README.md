@@ -15,6 +15,6 @@ roles:
 ```
 
 ## Required variables
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `postgres_username` Username for Postgres.
  - `postgres_password` Password for Postgres.

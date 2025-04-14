@@ -13,7 +13,7 @@ roles:
 ```
 
 ## Required variables
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `amule_downloads_folder` Folder path to place downloads in.
  - `amule_password` Password for the web ui.
  - `backup_day` Day of the week in which the config will be backed up.

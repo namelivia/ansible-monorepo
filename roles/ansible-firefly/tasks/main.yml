@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - host_port is defined
       - database_container_name is defined
       - database_user is defined
@@ -44,7 +44,7 @@
     pull: true
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     published_ports:
       - "0.0.0.0:{{ host_port }}:8080"

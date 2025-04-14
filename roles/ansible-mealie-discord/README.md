@@ -14,7 +14,7 @@ roles:
 
 ## Required variables
 
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `discord_token`: Your Discord token.
  - `mealie_token`: Your Mealie token.
  - `mealie_url`: Your Mealie server URL.

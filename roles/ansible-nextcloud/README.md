@@ -13,7 +13,7 @@ roles:
 ```
 
 ## Required variables
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `database_name` Name for the database Nextcloud will use.
  - `database_user` User that Nextcloud will use to connect to the database.
  - `database_password` Password for the user to connect to the database.

@@ -16,7 +16,7 @@ roles:
 
 ## Required variables
 
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `gallery_api_endpoint` API endpoint for connecting the client to the server API.
  - `user_info_service_endpoint` API endpoint for user information service.
  - `aws_access_key_id` Access key id to access the images S3 bucket.

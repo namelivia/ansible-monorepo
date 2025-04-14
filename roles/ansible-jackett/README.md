@@ -13,5 +13,5 @@ roles:
 ```
 
 ## Required variables
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `backup_day` Day of the week in which the config will be backed up.

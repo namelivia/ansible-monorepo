@@ -15,6 +15,6 @@ roles:
 ```
 
 ## Required variables (TODO: Update these)
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `domain_name` The domain name in which the app will be served from.
  - `host_port` Port to be mapped in the host machine.

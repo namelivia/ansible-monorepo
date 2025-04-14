@@ -8,7 +8,7 @@
       - database_name is defined
       - database_user is defined
       - database_password is defined
-      - loki_url is defined
+      - alloy_host is defined
       - dump_day is defined
       - backup_day is defined
       - mysql_root_password is defined
@@ -41,7 +41,7 @@
       - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     volumes:
       - ghost-database:/var/lib/mysql
@@ -73,7 +73,7 @@
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/content:/var/lib/ghost/content"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
       loki-pipeline-stages: "- multiline:\n    firstline: '^\\[\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}]'\n"
 

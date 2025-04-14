@@ -12,4 +12,4 @@ roles:
   - src: https://github.com/namelivia/ansible-cadvisor
 ```
 
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.

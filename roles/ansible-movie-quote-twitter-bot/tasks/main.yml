@@ -47,7 +47,7 @@
       - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}movies:/movies"

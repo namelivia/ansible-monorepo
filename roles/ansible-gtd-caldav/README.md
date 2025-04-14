@@ -14,7 +14,7 @@ roles:
 
 ## Required variables
 
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `caldav_url`: Caldav endpoint url.
  - `user`: Caldav user.
  - `password`: Caldav password.

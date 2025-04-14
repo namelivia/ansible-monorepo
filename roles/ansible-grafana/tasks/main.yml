@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - admin_user is defined
       - admin_password is defined
       - user is defined
@@ -84,7 +84,7 @@
       - name: "{{ prometheus_network_name }}"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/var/lib/grafana"

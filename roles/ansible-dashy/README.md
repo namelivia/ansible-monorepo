@@ -13,5 +13,5 @@ roles:
 ```
 
 ## Required variables
- - `loki_url` Loki url for logging.
+ - `alloy_host` Loki url for logging.
  - `host_port` Port to be mapped in the host machine.

@@ -28,6 +28,6 @@ docker run --rm -v "$destination_path":/restore \
         -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
         --name="restic-restore" \
         --log-driver="loki" \
-        --log-opt loki-url="{{ loki_url }}" \
+        --log-opt loki-url="{{ alloy_host }}" \
         --log-opt loki-batch-size="400" \
         instrumentisto/restic restore --host {{ inventory_hostname }} --target /restore "$snapshot_id"

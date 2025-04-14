@@ -13,6 +13,6 @@ docker run --rm \
         -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
         --name="restic-list-snapshots" \
         --log-driver="loki" \
-        --log-opt loki-url="{{ loki_url }}" \
+        --log-opt loki-url="{{ alloy_host }}" \
         --log-opt loki-batch-size="400" \
         instrumentisto/restic snapshots --host {{ inventory_hostname }}

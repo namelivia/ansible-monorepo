@@ -14,5 +14,5 @@ roles:
 
 ## Required variables
 
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `notifications_service_endpoint`: Notifications Service Endpoint.

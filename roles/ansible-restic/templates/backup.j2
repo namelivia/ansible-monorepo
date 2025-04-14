@@ -16,7 +16,7 @@ docker run --rm \
         -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
         --name="restic-initialize-repo" \
         --log-driver="loki" \
-        --log-opt loki-url="{{ loki_url }}" \
+        --log-opt loki-url="{{ alloy_host }}" \
         --log-opt loki-batch-size="400" \
         instrumentisto/restic init --retry-lock 5m >> /tmp/backup.log
 
@@ -36,7 +36,7 @@ perform_backup() {
             -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
             --name="restic-backup" \
             --log-driver="loki" \
-            --log-opt loki-url="{{ loki_url }}" \
+            --log-opt loki-url="{{ alloy_host }}" \
             --log-opt loki-batch-size="400" \
             instrumentisto/restic backup --retry-lock 5m --host {{ inventory_hostname }} "$folder_path"
     done < "$target_file"
@@ -64,7 +64,7 @@ docker run --rm \
         -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
         --name="restic-initialize-repo" \
         --log-driver="loki" \
-        --log-opt loki-url="{{ loki_url }}" \
+        --log-opt loki-url="{{ alloy_host }}" \
         --log-opt loki-batch-size="400" \
         instrumentisto/restic forget --retry-lock 5m --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --keep-yearly 1 --host {{ inventory_hostname }} >> /tmp/backup.log
 

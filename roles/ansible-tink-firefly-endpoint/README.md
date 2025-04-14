@@ -15,7 +15,7 @@ roles:
 ```
 
 ## Required variables (TODO: Update these)
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `host_port` Port to be mapped in the host machine.
  - `tink_client_id` Your Tink Client Id.
  - `tink_client_secret` Your Tink Client Secret.

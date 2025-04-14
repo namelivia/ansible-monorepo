@@ -3,7 +3,7 @@
   assert:
     that:
       - application_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - host_port is defined
       - docker_network_name is defined
 
@@ -28,7 +28,7 @@
     memory: "500MB"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     networks:
       - name: "{{ docker_network_name }}"

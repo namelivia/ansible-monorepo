@@ -3,7 +3,7 @@
 - name: 'Check mandatory variables are defined'
   assert:
     that:
-      - loki_url is defined
+      - alloy_host is defined
       - postgres_username is defined
       - docker_network_name is defined
       - postgres_password is defined
@@ -29,7 +29,7 @@
       - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     volumes:
       - postgres-data:/var/lib/postgresql/data

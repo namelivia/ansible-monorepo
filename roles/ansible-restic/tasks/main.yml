@@ -6,7 +6,7 @@
       - restic_password is defined
       - aws_access_key_id is defined
       - aws_secret_access_key is defined
-      - loki_url is defined
+      - alloy_host is defined
 
 - name: Create the restic directory
   file:

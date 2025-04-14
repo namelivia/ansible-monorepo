@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - consumer_key is defined
       - consumer_secret is defined
       - access_token_key is defined
@@ -32,7 +32,7 @@
       - name: "{{ docker_network_name }}"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     env:
       CONSUMER_KEY: "{{ consumer_key }}"

@@ -13,7 +13,7 @@ roles:
 ```
 
 ## Required variables
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `deluge_downloads_folder` Path for the downloads.
  - `deluge_movies_folder` Path for the movies.
  - `deluge_tv_folder` Path for the series.

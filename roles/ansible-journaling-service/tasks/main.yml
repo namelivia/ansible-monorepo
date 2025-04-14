@@ -3,7 +3,7 @@
   assert:
     that:
       - application_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - database_url is defined
       - database_container_name is defined
       - database_user is defined
@@ -32,7 +32,7 @@
     restart_policy: "always"
     log_driver: "loki"
     log_options:
-      loki-url: "{{ loki_url }}"
+      loki-url: "{{ alloy_host }}"
       loki-batch-size: "400"
     networks:
       - name: "{{ docker_network_name }}"

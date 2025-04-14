@@ -18,5 +18,5 @@ roles:
  - `dump_day` Day of the week in which the database will be dumped.
  - `backup_day` Day of the week in which the filesystem will be backed up.
  - `mysql_root_password` Password for admin user for the mariadb database.
- - `loki_url` Loki endpoint to send logs.
+ - `alloy_host` Loki endpoint to send logs.
  - `domain_name` The domain name in which the app will be served from.
