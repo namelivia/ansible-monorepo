@@ -74,6 +74,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
     networks:
       - name: "{{ docker_network_name }}"
     volumes:
@@ -94,6 +95,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
     restart_policy: "always"
     exposed_ports:
       - "80"
