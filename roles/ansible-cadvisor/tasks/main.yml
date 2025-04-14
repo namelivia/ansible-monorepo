@@ -19,7 +19,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro

@@ -47,7 +47,7 @@
     user: "{{ uid }}:{{ gid }}"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     published_ports:
       - "0.0.0.0:{{ host_port }}:8080"
 

@@ -40,7 +40,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     volumes:
       - immich-postgres-data:/var/lib/postgresql/data
     env:
@@ -57,7 +57,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     restart_policy: "always"
     published_ports:
       - "0.0.0.0:{{ host_port }}:2283"
@@ -83,7 +83,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     restart_policy: "always"
     networks:
       - name: "{{ docker_network_name }}"

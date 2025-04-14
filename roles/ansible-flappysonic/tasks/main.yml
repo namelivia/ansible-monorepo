@@ -32,7 +32,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     restart_policy: "always"
     memory: "70MB"
     exposed_ports:
@@ -53,7 +53,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     exposed_ports:
       - "60000"
     published_ports:

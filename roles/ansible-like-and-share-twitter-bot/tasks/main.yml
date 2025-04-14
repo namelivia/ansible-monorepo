@@ -33,7 +33,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     env:
       CONSUMER_KEY: "{{ consumer_key }}"
       CONSUMER_SECRET: "{{ consumer_secret }}"

@@ -85,7 +85,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      loki-batch-size: "400"
+      syslog-format: "rfc5424"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/var/lib/grafana"
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/provisioning:/etc/grafana/provisioning"
