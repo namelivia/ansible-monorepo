@@ -38,6 +38,7 @@
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
       syslog-format: "rfc5424"
+      tag: "{{ application_name }}"
     networks:
       - name: "{{ docker_network_name }}"
       - name: "{{ user_info_service_network_name }}"

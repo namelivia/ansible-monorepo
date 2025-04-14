@@ -33,6 +33,7 @@
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
       syslog-format: "rfc5424"
+      tag: "{{ application_name }}-database"
     restart_policy: "always"
     memory: "70MB"
     exposed_ports:
@@ -54,6 +55,7 @@
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
       syslog-format: "rfc5424"
+      tag: "{{ application_name }}-app"
     exposed_ports:
       - "60000"
     published_ports:

@@ -26,6 +26,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
       syslog-format: "rfc5424"
     networks:
       - name: "{{ docker_network_name }}"

@@ -40,6 +40,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-database"
       syslog-format: "rfc5424"
     volumes:
       - immich-postgres-data:/var/lib/postgresql/data
@@ -57,6 +58,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-server"
       syslog-format: "rfc5424"
     restart_policy: "always"
     published_ports:
@@ -83,6 +85,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-machine-learning"
       syslog-format: "rfc5424"
     restart_policy: "always"
     networks:

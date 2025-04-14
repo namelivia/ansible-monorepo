@@ -55,6 +55,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
       syslog-format: "rfc5424"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/prometheus"

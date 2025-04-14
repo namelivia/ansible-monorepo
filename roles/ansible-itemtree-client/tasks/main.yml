@@ -23,6 +23,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
       syslog-format: "rfc5424"
     exposed_ports:
       - "80"

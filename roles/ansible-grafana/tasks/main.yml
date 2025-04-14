@@ -86,6 +86,7 @@
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
       syslog-format: "rfc5424"
+      tag: "{{ application_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/var/lib/grafana"
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/provisioning:/etc/grafana/provisioning"

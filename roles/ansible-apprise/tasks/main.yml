@@ -42,5 +42,6 @@
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
       syslog-format: "rfc5424"
+      tag: "{{ application_name }}"
     env:
       APPRISE_STATEFUL_MODE: "simple"

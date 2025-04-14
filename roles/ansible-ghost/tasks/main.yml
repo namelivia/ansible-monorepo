@@ -42,6 +42,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-database"
       syslog-format: "rfc5424"
     volumes:
       - ghost-database:/var/lib/mysql
@@ -74,6 +75,7 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-app"
       syslog-format: "rfc5424"
       loki-pipeline-stages: "- multiline:\n    firstline: '^\\[\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}]'\n"
 

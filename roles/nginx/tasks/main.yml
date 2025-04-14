@@ -27,6 +27,7 @@
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
       syslog-format: "rfc5424"
+      tag: "{{ container_name }}"
     exposed_ports:
       - "80"
     published_ports:
