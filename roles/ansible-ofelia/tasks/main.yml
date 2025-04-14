@@ -23,6 +23,8 @@
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-app"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}ofelia:/etc/ofelia"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
