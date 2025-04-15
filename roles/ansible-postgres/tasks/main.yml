@@ -7,6 +7,7 @@
       - postgres_username is defined
       - docker_network_name is defined
       - postgres_password is defined
+      - postgres_version is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -19,7 +20,7 @@
 - name: Create database container
   community.docker.docker_container:
     name: "postgres-database"
-    image: "postgres:17.4"
+    image: "postgres:{{ postgres_version }}" # TODO: Align all postgres versions so I don't need to pass this
     restart_policy: "always"
     cleanup: true
     exposed_ports:
