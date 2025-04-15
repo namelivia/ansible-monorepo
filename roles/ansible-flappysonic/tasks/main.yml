@@ -5,7 +5,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - backup_day is defined
       - host_port is defined
 
@@ -29,10 +29,11 @@
   community.docker.docker_container:
     name: "{{ application_name }}-database"
     image: "mvertes/alpine-mongo:latest"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-database"
     restart_policy: "always"
     memory: "70MB"
     exposed_ports:
@@ -50,10 +51,11 @@
     cleanup: true
     restart_policy: "always"
     memory: "100MB"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-app"
     exposed_ports:
       - "60000"
     published_ports:

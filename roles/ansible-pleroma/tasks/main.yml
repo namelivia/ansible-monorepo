@@ -5,7 +5,7 @@
       - application_name is defined
       - docker_network_name is defined
       - domain_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - instance_name is defined
       - admin_mail is defined
       - notify_mail is defined
@@ -107,10 +107,11 @@
     name: "{{ application_name }}"
     image: "pleroma:latest"
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
+      syslog-format: "rfc5424"
     exposed_ports:
       - "4000"
     networks:

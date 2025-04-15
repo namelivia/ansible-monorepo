@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - sonarr_downloads_folder is defined
       - sonarr_tv_folder is defined
       - backup_day is defined
@@ -25,10 +25,11 @@
     image: "linuxserver/sonarr:4.0.14"
     restart_policy: "always"
     pull: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-app"
     networks:
       - name: "{{ docker_network_name }}"
     ports:

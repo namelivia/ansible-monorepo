@@ -3,7 +3,7 @@
 - name: 'Check mandatory variables are defined'
   assert:
     that:
-      - loki_url is defined
+      - alloy_host is defined
       - postgres_username is defined
       - docker_network_name is defined
       - postgres_password is defined
@@ -27,10 +27,11 @@
     published_ports: "{{ ['0.0.0.0:5432:5432'] if should_publish_ports else [] }}"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "postgres-database"
+      syslog-format: "rfc5424"
     volumes:
       - postgres-data:/var/lib/postgresql/data
     env:

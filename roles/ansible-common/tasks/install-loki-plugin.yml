@@ -1,8 +1,0 @@
----
-- name: Install Loki plugin
-  command: docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
-  register: result
-  failed_when:
-    - result.rc != 0
-    - "'plugin loki:latest already exists' not in result.stderr"
-  changed_when: "'plugin loki:latest already exists' not in result.stderr"

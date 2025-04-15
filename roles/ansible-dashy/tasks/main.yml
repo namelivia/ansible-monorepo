@@ -3,7 +3,7 @@
   assert:
     that:
       - application_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - host_port is defined
       - dashy_config_path is defined
       - docker_network_name is defined
@@ -33,12 +33,13 @@
     cleanup: true
     image: "lissy93/dashy:3.1.0"
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}dashy/conf.yml:/app/user-data/conf.yml"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}"
     exposed_ports:
       - "8080"
     networks:

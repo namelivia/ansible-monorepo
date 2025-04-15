@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - deluge_downloads_folder is defined
       - deluge_movies_folder is defined
       - deluge_tv_folder is defined
@@ -26,10 +26,11 @@
     image: "linuxserver/deluge:2.1.1"
     restart_policy: "always"
     pull: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-app"
     networks:
       - name: "{{ docker_network_name }}"
     ports:

@@ -45,10 +45,11 @@
     memory: "200MB"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
+      syslog-format: "rfc5424"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}movies:/movies"
     env:

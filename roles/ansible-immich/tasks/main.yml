@@ -5,7 +5,7 @@
       - application_name is defined
       - docker_network_name is defined
       - host_port is defined
-      - loki_url is defined
+      - alloy_host is defined
       - database_user is defined
       - database_password is defined
       - database_name is defined
@@ -37,10 +37,11 @@
       - "5432"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-database"
+      syslog-format: "rfc5424"
     volumes:
       - immich-postgres-data:/var/lib/postgresql/data
     env:
@@ -54,10 +55,11 @@
     image: "ghcr.io/immich-app/immich-server:v1.131.3"
     pull: true
     cleanup: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-server"
+      syslog-format: "rfc5424"
     restart_policy: "always"
     published_ports:
       - "0.0.0.0:{{ host_port }}:2283"
@@ -80,10 +82,11 @@
     image: "ghcr.io/immich-app/immich-machine-learning:v1.131.3"
     pull: true
     cleanup: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-machine-learning"
+      syslog-format: "rfc5424"
     restart_policy: "always"
     networks:
       - name: "{{ docker_network_name }}"

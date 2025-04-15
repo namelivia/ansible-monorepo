@@ -3,7 +3,7 @@
   assert:
     that:
       - application_name is defined
-      - loki_url is defined
+      - alloy_host is defined
 
 - name: Create app container
   community.docker.docker_container:
@@ -16,10 +16,11 @@
       - 8080:8080
     networks:
       - name: "host"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}"
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro

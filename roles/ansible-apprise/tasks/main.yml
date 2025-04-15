@@ -8,7 +8,7 @@
       - apprise_config_folder is defined
       - apprise_user is defined
       - apprise_group is defined
-      - loki_url is defined
+      - alloy_host is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -38,9 +38,10 @@
     memory: "400MB"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}:/config"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}"
     env:
       APPRISE_STATEFUL_MODE: "simple"

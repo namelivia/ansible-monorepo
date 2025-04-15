@@ -4,7 +4,7 @@
   assert:
     that:
       - application_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - discord_token is defined
       - mealie_token is defined
       - mealie_url is defined
@@ -16,10 +16,11 @@
     pull: true
     cleanup: true
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
+      syslog-format: "rfc5424"
     env:
       DISCORD_TOKEN: "{{ discord_token }}"
       MEALIE_TOKEN: "{{ mealie_token }}"

@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - jwt_auth_jwk_set_url is defined
       - log_level is defined
       - host_port is defined
@@ -32,10 +32,11 @@
     restart_policy: "always"
     cleanup: true
     pull: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-frontend"
+      syslog-format: "rfc5424"
     networks:
       - name: "{{ docker_network_name }}"
     volumes:
@@ -54,10 +55,11 @@
     restart_policy: "always"
     cleanup: true
     pull: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-backend"
+      syslog-format: "rfc5424"
     networks:
       - name: "{{ docker_network_name }}"
     volumes:

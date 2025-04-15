@@ -4,7 +4,7 @@
   assert:
     that:
       - container_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - host_port is defined
 
 - name: Create the files directory
@@ -23,10 +23,11 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ container_name }}/files:/usr/share/nginx/html"
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ container_name }}"
     exposed_ports:
       - "80"
     published_ports:

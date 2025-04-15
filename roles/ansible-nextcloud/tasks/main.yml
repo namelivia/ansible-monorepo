@@ -6,7 +6,7 @@
       - docker_network_name is defined
       - docker_network_subnet is defined
       - host_port is defined
-      - loki_url is defined
+      - alloy_host is defined
       - dump_day is defined
       - backup_day is defined
       - trusted_domains is defined
@@ -79,10 +79,11 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config:/var/www/html/config"
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/var/www/html/data"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
+      syslog-format: "rfc5424"
     env:
       POSTGRES_DB: "{{ database_name }}"
       POSTGRES_USER: "{{ database_user }}"

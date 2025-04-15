@@ -4,7 +4,7 @@
   assert:
     that:
       - application_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - docker_network_name is defined
       - owner is defined
       - group is defined
@@ -37,10 +37,11 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/data"
       - "{{ slskd_downloads_folder }}:/downloads"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}-app"
     env:
       PUID: "1000"
       PGID: "1000"

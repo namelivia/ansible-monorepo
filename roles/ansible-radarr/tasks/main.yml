@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - radarr_downloads_folder is defined
       - radarr_movies_folder is defined
       - backup_day is defined
@@ -25,10 +25,11 @@
     image: "linuxserver/radarr:5.22.3-nightly"
     restart_policy: "always"
     pull: true
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-app"
+      syslog-format: "rfc5424"
     networks:
       - name: "{{ docker_network_name }}"
     ports:

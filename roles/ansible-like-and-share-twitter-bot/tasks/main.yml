@@ -4,7 +4,7 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - consumer_key is defined
       - consumer_secret is defined
       - access_token_key is defined
@@ -30,10 +30,11 @@
     memory: "50MB"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
+      syslog-format: "rfc5424"
     env:
       CONSUMER_KEY: "{{ consumer_key }}"
       CONSUMER_SECRET: "{{ consumer_secret }}"

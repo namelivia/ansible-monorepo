@@ -8,7 +8,7 @@
       - database_name is defined
       - database_user is defined
       - database_password is defined
-      - loki_url is defined
+      - alloy_host is defined
       - dump_day is defined
       - backup_day is defined
       - mysql_root_password is defined
@@ -39,10 +39,11 @@
       - "3306"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-database"
+      syslog-format: "rfc5424"
     volumes:
       - ghost-database:/var/lib/mysql
     env:
@@ -71,11 +72,11 @@
       - name: "{{ reverse_proxy_network_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/content:/var/lib/ghost/content"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
-      loki-pipeline-stages: "- multiline:\n    firstline: '^\\[\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}]'\n"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-app"
+      syslog-format: "rfc5424"
 
 
     env:

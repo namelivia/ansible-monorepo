@@ -4,7 +4,7 @@
   assert:
     that:
       - application_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - user_info_service_endpoint is defined
       - domain_name is defined
       - aws_bucket is defined
@@ -34,10 +34,11 @@
     pull: true
     cleanup: true
     restart_policy: "always"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      syslog-format: "rfc5424"
+      tag: "{{ application_name }}"
     networks:
       - name: "{{ docker_network_name }}"
       - name: "{{ user_info_service_network_name }}"

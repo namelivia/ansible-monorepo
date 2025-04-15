@@ -5,7 +5,7 @@
       - application_name is defined
       - host_port is defined
       - docker_network_name is defined
-      - loki_url is defined
+      - alloy_host is defined
       - prometheus_config_path is defined
       - uid
       - gid
@@ -52,10 +52,11 @@
       - "0.0.0.0:{{ host_port }}:9090"
     networks:
       - name: "{{ docker_network_name }}"
-    log_driver: "loki"
+    log_driver: "syslog"
     log_options:
-      loki-url: "{{ loki_url }}"
-      loki-batch-size: "400"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}"
+      syslog-format: "rfc5424"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/prometheus"
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.yml:/etc/prometheus/prometheus.yml"
