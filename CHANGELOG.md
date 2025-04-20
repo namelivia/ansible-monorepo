@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.232.0] - 2025-04-20
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1773 to 0.22.1797
+ - Upgrade fireflyiii/core from 6.2.10 to 6.2.11
+ - Upgrade linuxserver/radarr from 5.22.3 to 5.22.4
+ - Upgrade prom/prometheus from 3.2.1 to 3.3.0
+ - Upgrade mcuadros/ofelia from 0.3.16 to 0.3.17
+ - Upgrade slskd/slskd from 0.22.4 to 0.22.5
+ - Upgrade library/ghost from 5.116.2 to 5.117.0
+
 ## [2.232.0] - 2025-04-15
 
 ### Fixed
