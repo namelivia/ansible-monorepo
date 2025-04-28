@@ -22,7 +22,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "linuxserver/radarr:5.23.0-nightly"
+    image: "linuxserver/radarr:5.23.1-nightly"
     restart_policy: "always"
     pull: true
     log_driver: "syslog"
