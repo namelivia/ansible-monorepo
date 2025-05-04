@@ -23,7 +23,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "linuxserver/deluge:2.1.1"
+    image: "linuxserver/deluge:2.2.0"
     restart_policy: "always"
     pull: true
     log_driver: "syslog"
