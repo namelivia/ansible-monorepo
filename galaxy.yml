@@ -1,6 +1,6 @@
 namespace: namelivia
 name: monorepo
-version: 2.240.0
+version: 2.241.0
 readme: README.md
 authors:
   - José Ignacio Amelivia Santiago <hello@namelivia.com>
