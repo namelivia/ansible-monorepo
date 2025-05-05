@@ -1,6 +1,6 @@
 namespace: namelivia
 name: monorepo
-version: 2.241.0
+version: 2.242.0
 readme: README.md
 authors:
   - José Ignacio Amelivia Santiago <hello@namelivia.com>
@@ -12,9 +12,9 @@ tags:
   - infrastructure
   - ansible
 dependencies:
-  community.docker: '>=1.0.0'
-  ansible.posix: '>=1.0.0'
-  prometheus.prometheus: '>=0.5.0'
+  community.docker: '>=4.5.0'
+  ansible.posix: '>=1.6.0'
+  prometheus.prometheus: '>=0.26.0'
 repository: http://example.com/repository
 documentation: http://docs.example.com
 homepage: http://example.com
