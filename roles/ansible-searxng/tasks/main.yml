@@ -46,7 +46,7 @@
     networks:
       - name: "{{ docker_network_name }}"
     volumes:
-      - "{{ hostvars[inventory_hostname].working_directory }}searxng/files/searxng_config:/etc/searxng"
+      - "{{ hostvars[inventory_hostname].working_directory }}searxng/files:/etc/searxng"
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
