@@ -19,8 +19,8 @@
   file:
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
     state: directory
-    owner: ubuntu
-    group: ubuntu
+    owner: "{{ searxng_user }}"
+    group: "{{ searxng_group }}"
     mode: "0755"
 
 - name: Copy searxng config folder
