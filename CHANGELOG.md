@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.246.0] - 2025-05-09
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1874 to 0.22.1884
+ - Upgrade pomerium/pomerium from 0.29.2 to 0.29.3
+ - Upgrade nginxproxy/nginx-proxy from 1.7.0 to 1.7.1
+
 ## [2.245.0] - 2025-05-07
 
 ### Added
