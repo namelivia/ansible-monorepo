@@ -1,0 +1,3 @@
+---
+application_name: movie-quote-mastodon-bot
+docker_network_name: movie_quote_mastodon_bot_network

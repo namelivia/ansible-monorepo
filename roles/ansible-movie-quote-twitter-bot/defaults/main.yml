@@ -1,3 +1,0 @@
----
-application_name: movie-quote-twitter-bot
-docker_network_name: movie_quote_twitter_bot_network

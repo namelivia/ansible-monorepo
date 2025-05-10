@@ -1,8 +1,8 @@
 galaxy_info:
-  role_name: movie_quote_twitter_bot
+  role_name: movie_quote_mastodon_bot
   namespace: namelivia
   author: José Ignacio Amelivia Santiago <hello@namelivia.com>
-  description: Ansible role I use to install and configure namelivia/movie-quote-twitter-bot
+  description: Ansible role I use to install and configure namelivia/movie-quote-mastodon-bot
   license: GPLv2
   min_ansible_version: 2.5.1
   platforms:

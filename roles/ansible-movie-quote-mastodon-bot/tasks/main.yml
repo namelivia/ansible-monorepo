@@ -5,11 +5,6 @@
     that:
       - application_name is defined
       - docker_network_name is defined
-      - twitter_enabled is defined
-      - twitter_consumer_key is defined
-      - twitter_consumer_secret is defined
-      - twitter_access_token_key is defined
-      - twitter_access_token_secret is defined
       - mastodon_enabled is defined
       - mastodon_client_id is defined
       - mastodon_client_secret is defined
@@ -38,7 +33,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/movie-quote-twitter-bot:latest"
+    image: "namelivia/movie-quote-mastodon-bot:1.0.0"
     pull: true
     cleanup: true
     restart_policy: "always"
@@ -53,11 +48,6 @@
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}movies:/movies"
     env:
-      TWITTER_ENABLED: "{{ twitter_enabled }}"
-      TWITTER_CONSUMER_KEY: "{{ twitter_consumer_key }}"
-      TWITTER_CONSUMER_SECRET: "{{ twitter_consumer_secret }}"
-      TWITTER_ACCESS_TOKEN_KEY: "{{ twitter_access_token_key }}"
-      TWITTER_ACCESS_TOKEN_SECRET: "{{ twitter_access_token_secret }}"
       MASTODON_ENABLED: "{{ mastodon_enabled }}"
       MASTODON_CLIENT_ID: "{{ mastodon_client_id }}"
       MASTODON_CLIENT_SECRET: "{{ mastodon_client_secret }}"
@@ -72,4 +62,3 @@
       TEXT_SIZE: "{{ text_size }}"
       TEXT_FONT: "{{ text_font }}"
       IDLE_PERIOD: "{{ idle_period }}"
-      SENTRY_URL: "{{ sentry_url }}"

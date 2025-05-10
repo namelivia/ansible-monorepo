@@ -5,25 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.247.3] - 2025-05-10
+## [2.249.0] - 2025-05-10
+
+### Changed
+
+ - Upgrade movie-quote-twitter-bot to movie-quote-mastodon-bot
+
+## [2.248.3] - 2025-05-10
 
 ### Changed
 
  - Set the tag for user-info-service
 
-## [2.247.2] - 2025-05-10
+## [2.248.2] - 2025-05-10
 
 ### Fixed
 
  - Fix journaling service migration command
 
-## [2.247.1] - 2025-05-10
+## [2.248.1] - 2025-05-10
 
 ### Changed
 
  - Set the tag for journaling-service
 
-## [2.247.0] - 2025-05-09
+## [2.248.0] - 2025-05-09
 
 ### Removed
 
