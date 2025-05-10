@@ -33,7 +33,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/movie-quote-mastodon-bot:1.0.2"
+    image: "namelivia/movie-quote-mastodon-bot:1.0.3"
     pull: true
     cleanup: true
     restart_policy: "always"
