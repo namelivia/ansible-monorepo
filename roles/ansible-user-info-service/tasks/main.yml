@@ -23,7 +23,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/user-info-service:latest"
+    image: "namelivia/user-info-service:1.0.0"
     memory: "200MB"
     pull: true
     restart_policy: "always"
@@ -50,6 +50,8 @@
   include_role:
     name: ansible-fastapi
     tasks_from: upgrade-alembic
+  vars:
+    manager: "poetry"
 
 - name: Setup database backups
   include_role:
