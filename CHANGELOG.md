@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.251.0] - 2025-05-14
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1891 to 0.22.1895
+ - Upgrade library/redis from 8.0.0 to 8.0.1
+ - Downgrade grafana/grafana from 12.0.0 to 11.6.1
+
 ## [2.250.0] - 2025-05-12
 
 ### Changed
