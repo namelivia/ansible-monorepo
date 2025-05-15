@@ -6,6 +6,8 @@
       - host_port is defined
       - docker_network_name is defined
       - alloy_host is defined
+      - keycloak_admin_user is defined
+      - keycloak_admin_password is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -31,6 +33,9 @@
       syslog-format: "rfc5424"
     command: >-
       start-dev
+    env:
+      KC_BOOTSTRAP_ADMIN_USERNAME: "{{ keycloak_admin_user }}"
+      KC_BOOTSTRAP_ADMIN_PASSWORD: "{{ keycloak_admin_password }}"
 
 # Restart keycloack
 - name: Restart keycloack
