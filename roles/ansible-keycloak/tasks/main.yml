@@ -32,7 +32,7 @@
       tag: "{{ application_name }}-app"
       syslog-format: "rfc5424"
     command: >-
-      start-dev
+      start-dev --proxy-headers=xforwarded --hostname-strict=false --hostname-strict-https=false
     env:
       KC_BOOTSTRAP_ADMIN_USERNAME: "{{ keycloak_admin_user }}"
       KC_BOOTSTRAP_ADMIN_PASSWORD: "{{ keycloak_admin_password }}"
