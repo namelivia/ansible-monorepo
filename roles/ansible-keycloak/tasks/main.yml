@@ -37,8 +37,8 @@
       KC_BOOTSTRAP_ADMIN_USERNAME: "{{ keycloak_admin_user }}"
       KC_BOOTSTRAP_ADMIN_PASSWORD: "{{ keycloak_admin_password }}"
 
-# Restart keycloack
-- name: Restart keycloack
-  command: docker restart keycloack
-  register: restart_keycloack_result
-  changed_when: restart_keycloack_result.rc != 0
+# Restart keycloak
+- name: Restart keycloak
+  command: docker restart keycloak
+  register: restart_keycloak_result
+  changed_when: restart_keycloak_result.rc != 0
