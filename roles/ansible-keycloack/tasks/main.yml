@@ -5,61 +5,32 @@
       - application_name is defined
       - host_port is defined
       - docker_network_name is defined
-      - cloudwatch_region is defined
-      - cloudwatch_log_group is defined
-      - keycloack_config_path is defined
-      - keycloack_user is defined
-      - keycloack_group is defined
-      - loki_network_name is defined
+      - alloy_host is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
     name: "{{ docker_network_name }}"
 
-- name: Create the files directory
-  file:
-    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
-    state: directory
-    owner: ubuntu
-    group: ubuntu
-    mode: "0755"
-
-- name: Copy keycloack config folder
-  copy:
-    src: "{{ keycloack_config_path }}"
-    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files"
-    owner: "{{ keycloack_user }}"
-    group: "{{ keycloack_group }}"
-    mode: "0644"
-    directory_mode: "0775"
-
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "grafana/keycloack:v1.8.3"
+    image: "quay.io/keycloak/keycloak:26.2.4"
     restart_policy: "always"
     cleanup: true
     pull: true
     exposed_ports:
-      - 12345
-      - 51893
+      - 8080
     published_ports:
-      - "0.0.0.0:{{ host_port }}:12345"
-      - "0.0.0.0:51893:51893"
+      - "0.0.0.0:{{ host_port }}:8080"
     networks:
       - name: "{{ docker_network_name }}"
-      - name: "{{ loki_network_name }}"
-    volumes:
-      - "{{ hostvars[inventory_hostname].working_directory }}keycloack/files/keycloack_config:/etc/keycloack"
-    log_driver: "awslogs"
+    log_driver: "syslog"
     log_options:
-      awslogs-region: "{{ cloudwatch_region }}"
-      awslogs-group: "{{ cloudwatch_log_group }}"
-      awslogs-stream: "{{ application_name }}-{{ inventory_hostname }}"
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-app"
+      syslog-format: "rfc5424"
     command: >-
-      run --server.http.listen-addr=0.0.0.0:12345
-          --storage.path=/var/lib/keycloack/data
-          /etc/keycloack/config.keycloack
+      start-dev
 
 # Restart keycloack
 - name: Restart keycloack
