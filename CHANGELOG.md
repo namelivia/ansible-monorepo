@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.253.0] - 2025-05-17
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1908 to 0.22.1913
+ - Upgrade library/nextcloud from 31.0.4 to 31.0.5
+ - Upgrade prom/prometheus from 3.3.1 to 3.4.0
+ - Upgrade library/ghost from 5.119.3 to 5.120.0
+
 ## [2.252.0] - 2025-05-16
 
 ### Changed
