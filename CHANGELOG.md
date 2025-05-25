@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.255.0] - 2025-05-25
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1917 to 0.22.1947
+ - Upgrade fireflyiii/core from 6.2.11 to 6.2.15
+ - Upgrade linuxserver/radarr from 5.24.0 to 5.24.1
+ - Upgrade pomerium/pomerium from 0.29.3 to 0.29.4
+ - Upgrade grafana/grafana from 11.6.1 to 12.0.1
+ - Upgrade ghcr.io/immich-app/immich-server from 1.132.3 to 1.133.1
+ - Upgrade ghcr.io/immich-app/immich-machine-learning from 1.132.3 to 1.133.1
+ - Upgrade grafana/loki from 3.5.0 to 3.5.1
+ - Upgrade library/ghost from 5.120.0 to 5.120.2
+
 ## [2.254.0] - 2025-05-18
 
 ### Changed
