@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Upgrade prom/prometheus from 3.4.0 to 3.4.1
  - Upgrade ghcr.io/immich-app/postgres from 0.3.0 to 0.4.2
  - Upgrade library/ghost from 5.120.3 to 5.121.0
+ - Upgrade namelivia/plants-client from 0.0.7 to 0.0.8
 
 ## [2.256.1] - 2025-05-28
 ### Changed
