@@ -30,7 +30,7 @@
 - name: Create database container
   community.docker.docker_container:
     name: "{{ application_name }}-database"
-    image: "ghcr.io/immich-app/postgres:14-vectorchord0.3.0-pgvectors0.2.0"
+    image: "ghcr.io/immich-app/postgres:14-vectorchord0.4.2-pgvectors0.2.0"
     restart_policy: "always"
     cleanup: true
     exposed_ports:
