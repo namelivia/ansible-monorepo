@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.257.0] - 2025-05-31
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1960 to 0.22.1974
+ - Upgrade deluan/navidrome from 0.55.2 to 0.56.1
+ - Upgrade prom/prometheus from 3.4.0 to 3.4.1
+ - Upgrade ghcr.io/immich-app/postgres from 0.3.0 to 0.4.2
+ - Upgrade library/ghost from 5.120.3 to 5.121.0
+
 ## [2.256.1] - 2025-05-28
 ### Changed
 
