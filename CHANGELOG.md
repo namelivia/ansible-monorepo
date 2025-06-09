@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.263.0] - 2025-06-09
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.1984 to 0.22.2002
+ - Upgrade linuxserver/radarr from 5.26.1 to 5.26.2
+ - Upgrade grafana/alloy from 1.9.0 to 1.9.1
+ - Upgrade linuxserver/lidarr from 2.11.2 to 2.12.4
+
 ## [2.262.0] - 2025-06-03
 
 ### Changed
