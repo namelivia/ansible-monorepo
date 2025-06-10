@@ -12,6 +12,7 @@
       - alloy_group is defined
       - loki_network_name is defined
       - postgres_network_name is defined
+      - prometheus_network_name is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -51,6 +52,7 @@
       - name: "{{ docker_network_name }}"
       - name: "{{ loki_network_name }}"
       - name: "{{ postgres_network_name }}"
+      - name: "{{ prometheus_network_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}alloy/files/alloy_config:/etc/alloy"
     log_driver: "awslogs"
