@@ -45,6 +45,11 @@
     image: "quay.io/prometheuscommunity/postgres-exporter:latest"
     restart_policy: "always"
     cleanup: true
+    log_driver: "syslog"
+    log_options:
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "postgres-database"
+      syslog-format: "rfc5424"
     exposed_ports:
       - "9187"
     env:
