@@ -6,6 +6,7 @@
       - alloy_host is defined
       - postgres_username is defined
       - docker_network_name is defined
+      - prometheus_network_name is defined
       - postgres_password is defined
       - postgres_version is defined
 
@@ -58,6 +59,7 @@
       DATA_SOURCE_URI: "postgres-database:5432/postgres?sslmode=disable"
     networks:
       - name: "{{ docker_network_name }}"
+      - name: "{{ prometheus_network_name }}"
 
 - name: Setup restic backups
   include_role:
