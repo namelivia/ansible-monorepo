@@ -114,6 +114,7 @@
       syslog-format: "rfc5424"
     exposed_ports:
       - "4000"
+    user: "{{ uid }}:{{ gid }}"
     networks:
       - name: "{{ docker_network_name }}"
       - name: "{{ database_network_name }}"
