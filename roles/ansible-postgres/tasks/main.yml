@@ -6,7 +6,6 @@
       - alloy_host is defined
       - postgres_username is defined
       - docker_network_name is defined
-      - prometheus_network_name is defined
       - postgres_password is defined
       - postgres_version is defined
 
@@ -39,27 +38,6 @@
     env:
       POSTGRES_USER: "{{ postgres_username }}"
       POSTGRES_PASSWORD: "{{ postgres_password }}"
-
-- name: Create prometheus exporter container
-  community.docker.docker_container:
-    name: "postgres-exporter"
-    image: "quay.io/prometheuscommunity/postgres-exporter:latest"
-    restart_policy: "always"
-    cleanup: true
-    log_driver: "syslog"
-    log_options:
-      syslog-address: "tcp://{{ alloy_host }}:51893"
-      tag: "postgres-database"
-      syslog-format: "rfc5424"
-    exposed_ports:
-      - "9187"
-    env:
-      DATA_SOURCE_USER: "{{ postgres_username }}"
-      DATA_SOURCE_PASS: "{{ postgres_password }}"
-      DATA_SOURCE_URI: "postgres-database:5432/postgres?sslmode=disable"
-    networks:
-      - name: "{{ docker_network_name }}"
-      - name: "{{ prometheus_network_name }}"
 
 - name: Setup restic backups
   include_role:
