@@ -36,7 +36,7 @@
       - "4533"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/data"
-      - "{{ music_folder}}:/music:ro"
+      - "{{ music_folder }}:/music:ro"
     env:
       ND_SCANSCHEDULE: 1h
       ND_LOGLEVEL: info
