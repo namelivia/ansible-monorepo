@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.264.0] - 2025-06-11
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.2002 to 0.22.2008
+ - Upgrade ghcr.io/immich-app/postgres from 0.3.0 to 0.4.2
+ - Upgrade library/ghost from 5.121.0 to 5.123.0
+
 ## [2.263.4] - 2025-06-10
 
 ### Fixed
