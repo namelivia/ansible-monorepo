@@ -1,0 +1,3 @@
+---
+application_name: keycloak
+docker_network_name: keycloak_network

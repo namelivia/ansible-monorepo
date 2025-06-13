@@ -1,0 +1,44 @@
+---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - application_name is defined
+      - host_port is defined
+      - docker_network_name is defined
+      - alloy_host is defined
+      - keycloak_admin_user is defined
+      - keycloak_admin_password is defined
+
+- name: Create the dockernetwork
+  community.docker.docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: Create app container
+  community.docker.docker_container:
+    name: "{{ application_name }}"
+    image: "quay.io/keycloak/keycloak:26.2.4"
+    restart_policy: "always"
+    cleanup: true
+    pull: true
+    exposed_ports:
+      - 8080
+    published_ports:
+      - "0.0.0.0:{{ host_port }}:8080"
+    networks:
+      - name: "{{ docker_network_name }}"
+    log_driver: "syslog"
+    log_options:
+      syslog-address: "tcp://{{ alloy_host }}:51893"
+      tag: "{{ application_name }}-app"
+      syslog-format: "rfc5424"
+    command: >-
+      start-dev --proxy-headers=xforwarded --hostname-strict=false
+    env:
+      KC_BOOTSTRAP_ADMIN_USERNAME: "{{ keycloak_admin_user }}"
+      KC_BOOTSTRAP_ADMIN_PASSWORD: "{{ keycloak_admin_password }}"
+
+# Restart keycloak
+- name: Restart keycloak
+  command: docker restart keycloak
+  register: restart_keycloak_result
+  changed_when: restart_keycloak_result.rc != 0
