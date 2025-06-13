@@ -18,7 +18,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/retroachievements-apprise:latest"
+    image: "namelivia/retroachievements-apprise:1.0.0"
     pull: true
     cleanup: true
     memory: "200MB"
