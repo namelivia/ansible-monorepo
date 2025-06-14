@@ -37,7 +37,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/itemtree-server:latest"
+    image: "namelivia/itemtree-server:0.0.3"
     memory: "200MB"
     cleanup: true
     pull: true
