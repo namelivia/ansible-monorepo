@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.274.0] - 2025-06-19
+
+### Changed
+
+ - Upgrade ghcr.io/immich-app/immich-server from 1.134.0 to 1.135.0
+ - Upgrade ghcr.io/immich-app/immich-machine-learning from 1.134.0 to 1.135.0
+
 ## [2.273.0] - 2025-06-18
 
 ### Changed
