@@ -18,7 +18,7 @@
     name: "{{ application_name }}"
     pull: true
     cleanup: true
-    image: "namelivia/plants-client:0.0.13"
+    image: "namelivia/plants-client:0.0.14"
     memory: "10MB"
     restart_policy: "always"
     log_driver: "syslog"
