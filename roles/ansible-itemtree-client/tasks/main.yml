@@ -17,7 +17,7 @@
     name: "{{ application_name }}"
     pull: true
     cleanup: true
-    image: "namelivia/itemtree-client:1.0.0"
+    image: "namelivia/itemtree-client:1.0.1"
     memory: "10MB"
     restart_policy: "always"
     log_driver: "syslog"
