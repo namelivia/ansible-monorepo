@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.286.0] - 2025-07-07
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.2107 to 0.22.2125
+ - Upgrade library/redis from 8.0.1 to 8.0.3
+ - Upgrade slskd/slskd from 0.22.5 to 0.23.1
+ - Upgrade library/ghost from 5.128.1 to 5.129.0
+
 ## [2.285.1] - 2025-07-05
 
 ### Changed
