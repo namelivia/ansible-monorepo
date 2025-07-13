@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.289.0] - 2025-07-13
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.2140 to 0.22.2153
+ - Upgrade library/nextcloud from 31.0.6 to 31.0.7
+ - Upgrade pomerium/pomerium from 0.30.0 to 0.30.2
+ - Upgrade grafana/loki from 3.5.1 to 3.5.2
+ - Upgrade library/ghost from 5.129.1 to 5.129.2
+
 ## [2.288.0] - 2025-07-10
 
 ### Changed
