@@ -25,7 +25,7 @@
 - name: Create pomerium
   community.docker.docker_container:
     name: "pomerium"
-    image: "pomerium/pomerium:v0.30.0"
+    image: "pomerium/pomerium:v0.30.2"
     restart_policy: "always"
     cleanup: true
     ports:
