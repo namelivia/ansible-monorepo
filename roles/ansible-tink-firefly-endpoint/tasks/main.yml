@@ -31,7 +31,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/tink-firefly-endpoint:1.0.3"
+    image: "namelivia/tink-firefly-endpoint:1.0.4"
     memory: "200MB"
     pull: true
     restart_policy: "always"
