@@ -61,7 +61,7 @@
       TINK_CLIENT_SECRET: "{{ tink_client_secret }}"
       TINK_CALLBACK_URI: "{{ tink_callback_uri }}"
       CSV_PATH: "{{ csv_path }}"
-      CONFIG_PATH: "/config/config.yaml"
+      CONFIG_PATH: "/config"
       NOTIFICATIONS_SERVICE_ENDPOINT: "{{ notifications_service_endpoint }}"
       FIREFLY_PERSONAL_ACCESS_TOKEN: "{{ firefly_personal_access_token }}"
       FIREFLY_URL: "{{ firefly_url }}"
