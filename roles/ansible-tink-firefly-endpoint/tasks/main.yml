@@ -10,6 +10,7 @@
       - tink_client_secret is defined
       - tink_callback_uri is defined
       - csv_path is defined
+      - tink_firefly_endpoint_config_path is defined
       - notifications_service_endpoint is defined
       - firefly_personal_access_token is defined
       - app_url is defined
@@ -22,6 +23,12 @@
     state: directory
     mode: "0700"
 
+- name: Copy configuration file
+  copy:
+    src: "{{ tink_firefly_endpoint_config_path }}"
+    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.yaml"
+    mode: "0644"
+
 - name: Create the csv directory
   file:
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/csv"
@@ -31,7 +38,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/tink-firefly-endpoint:1.1.0"
+    image: "namelivia/tink-firefly-endpoint:1.1.1"
     memory: "200MB"
     pull: true
     restart_policy: "always"
@@ -42,6 +49,7 @@
       tag: "{{ application_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/csv:/csv"
+      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/config.yaml:/config/config.yaml:ro"
     networks:
       - name: "firefly_network"
     exposed_ports:
@@ -53,6 +61,7 @@
       TINK_CLIENT_SECRET: "{{ tink_client_secret }}"
       TINK_CALLBACK_URI: "{{ tink_callback_uri }}"
       CSV_PATH: "{{ csv_path }}"
+      CONFIG_PATH: "/config/config.yaml"
       NOTIFICATIONS_SERVICE_ENDPOINT: "{{ notifications_service_endpoint }}"
       FIREFLY_PERSONAL_ACCESS_TOKEN: "{{ firefly_personal_access_token }}"
       FIREFLY_URL: "{{ firefly_url }}"
