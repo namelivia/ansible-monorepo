@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.305.0] - 2025-08-05
+
+### Changed
+
+ - Upgrade caronc/apprise from 1.2.0 to 1.2.1
+ - Upgrade linuxserver/jackett from 0.22.2225 to 0.22.2231
+ - Upgrade library/redis from 8.0.3 to 8.2.0
+
 ## [2.304.0] - 2025-08-04
 
 ### Changed
