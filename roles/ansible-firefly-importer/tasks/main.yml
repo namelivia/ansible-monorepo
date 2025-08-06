@@ -11,6 +11,14 @@
       - user is defined
       - group is defined
 
+- name: Install redis-cli
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  loop:
+    - 'redis-tools'
+
 - name: Create the importer directory
   file:
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}"
