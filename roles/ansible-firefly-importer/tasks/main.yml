@@ -19,6 +19,41 @@
   loop:
     - 'redis-tools'
 
+- name: Create the Redis listener script
+  ansible.builtin.copy:
+    content: |
+      #!/bin/bash
+      redis-cli -h localhost -p 6379 SUBSCRIBE imports
+    dest: /usr/local/bin/redis-imports-listener.sh
+    mode: '0755'
+
+- name: Create the systemd service file
+  ansible.builtin.copy:
+    content: |
+      [Unit]
+      Description=Redis "imports" Channel Listener
+      After=network.target
+
+      [Service]
+      ExecStart=/usr/local/bin/redis-imports-listener.sh
+      Restart=always
+      User=root
+
+      [Install]
+      WantedBy=multi-user.target
+    dest: /etc/systemd/system/redis-imports-listener.service
+    mode: '0644'
+
+- name: Reload systemd to pick up the new service
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: Enable and start the Redis listener service
+  ansible.builtin.systemd:
+    name: redis-imports-listener.service
+    enabled: true
+    state: started
+
 - name: Create the importer directory
   file:
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}"
