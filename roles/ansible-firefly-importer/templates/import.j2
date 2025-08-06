@@ -38,6 +38,7 @@ process_import_message() {
   # Use `jq` to parse the JSON payload
   output_path=$(echo "$payload" | jq -r '.output_path')
   balance=$(echo "$payload" | jq -r '.balance')
+  account_id=$(echo "$payload" | jq -r '.account_id')
 
   log_message "Received message from 'imports' channel:" "  Output Path: $output_path" "  Balance: $balance"
   
@@ -50,7 +51,7 @@ process_import_message() {
     handle_import_success
   fi
 
-  local DIFFERENCE=$(run_firefly_checker)
+  local DIFFERENCE=$(run_firefly_checker "$account_id" "$balance")
   send_notification "The difference after importing is: $DIFFERENCE"
 
 }
@@ -76,11 +77,13 @@ run_firefly_importer() {
 
 # Runs the Docker command for the Firefly III checker.
 run_firefly_checker() {
+  local account_id_arg="$1"
+  local balance_arg="$2"
   log_message "Checking results..."
   docker run --rm --network="$DOCKER_NETWORK_NAME" \
     -e FIREFLY_III_ACCESS_TOKEN="$FIREFLY_III_ACCESS_TOKEN" \
     -e FIREFLY_III_URL="$FIREFLY_III_URL" \
-    tink-firefly-check
+    tink-firefly-check "$account_id_arg" "$balance_arg"
 }
 
 # ---
