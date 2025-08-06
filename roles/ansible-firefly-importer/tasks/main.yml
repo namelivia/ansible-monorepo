@@ -20,7 +20,7 @@
     - 'redis-tools'
 
 - name: Create the Redis listener script
-  ansible.builtin.copy:
+  template:
     src: import.j2
     dest: /usr/local/bin/redis-imports-listener.sh
     mode: '0755'
