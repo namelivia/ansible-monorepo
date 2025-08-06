@@ -1,48 +1,123 @@
 #!/bin/bash
 
+# Configuration variables
 IMPORT_FILES_DIR="{{ import_files_dir }}"
 ERRORED_FILES_DIR="{{ hostvars[inventory_hostname]['working_directory'] }}{{ application_name }}/error"
+DOCKER_NETWORK_NAME="{{ docker_network_name }}"
+USER_GROUP="{{ user }}:{{ group }}"
+APPLICATION_NAME="{{ application_name }}"
+ALLOY_HOST="{{ alloy_host }}"
+FIREFLY_III_ACCESS_TOKEN="{{ firefly_3_access_token }}"
+FIREFLY_III_URL="{{ firefly_3_url }}"
+NOTIFICATIONS_ENDPOINT="{{ notifications_endpoint }}"
 
-redis-cli -h localhost -p 6379 --raw SUBSCRIBE imports | while read -r line; do
-  if [[ "$line" == "message" ]]; then
-    read -r channel
-    read -r payload
+# ---
 
-    if [[ "$channel" == "imports" ]]; then
-      output_path=$(echo "$payload" | jq -r '.output_path')
-      balance=$(echo "$payload" | jq -r '.balance')
-        
-      echo "Received message from 'imports' channel:"
-      echo "  Output Path: $output_path"
-      echo "  Balance: $balance"
+## Core Functions
 
-      echo "Running a command with the data..."
-      docker run --rm --network="{{ docker_network_name }}" \
-        --user "{{ user }}:{{ group }}" \
-        --name="firefly-importer" \
-        --log-driver=syslog \
-        --log-opt syslog-address="tcp://{{ alloy_host }}:51893" \
-        --log-opt tag="{{ application_name }}" \
-        --log-opt syslog-format="rfc5424" \
-        -v "$IMPORT_FILES_DIR:/import" \
-        -e FIREFLY_III_ACCESS_TOKEN={{ firefly_3_access_token }} \
-        -e IMPORT_DIR_ALLOWLIST=/import \
-        -e FIREFLY_III_URL={{ firefly_3_url }} \
-        -e LOG_LEVEL=info \
-        fireflyiii/data-importer:latest-cli
-
-      RESULT=$?
-
-      if [ $RESULT -ne 0 ]; then
-        mv "$IMPORT_FILES_DIR"/*.csv "$ERRORED_FILES_DIR" 2>/dev/null
-        mv "$IMPORT_FILES_DIR"/*.json "$ERRORED_FILES_DIR" 2>/dev/null
-        curl -X POST -d "{\"body\":\"Firefly import failed\"}" -H "Content-Type: application/json" {{ notifications_endpoint }}
-      else
-        CSV_COUNT=$(ls -1 "$IMPORT_FILES_DIR"/*.csv 2>/dev/null | wc -l)
-        curl -X POST -d "{\"body\":\"$CSV_COUNT firefly files imported\"}" -H "Content-Type: application/json" {{ notifications_endpoint }}
-        rm "$IMPORT_FILES_DIR"/*.csv "$IMPORT_FILES_DIR"/*.json 2>/dev/null
+# Subscribes to the Redis channel and processes messages.
+# This function is the main loop of the script.
+handle_redis_messages() {
+  redis-cli -h localhost -p 6379 --raw SUBSCRIBE imports | while read -r line; do
+    if [[ "$line" == "message" ]]; then
+      read -r channel
+      read -r payload
+      if [[ "$channel" == "imports" ]]; then
+        process_import_message "$payload"
       fi
     fi
-  fi
-done
+  done
+}
 
+# Processes a single import message from Redis.
+process_import_message() {
+  local payload="$1"
+  local output_path
+  local balance
+
+  # Use `jq` to parse the JSON payload
+  output_path=$(echo "$payload" | jq -r '.output_path')
+  balance=$(echo "$payload" | jq -r '.balance')
+
+  log_message "Received message from 'imports' channel:" "  Output Path: $output_path" "  Balance: $balance"
+  
+  run_firefly_importer
+  local result=$?
+
+  if [ $result -ne 0 ]; then
+    handle_import_failure
+  else
+    handle_import_success
+  fi
+}
+
+# Runs the Docker command for the Firefly III data importer.
+run_firefly_importer() {
+  log_message "Running a command with the data..."
+  docker run --rm --network="$DOCKER_NETWORK_NAME" \
+    --user "$USER_GROUP" \
+    --name="firefly-importer" \
+    --log-driver=syslog \
+    --log-opt syslog-address="tcp://$ALLOY_HOST:51893" \
+    --log-opt tag="$APPLICATION_NAME" \
+    --log-opt syslog-format="rfc5424" \
+    -v "$IMPORT_FILES_DIR:/import" \
+    -e FIREFLY_III_ACCESS_TOKEN="$FIREFLY_III_ACCESS_TOKEN" \
+    -e IMPORT_DIR_ALLOWLIST=/import \
+    -e FIREFLY_III_URL="$FIREFLY_III_URL" \
+    -e LOG_LEVEL=info \
+    fireflyiii/data-importer:latest-cli
+  return $?
+}
+
+# ---
+
+## Helper Functions
+
+# Handles the post-import cleanup and notification on success.
+handle_import_success() {
+  local csv_count
+  csv_count=$(ls -1 "$IMPORT_FILES_DIR"/*.csv 2>/dev/null | wc -l)
+  send_notification "$csv_count firefly files imported"
+  cleanup_files
+}
+
+# Handles error cleanup and notification on failure.
+handle_import_failure() {
+  send_notification "Firefly import failed"
+  move_errored_files
+}
+
+# Sends a notification using `curl`.
+send_notification() {
+  local message="$1"
+  curl -X POST -d "{\"body\":\"$message\"}" -H "Content-Type: application/json" "$NOTIFICATIONS_ENDPOINT"
+}
+
+# Moves errored files to the error directory.
+move_errored_files() {
+  mv "$IMPORT_FILES_DIR"/*.csv "$ERRORED_FILES_DIR" 2>/dev/null
+  mv "$IMPORT_FILES_DIR"/*.json "$ERRORED_FILES_DIR" 2>/dev/null
+}
+
+# Removes successfully imported files.
+cleanup_files() {
+  rm "$IMPORT_FILES_DIR"/*.csv "$IMPORT_FILES_DIR"/*.json 2>/dev/null
+}
+
+# A simple logging function for better output.
+log_message() {
+  echo "$@"
+}
+
+# ---
+
+# Main execution entry point.
+# Starts the subscription loop.
+main() {
+  log_message "Starting Firefly Importer service..."
+  handle_redis_messages
+}
+
+# Call the main function to start the script.
+main
