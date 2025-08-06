@@ -1,24 +1,32 @@
 #!/bin/bash
 IMPORT_FILES_DIR="{{ import_files_dir }}"
 ERRORED_FILES_DIR="{{ hostvars[inventory_hostname]['working_directory'] }}{{ application_name }}/error"
+redis-cli -h localhost -p 6379 --raw SUBSCRIBE imports | while read -r channel message; do
+  
+  if [[ "$channel" == "message" && "$message" == "imports" ]]; then
+    read -r payload
 
-# If the dir is empty, exit
-if [ -z "$(ls -A $IMPORT_FILES_DIR)" ]; then
+    output_path=$(echo "$payload" | jq -r '.output_path')
+    balance=$(echo "$payload" | jq -r '.balance')
+      
+    echo "Received message from 'imports' channel:"
+    echo "  Output Path: $output_path"
+    echo "  Balance: $balance"
+
+    echo "Running a command with the data..."
+    docker run --rm --network="{{ docker_network_name }}" --user "{{ user }}:{{ group }}" --name="firefly-importer" --log-driver=syslog --log-opt syslog-address="tcp://{{ alloy_host }}:51893" --log-opt tag="{{ application_name }}" --log-opt syslog-format="rfc5424" -v "$IMPORT_FILES_DIR:/import" -e FIREFLY_III_ACCESS_TOKEN={{ firefly_3_access_token }} -e IMPORT_DIR_ALLOWLIST=/import -e FIREFLY_III_URL={{ firefly_3_url }} -e LOG_LEVEL=info fireflyiii/data-importer:latest-cli
+    RESULT=$?
+
+    if [ $RESULT -ne 0 ]; then
+        mv $IMPORT_FILES_DIR/*.csv $ERRORED_FILES_DIR
+        mv $IMPORT_FILES_DIR/*.json $ERRORED_FILES_DIR
+        curl -X POST -d "{\"body\":\"Firefly import failed\"}" -H "Content-Type: application/json" {{ notifications_endpoint }}
+        exit 1
+    fi
+
+    CSV_COUNT=$(ls -1 $IMPORT_FILES_DIR/*.csv 2>/dev/null | wc -l)
+    curl -X POST -d "{\"body\":\"$CSV_COUNT firefly files imported\"}" -H "Content-Type: application/json" {{ notifications_endpoint }}
+    rm $IMPORT_FILES_DIR/*.csv $IMPORT_FILES_DIR/*.json
     exit 0
-fi
-
-docker run --rm --network="{{ docker_network_name }}" --user "{{ user }}:{{ group }}" --name="firefly-importer" --log-driver=syslog --log-opt syslog-address="tcp://{{ alloy_host }}:51893" --log-opt tag="{{ application_name }}" --log-opt syslog-format="rfc5424" -v "$IMPORT_FILES_DIR:/import" -e FIREFLY_III_ACCESS_TOKEN={{ firefly_3_access_token }} -e IMPORT_DIR_ALLOWLIST=/import -e FIREFLY_III_URL={{ firefly_3_url }} -e LOG_LEVEL=info fireflyiii/data-importer:latest-cli
-
-RESULT=$?
-
-if [ $RESULT -ne 0 ]; then
-    mv $IMPORT_FILES_DIR/*.csv $ERRORED_FILES_DIR
-    mv $IMPORT_FILES_DIR/*.json $ERRORED_FILES_DIR
-    curl -X POST -d "{\"body\":\"Firefly import failed\"}" -H "Content-Type: application/json" {{ notifications_endpoint }}
-    exit 1
-fi
-
-CSV_COUNT=$(ls -1 $IMPORT_FILES_DIR/*.csv 2>/dev/null | wc -l)
-curl -X POST -d "{\"body\":\"$CSV_COUNT firefly files imported\"}" -H "Content-Type: application/json" {{ notifications_endpoint }}
-rm $IMPORT_FILES_DIR/*.csv $IMPORT_FILES_DIR/*.json
-exit 0
+  fi
+done

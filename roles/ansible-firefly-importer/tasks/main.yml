@@ -21,9 +21,7 @@
 
 - name: Create the Redis listener script
   ansible.builtin.copy:
-    content: |
-      #!/bin/bash
-      redis-cli -h localhost -p 6379 SUBSCRIBE imports
+    src: import.j2
     dest: /usr/local/bin/redis-imports-listener.sh
     mode: '0755'
 
@@ -65,18 +63,3 @@
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/error"
     state: directory
     mode: "0755"
-
-- name: Create the import script
-  template:
-    src: import.j2
-    dest: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/import"
-    owner: root
-    group: root
-    mode: "0755"
-
-- name: Run every 5 minutes
-  cron:
-    name: "Check for pending imports every 5 minutes"
-    minute: "*/5"
-    job: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/import"
-    user: root
