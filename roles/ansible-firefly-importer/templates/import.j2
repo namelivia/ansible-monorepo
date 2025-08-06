@@ -49,6 +49,10 @@ process_import_message() {
   else
     handle_import_success
   fi
+
+  local DIFFERENCE=$(run_firefly_checker)
+  send_notification "The difference after importing is: $DIFFERENCE"
+
 }
 
 # Runs the Docker command for the Firefly III data importer.
@@ -68,6 +72,15 @@ run_firefly_importer() {
     -e LOG_LEVEL=info \
     fireflyiii/data-importer:latest-cli
   return $?
+}
+
+# Runs the Docker command for the Firefly III checker.
+run_firefly_checker() {
+  log_message "Checking results..."
+  docker run --rm --network="$DOCKER_NETWORK_NAME" \
+    -e FIREFLY_III_ACCESS_TOKEN="$FIREFLY_III_ACCESS_TOKEN" \
+    -e FIREFLY_III_URL="$FIREFLY_III_URL" \
+    tink-firefly-check
 }
 
 # ---
