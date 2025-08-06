@@ -79,7 +79,6 @@ run_firefly_importer() {
 run_firefly_checker() {
   local account_id_arg="$1"
   local balance_arg="$2"
-  log_message "Checking results..."
   docker run --rm --network="$DOCKER_NETWORK_NAME" \
     -e FIREFLY_III_ACCESS_TOKEN="$FIREFLY_III_ACCESS_TOKEN" \
     -e FIREFLY_III_URL="$FIREFLY_III_URL" \
