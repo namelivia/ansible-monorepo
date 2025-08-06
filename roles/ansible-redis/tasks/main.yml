@@ -19,6 +19,8 @@
     memory: "100MB"
     exposed_ports:
       - "6379"
+    published_ports:
+      - "6379:6379"
     networks:
       - name: "{{ docker_network_name }}"
     log_driver: "syslog"
