@@ -51,6 +51,7 @@
       DATA_DIR: /data
       NEXTAUTH_SECRET: "(( nextauth_secret }}"
       NEXTAUTH_URL: "http://localhost:3000"
+      MEILI_MASTER_KEY: "{{ meili_master_key }}"
 
 - name: Create chrome container
   community.docker.docker_container:
