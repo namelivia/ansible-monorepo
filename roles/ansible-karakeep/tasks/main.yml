@@ -6,7 +6,6 @@
       - docker_network_name is defined
       - host_port is defined
       - alloy_host is defined
-      - nextauth_url is defined
       - nextauth_secret is defined
       - meili_master_key is defined
       - user is defined
@@ -51,7 +50,7 @@
       BROWSER_WEB_URL: http://karakeep-chrome:9222
       DATA_DIR: /data
       NEXTAUTH_SECRET: "(( nextauth_secret }}"
-      NEXTAUTH_URL: "{{ nextauth_url }}"
+      NEXTAUTH_URL: "http://localhost:3000"
 
 - name: Create chrome container
   community.docker.docker_container:
