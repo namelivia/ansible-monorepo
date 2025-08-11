@@ -9,6 +9,8 @@
       - nextauth_url is defined
       - nextauth_secret is defined
       - meili_master_key is defined
+      - user is defined
+      - group is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -23,7 +25,7 @@
     path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
     state: directory
     mode: "0755"
-    owner: "{{ owner }}"
+    owner: "{{ user }}"
     group: "{{ group }}"
 
 - name: Create web container
