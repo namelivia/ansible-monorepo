@@ -10,6 +10,7 @@
       - meili_master_key is defined
       - user is defined
       - group is defined
+      - karakeep_openrouter_key is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -52,6 +53,8 @@
       NEXTAUTH_SECRET: "(( nextauth_secret }}"
       NEXTAUTH_URL: "http://localhost:3000"
       MEILI_MASTER_KEY: "{{ meili_master_key }}"
+      OPENAI_BASE_URL: "https://openrouter.ai/api/v1"
+      OPENAI_API_KEY=: "{{ karakeep_openrouter_key }}"
 
 - name: Create chrome container
   community.docker.docker_container:
