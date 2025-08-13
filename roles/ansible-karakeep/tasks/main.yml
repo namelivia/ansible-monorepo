@@ -83,7 +83,7 @@
 - name: Create meilisearch container
   community.docker.docker_container:
     name: "{{ application_name }}-meilisearch"
-    image: "getmeili/meilisearch:v1.13.3"
+    image: "getmeili/meilisearch:v1.13.3"  # ignore-updates
     pull: true
     cleanup: true
     log_driver: "syslog"
