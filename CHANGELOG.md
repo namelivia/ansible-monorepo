@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.313.0] - 2025-08-13
+
+### Changed
+
+ - Upgrade getmeili/meilisearch from 1.13.3 to 1.17.1
+ - Upgrade linuxserver/jackett from 0.22.2238 to 0.22.2282
+ - Upgrade slskd/slskd from 0.23.1 to 0.23.2
+ - Upgrade library/ghost from 6.0.0 to 6.0.2
+
 ## [2.312.3] - 2025-08-12
 
 ### Fixed
