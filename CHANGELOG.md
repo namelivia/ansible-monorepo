@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.313.0] - 2025-08-17
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.2238 to 0.22.2301
+ - Upgrade fireflyiii/core from 6.2.21 to 6.3.0
+ - Upgrade library/nextcloud from 31.0.7 to 31.0.8
+ - Upgrade grafana/grafana from 12.2.0-16818804881 to 12.2.0-16979757807
+ - Upgrade ghcr.io/immich-app/immich-server from 1.137.3 to 1.138.0
+ - Upgrade ghcr.io/immich-app/immich-machine-learning from 1.137.3 to 1.138.0
+ - Upgrade slskd/slskd from 0.23.1 to 0.23.2
+ - Upgrade library/ghost from 6.0.0 to 6.0.4
+
 ## [2.312.3] - 2025-08-12
 
 ### Fixed
