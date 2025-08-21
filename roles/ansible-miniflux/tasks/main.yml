@@ -29,7 +29,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "miniflux/miniflux:2.2.11"
+    image: "miniflux/miniflux:2.2.12"
     memory: "200MB"
     pull: true
     restart_policy: "always"
