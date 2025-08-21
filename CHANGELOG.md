@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.316.0] - 2025-08-21
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.2311 to 0.22.2319
+ - Upgrade grafana/alloy from 1.10.1 to 1.10.2
+ - Upgrade pomerium/pomerium from 0.30.3 to 0.30.5
+ - Upgrade grafana/grafana from 12.2.0-17055924271 to 12.2.0-17084981832
+ - Upgrade miniflux/miniflux from 2.2.11 to 2.2.12
+
 ## [2.315.0] - 2025-08-19
 
 ### Changed
