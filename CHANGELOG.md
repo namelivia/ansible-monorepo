@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.320.0] - 2025-08-27
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.22.2349 to 0.22.2353
+ - Upgrade grafana/grafana from 12.2.0-17195718647 to 12.2.0-17253726931
+
 ## [2.319.0] - 2025-08-26
 
 ### Changed
