@@ -25,7 +25,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "namelivia/journaling-service:1.0.0"
+    image: "namelivia/journaling-service:1.0.1"
     memory: "200MB"
     pull: true
     cleanup: true
