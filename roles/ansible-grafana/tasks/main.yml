@@ -68,7 +68,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "grafana/grafana:12.2.0-17535958692-ubuntu"
+    image: "grafana/grafana:12.2.0-17599138309-ubuntu"
     restart_policy: "always"
     cleanup: true
     pull: true
