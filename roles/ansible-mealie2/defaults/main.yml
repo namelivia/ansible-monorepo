@@ -1,0 +1,4 @@
+---
+docker_network_name: mealie2_network
+application_name: mealie2
+log_level: INFO
