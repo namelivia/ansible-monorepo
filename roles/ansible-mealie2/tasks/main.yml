@@ -45,7 +45,7 @@
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app/data"
     exposed_ports: 9925
     published_ports:
-      - "0.0.0.0:9925:9000"
+      - "0.0.0.0:{{ host_port }}:9925"
     env:
       PUID: "{{ uid }}"
       PGID: "{{ gid }}"
