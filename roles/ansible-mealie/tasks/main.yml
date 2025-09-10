@@ -5,9 +5,11 @@
       - application_name is defined
       - docker_network_name is defined
       - alloy_host is defined
-      - jwt_auth_jwk_set_url is defined
       - log_level is defined
       - host_port is defined
+      - app_url is defined
+      - uid is defined
+      - gid is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -25,71 +27,31 @@
     state: directory
     mode: "0755"
 
-- name: Create frontend container
+- name: Create app container
   community.docker.docker_container:
-    name: "{{ application_name }}-frontend"
-    image: "namelivia/mealie:frontend-nightly"
+    name: "{{ application_name }}"
+    image: "ghcr.io/mealie-recipes/mealie:v3.1.2"
     restart_policy: "always"
     cleanup: true
     pull: true
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
-      tag: "{{ application_name }}-frontend"
+      tag: "{{ application_name }}"
       syslog-format: "rfc5424"
     networks:
       - name: "{{ docker_network_name }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app/data"
-    exposed_ports:
-      - "3000"
+    exposed_ports: 9000
     published_ports:
-      - "0.0.0.0:{{ host_port }}:3000"
+      - "0.0.0.0:{{ host_port }}:9000"
     env:
-      API_URL: "http://mealie-backend:9000"
-
-- name: Create backend container
-  community.docker.docker_container:
-    name: "{{ application_name }}-backend"
-    image: "namelivia/mealie:api-nightly"
-    restart_policy: "always"
-    cleanup: true
-    pull: true
-    log_driver: "syslog"
-    log_options:
-      syslog-address: "tcp://{{ alloy_host }}:51893"
-      tag: "{{ application_name }}-backend"
-      syslog-format: "rfc5424"
-    networks:
-      - name: "{{ docker_network_name }}"
-    volumes:
-      - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app/data"
-    exposed_ports:
-      - "9000"
-    env:
-      ALLOW_SIGNUP: "false"
-      JWT_AUTH_ENABLED: "true"
-      JWT_AUTH_HEADER_NAME: "X-Pomerium-Jwt-Assertion"
-      JWT_AUTH_EMAIL_CLAIM: "email"
-      JWT_AUTH_NAME_CLAIM: "name"
-      JWT_AUTH_USERNAME_CLAIM: "user"
-      JWT_AUTH_AUTO_SIGN_UP: "true"
-      JWT_AUTH_JWK_SET_URL: "{{ jwt_auth_jwk_set_url }}"
-      DB_ENGINE: "sqlite"
-      WORKERS_PER_CORE: "1"
-      MAX_WORKERS: "1"
-      WEB_CONCURRENCY: "1"
+      PUID: "{{ uid }}"
+      PGID: "{{ gid }}"
+      TZ: Europe/Madrid
+      BASE_URL: "{{ app_url }}"
       LOG_LEVEL: "{{ log_level }}"
-
-- name: Setup file backups
-  include_role:
-    name: ansible-backups
-    tasks_from: setup-file-backups
-
-- name: Setup S3 backups
-  include_role:
-    name: ansible-backups
-    tasks_from: setup-s3-backups
 
 - name: Setup restic backups
   include_role:
