@@ -16,7 +16,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "grafana/loki:3.5.4"
+    image: "grafana/loki:3.5.5"
     restart_policy: "always"
     cleanup: true
     pull: true
