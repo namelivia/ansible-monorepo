@@ -31,7 +31,7 @@
 - name: Create web container
   community.docker.docker_container:
     name: "{{ application_name }}-web"
-    image: "ghcr.io/karakeep-app/karakeep:0.27.0"
+    image: "ghcr.io/karakeep-app/karakeep:0.27.1"
     pull: true
     cleanup: true
     log_driver: "syslog"
