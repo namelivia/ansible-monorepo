@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.331.1] - 2025-09-17
+
+### Changed
+
+ - Upgrade alexta69/metube from to 2024-08-02 to 2025.09.06
+
+
 ## [2.331.0] - 2025-09-17
 
 ### Changed
