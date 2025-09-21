@@ -9,6 +9,7 @@
       - owner is defined
       - group is defined
       - slskd_network_name is defined
+      - lidarr_network_name is defined
       - slskd_downloads_folder is defined
 
 - name: Create the dockernetwork
@@ -33,6 +34,7 @@
     networks:
       - name: "{{ docker_network_name }}"
       - name: "{{ slskd_network_name }}"
+      - name: "{{ lidarr_network_name }}"
     user: "{{ owner }}:{{ group }}"
     volumes:
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/data"

@@ -5,12 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.332.2] - 2025-09-22
+
+### Chaged
+
+ - Add missing network
+
 ## [2.332.1] - 2025-09-22
 
 ### Chaged
 
  - Add music share folder to slskd
-
 
 ## [2.332.0] - 2025-09-20
 
