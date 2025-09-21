@@ -11,6 +11,7 @@
       - group is defined
       - slskd_incomplete_folder is defined
       - slskd_downloads_folder is defined
+      - music_share_folder is defined
 
 - name: Create the dockernetwork
   community.docker.docker_network:
@@ -40,6 +41,7 @@
       - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app"
       - "{{ slskd_incomplete_folder }}:/incomplete"
       - "{{ slskd_downloads_folder }}:/downloads"
+      - "{{ music_share_folder }}:/music"
     log_driver: "syslog"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
