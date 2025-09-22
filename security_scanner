@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Create a named Docker volume for the Trivy database cache if it doesn't exist.
+docker volume create trivy-cache-db || true
+
+# Define an output directory
+OUTPUT_DIR="trivy_reports"
+mkdir -p "$OUTPUT_DIR"
+
+# Loop through each image and scan it
+grep -R 'image:' **/**/tasks/main.yml | sort | uniq | while read -r line; do
+  image=$(echo "$line" | sed -n 's/.*image: "\(.*\)"/\1/p' | sed 's/ //g')
+
+  if [[ -n "$image" && ! "$line" =~ "# ignore-updates" ]]; then
+    echo "---------------------------------------------------"
+    echo "Scanning image: $image"
+    echo "---------------------------------------------------"
+
+    # Define the output file name based on the image name
+    output_file="$OUTPUT_DIR/$(echo "$image" | sed 's/[\/:]/-/g').json"
+
+    docker run --rm \
+      -v trivy-cache-db:/root/.cache/trivy \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      aquasec/trivy image \
+      --scanners vuln \
+      --format json \
+      --ignore-unfixed \
+      --severity=HIGH,CRITICAL \
+      "$image" > "$output_file"
+  fi
+done
+

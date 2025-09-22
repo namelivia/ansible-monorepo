@@ -1,0 +1,327 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-22T12:18:34.644903162Z",
+  "ArtifactName": "pomerium/pomerium:v0.30.6",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 172844544,
+    "OS": {
+      "Family": "debian",
+      "Name": "12.11"
+    },
+    "ImageID": "sha256:5dd6e0676bb6bc68cb1d79f71e5c8da2a392f40e5fe7026cfb2f51c7b5bab392",
+    "DiffIDs": [
+      "sha256:f464af4b9b251ebe8a7c2f186aff656f0892f6cb159837a6ce8fd63842e83e35",
+      "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba",
+      "sha256:48c0fb67386ed713921fcc0468be23231d0872fa67ccc8ea3929df4656b6ddfc",
+      "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
+      "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
+      "sha256:6f1cdceb6a3146f0ccb986521156bef8a422cdbb0863396f7f751f575ba308f4",
+      "sha256:bbb6cacb8c82e4da4e8143e03351e939eab5e21ce0ef333c42e637af86c5217b",
+      "sha256:2a92d6ac9e4fcc274d5168b217ca4458a9fec6f094ead68d99c77073f08caac1",
+      "sha256:1a73b54f556b477f0a8b939d13c504a3b4f4db71f7a09c63afbc10acb3de5849",
+      "sha256:f4aee9e53c42a22ed82451218c3ea03d1eea8d6ca8fbe8eb4e950304ba8a8bb3",
+      "sha256:bfe9137a1b044e8097cdfcb6899137a8a984ed70931ed1e8ef0cf7e023a139fc",
+      "sha256:d5a3e014161bb602d87c2312e371ad2ea6f800c7f7af261af4faa67302b53c88",
+      "sha256:0711ad304a055c3c5d8fa5a9dab4a1bc1463599b8618d4b8c045edce85c79ce5",
+      "sha256:2ec3c7f39a8ffa204e42efd0ea5aca52bb7c61bc43181365f840329356c1dca0",
+      "sha256:8eac944f2500a708a0932e565f8e57285ba741af2c9001d9e15d6ddd510dd696",
+      "sha256:8967db22fc3acc301db2566054ec937f798968fc4029894669d6be32b44d181a"
+    ],
+    "RepoTags": [
+      "pomerium/pomerium:v0.30.6"
+    ],
+    "RepoDigests": [
+      "pomerium/pomerium@sha256:d0ecca215c85df79e89a1c11adc389174d65cb072ac50c3e0dd730cd6744f4a8"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-09-11T14:11:56.583646368Z",
+      "history": [
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "2025-09-11T14:11:53.81995406Z",
+          "created_by": "ENV AUTOCERT_DIR=/data/autocert",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-11T14:11:53.81995406Z",
+          "created_by": "WORKDIR /pomerium",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-11T14:11:56.54621196Z",
+          "created_by": "COPY pomerium /bin/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-11T14:11:56.583646368Z",
+          "created_by": "COPY /config.yaml /pomerium/config.yaml # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-11T14:11:56.583646368Z",
+          "created_by": "ENTRYPOINT [\"/bin/pomerium\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-11T14:11:56.583646368Z",
+          "created_by": "CMD [\"-config\" \"/pomerium/config.yaml\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:f464af4b9b251ebe8a7c2f186aff656f0892f6cb159837a6ce8fd63842e83e35",
+          "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba",
+          "sha256:48c0fb67386ed713921fcc0468be23231d0872fa67ccc8ea3929df4656b6ddfc",
+          "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
+          "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
+          "sha256:6f1cdceb6a3146f0ccb986521156bef8a422cdbb0863396f7f751f575ba308f4",
+          "sha256:bbb6cacb8c82e4da4e8143e03351e939eab5e21ce0ef333c42e637af86c5217b",
+          "sha256:2a92d6ac9e4fcc274d5168b217ca4458a9fec6f094ead68d99c77073f08caac1",
+          "sha256:1a73b54f556b477f0a8b939d13c504a3b4f4db71f7a09c63afbc10acb3de5849",
+          "sha256:f4aee9e53c42a22ed82451218c3ea03d1eea8d6ca8fbe8eb4e950304ba8a8bb3",
+          "sha256:bfe9137a1b044e8097cdfcb6899137a8a984ed70931ed1e8ef0cf7e023a139fc",
+          "sha256:d5a3e014161bb602d87c2312e371ad2ea6f800c7f7af261af4faa67302b53c88",
+          "sha256:0711ad304a055c3c5d8fa5a9dab4a1bc1463599b8618d4b8c045edce85c79ce5",
+          "sha256:2ec3c7f39a8ffa204e42efd0ea5aca52bb7c61bc43181365f840329356c1dca0",
+          "sha256:8eac944f2500a708a0932e565f8e57285ba741af2c9001d9e15d6ddd510dd696",
+          "sha256:8967db22fc3acc301db2566054ec937f798968fc4029894669d6be32b44d181a"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "-config",
+          "/pomerium/config.yaml"
+        ],
+        "Entrypoint": [
+          "/bin/pomerium"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt",
+          "AUTOCERT_DIR=/data/autocert"
+        ],
+        "Labels": {
+          "homepage": "http://www.pomerium.io",
+          "org.opencontainers.image.created": "2025-09-11T14:06:55Z",
+          "org.opencontainers.image.name": "pomerium",
+          "org.opencontainers.image.revision": "7ad5455f243a645eba295d7bc8a33e0b00445425",
+          "org.opencontainers.image.source": "https://github.com/pomerium/pomerium",
+          "org.opencontainers.image.version": "0.30.6",
+          "repository": "http://github.com/pomerium/pomerium"
+        },
+        "User": "0",
+        "WorkingDir": "/pomerium",
+        "ArgsEscaped": true
+      }
+    },
+    "Layers": [
+      {
+        "Size": 327680,
+        "Digest": "sha256:35d697fe273816c60d20a62a879f8643f79cd4ed85a8e80dba28a17350fc26b6",
+        "DiffID": "sha256:f464af4b9b251ebe8a7c2f186aff656f0892f6cb159837a6ce8fd63842e83e35"
+      },
+      {
+        "Size": 40960,
+        "Digest": "sha256:2e4cf50eeb92ac3a7afe75e15d96a26dee99449f86b46c75b5d95f4418a5bca0",
+        "DiffID": "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba"
+      },
+      {
+        "Size": 2406400,
+        "Digest": "sha256:4eff9a62d888790350b2481ff4a4f38f9c94b3674d26b2f2c85ca39cdef43fd9",
+        "DiffID": "sha256:48c0fb67386ed713921fcc0468be23231d0872fa67ccc8ea3929df4656b6ddfc"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:0f8b424aa0b96c1c388a5fd4d90735604459256336853082afb61733438872b5",
+        "DiffID": "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368"
+      },
+      {
+        "Size": 2560,
+        "Digest": "sha256:d557676654e572af3e3173c90e7874644207fda32cd87e9d3d66b5d7b98a7b21",
+        "DiffID": "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc"
+      },
+      {
+        "Size": 2560,
+        "Digest": "sha256:d82bc7a76a838c9a4a6025192429c2fed58f73742ef1fb9c8bb7b995fc3b7213",
+        "DiffID": "sha256:6f1cdceb6a3146f0ccb986521156bef8a422cdbb0863396f7f751f575ba308f4"
+      },
+      {
+        "Size": 2560,
+        "Digest": "sha256:d858cbc252ade14879807ff8dbc3043a26bbdb92087da98cda831ee040b172b3",
+        "DiffID": "sha256:bbb6cacb8c82e4da4e8143e03351e939eab5e21ce0ef333c42e637af86c5217b"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:1069fc2daed1aceff7232f4b8ab21200dd3d8b04f61be9da86977a34a105dfdc",
+        "DiffID": "sha256:2a92d6ac9e4fcc274d5168b217ca4458a9fec6f094ead68d99c77073f08caac1"
+      },
+      {
+        "Size": 10240,
+        "Digest": "sha256:b40161cd83fc5d470d6abe50e87aa288481b6b89137012881d74187cfbf9f502",
+        "DiffID": "sha256:1a73b54f556b477f0a8b939d13c504a3b4f4db71f7a09c63afbc10acb3de5849"
+      },
+      {
+        "Size": 3072,
+        "Digest": "sha256:3f4e2c5863480125882d92060440a5250766bce764fee10acdbac18c872e4dc7",
+        "DiffID": "sha256:f4aee9e53c42a22ed82451218c3ea03d1eea8d6ca8fbe8eb4e950304ba8a8bb3"
+      },
+      {
+        "Size": 241664,
+        "Digest": "sha256:eb8f5749650bdfb1514d83ae891881b02857c47b3b9a1cd5d50b647aeadc6376",
+        "DiffID": "sha256:bfe9137a1b044e8097cdfcb6899137a8a984ed70931ed1e8ef0cf7e023a139fc"
+      },
+      {
+        "Size": 13056000,
+        "Digest": "sha256:d00c3209d92970dad10c006c4d7120e5fd276349ce6e57dbad95a3a3f05411fc",
+        "DiffID": "sha256:d5a3e014161bb602d87c2312e371ad2ea6f800c7f7af261af4faa67302b53c88"
+      },
+      {
+        "Size": 5918720,
+        "Digest": "sha256:c1e595f74d521a729b57807c995939aa172969a3d988f35ce309b8e1b3d09885",
+        "DiffID": "sha256:0711ad304a055c3c5d8fa5a9dab4a1bc1463599b8618d4b8c045edce85c79ce5"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:17a8a23808b913d5b6230850267a7900c3c184d4d92364544aa2b2e7806899e1",
+        "DiffID": "sha256:2ec3c7f39a8ffa204e42efd0ea5aca52bb7c61bc43181365f840329356c1dca0"
+      },
+      {
+        "Size": 150825472,
+        "Digest": "sha256:a7e1af19570fd92dbc9c7321391992a01b6f9e6d89f799ebd7361a16171d48e2",
+        "DiffID": "sha256:8eac944f2500a708a0932e565f8e57285ba741af2c9001d9e15d6ddd510dd696"
+      },
+      {
+        "Size": 2048,
+        "Digest": "sha256:94e1ffa84181e76316a976d8b06a293b3259815eaf3f27175c1d53fcc917fe01",
+        "DiffID": "sha256:8967db22fc3acc301db2566054ec937f798968fc4029894669d6be32b44d181a"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "pomerium/pomerium:v0.30.6 (debian 12.11)",
+      "Class": "os-pkgs",
+      "Type": "debian",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-4802",
+          "PkgID": "libc6@2.36-9+deb12u10",
+          "PkgName": "libc6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+            "UID": "df967ffe0c87646"
+          },
+          "InstalledVersion": "2.36-9+deb12u10",
+          "FixedVersion": "2.36-9+deb12u11",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:d00c3209d92970dad10c006c4d7120e5fd276349ce6e57dbad95a3a3f05411fc",
+            "DiffID": "sha256:d5a3e014161bb602d87c2312e371ad2ea6f800c7f7af261af4faa67302b53c88"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-4802",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "glibc: static setuid binary dlopen may incorrectly search LD_LIBRARY_PATH",
+          "Description": "Untrusted LD_LIBRARY_PATH environment variable vulnerability in the GNU C Library version 2.27 to 2.38 allows attacker controlled loading of dynamically shared library in statically compiled setuid binaries that call dlopen (including internal dlopen calls after setlocale or calls to NSS functions such as getaddrinfo).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-426"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "azure": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/05/16/7",
+            "http://www.openwall.com/lists/oss-security/2025/05/17/2",
+            "https://access.redhat.com/errata/RHSA-2025:8655",
+            "https://access.redhat.com/security/cve/CVE-2025-4802",
+            "https://bugzilla.redhat.com/2367468",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2367468",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-4802",
+            "https://errata.almalinux.org/9/ALSA-2025-8655.html",
+            "https://errata.rockylinux.org/RLSA-2025:8686",
+            "https://linux.oracle.com/cve/CVE-2025-4802.html",
+            "https://linux.oracle.com/errata/ELSA-2025-8686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-4802",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=32976",
+            "https://sourceware.org/cgit/glibc/commit/?id=1e18586c5820e329f741d5c710275e165581380e",
+            "https://sourceware.org/cgit/glibc/commit/?id=5451fa962cd0a90a0e2ec1d8910a559ace02bba0",
+            "https://ubuntu.com/security/notices/USN-7541-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-4802",
+            "https://www.openwall.com/lists/oss-security/2025/05/16/7",
+            "https://www.openwall.com/lists/oss-security/2025/05/17/2"
+          ],
+          "PublishedDate": "2025-05-16T20:15:22.28Z",
+          "LastModifiedDate": "2025-06-17T14:09:23.137Z"
+        }
+      ]
+    },
+    {
+      "Target": "bin/pomerium",
+      "Class": "lang-pkgs",
+      "Type": "gobinary"
+    }
+  ]
+}

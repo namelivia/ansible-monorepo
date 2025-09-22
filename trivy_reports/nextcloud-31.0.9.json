@@ -1,0 +1,538 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-22T12:17:35.766077138Z",
+  "ArtifactName": "nextcloud:31.0.9",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 1482202624,
+    "OS": {
+      "Family": "debian",
+      "Name": "13.1"
+    },
+    "ImageID": "sha256:f97b7f47b591d5ef9b1e25659fa9019b8fb17c6fb9c6f99b62e92df16664e704",
+    "DiffIDs": [
+      "sha256:daf557c4f08e0cb77b2af2a08d8bca4f333cf408d88191911715e6f393eca215",
+      "sha256:659308883e40bb1fa78c47b3dab4f590c0d00a1bb8579f23ddbb82832a3c1c63",
+      "sha256:89743deb3e9289fe495d46af073540cfd8d43aadcdbc0feb01b2b09fbba32ac5",
+      "sha256:146ced886ae93e41b08c53dfbcca0cb8f340a6290b6f8bac59b045ca078c79b7",
+      "sha256:d0058afdbd8c466036a2ccace330982f6ada37133bc0eaeebc26bc745a84fe73",
+      "sha256:99726343161542eadd92b464034bec62ad10bced227c1f5a2abe0b3e4f29c8a8",
+      "sha256:7eeafba3a8b33ec77d4ddcc9f1fa2b833056b0bef32560522821478553ecd1fa",
+      "sha256:fd5842f3d87ec0c9b358268a0c46960aa6a577b3b3665ae5e2eb3903807e3656",
+      "sha256:7a63c97b56452f43a708a52fdbebf8e2bf1e01b70e32e8d7bd203e7f5a161102",
+      "sha256:1ff271be157f67321d4ae841ecebb6ddd37fe990796f4c13b1b8b1cc9adfe100",
+      "sha256:51dfdc6bdbdd634717cf89901777817b749f7efad0cc8fe5571ca4f2b1c131e6",
+      "sha256:5d1a940869ae2816ca12469988302f56377ca09c87737d359e48850bd4d759cb",
+      "sha256:a9b8801312ae6f5bb720a01e8ccaa56333b86bd74f70b6d51255c8c1ebb957cd",
+      "sha256:360988e3c01b001a26d667edf8b231d348c270db95b841c8b4bbe8cf85c2113d",
+      "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "sha256:5dd32d6ae9c30e9e1d7293012dc8d1e0ade0e0f88668f85327c02a15e6c6c5a8",
+      "sha256:07518cb93be649a0d863e6a1b8370f93376091fd2e0d72bbcfc8f82d5e75d497",
+      "sha256:000a5c2a7195fd228907c8540fd5c554fafcd4150d154574db16fec5116b8114",
+      "sha256:d972505e4f8b9ec9baca0094c06e4fda9e0af855e5530abf484f289993b43a92",
+      "sha256:65b155e14564f3755036be1134adec815a148927cbc02213d2c4d974be74828a",
+      "sha256:746036bf65f6e5355916024bc2827b43b5b9e8505ed797122b2480533a2203e9",
+      "sha256:df8ffb393b186029d8594974100b28f4fef9e4d8f42c6660037357e1b34cf192",
+      "sha256:1dc1f7e8604366170c8dbe4690a0b97fcac9d3cb7f013b111fb706101ec32eff"
+    ],
+    "RepoTags": [
+      "nextcloud:31.0.9"
+    ],
+    "RepoDigests": [
+      "nextcloud@sha256:11f158050216614d585886600445e0a1b75ee224d6a6dddc5eba996cc9499fa6"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-09-12T00:34:49Z",
+      "history": [
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "# debian.sh --arch 'amd64' out/ 'trixie' '@1757289600'",
+          "comment": "debuerreotype 0.16"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c set -eux; \t{ \t\techo 'Package: php*'; \t\techo 'Pin: release *'; \t\techo 'Pin-Priority: -1'; \t} \u003e /etc/apt/preferences.d/no-debian-php # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV PHPIZE_DEPS=autoconf \t\tdpkg-dev \t\tfile \t\tg++ \t\tgcc \t\tlibc-dev \t\tmake \t\tpkg-config \t\tre2c",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c set -eux; \tapt-get update; \tapt-get install -y --no-install-recommends \t\t$PHPIZE_DEPS \t\tca-certificates \t\tcurl \t\txz-utils \t; \tapt-get dist-clean # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV PHP_INI_DIR=/usr/local/etc/php",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c set -eux; \tmkdir -p \"$PHP_INI_DIR/conf.d\"; \t[ ! -d /var/www/html ]; \tmkdir -p /var/www/html; \tchown www-data:www-data /var/www/html; \tchmod 1777 /var/www/html # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV APACHE_CONFDIR=/etc/apache2",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV APACHE_ENVVARS=/etc/apache2/envvars",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c set -eux; \tapt-get update; \tapt-get install -y --no-install-recommends apache2; \tapt-get dist-clean; \t\tsed -ri 's/^export ([^=]+)=(.*)$/: ${\\1:=\\2}\\nexport \\1/' \"$APACHE_ENVVARS\"; \t\t. \"$APACHE_ENVVARS\"; \tfor dir in \t\t\"$APACHE_LOCK_DIR\" \t\t\"$APACHE_RUN_DIR\" \t\t\"$APACHE_LOG_DIR\" \t\t\"$APACHE_RUN_DIR/socks\" \t; do \t\trm -rvf \"$dir\"; \t\tmkdir -p \"$dir\"; \t\tchown \"$APACHE_RUN_USER:$APACHE_RUN_GROUP\" \"$dir\"; \t\tchmod 1777 \"$dir\"; \tdone; \t\trm -rvf /var/www/html/*; \t\tln -sfT /dev/stderr \"$APACHE_LOG_DIR/error.log\"; \tln -sfT /dev/stdout \"$APACHE_LOG_DIR/access.log\"; \tln -sfT /dev/stdout \"$APACHE_LOG_DIR/other_vhosts_access.log\"; \tchown -R --no-dereference \"$APACHE_RUN_USER:$APACHE_RUN_GROUP\" \"$APACHE_LOG_DIR\" # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c a2dismod mpm_event \u0026\u0026 a2enmod mpm_prefork # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c { \t\techo '\u003cFilesMatch \\.php$\u003e'; \t\techo '\\tSetHandler application/x-httpd-php'; \t\techo '\u003c/FilesMatch\u003e'; \t\techo; \t\techo 'DirectoryIndex disabled'; \t\techo 'DirectoryIndex index.php index.html'; \t\techo; \t\techo '\u003cDirectory /var/www/\u003e'; \t\techo '\\tOptions -Indexes'; \t\techo '\\tAllowOverride All'; \t\techo '\u003c/Directory\u003e'; \t} | tee \"$APACHE_CONFDIR/conf-available/docker-php.conf\" \t\u0026\u0026 a2enconf docker-php # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV PHP_LDFLAGS=-Wl,-O1 -pie",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV GPG_KEYS=1198C0117593497A5EC5C199286AF1F9897469DC C28D937575603EB4ABB725861C0779DC5C0A9DE4 AFD8691FDAEDF03BDF6E460563F15A9B715376CA",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV PHP_VERSION=8.3.25",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV PHP_URL=https://www.php.net/distributions/php-8.3.25.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.3.25.tar.xz.asc",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENV PHP_SHA256=187b61bb795015adacf53f8c55b44414a63777ec19a776b75fb88614506c0d37",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c set -eux; \t\tsavedAptMark=\"$(apt-mark showmanual)\"; \tapt-get update; \tapt-get install -y --no-install-recommends gnupg; \tapt-get dist-clean; \t\tmkdir -p /usr/src; \tcd /usr/src; \t\tcurl -fsSL -o php.tar.xz \"$PHP_URL\"; \t\tif [ -n \"$PHP_SHA256\" ]; then \t\techo \"$PHP_SHA256 *php.tar.xz\" | sha256sum -c -; \tfi; \t\tcurl -fsSL -o php.tar.xz.asc \"$PHP_ASC_URL\"; \texport GNUPGHOME=\"$(mktemp -d)\"; \tfor key in $GPG_KEYS; do \t\tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \tdone; \tgpg --batch --verify php.tar.xz.asc php.tar.xz; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\"; \t\tapt-mark auto '.*' \u003e /dev/null; \tapt-mark manual $savedAptMark \u003e /dev/null; \tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "COPY docker-php-source /usr/local/bin/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c set -eux; \t\tsavedAptMark=\"$(apt-mark showmanual)\"; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tapache2-dev \t\tlibargon2-dev \t\tlibcurl4-openssl-dev \t\tlibonig-dev \t\tlibreadline-dev \t\tlibsodium-dev \t\tlibsqlite3-dev \t\tlibssl-dev \t\tlibxml2-dev \t\tzlib1g-dev \t; \t\texport \t\tCFLAGS=\"$PHP_CFLAGS\" \t\tCPPFLAGS=\"$PHP_CPPFLAGS\" \t\tLDFLAGS=\"$PHP_LDFLAGS\" \t\tPHP_BUILD_PROVIDER='https://github.com/docker-library/php' \t\tPHP_UNAME='Linux - Docker' \t; \tdocker-php-source extract; \tcd /usr/src/php; \tgnuArch=\"$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)\"; \tdebMultiarch=\"$(dpkg-architecture --query DEB_BUILD_MULTIARCH)\"; \tif [ ! -d /usr/include/curl ]; then \t\tln -sT \"/usr/include/$debMultiarch/curl\" /usr/local/include/curl; \tfi; \t./configure \t\t--build=\"$gnuArch\" \t\t--with-config-file-path=\"$PHP_INI_DIR\" \t\t--with-config-file-scan-dir=\"$PHP_INI_DIR/conf.d\" \t\t\t\t--enable-option-checking=fatal \t\t\t\t--with-mhash \t\t\t\t--with-pic \t\t\t\t--enable-mbstring \t\t--enable-mysqlnd \t\t--with-password-argon2 \t\t--with-sodium=shared \t\t--with-pdo-sqlite=/usr \t\t--with-sqlite3=/usr \t\t\t\t--with-curl \t\t--with-iconv \t\t--with-openssl \t\t--with-readline \t\t--with-zlib \t\t\t\t--disable-phpdbg \t\t\t\t--with-pear \t\t\t\t--with-libdir=\"lib/$debMultiarch\" \t\t\t\t--disable-cgi \t\t\t\t--with-apxs2 \t; \tmake -j \"$(nproc)\"; \tfind -type f -name '*.a' -delete; \tmake install; \tfind \t\t/usr/local \t\t-type f \t\t-perm '/0111' \t\t-exec sh -euxc ' \t\t\tstrip --strip-all \"$@\" || : \t\t' -- '{}' + \t; \tmake clean; \t\tcp -v php.ini-* \"$PHP_INI_DIR/\"; \t\tcd /; \tdocker-php-source delete; \t\tapt-mark auto '.*' \u003e /dev/null; \t[ -z \"$savedAptMark\" ] || apt-mark manual $savedAptMark; \tfind /usr/local -type f -executable -exec ldd '{}' ';' \t\t| awk '/=\u003e/ { so = $(NF-1); if (index(so, \"/usr/local/\") == 1) { next }; gsub(\"^/(usr/)?\", \"\", so); printf \"*%s\\n\", so }' \t\t| sort -u \t\t| xargs -rt dpkg-query --search \t\t| awk 'sub(\":$\", \"\", $1) { print $1 }' \t\t| sort -u \t\t| xargs -r apt-mark manual \t; \tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \tapt-get dist-clean; \t\tpecl update-channels; \trm -rf /tmp/pear ~/.pearrc; \t\tphp --version # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c docker-php-ext-enable opcache # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "RUN /bin/sh -c docker-php-ext-enable sodium # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "ENTRYPOINT [\"docker-php-entrypoint\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "STOPSIGNAL SIGWINCH",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "COPY apache2-foreground /usr/local/bin/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "WORKDIR /var/www/html",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "EXPOSE map[80/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-28T15:22:56Z",
+          "created_by": "CMD [\"apache2-foreground\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "RUN /bin/sh -c set -ex;         apt-get update;     apt-get install -y --no-install-recommends         busybox-static         bzip2         libldap-common         libmagickcore-7.q16-10-extra         rsync     ;     apt-get dist-clean;         mkdir -p /var/spool/cron/crontabs;     echo '*/5 * * * * php -f /var/www/html/cron.php' \u003e /var/spool/cron/crontabs/www-data # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "ENV PHP_MEMORY_LIMIT=512M",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "ENV PHP_UPLOAD_LIMIT=512M",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "ENV PHP_OPCACHE_MEMORY_CONSUMPTION=128",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "RUN /bin/sh -c set -ex;         savedAptMark=\"$(apt-mark showmanual)\";         apt-get update;     apt-get install -y --no-install-recommends         libcurl4-openssl-dev         libevent-dev         libfreetype6-dev         libgmp-dev         libicu-dev         libjpeg-dev         libldap2-dev         libmagickwand-dev         libmcrypt-dev         libmemcached-dev         libpng-dev         libpq-dev         libwebp-dev         libxml2-dev         libzip-dev     ;         debMultiarch=\"$(dpkg-architecture --query DEB_BUILD_MULTIARCH)\";     docker-php-ext-configure ftp --with-openssl-dir=/usr;     docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp;     docker-php-ext-configure ldap --with-libdir=\"lib/$debMultiarch\";     docker-php-ext-install -j \"$(nproc)\"         bcmath         exif         ftp         gd         gmp         intl         ldap         pcntl         pdo_mysql         pdo_pgsql         sysvsem         zip     ;         pecl install APCu-5.1.27;     pecl install igbinary-3.2.16;     pecl install imagick-3.8.0;     pecl install memcached-3.3.0         --configureoptions 'enable-memcached-igbinary=\"yes\"';     pecl install redis-6.2.0         --configureoptions 'enable-redis-igbinary=\"yes\" enable-redis-zstd=\"yes\" enable-redis-lz4=\"yes\"';         docker-php-ext-enable         apcu         igbinary         imagick         memcached         redis     ;     rm -r /tmp/pear;         apt-mark auto '.*' \u003e /dev/null;     apt-mark manual $savedAptMark;     ldd \"$(php -r 'echo ini_get(\"extension_dir\");')\"/*.so         | awk '/=\u003e/ { so = $(NF-1); if (index(so, \"/usr/local/\") == 1) { next }; gsub(\"^/(usr/)?\", \"\", so); print so }'         | sort -u         | xargs -rt dpkg-query --search         | awk 'sub(\":$\", \"\", $1) { print $1 }'         | sort -u         | xargs -rt apt-mark manual;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false;     apt-get dist-clean # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "RUN /bin/sh -c {         echo 'opcache.enable=1';         echo 'opcache.interned_strings_buffer=32';         echo 'opcache.max_accelerated_files=10000';         echo 'opcache.memory_consumption=${PHP_OPCACHE_MEMORY_CONSUMPTION}';         echo 'opcache.save_comments=1';         echo 'opcache.revalidate_freq=60';         echo 'opcache.jit=1255';         echo 'opcache.jit_buffer_size=8M';     } \u003e \"${PHP_INI_DIR}/conf.d/opcache-recommended.ini\";         echo 'apc.enable_cli=1' \u003e\u003e \"${PHP_INI_DIR}/conf.d/docker-php-ext-apcu.ini\";         {         echo 'apc.serializer=igbinary';         echo 'session.serialize_handler=igbinary';     } \u003e\u003e \"${PHP_INI_DIR}/conf.d/docker-php-ext-igbinary.ini\";         {         echo 'memory_limit=${PHP_MEMORY_LIMIT}';         echo 'upload_max_filesize=${PHP_UPLOAD_LIMIT}';         echo 'post_max_size=${PHP_UPLOAD_LIMIT}';     } \u003e \"${PHP_INI_DIR}/conf.d/nextcloud.ini\";         mkdir /var/www/data;     mkdir -p /docker-entrypoint-hooks.d/pre-installation              /docker-entrypoint-hooks.d/post-installation              /docker-entrypoint-hooks.d/pre-upgrade              /docker-entrypoint-hooks.d/post-upgrade              /docker-entrypoint-hooks.d/before-starting;     chown -R www-data:root /var/www;     chmod -R g=u /var/www # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "VOLUME [/var/www/html]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "RUN /bin/sh -c a2enmod headers rewrite remoteip ;     {      echo 'RemoteIPHeader X-Real-IP';      echo 'RemoteIPInternalProxy 10.0.0.0/8';      echo 'RemoteIPInternalProxy 172.16.0.0/12';      echo 'RemoteIPInternalProxy 192.168.0.0/16';     } \u003e /etc/apache2/conf-available/remoteip.conf;     a2enconf remoteip # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "ENV APACHE_BODY_LIMIT=1073741824",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "RUN /bin/sh -c {      echo 'LimitRequestBody ${APACHE_BODY_LIMIT}';     } \u003e /etc/apache2/conf-available/apache-limits.conf;     a2enconf apache-limits # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "ENV NEXTCLOUD_VERSION=31.0.9",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "RUN /bin/sh -c set -ex;     fetchDeps=\"         gnupg         dirmngr     \";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         curl -fsSL -o nextcloud.tar.bz2 \"https://download.nextcloud.com/server/releases/nextcloud-31.0.9.tar.bz2\";     curl -fsSL -o nextcloud.tar.bz2.asc \"https://download.nextcloud.com/server/releases/nextcloud-31.0.9.tar.bz2.asc\";     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 28806A878AE423A28372792ED75899B9A724937A;     gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2;     tar -xjf nextcloud.tar.bz2 -C /usr/src/;     gpgconf --kill all;     rm nextcloud.tar.bz2.asc nextcloud.tar.bz2;     rm -rf \"$GNUPGHOME\" /usr/src/nextcloud/updater;     mkdir -p /usr/src/nextcloud/data;     mkdir -p /usr/src/nextcloud/custom_apps;     chmod +x /usr/src/nextcloud/occ;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     apt-get dist-clean # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "COPY *.sh upgrade.exclude / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "COPY config/* /usr/src/nextcloud/config/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "ENTRYPOINT [\"/entrypoint.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-12T00:34:49Z",
+          "created_by": "CMD [\"apache2-foreground\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:daf557c4f08e0cb77b2af2a08d8bca4f333cf408d88191911715e6f393eca215",
+          "sha256:659308883e40bb1fa78c47b3dab4f590c0d00a1bb8579f23ddbb82832a3c1c63",
+          "sha256:89743deb3e9289fe495d46af073540cfd8d43aadcdbc0feb01b2b09fbba32ac5",
+          "sha256:146ced886ae93e41b08c53dfbcca0cb8f340a6290b6f8bac59b045ca078c79b7",
+          "sha256:d0058afdbd8c466036a2ccace330982f6ada37133bc0eaeebc26bc745a84fe73",
+          "sha256:99726343161542eadd92b464034bec62ad10bced227c1f5a2abe0b3e4f29c8a8",
+          "sha256:7eeafba3a8b33ec77d4ddcc9f1fa2b833056b0bef32560522821478553ecd1fa",
+          "sha256:fd5842f3d87ec0c9b358268a0c46960aa6a577b3b3665ae5e2eb3903807e3656",
+          "sha256:7a63c97b56452f43a708a52fdbebf8e2bf1e01b70e32e8d7bd203e7f5a161102",
+          "sha256:1ff271be157f67321d4ae841ecebb6ddd37fe990796f4c13b1b8b1cc9adfe100",
+          "sha256:51dfdc6bdbdd634717cf89901777817b749f7efad0cc8fe5571ca4f2b1c131e6",
+          "sha256:5d1a940869ae2816ca12469988302f56377ca09c87737d359e48850bd4d759cb",
+          "sha256:a9b8801312ae6f5bb720a01e8ccaa56333b86bd74f70b6d51255c8c1ebb957cd",
+          "sha256:360988e3c01b001a26d667edf8b231d348c270db95b841c8b4bbe8cf85c2113d",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "sha256:5dd32d6ae9c30e9e1d7293012dc8d1e0ade0e0f88668f85327c02a15e6c6c5a8",
+          "sha256:07518cb93be649a0d863e6a1b8370f93376091fd2e0d72bbcfc8f82d5e75d497",
+          "sha256:000a5c2a7195fd228907c8540fd5c554fafcd4150d154574db16fec5116b8114",
+          "sha256:d972505e4f8b9ec9baca0094c06e4fda9e0af855e5530abf484f289993b43a92",
+          "sha256:65b155e14564f3755036be1134adec815a148927cbc02213d2c4d974be74828a",
+          "sha256:746036bf65f6e5355916024bc2827b43b5b9e8505ed797122b2480533a2203e9",
+          "sha256:df8ffb393b186029d8594974100b28f4fef9e4d8f42c6660037357e1b34cf192",
+          "sha256:1dc1f7e8604366170c8dbe4690a0b97fcac9d3cb7f013b111fb706101ec32eff"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "apache2-foreground"
+        ],
+        "Entrypoint": [
+          "/entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "PHPIZE_DEPS=autoconf \t\tdpkg-dev \t\tfile \t\tg++ \t\tgcc \t\tlibc-dev \t\tmake \t\tpkg-config \t\tre2c",
+          "PHP_INI_DIR=/usr/local/etc/php",
+          "APACHE_CONFDIR=/etc/apache2",
+          "APACHE_ENVVARS=/etc/apache2/envvars",
+          "PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+          "PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+          "PHP_LDFLAGS=-Wl,-O1 -pie",
+          "GPG_KEYS=1198C0117593497A5EC5C199286AF1F9897469DC C28D937575603EB4ABB725861C0779DC5C0A9DE4 AFD8691FDAEDF03BDF6E460563F15A9B715376CA",
+          "PHP_VERSION=8.3.25",
+          "PHP_URL=https://www.php.net/distributions/php-8.3.25.tar.xz",
+          "PHP_ASC_URL=https://www.php.net/distributions/php-8.3.25.tar.xz.asc",
+          "PHP_SHA256=187b61bb795015adacf53f8c55b44414a63777ec19a776b75fb88614506c0d37",
+          "PHP_MEMORY_LIMIT=512M",
+          "PHP_UPLOAD_LIMIT=512M",
+          "PHP_OPCACHE_MEMORY_CONSUMPTION=128",
+          "APACHE_BODY_LIMIT=1073741824",
+          "NEXTCLOUD_VERSION=31.0.9"
+        ],
+        "Volumes": {
+          "/var/www/html": {}
+        },
+        "WorkingDir": "/var/www/html",
+        "ExposedPorts": {
+          "80/tcp": {}
+        },
+        "StopSignal": "SIGWINCH"
+      }
+    },
+    "Layers": [
+      {
+        "Size": 81039360,
+        "Digest": "sha256:ce1261c6d567efa8e3b457673eeeb474a0a8066df6bb95ca9a6a94a31e219dd3",
+        "DiffID": "sha256:daf557c4f08e0cb77b2af2a08d8bca4f333cf408d88191911715e6f393eca215"
+      },
+      {
+        "Size": 3584,
+        "Digest": "sha256:c0cdc4d13cbbd81c4da28f0a5177669fb5f957466c2f904f98496f7ee0b40ef2",
+        "DiffID": "sha256:659308883e40bb1fa78c47b3dab4f590c0d00a1bb8579f23ddbb82832a3c1c63"
+      },
+      {
+        "Size": 352972800,
+        "Digest": "sha256:b1fdc707494c42458e3bc8fa49c7d2fb3ba9bf7e0c4167b81ebb7da71e88d578",
+        "DiffID": "sha256:89743deb3e9289fe495d46af073540cfd8d43aadcdbc0feb01b2b09fbba32ac5"
+      },
+      {
+        "Size": 5120,
+        "Digest": "sha256:f7af854b6e1ae3f00efa46e227cb802e00113099fad0730bf0ea79777571937d",
+        "DiffID": "sha256:146ced886ae93e41b08c53dfbcca0cb8f340a6290b6f8bac59b045ca078c79b7"
+      },
+      {
+        "Size": 12227584,
+        "Digest": "sha256:27844f0bba07885733a1a891137be2bb42e3b0fd74fad355ec9aeff9fe2dce1e",
+        "DiffID": "sha256:d0058afdbd8c466036a2ccace330982f6ada37133bc0eaeebc26bc745a84fe73"
+      },
+      {
+        "Size": 9728,
+        "Digest": "sha256:57992caed768086a6c0e311f63782c09831610a3e32216259bdd76df6ae08363",
+        "DiffID": "sha256:99726343161542eadd92b464034bec62ad10bced227c1f5a2abe0b3e4f29c8a8"
+      },
+      {
+        "Size": 7680,
+        "Digest": "sha256:347ae1524e2ad360b24b4ef2387a9461da4891a4b8ef160eae8ec6ad34ca473a",
+        "DiffID": "sha256:7eeafba3a8b33ec77d4ddcc9f1fa2b833056b0bef32560522821478553ecd1fa"
+      },
+      {
+        "Size": 13260800,
+        "Digest": "sha256:6ce000de9ce8887551c23d5c4567a55797742eb3a0e51305c7bc8cf1fc5ef754",
+        "DiffID": "sha256:fd5842f3d87ec0c9b358268a0c46960aa6a577b3b3665ae5e2eb3903807e3656"
+      },
+      {
+        "Size": 4096,
+        "Digest": "sha256:8ffb1c55e0d2aad7b78b024ae001e27cce8b007128502a87b156bbd9cbdbe485",
+        "DiffID": "sha256:7a63c97b56452f43a708a52fdbebf8e2bf1e01b70e32e8d7bd203e7f5a161102"
+      },
+      {
+        "Size": 53015040,
+        "Digest": "sha256:8b220f5e801fbe37e7f63103f02b4e2a791105442be23ed365551ac089d56cb8",
+        "DiffID": "sha256:1ff271be157f67321d4ae841ecebb6ddd37fe990796f4c13b1b8b1cc9adfe100"
+      },
+      {
+        "Size": 12800,
+        "Digest": "sha256:c39fec0932f30c6ffb2c4b45aff32723c845214ce3c82df80f85e0053d04142d",
+        "DiffID": "sha256:51dfdc6bdbdd634717cf89901777817b749f7efad0cc8fe5571ca4f2b1c131e6"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:64af9df2d0f46cd215f60de277299b2285ecd1b6d40f305e7d230a2ffe293c65",
+        "DiffID": "sha256:5d1a940869ae2816ca12469988302f56377ca09c87737d359e48850bd4d759cb"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:60d9c4eff296fff77f568ecb99d8c3c58ddf7f4643c37dbc869f973660fef40d",
+        "DiffID": "sha256:a9b8801312ae6f5bb720a01e8ccaa56333b86bd74f70b6d51255c8c1ebb957cd"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:d1fea5d06223ba540e4224bafb4f89d219c75cba16d48a33102d681aca5ac412",
+        "DiffID": "sha256:360988e3c01b001a26d667edf8b231d348c270db95b841c8b4bbe8cf85c2113d"
+      },
+      {
+        "Size": 1024,
+        "Digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "DiffID": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      {
+        "Size": 55082496,
+        "Digest": "sha256:8b60c06098e03801cdb626c511b623599177fbc8b42e931e387f5baed529fff2",
+        "DiffID": "sha256:5dd32d6ae9c30e9e1d7293012dc8d1e0ade0e0f88668f85327c02a15e6c6c5a8"
+      },
+      {
+        "Size": 107375616,
+        "Digest": "sha256:a8b7423052146f6241baa29e0f4dbc89413aa762dba97dc7f2c21e777881fe96",
+        "DiffID": "sha256:07518cb93be649a0d863e6a1b8370f93376091fd2e0d72bbcfc8f82d5e75d497"
+      },
+      {
+        "Size": 12800,
+        "Digest": "sha256:78d0cd371c9607557cc712695f232c788b53ea7b3aa7b56a28d0126265784438",
+        "DiffID": "sha256:000a5c2a7195fd228907c8540fd5c554fafcd4150d154574db16fec5116b8114"
+      },
+      {
+        "Size": 12288,
+        "Digest": "sha256:602b25720f07d9b48c74cbc921be39632da10dc7a2c96fa9195389ac1bc2171d",
+        "DiffID": "sha256:d972505e4f8b9ec9baca0094c06e4fda9e0af855e5530abf484f289993b43a92"
+      },
+      {
+        "Size": 7680,
+        "Digest": "sha256:ea06da986f5f832fdf941f1a1db3ee7ba813b982e946533d37e2ecf49ae762fe",
+        "DiffID": "sha256:65b155e14564f3755036be1134adec815a148927cbc02213d2c4d974be74828a"
+      },
+      {
+        "Size": 807100928,
+        "Digest": "sha256:1d169c2dd39c62afb6e94f22f05b3a2e1c9487e8e5c6a9f39ee0787a60b4b464",
+        "DiffID": "sha256:746036bf65f6e5355916024bc2827b43b5b9e8505ed797122b2480533a2203e9"
+      },
+      {
+        "Size": 17408,
+        "Digest": "sha256:4b79a2c64d96ccd2ffcaea562050a628828cd7cb2b0975354e5048564a668c36",
+        "DiffID": "sha256:df8ffb393b186029d8594974100b28f4fef9e4d8f42c6660037357e1b34cf192"
+      },
+      {
+        "Size": 19968,
+        "Digest": "sha256:4a8b8191fda73126d99ee671b5db5e85321471d90c24a66c8a6a1ef341fd2055",
+        "DiffID": "sha256:1dc1f7e8604366170c8dbe4690a0b97fcac9d3cb7f013b111fb706101ec32eff"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "nextcloud:31.0.9 (debian 13.1)",
+      "Class": "os-pkgs",
+      "Type": "debian"
+    },
+    {
+      "Target": "Node.js",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg"
+    },
+    {
+      "Target": "usr/src/nextcloud/3rdparty/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor"
+    },
+    {
+      "Target": "usr/src/nextcloud/apps/files_external/3rdparty/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor"
+    },
+    {
+      "Target": "usr/src/nextcloud/apps/photos/vendor/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor"
+    },
+    {
+      "Target": "usr/src/nextcloud/apps/suspicious_login/vendor-bin/php-cs-fixer/vendor/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor"
+    },
+    {
+      "Target": "usr/src/nextcloud/apps/suspicious_login/vendor-bin/psalm/vendor/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor"
+    },
+    {
+      "Target": "usr/src/nextcloud/apps/suspicious_login/vendor/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor"
+    },
+    {
+      "Target": "usr/src/nextcloud/apps/twofactor_totp/vendor/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor"
+    },
+    {
+      "Target": "usr/src/nextcloud/lib/composer/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor"
+    }
+  ]
+}

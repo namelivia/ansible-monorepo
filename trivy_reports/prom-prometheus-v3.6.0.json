@@ -1,0 +1,254 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-22T12:18:39.21706903Z",
+  "ArtifactName": "prom/prometheus:v3.6.0",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 314424320,
+    "ImageID": "sha256:4fcecf061b747d0b5dc55bc7efdba26f87768d058d403b5bcc3f0904cf49f973",
+    "DiffIDs": [
+      "sha256:1e604deea57dbda554a168861cff1238f93b8c6c69c863c43aed37d9d99c5fed",
+      "sha256:6b83872188a9e8912bee1d43add5e9bc518601b02a14a364c0da43b0d59acf33",
+      "sha256:19f8c5d1690a669a573b5e7824661b090adc99ada0c7db9b22d274d20fc26924",
+      "sha256:39e3be40c35a6e8a904612d469fe5c62b5542612b7bae2438a5dcef7d8f61e23",
+      "sha256:f7011cb81407547f382498f6048bba1f6326e63048677c98b1563e8f7b451e68",
+      "sha256:d44ee684b2392e9f843cbc99a5fee4b50ae99761197c73d86e6f553493b4f29d",
+      "sha256:d7b99c96539b65ccc1629ada6c5dc2e7976de894cae956803aefde30fe9879dd",
+      "sha256:a75cbb7b144821157a4bc542ab11c87a82599e057d308f924c417b5ac1e58608",
+      "sha256:a336d4a07269f498576337926af0a6bf29ac1480ae65998002cf9a897799d8c9",
+      "sha256:80a8d7768c7d399fcf6a4c7adaa18f6e88596a11c37d248a32d3786506a82917"
+    ],
+    "RepoTags": [
+      "prom/prometheus:v3.6.0"
+    ],
+    "RepoDigests": [
+      "prom/prometheus@sha256:76947e7ef22f8a698fc638f706685909be425dbe09bd7a2cd7aca849f79b5f64"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "author": "The Prometheus Authors \u003cprometheus-developers@googlegroups.com\u003e",
+      "created": "2025-09-21T20:24:58.578477077Z",
+      "history": [
+        {
+          "created": "2023-12-05T20:23:06.467739954Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:ee9bb8755ccbdd689b434d9b4ac7518e972699604ecda33e4ddc2a15d2831443 in / "
+        },
+        {
+          "created": "2023-12-05T20:23:06.550971969Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-12-15T10:54:58.99835989Z",
+          "created_by": "MAINTAINER The Prometheus Authors \u003cprometheus-developers@googlegroups.com\u003e",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-12-15T10:54:58.99835989Z",
+          "created_by": "COPY /rootfs / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.004881879Z",
+          "created_by": "LABEL maintainer=The Prometheus Authors \u003cprometheus-developers@googlegroups.com\u003e",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-21T20:24:58.004881879Z",
+          "created_by": "LABEL org.opencontainers.image.source=https://github.com/prometheus/prometheus",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-21T20:24:58.004881879Z",
+          "created_by": "ARG ARCH=amd64",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-21T20:24:58.004881879Z",
+          "created_by": "ARG OS=linux",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-21T20:24:58.004881879Z",
+          "created_by": "COPY .build/linux-amd64/prometheus /bin/prometheus # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.416320073Z",
+          "created_by": "COPY .build/linux-amd64/promtool /bin/promtool # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.425236865Z",
+          "created_by": "COPY documentation/examples/prometheus.yml /etc/prometheus/prometheus.yml # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.433399338Z",
+          "created_by": "COPY LICENSE /LICENSE # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.442915107Z",
+          "created_by": "COPY NOTICE /NOTICE # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.450672302Z",
+          "created_by": "COPY npm_licenses.tar.bz2 /npm_licenses.tar.bz2 # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.457646448Z",
+          "created_by": "WORKDIR /prometheus",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.578477077Z",
+          "created_by": "RUN |2 ARCH=amd64 OS=linux /bin/sh -c chown -R nobody:nobody /etc/prometheus /prometheus \u0026\u0026 chmod g+w /prometheus # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-21T20:24:58.578477077Z",
+          "created_by": "USER nobody",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-21T20:24:58.578477077Z",
+          "created_by": "EXPOSE map[9090/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-21T20:24:58.578477077Z",
+          "created_by": "VOLUME [/prometheus]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-21T20:24:58.578477077Z",
+          "created_by": "ENTRYPOINT [\"/bin/prometheus\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-21T20:24:58.578477077Z",
+          "created_by": "CMD [\"--config.file=/etc/prometheus/prometheus.yml\" \"--storage.tsdb.path=/prometheus\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:1e604deea57dbda554a168861cff1238f93b8c6c69c863c43aed37d9d99c5fed",
+          "sha256:6b83872188a9e8912bee1d43add5e9bc518601b02a14a364c0da43b0d59acf33",
+          "sha256:19f8c5d1690a669a573b5e7824661b090adc99ada0c7db9b22d274d20fc26924",
+          "sha256:39e3be40c35a6e8a904612d469fe5c62b5542612b7bae2438a5dcef7d8f61e23",
+          "sha256:f7011cb81407547f382498f6048bba1f6326e63048677c98b1563e8f7b451e68",
+          "sha256:d44ee684b2392e9f843cbc99a5fee4b50ae99761197c73d86e6f553493b4f29d",
+          "sha256:d7b99c96539b65ccc1629ada6c5dc2e7976de894cae956803aefde30fe9879dd",
+          "sha256:a75cbb7b144821157a4bc542ab11c87a82599e057d308f924c417b5ac1e58608",
+          "sha256:a336d4a07269f498576337926af0a6bf29ac1480ae65998002cf9a897799d8c9",
+          "sha256:80a8d7768c7d399fcf6a4c7adaa18f6e88596a11c37d248a32d3786506a82917"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "--config.file=/etc/prometheus/prometheus.yml",
+          "--storage.tsdb.path=/prometheus"
+        ],
+        "Entrypoint": [
+          "/bin/prometheus"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Labels": {
+          "maintainer": "The Prometheus Authors \u003cprometheus-developers@googlegroups.com\u003e",
+          "org.opencontainers.image.source": "https://github.com/prometheus/prometheus"
+        },
+        "User": "nobody",
+        "Volumes": {
+          "/prometheus": {}
+        },
+        "WorkingDir": "/prometheus",
+        "ExposedPorts": {
+          "9090/tcp": {}
+        },
+        "ArgsEscaped": true
+      }
+    },
+    "Layers": [
+      {
+        "Size": 1457664,
+        "Digest": "sha256:9fa9226be034e47923c0457d916aa68474cdfb23af8d4525e9baeebc4760977a",
+        "DiffID": "sha256:1e604deea57dbda554a168861cff1238f93b8c6c69c863c43aed37d9d99c5fed"
+      },
+      {
+        "Size": 2454528,
+        "Digest": "sha256:1617e25568b2231fdd0d5caff63b06f6f7738d8d961f031c80e47d35aaec9733",
+        "DiffID": "sha256:6b83872188a9e8912bee1d43add5e9bc518601b02a14a364c0da43b0d59acf33"
+      },
+      {
+        "Size": 159557120,
+        "Digest": "sha256:15e2cd5823b36ac995965d7566c961359a0df32897f062ab2f57ac37b15c4251",
+        "DiffID": "sha256:19f8c5d1690a669a573b5e7824661b090adc99ada0c7db9b22d274d20fc26924"
+      },
+      {
+        "Size": 150862336,
+        "Digest": "sha256:d14d9311398ee803a62e0674c3e93cefba32ce8b52eb99e4fa6a058a1e7a9454",
+        "DiffID": "sha256:39e3be40c35a6e8a904612d469fe5c62b5542612b7bae2438a5dcef7d8f61e23"
+      },
+      {
+        "Size": 4096,
+        "Digest": "sha256:4314b14247f86afa95f03c741faa016ec8566e82739033f38c868060bd3be996",
+        "DiffID": "sha256:f7011cb81407547f382498f6048bba1f6326e63048677c98b1563e8f7b451e68"
+      },
+      {
+        "Size": 13312,
+        "Digest": "sha256:03def9af9150ac7fde938b519335996057bd19053b262b7bba0b4e0fb992549c",
+        "DiffID": "sha256:d44ee684b2392e9f843cbc99a5fee4b50ae99761197c73d86e6f553493b4f29d"
+      },
+      {
+        "Size": 5632,
+        "Digest": "sha256:7dc70dd519ad0ebef7e029f9f80fb672a84f823c3e73d4daf98a673fd014faef",
+        "DiffID": "sha256:d7b99c96539b65ccc1629ada6c5dc2e7976de894cae956803aefde30fe9879dd"
+      },
+      {
+        "Size": 62464,
+        "Digest": "sha256:92fd369f57f062cf6186d212d4bc770a7b1d568dbb51970388b0664f715b907e",
+        "DiffID": "sha256:a75cbb7b144821157a4bc542ab11c87a82599e057d308f924c417b5ac1e58608"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:0357ac67262f2c28c9e08f98a6cc48da282930e4a387f847f90ce12a3726369b",
+        "DiffID": "sha256:a336d4a07269f498576337926af0a6bf29ac1480ae65998002cf9a897799d8c9"
+      },
+      {
+        "Size": 5632,
+        "Digest": "sha256:e9fa37e588a85eb30651e1dce76e8afaf287b213929457a7ec11e213abd4c53a",
+        "DiffID": "sha256:80a8d7768c7d399fcf6a4c7adaa18f6e88596a11c37d248a32d3786506a82917"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "bin/prometheus",
+      "Class": "lang-pkgs",
+      "Type": "gobinary"
+    },
+    {
+      "Target": "bin/promtool",
+      "Class": "lang-pkgs",
+      "Type": "gobinary"
+    }
+  ]
+}

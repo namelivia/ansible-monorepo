@@ -1,0 +1,441 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-22T12:22:04.849179041Z",
+  "ArtifactName": "linuxserver/sonarr:4.0.15",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 207312384,
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.22.1"
+    },
+    "ImageID": "sha256:5cf2e5bc9d7531b98247939670871285625c8f2cac1ca2a668f6ec51ab29ab10",
+    "DiffIDs": [
+      "sha256:dc92c16044e333c5b96de0754c326fb5d11110d555b3f68e73501ee12b91f1a0",
+      "sha256:4237b4abe0c583f84633de1da55c1e716dbf60660634932965955c149a90929c",
+      "sha256:c80e099cc0c1ea481b516c2ff40e5e744006a7d3bf08a8212b74b336ad3e1adc",
+      "sha256:74f398e7694c5078b9ad601e79eb7186be5cfd2d3e00a2171a00ea8c2536b10a",
+      "sha256:552c2aa51bac39e83bf12e583b07a44021163fe0eca7cc029c452227465d7fbf",
+      "sha256:b85bec4b217904bcf4be4b686e18ad65528ee288a9f6541159d2d457d0330f33",
+      "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf",
+      "sha256:51841de211888b6e89d89a5387f03ea0bd62e380888682bf7ca3dfe98ac73eba",
+      "sha256:4fed2fa5fbbbbb5c9bd9abbca95887efebf2ac814f6687599644735eb6808170"
+    ],
+    "RepoTags": [
+      "linuxserver/sonarr:4.0.15"
+    ],
+    "RepoDigests": [
+      "linuxserver/sonarr@sha256:bb50bac26881613af15deb4df891e4a7cb09e3333aec20a0522cb188fb22b11d"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-09-19T23:35:00.492055632Z",
+      "history": [
+        {
+          "created": "2025-09-13T13:35:29.863151704Z",
+          "created_by": "COPY /root-out/ / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG BUILD_DATE=2025-09-13T13:33:56+00:00",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG VERSION=25712cc1-ls9",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG MODS_VERSION=v3",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG PKG_INST_VERSION=v1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG LSIOWN_VERSION=v1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG WITHCONTENV_VERSION=v1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "LABEL build_version=Linuxserver.io version:- 25712cc1-ls9 Build-date:- 2025-09-13T13:33:56+00:00",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "LABEL maintainer=TheLamer",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ADD --chmod=755 https://raw.githubusercontent.com/linuxserver/docker-mods/mod-scripts/docker-mods.v3 /docker-mods # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.962706694Z",
+          "created_by": "ADD --chmod=755 https://raw.githubusercontent.com/linuxserver/docker-mods/mod-scripts/package-install.v1 /etc/s6-overlay/s6-rc.d/init-mods-package-install/run # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.977412846Z",
+          "created_by": "ADD --chmod=755 https://raw.githubusercontent.com/linuxserver/docker-mods/mod-scripts/lsiown.v1 /usr/bin/lsiown # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.9933967Z",
+          "created_by": "ADD --chmod=755 https://raw.githubusercontent.com/linuxserver/docker-mods/mod-scripts/with-contenv.v1 /usr/bin/with-contenv # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.9933967Z",
+          "created_by": "ENV PS1=$(whoami)@$(hostname):$(pwd)\\$  HOME=/root TERM=xterm S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 S6_VERBOSITY=1 S6_STAGE2_HOOK=/docker-mods VIRTUAL_ENV=/lsiopy PATH=/lsiopy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:31.367904524Z",
+          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" \u0026\u0026   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata \u0026\u0026   echo \"**** create abc user and make our folders ****\" \u0026\u0026   groupmod -g 1000 users \u0026\u0026   useradd -u 911 -U -d /config -s /bin/false abc \u0026\u0026   usermod -G users abc \u0026\u0026   mkdir -p     /app     /config     /defaults     /lsiopy \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /tmp/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:31.403613486Z",
+          "created_by": "COPY root/ / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:31.403613486Z",
+          "created_by": "ENTRYPOINT [\"/init\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.469173806Z",
+          "created_by": "ENV LSIO_FIRST_PARTY=true",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.469173806Z",
+          "created_by": "ARG BUILD_DATE=2025-09-19T23:33:20+00:00",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.469173806Z",
+          "created_by": "ARG VERSION=4.0.15.2941-ls292",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.469173806Z",
+          "created_by": "ARG SONARR_VERSION=4.0.15.2941",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.469173806Z",
+          "created_by": "LABEL build_version=Linuxserver.io version:- 4.0.15.2941-ls292 Build-date:- 2025-09-19T23:33:20+00:00",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.469173806Z",
+          "created_by": "LABEL maintainer=thespad",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.469173806Z",
+          "created_by": "ENV XDG_CONFIG_HOME=/config/xdg SONARR_CHANNEL=v4-stable SONARR_BRANCH=main COMPlus_EnableDiagnostics=0 TMPDIR=/run/sonarr-temp",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.469173806Z",
+          "created_by": "RUN |3 BUILD_DATE=2025-09-19T23:33:20+00:00 VERSION=4.0.15.2941-ls292 SONARR_VERSION=4.0.15.2941 /bin/sh -c echo \"**** install packages ****\" \u0026\u0026   apk add --no-cache     icu-libs     sqlite-libs     xmlstarlet \u0026\u0026   echo \"**** install sonarr ****\" \u0026\u0026   mkdir -p /app/sonarr/bin \u0026\u0026   if [ -z ${SONARR_VERSION+x} ]; then     SONARR_VERSION=$(curl -sX GET http://services.sonarr.tv/v1/releases     | jq -r \"first(.[] | select(.releaseChannel==\\\"${SONARR_CHANNEL}\\\") | .version)\");   fi \u0026\u0026   curl -o     /tmp/sonarr.tar.gz -L     \"https://services.sonarr.tv/v1/update/${SONARR_BRANCH}/download?version=${SONARR_VERSION}\u0026os=linuxmusl\u0026runtime=netcore\u0026arch=x64\" \u0026\u0026   tar xzf     /tmp/sonarr.tar.gz -C     /app/sonarr/bin --strip-components=1 \u0026\u0026   echo -e \"UpdateMethod=docker\\nBranch=${SONARR_BRANCH}\\nPackageVersion=${VERSION:-LocalBuild}\\nPackageAuthor=[linuxserver.io](https://linuxserver.io)\" \u003e /app/sonarr/package_info \u0026\u0026   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" \u003e /build_version \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /app/sonarr/bin/Sonarr.Update     /tmp/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-19T23:35:00.492055632Z",
+          "created_by": "COPY root/ / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-19T23:35:00.492055632Z",
+          "created_by": "EXPOSE \u0026{[{{50 0} {50 0}}] 0xc00069e600}",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-19T23:35:00.492055632Z",
+          "created_by": "VOLUME [/config]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:dc92c16044e333c5b96de0754c326fb5d11110d555b3f68e73501ee12b91f1a0",
+          "sha256:4237b4abe0c583f84633de1da55c1e716dbf60660634932965955c149a90929c",
+          "sha256:c80e099cc0c1ea481b516c2ff40e5e744006a7d3bf08a8212b74b336ad3e1adc",
+          "sha256:74f398e7694c5078b9ad601e79eb7186be5cfd2d3e00a2171a00ea8c2536b10a",
+          "sha256:552c2aa51bac39e83bf12e583b07a44021163fe0eca7cc029c452227465d7fbf",
+          "sha256:b85bec4b217904bcf4be4b686e18ad65528ee288a9f6541159d2d457d0330f33",
+          "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf",
+          "sha256:51841de211888b6e89d89a5387f03ea0bd62e380888682bf7ca3dfe98ac73eba",
+          "sha256:4fed2fa5fbbbbb5c9bd9abbca95887efebf2ac814f6687599644735eb6808170"
+        ]
+      },
+      "config": {
+        "Entrypoint": [
+          "/init"
+        ],
+        "Env": [
+          "PATH=/lsiopy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "PS1=$(whoami)@$(hostname):$(pwd)\\$ ",
+          "HOME=/root",
+          "TERM=xterm",
+          "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0",
+          "S6_VERBOSITY=1",
+          "S6_STAGE2_HOOK=/docker-mods",
+          "VIRTUAL_ENV=/lsiopy",
+          "LSIO_FIRST_PARTY=true",
+          "XDG_CONFIG_HOME=/config/xdg",
+          "SONARR_CHANNEL=v4-stable",
+          "SONARR_BRANCH=main",
+          "COMPlus_EnableDiagnostics=0",
+          "TMPDIR=/run/sonarr-temp"
+        ],
+        "Labels": {
+          "build_version": "Linuxserver.io version:- 4.0.15.2941-ls292 Build-date:- 2025-09-19T23:33:20+00:00",
+          "maintainer": "thespad",
+          "org.opencontainers.image.authors": "linuxserver.io",
+          "org.opencontainers.image.created": "2025-09-19T23:33:20+00:00",
+          "org.opencontainers.image.description": "[Sonarr](https://sonarr.tv/) (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.  ",
+          "org.opencontainers.image.documentation": "https://docs.linuxserver.io/images/docker-sonarr",
+          "org.opencontainers.image.licenses": "GPL-3.0-only",
+          "org.opencontainers.image.ref.name": "6744fdd8f1da1aa361d04d05ff32ec0b39cddef8",
+          "org.opencontainers.image.revision": "6744fdd8f1da1aa361d04d05ff32ec0b39cddef8",
+          "org.opencontainers.image.source": "https://github.com/linuxserver/docker-sonarr",
+          "org.opencontainers.image.title": "Sonarr",
+          "org.opencontainers.image.url": "https://github.com/linuxserver/docker-sonarr/packages",
+          "org.opencontainers.image.vendor": "linuxserver.io",
+          "org.opencontainers.image.version": "4.0.15.2941-ls292"
+        },
+        "Volumes": {
+          "/config": {}
+        },
+        "WorkingDir": "/",
+        "ExposedPorts": {
+          "8989/tcp": {}
+        }
+      }
+    },
+    "Layers": [
+      {
+        "Size": 14354944,
+        "Digest": "sha256:98d05af6f9a424f2cc286ad94dc26ad3d011321e2dde0e2cd68c4fe77c8dee5f",
+        "DiffID": "sha256:dc92c16044e333c5b96de0754c326fb5d11110d555b3f68e73501ee12b91f1a0"
+      },
+      {
+        "Size": 32768,
+        "Digest": "sha256:f6a4c3e338ed76d3e90c1ce7a15013a45c9b55febc952bc905eed245ce0bb8d2",
+        "DiffID": "sha256:4237b4abe0c583f84633de1da55c1e716dbf60660634932965955c149a90929c"
+      },
+      {
+        "Size": 8192,
+        "Digest": "sha256:7018d20e74d0d44bec7bc559528209361458325c7bd8d27b225fa6b63f629666",
+        "DiffID": "sha256:c80e099cc0c1ea481b516c2ff40e5e744006a7d3bf08a8212b74b336ad3e1adc"
+      },
+      {
+        "Size": 3584,
+        "Digest": "sha256:00b74d685ee5b004bde40d630fd128a42b9c6fcb60f63df73eb8765e87c4b104",
+        "DiffID": "sha256:74f398e7694c5078b9ad601e79eb7186be5cfd2d3e00a2171a00ea8c2536b10a"
+      },
+      {
+        "Size": 3072,
+        "Digest": "sha256:0ac0a0f712f1f468819330a53fc281e4c47139fef80f17de168d8e41b8714839",
+        "DiffID": "sha256:552c2aa51bac39e83bf12e583b07a44021163fe0eca7cc029c452227465d7fbf"
+      },
+      {
+        "Size": 14952960,
+        "Digest": "sha256:9ac5470a04d6f6fbd6a422aa6bbcbc2f9c8fe569c86a35535d6ae7eee2d5226d",
+        "DiffID": "sha256:b85bec4b217904bcf4be4b686e18ad65528ee288a9f6541159d2d457d0330f33"
+      },
+      {
+        "Size": 79360,
+        "Digest": "sha256:8f4d8cb90ab24bd9cf8b3315b78999a11a6b96299bc30cfd93533686cf57fe76",
+        "DiffID": "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf"
+      },
+      {
+        "Size": 177859584,
+        "Digest": "sha256:3a9faa752db665aee17eb3486f35be7a963062496287629ae2b3168c57a1c67f",
+        "DiffID": "sha256:51841de211888b6e89d89a5387f03ea0bd62e380888682bf7ca3dfe98ac73eba"
+      },
+      {
+        "Size": 17920,
+        "Digest": "sha256:a8a12577c570009f27626bed519ab29bc9f940f66a3f28f0b7d01eaa9d6593e6",
+        "DiffID": "sha256:4fed2fa5fbbbbb5c9bd9abbca95887efebf2ac814f6687599644735eb6808170"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "linuxserver/sonarr:4.0.15 (alpine 3.22.1)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.Api.V3.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.Common.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.Core.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.Host.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.Http.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.Mono.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.RuntimePatches.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-43485",
+          "PkgID": "System.Text.Json/6.0.9",
+          "PkgName": "System.Text.Json",
+          "PkgIdentifier": {
+            "PURL": "pkg:nuget/System.Text.Json@6.0.9",
+            "UID": "a58045e4aed304e3"
+          },
+          "InstalledVersion": "6.0.9",
+          "FixedVersion": "8.0.5, 6.0.10",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:3a9faa752db665aee17eb3486f35be7a963062496287629ae2b3168c57a1c67f",
+            "DiffID": "sha256:51841de211888b6e89d89a5387f03ea0bd62e380888682bf7ca3dfe98ac73eba"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-43485",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory NuGet",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anuget"
+          },
+          "Title": "dotnet: Denial of Service in System.Text.Json",
+          "Description": ".NET and Visual Studio Denial of Service Vulnerability",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2024:7869",
+            "https://access.redhat.com/security/cve/CVE-2024-43485",
+            "https://bugzilla.redhat.com/2315729",
+            "https://bugzilla.redhat.com/2315730",
+            "https://bugzilla.redhat.com/2315731",
+            "https://bugzilla.redhat.com/2316161",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2315729",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2315730",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2315731",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2316161",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-38229",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-43483",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-43484",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-43485",
+            "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-october-2024-servicing-updates",
+            "https://errata.almalinux.org/9/ALSA-2024-7869.html",
+            "https://errata.rockylinux.org/RLSA-2024:7868",
+            "https://github.com/dotnet/announcements/issues/329",
+            "https://github.com/dotnet/runtime",
+            "https://github.com/dotnet/runtime/issues/108678",
+            "https://github.com/dotnet/runtime/security/advisories/GHSA-8g4q-xg66-9fp4",
+            "https://linux.oracle.com/cve/CVE-2024-43485.html",
+            "https://linux.oracle.com/errata/ELSA-2024-7869.html",
+            "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43485",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-43485",
+            "https://ubuntu.com/security/notices/USN-7058-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-43485"
+          ],
+          "PublishedDate": "2024-10-08T18:15:10.84Z",
+          "LastModifiedDate": "2024-10-21T18:01:28.623Z"
+        }
+      ]
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.SignalR.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    },
+    {
+      "Target": "app/sonarr/bin/Sonarr.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    }
+  ]
+}
