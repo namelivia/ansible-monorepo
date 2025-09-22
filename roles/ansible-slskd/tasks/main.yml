@@ -9,6 +9,8 @@
       - docker_network_name is defined
       - owner is defined
       - group is defined
+      - uid is defined
+      - gid is defined
       - slskd_incomplete_folder is defined
       - slskd_downloads_folder is defined
       - music_share_folder is defined
@@ -43,7 +45,7 @@
       - "{{ slskd_downloads_folder }}:/downloads"
       - "{{ music_share_folder }}:/music"
     log_driver: "syslog"
-    user: "{{ owner }}:{{ group }}"
+    user: "{{ uid }}:{{ gid }}"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
       syslog-format: "rfc5424"
