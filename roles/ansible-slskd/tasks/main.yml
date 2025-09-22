@@ -43,6 +43,7 @@
       - "{{ slskd_downloads_folder }}:/downloads"
       - "{{ music_share_folder }}:/music"
     log_driver: "syslog"
+    user: "{{ owner }}:{{ group }}"
     log_options:
       syslog-address: "tcp://{{ alloy_host }}:51893"
       syslog-format: "rfc5424"
