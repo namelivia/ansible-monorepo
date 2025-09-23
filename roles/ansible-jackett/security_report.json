@@ -1,0 +1,316 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "linuxserver/jackett:0.23.52",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 183075328,
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.22.1"
+    },
+    "ImageID": "sha256:d7e7161bb404b0150315eb60667ae6cdf1bd357e23dae34d29d6cfba353e0120",
+    "DiffIDs": [
+      "sha256:dc92c16044e333c5b96de0754c326fb5d11110d555b3f68e73501ee12b91f1a0",
+      "sha256:4237b4abe0c583f84633de1da55c1e716dbf60660634932965955c149a90929c",
+      "sha256:c80e099cc0c1ea481b516c2ff40e5e744006a7d3bf08a8212b74b336ad3e1adc",
+      "sha256:74f398e7694c5078b9ad601e79eb7186be5cfd2d3e00a2171a00ea8c2536b10a",
+      "sha256:552c2aa51bac39e83bf12e583b07a44021163fe0eca7cc029c452227465d7fbf",
+      "sha256:b85bec4b217904bcf4be4b686e18ad65528ee288a9f6541159d2d457d0330f33",
+      "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf",
+      "sha256:142b06b574e23ba885691cdf0df3b914e99555a868fa91765e6c4d27922df761",
+      "sha256:618a773638fa5dddcde49f8166ab989223856d96692f3d7d4126161459d36ddb"
+    ],
+    "RepoTags": [
+      "linuxserver/jackett:0.23.52"
+    ],
+    "RepoDigests": [
+      "linuxserver/jackett@sha256:56eb74796ec0964991a3c79b05ec38d756086ab8baab9339b502b3b42c8e83a0"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-09-22T06:58:42.854564571Z",
+      "history": [
+        {
+          "created": "2025-09-13T13:35:29.863151704Z",
+          "created_by": "COPY /root-out/ / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG BUILD_DATE=2025-09-13T13:33:56+00:00",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG VERSION=25712cc1-ls9",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG MODS_VERSION=v3",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG PKG_INST_VERSION=v1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG LSIOWN_VERSION=v1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ARG WITHCONTENV_VERSION=v1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "LABEL build_version=Linuxserver.io version:- 25712cc1-ls9 Build-date:- 2025-09-13T13:33:56+00:00",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "LABEL maintainer=TheLamer",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:29.94726441Z",
+          "created_by": "ADD --chmod=755 https://raw.githubusercontent.com/linuxserver/docker-mods/mod-scripts/docker-mods.v3 /docker-mods # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.962706694Z",
+          "created_by": "ADD --chmod=755 https://raw.githubusercontent.com/linuxserver/docker-mods/mod-scripts/package-install.v1 /etc/s6-overlay/s6-rc.d/init-mods-package-install/run # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.977412846Z",
+          "created_by": "ADD --chmod=755 https://raw.githubusercontent.com/linuxserver/docker-mods/mod-scripts/lsiown.v1 /usr/bin/lsiown # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.9933967Z",
+          "created_by": "ADD --chmod=755 https://raw.githubusercontent.com/linuxserver/docker-mods/mod-scripts/with-contenv.v1 /usr/bin/with-contenv # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:29.9933967Z",
+          "created_by": "ENV PS1=$(whoami)@$(hostname):$(pwd)\\$  HOME=/root TERM=xterm S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 S6_VERBOSITY=1 S6_STAGE2_HOOK=/docker-mods VIRTUAL_ENV=/lsiopy PATH=/lsiopy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-13T13:35:31.367904524Z",
+          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" &&   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata &&   echo \"**** create abc user and make our folders ****\" &&   groupmod -g 1000 users &&   useradd -u 911 -U -d /config -s /bin/false abc &&   usermod -G users abc &&   mkdir -p     /app     /config     /defaults     /lsiopy &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:31.403613486Z",
+          "created_by": "COPY root/ / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-13T13:35:31.403613486Z",
+          "created_by": "ENTRYPOINT [\"/init\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.261669409Z",
+          "created_by": "ENV LSIO_FIRST_PARTY=true",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.261669409Z",
+          "created_by": "ARG BUILD_DATE=2025-09-22T06:56:15+00:00",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.261669409Z",
+          "created_by": "ARG VERSION=v0.23.52-ls161",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.261669409Z",
+          "created_by": "ARG JACKETT_RELEASE=v0.23.52",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.261669409Z",
+          "created_by": "LABEL build_version=Linuxserver.io version:- v0.23.52-ls161 Build-date:- 2025-09-22T06:56:15+00:00",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.261669409Z",
+          "created_by": "LABEL maintainer=thelamer",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.261669409Z",
+          "created_by": "ENV XDG_DATA_HOME=/config XDG_CONFIG_HOME=/config TMPDIR=/run/jackett-temp",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.261669409Z",
+          "created_by": "RUN |3 BUILD_DATE=2025-09-22T06:56:15+00:00 VERSION=v0.23.52-ls161 JACKETT_RELEASE=v0.23.52 /bin/sh -c echo \"**** install packages ****\" &&   apk --no-cache add     icu-data-full     icu-libs &&   echo \"**** install jackett ****\" &&   mkdir -p     /app/Jackett &&   if [ -z ${JACKETT_RELEASE+x} ]; then     JACKETT_RELEASE=$(curl -sX GET \"https://api.github.com/repos/Jackett/Jackett/releases/latest\"     | jq -r .tag_name);   fi &&   curl -o     /tmp/jacket.tar.gz -L     \"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.LinuxMuslAMDx64.tar.gz\" &&   tar xf     /tmp/jacket.tar.gz -C     /app/Jackett --strip-components=1 &&   echo \"**** fix for host id mapping error ****\" &&   chown -R root:root /app/Jackett &&   echo \"**** save docker image version ****\" &&   echo \"${VERSION}\" > /etc/docker-image &&   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" > /build_version &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-22T06:58:42.854564571Z",
+          "created_by": "COPY root/ / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-22T06:58:42.854564571Z",
+          "created_by": "VOLUME [/config]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-22T06:58:42.854564571Z",
+          "created_by": "EXPOSE &{[{{52 0} {52 0}}] 0xc0003bad80}",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:dc92c16044e333c5b96de0754c326fb5d11110d555b3f68e73501ee12b91f1a0",
+          "sha256:4237b4abe0c583f84633de1da55c1e716dbf60660634932965955c149a90929c",
+          "sha256:c80e099cc0c1ea481b516c2ff40e5e744006a7d3bf08a8212b74b336ad3e1adc",
+          "sha256:74f398e7694c5078b9ad601e79eb7186be5cfd2d3e00a2171a00ea8c2536b10a",
+          "sha256:552c2aa51bac39e83bf12e583b07a44021163fe0eca7cc029c452227465d7fbf",
+          "sha256:b85bec4b217904bcf4be4b686e18ad65528ee288a9f6541159d2d457d0330f33",
+          "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf",
+          "sha256:142b06b574e23ba885691cdf0df3b914e99555a868fa91765e6c4d27922df761",
+          "sha256:618a773638fa5dddcde49f8166ab989223856d96692f3d7d4126161459d36ddb"
+        ]
+      },
+      "config": {
+        "Entrypoint": [
+          "/init"
+        ],
+        "Env": [
+          "PATH=/lsiopy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "PS1=$(whoami)@$(hostname):$(pwd)\\$ ",
+          "HOME=/root",
+          "TERM=xterm",
+          "S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0",
+          "S6_VERBOSITY=1",
+          "S6_STAGE2_HOOK=/docker-mods",
+          "VIRTUAL_ENV=/lsiopy",
+          "LSIO_FIRST_PARTY=true",
+          "XDG_DATA_HOME=/config",
+          "XDG_CONFIG_HOME=/config",
+          "TMPDIR=/run/jackett-temp"
+        ],
+        "Labels": {
+          "build_version": "Linuxserver.io version:- v0.23.52-ls161 Build-date:- 2025-09-22T06:56:15+00:00",
+          "maintainer": "thelamer",
+          "org.opencontainers.image.authors": "linuxserver.io",
+          "org.opencontainers.image.created": "2025-09-22T06:56:15+00:00",
+          "org.opencontainers.image.description": "[Jackett](https://github.com/Jackett/Jackett) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.",
+          "org.opencontainers.image.documentation": "https://docs.linuxserver.io/images/docker-jackett",
+          "org.opencontainers.image.licenses": "GPL-3.0-only",
+          "org.opencontainers.image.ref.name": "fb3f7d38ae074acc3ae341c04a271f1ffc193850",
+          "org.opencontainers.image.revision": "fb3f7d38ae074acc3ae341c04a271f1ffc193850",
+          "org.opencontainers.image.source": "https://github.com/linuxserver/docker-jackett",
+          "org.opencontainers.image.title": "Jackett",
+          "org.opencontainers.image.url": "https://github.com/linuxserver/docker-jackett/packages",
+          "org.opencontainers.image.vendor": "linuxserver.io",
+          "org.opencontainers.image.version": "v0.23.52-ls161"
+        },
+        "Volumes": {
+          "/config": {}
+        },
+        "WorkingDir": "/",
+        "ExposedPorts": {
+          "9117/tcp": {}
+        }
+      }
+    },
+    "Layers": [
+      {
+        "Size": 14354944,
+        "Digest": "sha256:98d05af6f9a424f2cc286ad94dc26ad3d011321e2dde0e2cd68c4fe77c8dee5f",
+        "DiffID": "sha256:dc92c16044e333c5b96de0754c326fb5d11110d555b3f68e73501ee12b91f1a0"
+      },
+      {
+        "Size": 32768,
+        "Digest": "sha256:f6a4c3e338ed76d3e90c1ce7a15013a45c9b55febc952bc905eed245ce0bb8d2",
+        "DiffID": "sha256:4237b4abe0c583f84633de1da55c1e716dbf60660634932965955c149a90929c"
+      },
+      {
+        "Size": 8192,
+        "Digest": "sha256:7018d20e74d0d44bec7bc559528209361458325c7bd8d27b225fa6b63f629666",
+        "DiffID": "sha256:c80e099cc0c1ea481b516c2ff40e5e744006a7d3bf08a8212b74b336ad3e1adc"
+      },
+      {
+        "Size": 3584,
+        "Digest": "sha256:00b74d685ee5b004bde40d630fd128a42b9c6fcb60f63df73eb8765e87c4b104",
+        "DiffID": "sha256:74f398e7694c5078b9ad601e79eb7186be5cfd2d3e00a2171a00ea8c2536b10a"
+      },
+      {
+        "Size": 3072,
+        "Digest": "sha256:0ac0a0f712f1f468819330a53fc281e4c47139fef80f17de168d8e41b8714839",
+        "DiffID": "sha256:552c2aa51bac39e83bf12e583b07a44021163fe0eca7cc029c452227465d7fbf"
+      },
+      {
+        "Size": 14952960,
+        "Digest": "sha256:9ac5470a04d6f6fbd6a422aa6bbcbc2f9c8fe569c86a35535d6ae7eee2d5226d",
+        "DiffID": "sha256:b85bec4b217904bcf4be4b686e18ad65528ee288a9f6541159d2d457d0330f33"
+      },
+      {
+        "Size": 79360,
+        "Digest": "sha256:8f4d8cb90ab24bd9cf8b3315b78999a11a6b96299bc30cfd93533686cf57fe76",
+        "DiffID": "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf"
+      },
+      {
+        "Size": 153624576,
+        "Digest": "sha256:db143129d22cd0e28c646a7bfd97454573fc442cb9f4c8f1c619f73b964f3d11",
+        "DiffID": "sha256:142b06b574e23ba885691cdf0df3b914e99555a868fa91765e6c4d27922df761"
+      },
+      {
+        "Size": 15872,
+        "Digest": "sha256:017c32bf675d7c4bd57aaed4cc1b24512951d5b35d90e0d1c6f2b43eecf8cca0",
+        "DiffID": "sha256:618a773638fa5dddcde49f8166ab989223856d96692f3d7d4126161459d36ddb"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "linuxserver/jackett:0.23.52 (alpine 3.22.1)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    },
+    {
+      "Target": "app/Jackett/JackettUpdater.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    },
+    {
+      "Target": "app/Jackett/jackett.deps.json",
+      "Class": "lang-pkgs",
+      "Type": "dotnet-core"
+    }
+  ]
+}

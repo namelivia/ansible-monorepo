@@ -1,0 +1,460 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "namelivia/itemtree-client:1.0.1",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 50046976,
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.21.3"
+    },
+    "ImageID": "sha256:a452058ce99e66c10f280dc92de6f9b4d58210f04bf1c7f00b2fc454c42d7421",
+    "DiffIDs": [
+      "sha256:08000c18d16dadf9553d747a58cf44023423a9ab010aab96cf263d2216b8b350",
+      "sha256:4babb02c7c40d97e82507fdd582797de0f0553d5458d694980e90e9a9a9d886c",
+      "sha256:9c2b6e6f2e2efc50b4d2b0bd7fc4dad06a7425936f4f576e2cb629da09e2cd64",
+      "sha256:5f5a3d906b11cb08917f173e55d1bd0fed2863a9361e5adcfb54229b0990391a",
+      "sha256:b0debeaa68c5761a123cc2e5324f332161b019f4655c62a3e2e0ab55969bd741",
+      "sha256:2bfd71b953a3f6efe3e43881a1f3b66cdaf5633b7fec90f8fc59cf66c6a3a19d",
+      "sha256:3db4ef8dec24b65421383bad8b09258de423f8819488dabb300fa6510d46bcd1",
+      "sha256:7e881413b63537d3bcada36b82d430859560b01e8f3348460bfa983554882dd7",
+      "sha256:f78017343aa7532c897d45709498142fd1ae7b564174adef7c755b27d5b25ff7",
+      "sha256:3f5eb473168b4d3a2b0ce8cad6572700dad9b1cab38a9f5eb51765d1adac3f7e"
+    ],
+    "RepoTags": [
+      "namelivia/itemtree-client:1.0.1"
+    ],
+    "RepoDigests": [
+      "namelivia/itemtree-client@sha256:d50bde9e399f990828b4e26079ed8ad3973a5420735a8e7028b5716b59386805"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-07-05T10:22:59.00920774Z",
+      "history": [
+        {
+          "created": "2025-02-14T03:28:36Z",
+          "created_by": "ADD alpine-minirootfs-3.21.3-x86_64.tar.gz / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-14T03:28:36Z",
+          "created_by": "CMD [\"/bin/sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "LABEL maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "ENV NGINX_VERSION=1.28.0",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "ENV PKG_RELEASE=1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "ENV DYNPKG_RELEASE=1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "RUN /bin/sh -c set -x     && addgroup -g 101 -S nginx     && adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx     && apkArch=\"$(cat /etc/apk/arch)\"     && nginxPackages=\"         nginx=${NGINX_VERSION}-r${PKG_RELEASE}     \"     && apk add --no-cache --virtual .checksum-deps         openssl     && case \"$apkArch\" in         x86_64|aarch64)             set -x             && KEY_SHA512=\"e09fa32f0a0eab2b879ccbbc4d0e4fb9751486eedda75e35fac65802cc9faa266425edf83e261137a2f4d16281ce2c1a5f4502930fe75154723da014214f0655\"             && wget -O /tmp/nginx_signing.rsa.pub https://nginx.org/keys/nginx_signing.rsa.pub             && if echo \"$KEY_SHA512 */tmp/nginx_signing.rsa.pub\" | sha512sum -c -; then                 echo \"key verification succeeded!\";                 mv /tmp/nginx_signing.rsa.pub /etc/apk/keys/;             else                 echo \"key verification failed!\";                 exit 1;             fi             && apk add -X \"https://nginx.org/packages/alpine/v$(egrep -o '^[0-9]+\\.[0-9]+' /etc/alpine-release)/main\" --no-cache $nginxPackages             ;;         *)             set -x             && tempDir=\"$(mktemp -d)\"             && chown nobody:nobody $tempDir             && apk add --no-cache --virtual .build-deps                 gcc                 libc-dev                 make                 openssl-dev                 pcre2-dev                 zlib-dev                 linux-headers                 bash                 alpine-sdk                 findutils                 curl             && su nobody -s /bin/sh -c \"                 export HOME=${tempDir}                 && cd ${tempDir}                 && curl -f -L -O https://github.com/nginx/pkg-oss/archive/${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 && PKGOSSCHECKSUM=\\\"517bc18954ccf4efddd51986584ca1f37966833ad342a297e1fe58fd0faf14c5a4dabcb23519dca433878a2927a95d6bea05a6749ee2fa67a33bf24cdc41b1e4 *${NGINX_VERSION}-${PKG_RELEASE}.tar.gz\\\"                 && if [ \\\"\\$(openssl sha512 -r ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz)\\\" = \\\"\\$PKGOSSCHECKSUM\\\" ]; then                     echo \\\"pkg-oss tarball checksum verification succeeded!\\\";                 else                     echo \\\"pkg-oss tarball checksum verification failed!\\\";                     exit 1;                 fi                 && tar xzvf ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 && cd pkg-oss-${NGINX_VERSION}-${PKG_RELEASE}                 && cd alpine                 && make base                 && apk index --allow-untrusted -o ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz ${tempDir}/packages/alpine/${apkArch}/*.apk                 && abuild-sign -k ${tempDir}/.abuild/abuild-key.rsa ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz                 \"             && cp ${tempDir}/.abuild/abuild-key.rsa.pub /etc/apk/keys/             && apk del --no-network .build-deps             && apk add -X ${tempDir}/packages/alpine/ --no-cache $nginxPackages             ;;     esac     && apk del --no-network .checksum-deps     && if [ -n \"$tempDir\" ]; then rm -rf \"$tempDir\"; fi     && if [ -f \"/etc/apk/keys/abuild-key.rsa.pub\" ]; then rm -f /etc/apk/keys/abuild-key.rsa.pub; fi     && apk add --no-cache gettext-envsubst     && apk add --no-cache tzdata     && ln -sf /dev/stdout /var/log/nginx/access.log     && ln -sf /dev/stderr /var/log/nginx/error.log     && mkdir /docker-entrypoint.d # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "COPY docker-entrypoint.sh / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "COPY 10-listen-on-ipv6-by-default.sh /docker-entrypoint.d # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "COPY 15-local-resolvers.envsh /docker-entrypoint.d # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "COPY 20-envsubst-on-templates.sh /docker-entrypoint.d # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "COPY 30-tune-worker-processes.sh /docker-entrypoint.d # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "ENTRYPOINT [\"/docker-entrypoint.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "EXPOSE map[80/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "STOPSIGNAL SIGQUIT",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "ENV NJS_VERSION=0.8.10",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "ENV NJS_RELEASE=1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-23T18:00:49Z",
+          "created_by": "RUN /bin/sh -c set -x     && apkArch=\"$(cat /etc/apk/arch)\"     && nginxPackages=\"         nginx=${NGINX_VERSION}-r${PKG_RELEASE}         nginx-module-xslt=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-geoip=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-image-filter=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-njs=${NGINX_VERSION}.${NJS_VERSION}-r${NJS_RELEASE}     \"     && apk add --no-cache --virtual .checksum-deps         openssl     && case \"$apkArch\" in         x86_64|aarch64)             apk add -X \"https://nginx.org/packages/alpine/v$(egrep -o '^[0-9]+\\.[0-9]+' /etc/alpine-release)/main\" --no-cache $nginxPackages             ;;         *)             set -x             && tempDir=\"$(mktemp -d)\"             && chown nobody:nobody $tempDir             && apk add --no-cache --virtual .build-deps                 gcc                 libc-dev                 make                 openssl-dev                 pcre2-dev                 zlib-dev                 linux-headers                 libxslt-dev                 gd-dev                 geoip-dev                 libedit-dev                 bash                 alpine-sdk                 findutils                 curl             && su nobody -s /bin/sh -c \"                 export HOME=${tempDir}                 && cd ${tempDir}                 && curl -f -L -O https://github.com/nginx/pkg-oss/archive/${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 && PKGOSSCHECKSUM=\\\"517bc18954ccf4efddd51986584ca1f37966833ad342a297e1fe58fd0faf14c5a4dabcb23519dca433878a2927a95d6bea05a6749ee2fa67a33bf24cdc41b1e4 *${NGINX_VERSION}-${PKG_RELEASE}.tar.gz\\\"                 && if [ \\\"\\$(openssl sha512 -r ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz)\\\" = \\\"\\$PKGOSSCHECKSUM\\\" ]; then                     echo \\\"pkg-oss tarball checksum verification succeeded!\\\";                 else                     echo \\\"pkg-oss tarball checksum verification failed!\\\";                     exit 1;                 fi                 && tar xzvf ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 && cd pkg-oss-${NGINX_VERSION}-${PKG_RELEASE}                 && cd alpine                 && make module-geoip module-image-filter module-njs module-xslt                 && apk index --allow-untrusted -o ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz ${tempDir}/packages/alpine/${apkArch}/*.apk                 && abuild-sign -k ${tempDir}/.abuild/abuild-key.rsa ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz                 \"             && cp ${tempDir}/.abuild/abuild-key.rsa.pub /etc/apk/keys/             && apk del --no-network .build-deps             && apk add -X ${tempDir}/packages/alpine/ --no-cache $nginxPackages             ;;     esac     && apk del --no-network .checksum-deps     && if [ -n \"$tempDir\" ]; then rm -rf \"$tempDir\"; fi     && if [ -f \"/etc/apk/keys/abuild-key.rsa.pub\" ]; then rm -f /etc/apk/keys/abuild-key.rsa.pub; fi     && apk add --no-cache curl ca-certificates # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-07-05T10:22:58.994704744Z",
+          "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-07-05T10:22:59.00920774Z",
+          "created_by": "COPY nginx/nginx.conf /etc/nginx/nginx.conf # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-07-05T10:22:59.00920774Z",
+          "created_by": "EXPOSE map[80/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-07-05T10:22:59.00920774Z",
+          "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:08000c18d16dadf9553d747a58cf44023423a9ab010aab96cf263d2216b8b350",
+          "sha256:4babb02c7c40d97e82507fdd582797de0f0553d5458d694980e90e9a9a9d886c",
+          "sha256:9c2b6e6f2e2efc50b4d2b0bd7fc4dad06a7425936f4f576e2cb629da09e2cd64",
+          "sha256:5f5a3d906b11cb08917f173e55d1bd0fed2863a9361e5adcfb54229b0990391a",
+          "sha256:b0debeaa68c5761a123cc2e5324f332161b019f4655c62a3e2e0ab55969bd741",
+          "sha256:2bfd71b953a3f6efe3e43881a1f3b66cdaf5633b7fec90f8fc59cf66c6a3a19d",
+          "sha256:3db4ef8dec24b65421383bad8b09258de423f8819488dabb300fa6510d46bcd1",
+          "sha256:7e881413b63537d3bcada36b82d430859560b01e8f3348460bfa983554882dd7",
+          "sha256:f78017343aa7532c897d45709498142fd1ae7b564174adef7c755b27d5b25ff7",
+          "sha256:3f5eb473168b4d3a2b0ce8cad6572700dad9b1cab38a9f5eb51765d1adac3f7e"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "nginx",
+          "-g",
+          "daemon off;"
+        ],
+        "Entrypoint": [
+          "/docker-entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "NGINX_VERSION=1.28.0",
+          "PKG_RELEASE=1",
+          "DYNPKG_RELEASE=1",
+          "NJS_VERSION=0.8.10",
+          "NJS_RELEASE=1"
+        ],
+        "Labels": {
+          "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+        },
+        "WorkingDir": "/",
+        "ExposedPorts": {
+          "80/tcp": {}
+        },
+        "ArgsEscaped": true,
+        "StopSignal": "SIGQUIT"
+      }
+    },
+    "Layers": [
+      {
+        "Size": 8120832,
+        "Digest": "sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870",
+        "DiffID": "sha256:08000c18d16dadf9553d747a58cf44023423a9ab010aab96cf263d2216b8b350"
+      },
+      {
+        "Size": 4511232,
+        "Digest": "sha256:dde65f7af9d6bd24c25436572f04a4590e1d24cc3261e490b4dc04f8ddc95f55",
+        "DiffID": "sha256:4babb02c7c40d97e82507fdd582797de0f0553d5458d694980e90e9a9a9d886c"
+      },
+      {
+        "Size": 3584,
+        "Digest": "sha256:532a231453496d98bd24f9d17442565e55a30c355843a7106ca30d455828ab0c",
+        "DiffID": "sha256:9c2b6e6f2e2efc50b4d2b0bd7fc4dad06a7425936f4f576e2cb629da09e2cd64"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:bbdf43ac95df903e0e0aba895e4fde36b9994a02e21e6f9ee01a90b874330b2b",
+        "DiffID": "sha256:5f5a3d906b11cb08917f173e55d1bd0fed2863a9361e5adcfb54229b0990391a"
+      },
+      {
+        "Size": 2560,
+        "Digest": "sha256:c544760e65143e93084253d9559bde21e5b5ed47cec5db7ffce3cf52c6c1ea4d",
+        "DiffID": "sha256:b0debeaa68c5761a123cc2e5324f332161b019f4655c62a3e2e0ab55969bd741"
+      },
+      {
+        "Size": 5120,
+        "Digest": "sha256:3cc2eb67bce91b1eacb09e48d14caba02f056ba09772b34f083b54b7b369cc8c",
+        "DiffID": "sha256:2bfd71b953a3f6efe3e43881a1f3b66cdaf5633b7fec90f8fc59cf66c6a3a19d"
+      },
+      {
+        "Size": 7168,
+        "Digest": "sha256:19f9a172b25c0bb4945785ec1043c39f16f4af6efc5f40b0000ef423c84c1a1d",
+        "DiffID": "sha256:3db4ef8dec24b65421383bad8b09258de423f8819488dabb300fa6510d46bcd1"
+      },
+      {
+        "Size": 36978176,
+        "Digest": "sha256:e57f9eaa9ba5fcc77182b2bac87e8ff12915363b7f083eb096744ac3c762a138",
+        "DiffID": "sha256:7e881413b63537d3bcada36b82d430859560b01e8f3348460bfa983554882dd7"
+      },
+      {
+        "Size": 410112,
+        "Digest": "sha256:914728886bcdb9971e95e0de595332812e5a764771bd738b6bf22c4df799d7af",
+        "DiffID": "sha256:f78017343aa7532c897d45709498142fd1ae7b564174adef7c755b27d5b25ff7"
+      },
+      {
+        "Size": 3584,
+        "Digest": "sha256:b62ccdf66b833731b63e2f3f11f7aff7f0e332694551277370435d76897e290a",
+        "DiffID": "sha256:3f5eb473168b4d3a2b0ce8cad6572700dad9b1cab38a9f5eb51765d1adac3f7e"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "namelivia/itemtree-client:1.0.1 (alpine 3.21.3)",
+      "Class": "os-pkgs",
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-59375",
+          "PkgID": "libexpat@2.7.0-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.7.0-r0?arch=x86_64&distro=3.21.3",
+            "UID": "c0ff74b5002517fa"
+          },
+          "InstalledVersion": "2.7.0-r0",
+          "FixedVersion": "2.7.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:e57f9eaa9ba5fcc77182b2bac87e8ff12915363b7f083eb096744ac3c762a138",
+            "DiffID": "sha256:7e881413b63537d3bcada36b82d430859560b01e8f3348460bfa983554882dd7"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-59375",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: libexpat in Expat allows attackers to trigger large dynamic memory allocations via a small document that is submitted for parsing",
+          "Description": "libexpat in Expat before 2.7.2 allows attackers to trigger large dynamic memory allocations via a small document that is submitted for parsing.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-59375",
+            "https://github.com/libexpat/libexpat/blob/676a4c531ec768732fac215da9730b5f50fbd2bf/expat/Changes#L45-L74",
+            "https://github.com/libexpat/libexpat/blob/R_2_7_2/expat/Changes",
+            "https://github.com/libexpat/libexpat/issues/1018",
+            "https://github.com/libexpat/libexpat/pull/1034",
+            "https://issues.oss-fuzz.com/issues/439133977",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-59375",
+            "https://www.cve.org/CVERecord?id=CVE-2025-59375"
+          ],
+          "PublishedDate": "2025-09-15T03:15:40.92Z",
+          "LastModifiedDate": "2025-09-17T14:15:40.913Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32414",
+          "PkgID": "libxml2@2.13.4-r5",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2@2.13.4-r5?arch=x86_64&distro=3.21.3",
+            "UID": "23d053039c2d3ad2"
+          },
+          "InstalledVersion": "2.13.4-r5",
+          "FixedVersion": "2.13.4-r6",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:e57f9eaa9ba5fcc77182b2bac87e8ff12915363b7f083eb096744ac3c762a138",
+            "DiffID": "sha256:7e881413b63537d3bcada36b82d430859560b01e8f3348460bfa983554882dd7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32414",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Out-of-Bounds Read in libxml2",
+          "Description": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, out-of-bounds memory access can occur in the Python API (Python bindings) because of an incorrect return value. This occurs in xmlPythonFileRead and xmlPythonFileReadRaw because of a difference between bytes and characters.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-393",
+            "CWE-252"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L",
+              "V3Score": 5.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:13428",
+            "https://access.redhat.com/security/cve/CVE-2025-32414",
+            "https://bugzilla.redhat.com/2358121",
+            "https://bugzilla.redhat.com/2360768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2358121",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-32414",
+            "https://errata.almalinux.org/9/ALSA-2025-13428.html",
+            "https://errata.rockylinux.org/RLSA-2025:8958",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/889",
+            "https://linux.oracle.com/cve/CVE-2025-32414.html",
+            "https://linux.oracle.com/errata/ELSA-2025-8958.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32414",
+            "https://ubuntu.com/security/notices/USN-7467-1",
+            "https://ubuntu.com/security/notices/USN-7467-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32414"
+          ],
+          "PublishedDate": "2025-04-08T03:15:15.94Z",
+          "LastModifiedDate": "2025-04-23T19:09:35.517Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32415",
+          "PkgID": "libxml2@2.13.4-r5",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2@2.13.4-r5?arch=x86_64&distro=3.21.3",
+            "UID": "23d053039c2d3ad2"
+          },
+          "InstalledVersion": "2.13.4-r5",
+          "FixedVersion": "2.13.4-r6",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:e57f9eaa9ba5fcc77182b2bac87e8ff12915363b7f083eb096744ac3c762a138",
+            "DiffID": "sha256:7e881413b63537d3bcada36b82d430859560b01e8f3348460bfa983554882dd7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32415",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Out-of-bounds Read in xmlSchemaIDCFillNodeTables",
+          "Description": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, xmlSchemaIDCFillNodeTables in xmlschemas.c has a heap-based buffer under-read. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1284",
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 1,
+            "cbl-mariner": 1,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:13428",
+            "https://access.redhat.com/security/cve/CVE-2025-32415",
+            "https://bugzilla.redhat.com/2358121",
+            "https://bugzilla.redhat.com/2360768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2360768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-32415",
+            "https://errata.almalinux.org/9/ALSA-2025-13428.html",
+            "https://errata.rockylinux.org/RLSA-2025:13203",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/890",
+            "https://linux.oracle.com/cve/CVE-2025-32415.html",
+            "https://linux.oracle.com/errata/ELSA-2025-13789.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32415",
+            "https://ubuntu.com/security/notices/USN-7467-1",
+            "https://ubuntu.com/security/notices/USN-7467-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32415"
+          ],
+          "PublishedDate": "2025-04-17T17:15:33.733Z",
+          "LastModifiedDate": "2025-04-23T18:17:52.053Z"
+        }
+      ]
+    }
+  ]
+}

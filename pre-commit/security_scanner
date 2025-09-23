@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# pre-commit automatically passes the list of staged files as arguments.
+# Use git diff to find the staged files, filtering for only main.yml
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep 'tasks/main.yml$')
+
+if [ -z "$FILES" ]; then
+  echo "No staged 'tasks/main.yml' files to scan. Skipping."
+  exit 0
+fi
+
+# Loop through each changed main.yml file
+for file_path in $FILES; do
+  # Find the image name within the changed file
+  grep 'image:' "$file_path" | while read -r line; do
+    image=$(echo "$line" | sed -n 's/.*image: "\(.*\)"/\1/p' | sed 's/ //g')
+
+    if [[ "$image" =~ ^[a-z0-9\._\-]+([\/][a-z0-9\._\-]+)*(:[a-z0-9\._\-]+)?$ ]]; then
+      if [[ -n "$image" && ! "$line" =~ "# ignore-updates" ]]; then
+        echo "Scanning image: $image"
+        
+        # Determine the parent directory and output file
+        parent_dir=$(dirname "$file_path" | sed 's|/tasks||')
+        mkdir -p "$parent_dir"
+        output_file="$parent_dir/security_report.json"
+
+        docker run --rm \
+          -v trivy-cache-db:/root/.cache/trivy \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          aquasec/trivy image \
+          --scanners vuln \
+          --ignore-unfixed \
+          --severity=HIGH,CRITICAL \
+          --format json \
+          "$image" | jq 'del(.CreatedAt)' > "$output_file"
+      fi
+    else
+      echo "Skipping invalid image name: $image"
+    fi
+  done
+done

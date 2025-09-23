@@ -1,0 +1,687 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "ngosang/amule:2.3.3-19",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 37980160,
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.22.0_alpha20250108"
+    },
+    "ImageID": "sha256:03c533a715530bf255a073539083f384cb262e487e3c5bc2edc624f392be55ab",
+    "DiffIDs": [
+      "sha256:e21721183b10fa6d84b263043a2e6a3f972aab36fcbdb9640aeeb21044a8c8c1",
+      "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495",
+      "sha256:d1360b39e1489167489868997b5de27eb41cfdd5767a23928217deba4ebc3397",
+      "sha256:e07afd44a860450829b1545080d6004802edc9ca265a90a4a4c5cdb973b409ab",
+      "sha256:f4c743c74da89d1229a040468c593e92d7133c10de66e05a8f384961d592c433",
+      "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "sha256:a8355914fd46cda9947346168e63be5790db5816a47b32e4a01949b604a9b59e",
+      "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    ],
+    "RepoTags": [
+      "ngosang/amule:2.3.3-19"
+    ],
+    "RepoDigests": [
+      "ngosang/amule@sha256:172bc19dbe72ab35149781aaf268f204bb0663716b2619917a3d15e65b0900bd"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-02-05T11:28:45.780378695Z",
+      "history": [
+        {
+          "created": "2025-01-08T12:16:36Z",
+          "created_by": "ADD alpine-minirootfs-20250108-x86_64.tar.gz / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-01-08T12:16:36Z",
+          "created_by": "CMD [\"/bin/sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T11:28:31.699499244Z",
+          "created_by": "LABEL maintainer=ngosang@hotmail.es",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T11:28:31.699499244Z",
+          "created_by": "RUN /bin/sh -c apk add --no-cache libedit libgcc libintl libpng libstdc++ libupnp musl wxwidgets zlib tzdata pwgen mandoc curl &&     apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing crypto++ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T11:28:45.184173941Z",
+          "created_by": "COPY /usr/bin/alcc /usr/bin/amulecmd /usr/bin/amuled /usr/bin/amuleweb /usr/bin/ed2k /usr/bin/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T11:28:45.227111506Z",
+          "created_by": "COPY /usr/share/amule /usr/share/amule # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T11:28:45.264224814Z",
+          "created_by": "COPY /usr/share/man/man1/alcc.1.gz /usr/share/man/man1/amulecmd.1.gz /usr/share/man/man1/amuled.1.gz /usr/share/man/man1/amuleweb.1.gz /usr/share/man/man1/ed2k.1.gz /usr/share/man/man1/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T11:28:45.756155643Z",
+          "created_by": "RUN /bin/sh -c ldd /usr/bin/alcc &&     ldd /usr/bin/amulecmd &&     ldd /usr/bin/amuled &&     ldd /usr/bin/amuleweb &&     ldd /usr/bin/ed2k # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T11:28:45.770135137Z",
+          "created_by": "COPY entrypoint.sh /home/amule/entrypoint.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T11:28:45.780378695Z",
+          "created_by": "WORKDIR /home/amule",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T11:28:45.780378695Z",
+          "created_by": "EXPOSE map[4662/tcp:{} 4665/udp:{} 4672/udp:{} 4711/tcp:{} 4712/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T11:28:45.780378695Z",
+          "created_by": "ENTRYPOINT [\"/home/amule/entrypoint.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:e21721183b10fa6d84b263043a2e6a3f972aab36fcbdb9640aeeb21044a8c8c1",
+          "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495",
+          "sha256:d1360b39e1489167489868997b5de27eb41cfdd5767a23928217deba4ebc3397",
+          "sha256:e07afd44a860450829b1545080d6004802edc9ca265a90a4a4c5cdb973b409ab",
+          "sha256:f4c743c74da89d1229a040468c593e92d7133c10de66e05a8f384961d592c433",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "sha256:a8355914fd46cda9947346168e63be5790db5816a47b32e4a01949b604a9b59e",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        ]
+      },
+      "config": {
+        "Entrypoint": [
+          "/home/amule/entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Labels": {
+          "maintainer": "ngosang@hotmail.es",
+          "org.opencontainers.image.created": "2025-02-05T11:28:13.804Z",
+          "org.opencontainers.image.description": "aMule is a multi-platform client for the ED2K file sharing network",
+          "org.opencontainers.image.licenses": "MIT",
+          "org.opencontainers.image.revision": "6dc84240ada56740af5cecf63afbae45596788ce",
+          "org.opencontainers.image.source": "https://github.com/ngosang/docker-amule",
+          "org.opencontainers.image.title": "docker-amule",
+          "org.opencontainers.image.url": "https://github.com/ngosang/docker-amule",
+          "org.opencontainers.image.version": "2.3.3-19"
+        },
+        "WorkingDir": "/home/amule",
+        "ExposedPorts": {
+          "4662/tcp": {},
+          "4665/udp": {},
+          "4672/udp": {},
+          "4711/tcp": {},
+          "4712/tcp": {}
+        }
+      }
+    },
+    "Layers": [
+      {
+        "Size": 8120832,
+        "Digest": "sha256:d62bb7eb03b5936dc5a5665fd5a6ede7eab4a6bd0ed965be8c6c3c21e1e53931",
+        "DiffID": "sha256:e21721183b10fa6d84b263043a2e6a3f972aab36fcbdb9640aeeb21044a8c8c1"
+      },
+      {
+        "Size": 26021376,
+        "Digest": "sha256:b71a67f3a201e1f583503b630e2113f3597498682b13dd3592c4f8772fc6e97c",
+        "DiffID": "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495"
+      },
+      {
+        "Size": 2506240,
+        "Digest": "sha256:2996b37bc43057e9600508c9fa81ae765aa8fbc7aa91fa9513013f317dab63ac",
+        "DiffID": "sha256:d1360b39e1489167489868997b5de27eb41cfdd5767a23928217deba4ebc3397"
+      },
+      {
+        "Size": 1299456,
+        "Digest": "sha256:71dfc8facea3ba6094ec151625185db2bc5037a31a59725bbc7ec883454cfbe0",
+        "DiffID": "sha256:e07afd44a860450829b1545080d6004802edc9ca265a90a4a4c5cdb973b409ab"
+      },
+      {
+        "Size": 16384,
+        "Digest": "sha256:0d8c9804fe0b72e80575b90f9d7a2b10b357c8f9c83ccc70fb6a3f2de35f327f",
+        "DiffID": "sha256:f4c743c74da89d1229a040468c593e92d7133c10de66e05a8f384961d592c433"
+      },
+      {
+        "Size": 1024,
+        "Digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "DiffID": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      {
+        "Size": 13824,
+        "Digest": "sha256:4b69c1ddd65aa3ef46f3bd0d944601f8c939d0287165826c6a89c867cbee5326",
+        "DiffID": "sha256:a8355914fd46cda9947346168e63be5790db5816a47b32e4a01949b604a9b59e"
+      },
+      {
+        "Size": 1024,
+        "Digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "DiffID": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "ngosang/amule:2.3.3-19 (alpine 3.22.0_alpha20250108)",
+      "Class": "os-pkgs",
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-31498",
+          "PkgID": "c-ares@1.34.4-r0",
+          "PkgName": "c-ares",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/c-ares@1.34.4-r0?arch=x86_64&distro=3.22.0_alpha20250108",
+            "UID": "ea023a7b6c606acb"
+          },
+          "InstalledVersion": "1.34.4-r0",
+          "FixedVersion": "1.34.5-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:b71a67f3a201e1f583503b630e2113f3597498682b13dd3592c4f8772fc6e97c",
+            "DiffID": "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-31498",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "c-ares: c-ares has a use-after-free in read_answers()",
+          "Description": "c-ares is an asynchronous resolver library. From 1.32.3 through 1.34.4, there is a use-after-free in read_answers() when process_answer() may re-enqueue a query either due to a DNS Cookie Failure or when the upstream server does not properly support EDNS, or possibly on TCP queries if the remote closed the connection immediately after a response. If there was an issue trying to put that new transaction on the wire, it would close the connection handle, but read_answers() was still expecting the connection handle to be available to possibly dequeue other responses. In theory a remote attacker might be able to trigger this by flooding the target with ICMP UNREACHABLE packets if they also control the upstream nameserver and can return a result with one of those conditions, this has been untested. Otherwise only a local attacker might be able to change system behavior to make send()/write() return a failure condition. This vulnerability is fixed in 1.34.5.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/04/08/3",
+            "https://access.redhat.com/errata/RHSA-2025:7433",
+            "https://access.redhat.com/security/cve/CVE-2025-31498",
+            "https://bugzilla.redhat.com/2358271",
+            "https://bugzilla.redhat.com/2359553",
+            "https://errata.almalinux.org/9/ALSA-2025-7433.html",
+            "https://github.com/c-ares/c-ares/commit/29d38719112639d8c0ba910254a3dd4f482ea2d1",
+            "https://github.com/c-ares/c-ares/pull/821",
+            "https://github.com/c-ares/c-ares/security/advisories/GHSA-6hxc-62jh-p29v",
+            "https://linux.oracle.com/cve/CVE-2025-31498.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7502.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-31498",
+            "https://ubuntu.com/security/notices/USN-7477-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-31498"
+          ],
+          "PublishedDate": "2025-04-08T14:15:35.293Z",
+          "LastModifiedDate": "2025-04-08T15:15:50.31Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-12797",
+          "PkgID": "libcrypto3@3.3.2-r4",
+          "PkgName": "libcrypto3",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.2-r4?arch=x86_64&distro=3.22.0_alpha20250108",
+            "UID": "b897b0cd50aa09f"
+          },
+          "InstalledVersion": "3.3.2-r4",
+          "FixedVersion": "3.3.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:d62bb7eb03b5936dc5a5665fd5a6ede7eab4a6bd0ed965be8c6c3c21e1e53931",
+            "DiffID": "sha256:e21721183b10fa6d84b263043a2e6a3f972aab36fcbdb9640aeeb21044a8c8c1"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-12797",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: RFC7250 handshakes with unauthenticated servers don't abort as expected",
+          "Description": "Issue summary: Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a\nserver may fail to notice that the server was not authenticated, because\nhandshakes don't abort as expected when the SSL_VERIFY_PEER verification mode\nis set.\n\nImpact summary: TLS and DTLS connections using raw public keys may be\nvulnerable to man-in-middle attacks when server authentication failure is not\ndetected by clients.\n\nRPKs are disabled by default in both TLS clients and TLS servers.  The issue\nonly arises when TLS clients explicitly enable RPK use by the server, and the\nserver, likewise, enables sending of an RPK instead of an X.509 certificate\nchain.  The affected clients are those that then rely on the handshake to\nfail when the server's RPK fails to match one of the expected public keys,\nby setting the verification mode to SSL_VERIFY_PEER.\n\nClients that enable server-side raw public keys can still find out that raw\npublic key verification failed by calling SSL_get_verify_result(), and those\nthat do, and take appropriate action, are not affected.  This issue was\nintroduced in the initial implementation of RPK support in OpenSSL 3.2.\n\nThe FIPS modules in 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-392"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 1,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/02/11/3",
+            "http://www.openwall.com/lists/oss-security/2025/02/11/4",
+            "https://access.redhat.com/errata/RHSA-2025:1330",
+            "https://access.redhat.com/security/cve/CVE-2024-12797",
+            "https://bugzilla.redhat.com/2342757",
+            "https://errata.almalinux.org/9/ALSA-2025-1330.html",
+            "https://github.com/openssl/openssl/commit/738d4f9fdeaad57660dcba50a619fafced3fd5e9",
+            "https://github.com/openssl/openssl/commit/798779d43494549b611233f92652f0da5328fbe7",
+            "https://github.com/openssl/openssl/commit/87ebd203feffcf92ad5889df92f90bb0ee10a699",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-79v4-65xg-pq4g",
+            "https://linux.oracle.com/cve/CVE-2024-12797.html",
+            "https://linux.oracle.com/errata/ELSA-2025-1330.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-12797",
+            "https://openssl-library.org/news/secadv/20250211.txt",
+            "https://security.netapp.com/advisory/ntap-20250214-0001/",
+            "https://ubuntu.com/security/notices/USN-7264-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-12797"
+          ],
+          "PublishedDate": "2025-02-11T16:15:38.827Z",
+          "LastModifiedDate": "2025-02-18T14:15:27.107Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-8176",
+          "PkgID": "libexpat@2.6.4-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.6.4-r0?arch=x86_64&distro=3.22.0_alpha20250108",
+            "UID": "103f73c265fdedc8"
+          },
+          "InstalledVersion": "2.6.4-r0",
+          "FixedVersion": "2.7.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:b71a67f3a201e1f583503b630e2113f3597498682b13dd3592c4f8772fc6e97c",
+            "DiffID": "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-8176",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libexpat: expat: Improper Restriction of XML Entity Expansion Depth in libexpat",
+          "Description": "A stack overflow vulnerability exists in the libexpat library due to the way it handles recursive entity expansion in XML documents. When parsing an XML document with deeply nested entity references, libexpat can be forced to recurse indefinitely, exhausting the stack space and causing a crash. This issue could lead to denial of service (DoS) or, in some cases, exploitable memory corruption, depending on the environment and library usage.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/03/15/1",
+            "https://access.redhat.com/errata/RHSA-2025:13681",
+            "https://access.redhat.com/errata/RHSA-2025:3531",
+            "https://access.redhat.com/errata/RHSA-2025:3734",
+            "https://access.redhat.com/errata/RHSA-2025:3913",
+            "https://access.redhat.com/errata/RHSA-2025:4048",
+            "https://access.redhat.com/errata/RHSA-2025:4446",
+            "https://access.redhat.com/errata/RHSA-2025:4447",
+            "https://access.redhat.com/errata/RHSA-2025:4448",
+            "https://access.redhat.com/errata/RHSA-2025:4449",
+            "https://access.redhat.com/errata/RHSA-2025:7444",
+            "https://access.redhat.com/errata/RHSA-2025:7512",
+            "https://access.redhat.com/errata/RHSA-2025:8385",
+            "https://access.redhat.com/security/cve/CVE-2024-8176",
+            "https://blog.hartwork.org/posts/expat-2-7-0-released/",
+            "https://bugzilla.redhat.com/2310137",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2310137",
+            "https://bugzilla.suse.com/show_bug.cgi?id=1239618",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-8176",
+            "https://errata.almalinux.org/9/ALSA-2025-7444.html",
+            "https://errata.rockylinux.org/RLSA-2025:4048",
+            "https://github.com/libexpat/libexpat/blob/R_2_7_0/expat/Changes#L40-L52",
+            "https://github.com/libexpat/libexpat/issues/893",
+            "https://gitlab.alpinelinux.org/alpine/aports/-/commit/d068c3ff36fc6f4789988a09c69b434db757db53",
+            "https://linux.oracle.com/cve/CVE-2024-8176.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-8176",
+            "https://security-tracker.debian.org/tracker/CVE-2024-8176",
+            "https://security.netapp.com/advisory/ntap-20250328-0009/",
+            "https://ubuntu.com/security/CVE-2024-8176",
+            "https://ubuntu.com/security/notices/USN-7424-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-8176",
+            "https://www.kb.cert.org/vuls/id/760160"
+          ],
+          "PublishedDate": "2025-03-14T09:15:14.157Z",
+          "LastModifiedDate": "2025-08-14T16:15:31.497Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-59375",
+          "PkgID": "libexpat@2.6.4-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.6.4-r0?arch=x86_64&distro=3.22.0_alpha20250108",
+            "UID": "103f73c265fdedc8"
+          },
+          "InstalledVersion": "2.6.4-r0",
+          "FixedVersion": "2.7.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:b71a67f3a201e1f583503b630e2113f3597498682b13dd3592c4f8772fc6e97c",
+            "DiffID": "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-59375",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: libexpat in Expat allows attackers to trigger large dynamic memory allocations via a small document that is submitted for parsing",
+          "Description": "libexpat in Expat before 2.7.2 allows attackers to trigger large dynamic memory allocations via a small document that is submitted for parsing.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-59375",
+            "https://github.com/libexpat/libexpat/blob/676a4c531ec768732fac215da9730b5f50fbd2bf/expat/Changes#L45-L74",
+            "https://github.com/libexpat/libexpat/blob/R_2_7_2/expat/Changes",
+            "https://github.com/libexpat/libexpat/issues/1018",
+            "https://github.com/libexpat/libexpat/pull/1034",
+            "https://issues.oss-fuzz.com/issues/439133977",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-59375",
+            "https://www.cve.org/CVERecord?id=CVE-2025-59375"
+          ],
+          "PublishedDate": "2025-09-15T03:15:40.92Z",
+          "LastModifiedDate": "2025-09-17T14:15:40.913Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-58050",
+          "PkgID": "libpcre2-32@10.43-r0",
+          "PkgName": "libpcre2-32",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libpcre2-32@10.43-r0?arch=x86_64&distro=3.22.0_alpha20250108",
+            "UID": "a952d268b3fc55dd"
+          },
+          "InstalledVersion": "10.43-r0",
+          "FixedVersion": "10.46-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:b71a67f3a201e1f583503b630e2113f3597498682b13dd3592c4f8772fc6e97c",
+            "DiffID": "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-58050",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "pcre2: PCRE2: heap-buffer-overflow read in match_ref due to missing boundary restoration in SCS",
+          "Description": "The PCRE2 library is a set of C functions that implement regular expression pattern matching. In version 10.45, a heap-buffer-overflow read vulnerability exists in the PCRE2 regular expression matching engine, specifically within the handling of the (*scs:...) (Scan SubString) verb when combined with (*ACCEPT) in src/pcre2_match.c. This vulnerability may potentially lead to information disclosure if the out-of-bounds data read during the memcmp affects the final match result in a way observable by the attacker. This issue has been resolved in version 10.46.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-122",
+            "CWE-125",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "nvd": 4,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-58050",
+            "https://github.com/PCRE2Project/pcre2/commit/a141712e5967d448c7ce13090ab530c8e3d82254",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.46",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-c2gv-xgf5-5cc2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-58050",
+            "https://www.cve.org/CVERecord?id=CVE-2025-58050"
+          ],
+          "PublishedDate": "2025-08-27T19:15:37.56Z",
+          "LastModifiedDate": "2025-09-09T15:27:39.573Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-12797",
+          "PkgID": "libssl3@3.3.2-r4",
+          "PkgName": "libssl3",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.2-r4?arch=x86_64&distro=3.22.0_alpha20250108",
+            "UID": "ce65b52eca43cad4"
+          },
+          "InstalledVersion": "3.3.2-r4",
+          "FixedVersion": "3.3.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:d62bb7eb03b5936dc5a5665fd5a6ede7eab4a6bd0ed965be8c6c3c21e1e53931",
+            "DiffID": "sha256:e21721183b10fa6d84b263043a2e6a3f972aab36fcbdb9640aeeb21044a8c8c1"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-12797",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: RFC7250 handshakes with unauthenticated servers don't abort as expected",
+          "Description": "Issue summary: Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a\nserver may fail to notice that the server was not authenticated, because\nhandshakes don't abort as expected when the SSL_VERIFY_PEER verification mode\nis set.\n\nImpact summary: TLS and DTLS connections using raw public keys may be\nvulnerable to man-in-middle attacks when server authentication failure is not\ndetected by clients.\n\nRPKs are disabled by default in both TLS clients and TLS servers.  The issue\nonly arises when TLS clients explicitly enable RPK use by the server, and the\nserver, likewise, enables sending of an RPK instead of an X.509 certificate\nchain.  The affected clients are those that then rely on the handshake to\nfail when the server's RPK fails to match one of the expected public keys,\nby setting the verification mode to SSL_VERIFY_PEER.\n\nClients that enable server-side raw public keys can still find out that raw\npublic key verification failed by calling SSL_get_verify_result(), and those\nthat do, and take appropriate action, are not affected.  This issue was\nintroduced in the initial implementation of RPK support in OpenSSL 3.2.\n\nThe FIPS modules in 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-392"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 1,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/02/11/3",
+            "http://www.openwall.com/lists/oss-security/2025/02/11/4",
+            "https://access.redhat.com/errata/RHSA-2025:1330",
+            "https://access.redhat.com/security/cve/CVE-2024-12797",
+            "https://bugzilla.redhat.com/2342757",
+            "https://errata.almalinux.org/9/ALSA-2025-1330.html",
+            "https://github.com/openssl/openssl/commit/738d4f9fdeaad57660dcba50a619fafced3fd5e9",
+            "https://github.com/openssl/openssl/commit/798779d43494549b611233f92652f0da5328fbe7",
+            "https://github.com/openssl/openssl/commit/87ebd203feffcf92ad5889df92f90bb0ee10a699",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-79v4-65xg-pq4g",
+            "https://linux.oracle.com/cve/CVE-2024-12797.html",
+            "https://linux.oracle.com/errata/ELSA-2025-1330.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-12797",
+            "https://openssl-library.org/news/secadv/20250211.txt",
+            "https://security.netapp.com/advisory/ntap-20250214-0001/",
+            "https://ubuntu.com/security/notices/USN-7264-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-12797"
+          ],
+          "PublishedDate": "2025-02-11T16:15:38.827Z",
+          "LastModifiedDate": "2025-02-18T14:15:27.107Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-58050",
+          "PkgID": "pcre2@10.43-r0",
+          "PkgName": "pcre2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/pcre2@10.43-r0?arch=x86_64&distro=3.22.0_alpha20250108",
+            "UID": "29e13c82b8497b0f"
+          },
+          "InstalledVersion": "10.43-r0",
+          "FixedVersion": "10.46-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:b71a67f3a201e1f583503b630e2113f3597498682b13dd3592c4f8772fc6e97c",
+            "DiffID": "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-58050",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "pcre2: PCRE2: heap-buffer-overflow read in match_ref due to missing boundary restoration in SCS",
+          "Description": "The PCRE2 library is a set of C functions that implement regular expression pattern matching. In version 10.45, a heap-buffer-overflow read vulnerability exists in the PCRE2 regular expression matching engine, specifically within the handling of the (*scs:...) (Scan SubString) verb when combined with (*ACCEPT) in src/pcre2_match.c. This vulnerability may potentially lead to information disclosure if the out-of-bounds data read during the memcmp affects the final match result in a way observable by the attacker. This issue has been resolved in version 10.46.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-122",
+            "CWE-125",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "nvd": 4,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-58050",
+            "https://github.com/PCRE2Project/pcre2/commit/a141712e5967d448c7ce13090ab530c8e3d82254",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.46",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-c2gv-xgf5-5cc2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-58050",
+            "https://www.cve.org/CVERecord?id=CVE-2025-58050"
+          ],
+          "PublishedDate": "2025-08-27T19:15:37.56Z",
+          "LastModifiedDate": "2025-09-09T15:27:39.573Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-31115",
+          "PkgID": "xz-libs@5.6.4-r0",
+          "PkgName": "xz-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/xz-libs@5.6.4-r0?arch=x86_64&distro=3.22.0_alpha20250108",
+            "UID": "d5a7d3021c9158ca"
+          },
+          "InstalledVersion": "5.6.4-r0",
+          "FixedVersion": "5.8.1-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:b71a67f3a201e1f583503b630e2113f3597498682b13dd3592c4f8772fc6e97c",
+            "DiffID": "sha256:6e642188cd69b838b3c446492f2e9c52b3a81167bd921e593f143463129c4495"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-31115",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "xz: XZ has a heap-use-after-free bug in threaded .xz decoder",
+          "Description": "XZ Utils provide a general-purpose data-compression library plus command-line tools. In XZ Utils 5.3.3alpha to 5.8.0, the multithreaded .xz decoder in liblzma has a bug where invalid input can at least result in a crash. The effects include heap use after free and writing to an address based on the null pointer plus an offset. Applications and libraries that use the lzma_stream_decoder_mt function are affected. The bug has been fixed in XZ Utils 5.8.1, and the fix has been committed to the v5.4, v5.6, v5.8, and master branches in the xz Git repository. No new release packages will be made from the old stable branches, but a standalone patch is available that applies to all affected releases.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-366",
+            "CWE-416",
+            "CWE-476",
+            "CWE-826"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/04/03/1",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/2",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/3",
+            "https://access.redhat.com/errata/RHSA-2025:7524",
+            "https://access.redhat.com/security/cve/CVE-2025-31115",
+            "https://bugzilla.redhat.com/2357249",
+            "https://errata.almalinux.org/10/ALSA-2025-7524.html",
+            "https://github.com/tukaani-project/xz/commit/d5a2ffe41bb77b918a8c96084885d4dbe4bf6480",
+            "https://github.com/tukaani-project/xz/security/advisories/GHSA-6cc8-p5mm-29w2",
+            "https://linux.oracle.com/cve/CVE-2025-31115.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7524.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-31115",
+            "https://tukaani.org/xz/xz-cve-2025-31115.patch",
+            "https://ubuntu.com/security/notices/USN-7414-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-31115"
+          ],
+          "PublishedDate": "2025-04-03T17:15:30.54Z",
+          "LastModifiedDate": "2025-04-07T14:18:34.453Z"
+        }
+      ]
+    }
+  ]
+}
