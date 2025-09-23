@@ -1,0 +1,278 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-23T09:31:44.772477584Z",
+  "ArtifactName": "grafana/loki:3.5.5",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 124010496,
+    "OS": {
+      "Family": "debian",
+      "Name": "12.12"
+    },
+    "ImageID": "sha256:fd1a879e62ca9d47558fee718af5e745bd381b20be50723d0047615f46c8b64d",
+    "DiffIDs": [
+      "sha256:bff7f7a9d44356d8784500366094c66399aa6a2edd990cc70e02e27c84402753",
+      "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba",
+      "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa",
+      "sha256:114dde0fefebbca13165d0da9c500a66190e497a82a53dcaabc3172d630be1e9",
+      "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
+      "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
+      "sha256:6f1cdceb6a3146f0ccb986521156bef8a422cdbb0863396f7f751f575ba308f4",
+      "sha256:bbb6cacb8c82e4da4e8143e03351e939eab5e21ce0ef333c42e637af86c5217b",
+      "sha256:2a92d6ac9e4fcc274d5168b217ca4458a9fec6f094ead68d99c77073f08caac1",
+      "sha256:1a73b54f556b477f0a8b939d13c504a3b4f4db71f7a09c63afbc10acb3de5849",
+      "sha256:f4aee9e53c42a22ed82451218c3ea03d1eea8d6ca8fbe8eb4e950304ba8a8bb3",
+      "sha256:bfe9137a1b044e8097cdfcb6899137a8a984ed70931ed1e8ef0cf7e023a139fc",
+      "sha256:3f0dbb44ecc4b3bb9f9df67248157befc04955e8ca9c058e526211c9df4253ef",
+      "sha256:2e0587f3dcbac42b7e47e3cbabcfc12ad45616aa0596796e606a0957c20e2fcf",
+      "sha256:ea8f8bb445405356acec58c79a2abdf19b888078fd682c486f0b226dd92d7644",
+      "sha256:886941ece92092419b499a5e28c141eec397c7b9ec82613d2bad25b71e59f6c9",
+      "sha256:b1aca78514388b89a1f2f0835af71f89ec90a90b052b61037bf403568f96a9f0"
+    ],
+    "RepoTags": [
+      "grafana/loki:3.5.5"
+    ],
+    "RepoDigests": [
+      "grafana/loki@sha256:31628519045e7f28692a7ae73b4a3fd293dccb425585ed5d16ceea3b5c9592e6"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-09-11T08:10:36.385008929Z",
+      "history": [
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "0001-01-01T00:00:00Z"
+        },
+        {
+          "created": "2025-09-11T08:10:36.246363378Z",
+          "created_by": "COPY /src/loki/cmd/loki/loki /usr/bin/loki # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-11T08:10:36.260776499Z",
+          "created_by": "COPY cmd/loki/loki-docker-config.yaml /etc/loki/local-config.yaml # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-11T08:10:36.325932333Z",
+          "created_by": "SHELL [/busybox/sh -c]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-11T08:10:36.325932333Z",
+          "created_by": "RUN /busybox/sh -c addgroup -g 10001 -S loki \u0026\u0026     adduser -u 10001 -S loki -G loki # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-11T08:10:36.385008929Z",
+          "created_by": "RUN /busybox/sh -c mkdir -p /loki/rules \u0026\u0026     mkdir -p /loki/rules-temp \u0026\u0026     chown -R loki:loki /etc/loki /loki \u0026\u0026     ln -s /busybox/sh /bin/sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-11T08:10:36.385008929Z",
+          "created_by": "USER 10001",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-11T08:10:36.385008929Z",
+          "created_by": "EXPOSE map[3100/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-11T08:10:36.385008929Z",
+          "created_by": "ENTRYPOINT [\"/usr/bin/loki\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-11T08:10:36.385008929Z",
+          "created_by": "CMD [\"-config.file=/etc/loki/local-config.yaml\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:bff7f7a9d44356d8784500366094c66399aa6a2edd990cc70e02e27c84402753",
+          "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba",
+          "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa",
+          "sha256:114dde0fefebbca13165d0da9c500a66190e497a82a53dcaabc3172d630be1e9",
+          "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
+          "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
+          "sha256:6f1cdceb6a3146f0ccb986521156bef8a422cdbb0863396f7f751f575ba308f4",
+          "sha256:bbb6cacb8c82e4da4e8143e03351e939eab5e21ce0ef333c42e637af86c5217b",
+          "sha256:2a92d6ac9e4fcc274d5168b217ca4458a9fec6f094ead68d99c77073f08caac1",
+          "sha256:1a73b54f556b477f0a8b939d13c504a3b4f4db71f7a09c63afbc10acb3de5849",
+          "sha256:f4aee9e53c42a22ed82451218c3ea03d1eea8d6ca8fbe8eb4e950304ba8a8bb3",
+          "sha256:bfe9137a1b044e8097cdfcb6899137a8a984ed70931ed1e8ef0cf7e023a139fc",
+          "sha256:3f0dbb44ecc4b3bb9f9df67248157befc04955e8ca9c058e526211c9df4253ef",
+          "sha256:2e0587f3dcbac42b7e47e3cbabcfc12ad45616aa0596796e606a0957c20e2fcf",
+          "sha256:ea8f8bb445405356acec58c79a2abdf19b888078fd682c486f0b226dd92d7644",
+          "sha256:886941ece92092419b499a5e28c141eec397c7b9ec82613d2bad25b71e59f6c9",
+          "sha256:b1aca78514388b89a1f2f0835af71f89ec90a90b052b61037bf403568f96a9f0"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "-config.file=/etc/loki/local-config.yaml"
+        ],
+        "Entrypoint": [
+          "/usr/bin/loki"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/busybox",
+          "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+        ],
+        "User": "10001",
+        "WorkingDir": "/",
+        "ExposedPorts": {
+          "3100/tcp": {}
+        },
+        "ArgsEscaped": true,
+        "Shell": [
+          "/busybox/sh",
+          "-c"
+        ]
+      }
+    },
+    "Layers": [
+      {
+        "Size": 327680,
+        "Digest": "sha256:259db2ee6b876afac49b298219529e5ff850e8efb940856f8397c17d1bab100e",
+        "DiffID": "sha256:bff7f7a9d44356d8784500366094c66399aa6a2edd990cc70e02e27c84402753"
+      },
+      {
+        "Size": 40960,
+        "Digest": "sha256:2e4cf50eeb92ac3a7afe75e15d96a26dee99449f86b46c75b5d95f4418a5bca0",
+        "DiffID": "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba"
+      },
+      {
+        "Size": 2406400,
+        "Digest": "sha256:56ce5a7a0a8cc3aded9e8cab00fd85f0a1c50376aa9f2318c4e66beb03eadf8f",
+        "DiffID": "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa"
+      },
+      {
+        "Size": 102400,
+        "Digest": "sha256:e1089d61b200106053b1717881bf0c1c47551478f01569d9224d33cccf3e4692",
+        "DiffID": "sha256:114dde0fefebbca13165d0da9c500a66190e497a82a53dcaabc3172d630be1e9"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:0f8b424aa0b96c1c388a5fd4d90735604459256336853082afb61733438872b5",
+        "DiffID": "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368"
+      },
+      {
+        "Size": 2560,
+        "Digest": "sha256:d557676654e572af3e3173c90e7874644207fda32cd87e9d3d66b5d7b98a7b21",
+        "DiffID": "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc"
+      },
+      {
+        "Size": 2560,
+        "Digest": "sha256:d82bc7a76a838c9a4a6025192429c2fed58f73742ef1fb9c8bb7b995fc3b7213",
+        "DiffID": "sha256:6f1cdceb6a3146f0ccb986521156bef8a422cdbb0863396f7f751f575ba308f4"
+      },
+      {
+        "Size": 2560,
+        "Digest": "sha256:d858cbc252ade14879807ff8dbc3043a26bbdb92087da98cda831ee040b172b3",
+        "DiffID": "sha256:bbb6cacb8c82e4da4e8143e03351e939eab5e21ce0ef333c42e637af86c5217b"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:1069fc2daed1aceff7232f4b8ab21200dd3d8b04f61be9da86977a34a105dfdc",
+        "DiffID": "sha256:2a92d6ac9e4fcc274d5168b217ca4458a9fec6f094ead68d99c77073f08caac1"
+      },
+      {
+        "Size": 10240,
+        "Digest": "sha256:b40161cd83fc5d470d6abe50e87aa288481b6b89137012881d74187cfbf9f502",
+        "DiffID": "sha256:1a73b54f556b477f0a8b939d13c504a3b4f4db71f7a09c63afbc10acb3de5849"
+      },
+      {
+        "Size": 3072,
+        "Digest": "sha256:3f4e2c5863480125882d92060440a5250766bce764fee10acdbac18c872e4dc7",
+        "DiffID": "sha256:f4aee9e53c42a22ed82451218c3ea03d1eea8d6ca8fbe8eb4e950304ba8a8bb3"
+      },
+      {
+        "Size": 241664,
+        "Digest": "sha256:eb8f5749650bdfb1514d83ae891881b02857c47b3b9a1cd5d50b647aeadc6376",
+        "DiffID": "sha256:bfe9137a1b044e8097cdfcb6899137a8a984ed70931ed1e8ef0cf7e023a139fc"
+      },
+      {
+        "Size": 1366528,
+        "Digest": "sha256:5391af8231d5bb88d019d9ca8b72d2ec0552040537c5ffb63f871432b8d63c75",
+        "DiffID": "sha256:3f0dbb44ecc4b3bb9f9df67248157befc04955e8ca9c058e526211c9df4253ef"
+      },
+      {
+        "Size": 119483392,
+        "Digest": "sha256:20ef0d8e61e30b448330bc8c8c83977c903bba3c1f372fdc2c8b40ca14fa27ac",
+        "DiffID": "sha256:2e0587f3dcbac42b7e47e3cbabcfc12ad45616aa0596796e606a0957c20e2fcf"
+      },
+      {
+        "Size": 4096,
+        "Digest": "sha256:3829058c72f170e20d42f8eba45e9cc43d78e7c2fb7a0b592b620fcc4fa0fa68",
+        "DiffID": "sha256:ea8f8bb445405356acec58c79a2abdf19b888078fd682c486f0b226dd92d7644"
+      },
+      {
+        "Size": 6656,
+        "Digest": "sha256:13e55905048db2166ff69129024fe0a3e663f143dacab9a20444d493ac693224",
+        "DiffID": "sha256:886941ece92092419b499a5e28c141eec397c7b9ec82613d2bad25b71e59f6c9"
+      },
+      {
+        "Size": 6656,
+        "Digest": "sha256:408449e5b7801c54b2579740c56df41ab54d25024c9e8f4cab72cc8453eded99",
+        "DiffID": "sha256:b1aca78514388b89a1f2f0835af71f89ec90a90b052b61037bf403568f96a9f0"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "grafana/loki:3.5.5 (debian 12.12)",
+      "Class": "os-pkgs",
+      "Type": "debian"
+    },
+    {
+      "Target": "usr/bin/loki",
+      "Class": "lang-pkgs",
+      "Type": "gobinary"
+    }
+  ]
+}

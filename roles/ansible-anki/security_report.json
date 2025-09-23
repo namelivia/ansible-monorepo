@@ -1,0 +1,84 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-23T09:30:58.75578191Z",
+  "ArtifactName": "ghcr.io/luckyturtledev/anki:latest",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 20441088,
+    "ImageID": "sha256:7855d4f8c5f0f319e96ac0ba55a1672d53d68856fb5a96738663cb6ba3368e3d",
+    "DiffIDs": [
+      "sha256:52dfd600d4a32815b12c615c189f27c7cf5a99bb68fa1c94c70764a50a5ab46c"
+    ],
+    "RepoTags": [
+      "ghcr.io/luckyturtledev/anki:latest"
+    ],
+    "RepoDigests": [
+      "ghcr.io/luckyturtledev/anki@sha256:0d427ea53a95e75dbe1c7bc5fec4387836f125f8b0509f7ede99f1bf0cbf736d"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-09-17T11:22:24.574989533Z",
+      "history": [
+        {
+          "created": "2025-09-17T11:22:24.574989533Z",
+          "created_by": "ENV SYNC_BASE=/data",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-17T11:22:24.574989533Z",
+          "created_by": "COPY --chmod=0755 /usr/local/cargo/bin/anki-sync-server / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-17T11:22:24.574989533Z",
+          "created_by": "CMD [\"./anki-sync-server\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-17T11:22:24.574989533Z",
+          "created_by": "STOPSIGNAL SIGINT",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:52dfd600d4a32815b12c615c189f27c7cf5a99bb68fa1c94c70764a50a5ab46c"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "./anki-sync-server"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "SYNC_BASE=/data"
+        ],
+        "Labels": {
+          "org.opencontainers.image.created": "2025-09-17T11:13:59.423Z",
+          "org.opencontainers.image.description": "",
+          "org.opencontainers.image.licenses": "",
+          "org.opencontainers.image.revision": "63d5e6b3111a9b9794248a611fef996675f16428",
+          "org.opencontainers.image.source": "https://github.com/LuckyTurtleDev/docker-images",
+          "org.opencontainers.image.title": "docker-images",
+          "org.opencontainers.image.url": "https://github.com/LuckyTurtleDev/docker-images",
+          "org.opencontainers.image.version": "latest}"
+        },
+        "WorkingDir": "/",
+        "ArgsEscaped": true,
+        "StopSignal": "SIGINT"
+      }
+    },
+    "Layers": [
+      {
+        "Size": 20441088,
+        "Digest": "sha256:d4006c2c3282ee028b0300522c5cc4e27b66b39afd29dcdb6b33861852096956",
+        "DiffID": "sha256:52dfd600d4a32815b12c615c189f27c7cf5a99bb68fa1c94c70764a50a5ab46c"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3741 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-23T09:31:40.222548129Z",
+  "ArtifactName": "kimai/kimai2:fpm-2.19.1-prod",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 477743616,
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.20.1"
+    },
+    "ImageID": "sha256:760c4cbb8802d0dfec9eaf510365a21e43a0855c2fdb75caa6cd1387b8293585",
+    "DiffIDs": [
+      "sha256:94e5f06ff8e3d4441dc3cd8b090ff38dc911bfa8ebdb0dc28395bc98f82f983f",
+      "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc",
+      "sha256:0eadc0a34dab81e18351173697264a47cd3d575f1f3db808195cc9f0ec07f480",
+      "sha256:48ca8aad08f683572e54d1234ae4e5bb73c26b884c596aeb96b6a898b671aa58",
+      "sha256:1669cbdb0ecc401ff6d50d24c4933aee05ac48822e9752b4a53a748d96c5cec0",
+      "sha256:ff5aad16c00ad112b5fe81296305acaf57eff732d0f57f4644e1ac93dfd1b041",
+      "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5",
+      "sha256:505f9be9da7eb3fde4cac83f4929d6b1664045ac86d4e02f7dcdc31c54fb7621",
+      "sha256:4ea429a743bed7c6abb7fc27abceb23c03afd912685b413458355a5c4bb287e4",
+      "sha256:6c3f7ec5d5344a323e64072063955d592ad93b98cf325fba14a02bbe39865921",
+      "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78",
+      "sha256:329f5cdd28b00b5dcb182f459e9878eff4bc13199b587c0dedf1a8a95713667b",
+      "sha256:5cffd67ad6bf84daea32ee985bf2cb7ec6a0bb4f2561b8074a33ab60b6a483f3",
+      "sha256:54cd0d9c2fa0ac35c21f738d74fc4266ee5fcbb025c6bc90e4ba05cc2d6510fd",
+      "sha256:94d8d793f71d90ea2766d20c36af049a19029fe27a469543f928f42cfacfe38e",
+      "sha256:b355c523d3a6e70dca7628cf56173233a2f864e14173cc1008243e252492c07e",
+      "sha256:d146d07ec9263363bab48bdf1d1b02628ac3ad00ca5a2a703e02a705fe11e73f",
+      "sha256:e41a351735725e1578beb36ed327c866f910d3cc80e4c02f3e0da804e849a2f4",
+      "sha256:31a5427f7fb8b7740cf1405bdcade5f0c3ab50bc91d64d203d9109f0b2b9effe",
+      "sha256:869d62480f000f919a8660b5477cffb152c9f8946b6d0f083afe3909dc9af6a6",
+      "sha256:e9e001b538f86cfc2740bc2755b2a85ca6202d780ca4766a4a7543ff0655debd",
+      "sha256:d2b4a5cd22d6b16f713388900faa6aff31fcf56b9c195a0900a9c16a174a79e7",
+      "sha256:67460a14281f37c57104b94235cc3f23c2a172571c8bc3adb423584ac1cb6751",
+      "sha256:faaa0ea2f7576b3c5301319e85ddce95952609059b47c31e088e0754fba54e60",
+      "sha256:08387f5f14f5c692d0d513b73a9fd64515fc05f2d07185ac383fe14d84a1d7e0",
+      "sha256:2899d687ebecf6cd11118e5b5b51689ea4c067538e2ca9165248d63f438fd4a1",
+      "sha256:4610fe81b1ac831fc04efe2987e8eac6d5f5135b7628674477775c484d798bca",
+      "sha256:5ad253ec75d03b8777883c9c65f8e0d3f490c59049c8a4c7378e337864638d3b",
+      "sha256:26a404ba17a19e8bc515953fd69941fe9c275558491b6727847d8e71eb61360c",
+      "sha256:94ef01f88bba79f994e81b761e0f2af3d61a26b2420fe0135a6f06000eecc8c1",
+      "sha256:84ba452aacfa67f4f8bd005e61c74552617ac2efac4ef5aed0fc01ea97311674",
+      "sha256:a53712f2f0b0f7e8eeba1e607b77fbba765e55bb6be4ee452accfabbc444ab12",
+      "sha256:b78c0b0da54108ab0b58940727747a95b5fd857f00639c94253d98bce81d3bc4",
+      "sha256:be297b76f2a1650804ac42f277945693c082cc3baf9658742375402431cf71cd",
+      "sha256:61e5a689119fbdcb77580532a9ca628506c92b28a413cad739c1f596ee35fc23",
+      "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+    ],
+    "RepoTags": [
+      "kimai/kimai2:fpm-2.19.1-prod"
+    ],
+    "RepoDigests": [
+      "kimai/kimai2@sha256:602189533d7941aae9d2c5b9ce65d7dd693f827983a3bfb800dec18547d0c4dd"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2024-07-28T16:06:53.999899135Z",
+      "history": [
+        {
+          "created": "2024-06-20T20:16:57.940229876Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:33ebe56b967747a97dcec01bc2559962bee8823686c9739d26be060381bbb3ca in / "
+        },
+        {
+          "created": "2024-06-20T20:16:58.064410339Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:00:12.656182742Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PHPIZE_DEPS=autoconf \t\tdpkg-dev dpkg \t\tfile \t\tg++ \t\tgcc \t\tlibc-dev \t\tmake \t\tpkgconf \t\tre2c",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:00:14.148136623Z",
+          "created_by": "/bin/sh -c apk add --no-cache \t\tca-certificates \t\tcurl \t\topenssl \t\ttar \t\txz"
+        },
+        {
+          "created": "2024-06-21T01:00:14.786717128Z",
+          "created_by": "/bin/sh -c set -eux; \tadduser -u 82 -D -S -G www-data www-data"
+        },
+        {
+          "created": "2024-06-21T01:00:14.907765749Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PHP_INI_DIR=/usr/local/etc/php",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:00:15.465654599Z",
+          "created_by": "/bin/sh -c set -eux; \tmkdir -p \"$PHP_INI_DIR/conf.d\"; \t[ ! -d /var/www/html ]; \tmkdir -p /var/www/html; \tchown www-data:www-data /var/www/html; \tchmod 1777 /var/www/html"
+        },
+        {
+          "created": "2024-06-21T01:00:15.579139473Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:00:15.703318201Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:00:15.822990621Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PHP_LDFLAGS=-Wl,-O1 -pie",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:26:27.449754149Z",
+          "created_by": "/bin/sh -c #(nop)  ENV GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:26:27.560419092Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PHP_VERSION=8.2.20",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:26:27.668165458Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PHP_URL=https://www.php.net/distributions/php-8.2.20.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.20.tar.xz.asc",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:26:27.778347928Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PHP_SHA256=4474cc430febef6de7be958f2c37253e5524d5c5331a7e1765cd2d2234881e50",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:26:32.795878334Z",
+          "created_by": "/bin/sh -c set -eux; \t\tapk add --no-cache --virtual .fetch-deps gnupg; \t\tmkdir -p /usr/src; \tcd /usr/src; \t\tcurl -fsSL -o php.tar.xz \"$PHP_URL\"; \t\tif [ -n \"$PHP_SHA256\" ]; then \t\techo \"$PHP_SHA256 *php.tar.xz\" | sha256sum -c -; \tfi; \t\tif [ -n \"$PHP_ASC_URL\" ]; then \t\tcurl -fsSL -o php.tar.xz.asc \"$PHP_ASC_URL\"; \t\texport GNUPGHOME=\"$(mktemp -d)\"; \t\tfor key in $GPG_KEYS; do \t\t\tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \t\tdone; \t\tgpg --batch --verify php.tar.xz.asc php.tar.xz; \t\tgpgconf --kill all; \t\trm -rf \"$GNUPGHOME\"; \tfi; \t\tapk del --no-network .fetch-deps"
+        },
+        {
+          "created": "2024-06-21T01:26:32.949331045Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ "
+        },
+        {
+          "created": "2024-06-21T01:34:50.19890689Z",
+          "created_by": "/bin/sh -c set -eux; \tapk add --no-cache --virtual .build-deps \t\t$PHPIZE_DEPS \t\targon2-dev \t\tcoreutils \t\tcurl-dev \t\tgnu-libiconv-dev \t\tlibsodium-dev \t\tlibxml2-dev \t\tlinux-headers \t\toniguruma-dev \t\topenssl-dev \t\treadline-dev \t\tsqlite-dev \t; \t\trm -vf /usr/include/iconv.h; \t\texport \t\tCFLAGS=\"$PHP_CFLAGS\" \t\tCPPFLAGS=\"$PHP_CPPFLAGS\" \t\tLDFLAGS=\"$PHP_LDFLAGS\" \t\tPHP_BUILD_PROVIDER='https://github.com/docker-library/php' \t\tPHP_UNAME='Linux - Docker' \t; \tdocker-php-source extract; \tcd /usr/src/php; \tgnuArch=\"$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)\"; \t./configure \t\t--build=\"$gnuArch\" \t\t--with-config-file-path=\"$PHP_INI_DIR\" \t\t--with-config-file-scan-dir=\"$PHP_INI_DIR/conf.d\" \t\t\t\t--enable-option-checking=fatal \t\t\t\t--with-mhash \t\t\t\t--with-pic \t\t\t\t--enable-mbstring \t\t--enable-mysqlnd \t\t--with-password-argon2 \t\t--with-sodium=shared \t\t--with-pdo-sqlite=/usr \t\t--with-sqlite3=/usr \t\t\t\t--with-curl \t\t--with-iconv=/usr \t\t--with-openssl \t\t--with-readline \t\t--with-zlib \t\t\t\t--disable-phpdbg \t\t\t\t--with-pear \t\t\t\t$(test \"$gnuArch\" = 'riscv64-linux-musl' \u0026\u0026 echo '--without-pcre-jit') \t\t\t\t--disable-cgi \t\t\t\t--enable-fpm \t\t--with-fpm-user=www-data \t\t--with-fpm-group=www-data \t; \tmake -j \"$(nproc)\"; \tfind -type f -name '*.a' -delete; \tmake install; \tfind \t\t/usr/local \t\t-type f \t\t-perm '/0111' \t\t-exec sh -euxc ' \t\t\tstrip --strip-all \"$@\" || : \t\t' -- '{}' + \t; \tmake clean; \t\tcp -v php.ini-* \"$PHP_INI_DIR/\"; \t\tcd /; \tdocker-php-source delete; \t\trunDeps=\"$( \t\tscanelf --needed --nobanner --format '%n#p' --recursive /usr/local \t\t\t| tr ',' '\\n' \t\t\t| sort -u \t\t\t| awk 'system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }' \t)\"; \tapk add --no-cache $runDeps; \t\tapk del --no-network .build-deps; \t\tpecl update-channels; \trm -rf /tmp/pear ~/.pearrc; \t\tphp --version"
+        },
+        {
+          "created": "2024-06-21T01:34:50.572988583Z",
+          "created_by": "/bin/sh -c #(nop) COPY multi:869bde9dbeae74886a05c9e2107b3e3b4877116db8c6d9adbaff2719f9fb5262 in /usr/local/bin/ "
+        },
+        {
+          "created": "2024-06-21T01:34:51.894409432Z",
+          "created_by": "/bin/sh -c docker-php-ext-enable sodium"
+        },
+        {
+          "created": "2024-06-21T01:34:52.010547008Z",
+          "created_by": "/bin/sh -c #(nop)  ENTRYPOINT [\"docker-php-entrypoint\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:34:52.129303559Z",
+          "created_by": "/bin/sh -c #(nop) WORKDIR /var/www/html",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:34:52.69628188Z",
+          "created_by": "/bin/sh -c set -eux; \tcd /usr/local/etc; \tif [ -d php-fpm.d ]; then \t\tsed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf \u003e /dev/null; \t\tcp php-fpm.d/www.conf.default php-fpm.d/www.conf; \telse \t\tmkdir php-fpm.d; \t\tcp php-fpm.conf.default php-fpm.d/www.conf; \t\t{ \t\t\techo '[global]'; \t\t\techo 'include=etc/php-fpm.d/*.conf'; \t\t} | tee php-fpm.conf; \tfi; \t{ \t\techo '[global]'; \t\techo 'error_log = /proc/self/fd/2'; \t\techo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; \t\techo; \t\techo '[www]'; \t\techo '; php-fpm closes STDOUT on startup, so sending logs to /proc/self/fd/1 does not work.'; \t\techo '; https://bugs.php.net/bug.php?id=73886'; \t\techo 'access.log = /proc/self/fd/2'; \t\techo; \t\techo 'clear_env = no'; \t\techo; \t\techo '; Ensure worker stdout and stderr are sent to the main error log.'; \t\techo 'catch_workers_output = yes'; \t\techo 'decorate_workers_output = no'; \t} | tee php-fpm.d/docker.conf; \t{ \t\techo '[global]'; \t\techo 'daemonize = no'; \t\techo; \t\techo '[www]'; \t\techo 'listen = 9000'; \t} | tee php-fpm.d/zz-docker.conf; \tmkdir -p \"$PHP_INI_DIR/conf.d\"; \t{ \t\techo '; https://github.com/docker-library/php/issues/878#issuecomment-938595965'; \t\techo 'fastcgi.logging = Off'; \t} \u003e \"$PHP_INI_DIR/conf.d/docker-fpm.ini\""
+        },
+        {
+          "created": "2024-06-21T01:34:52.822774448Z",
+          "created_by": "/bin/sh -c #(nop)  STOPSIGNAL SIGQUIT",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:34:52.94358957Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 9000",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-06-21T01:34:53.071344715Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"php-fpm\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-05T04:07:34.546979721Z",
+          "created_by": "ARG TIMEZONE=Europe/London",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-05T04:07:34.546979721Z",
+          "created_by": "RUN |1 TIMEZONE=Europe/London /bin/sh -c apk add --no-cache         bash         coreutils         freetype         haveged         icu         icu-data-full         libldap         libpng         libzip         libxslt-dev         fcgi         tzdata \u0026\u0026     touch /use_fpm # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:07:34.546979721Z",
+          "created_by": "EXPOSE map[9000/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-05T04:07:34.546979721Z",
+          "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"SCRIPT_NAME=/ping     SCRIPT_FILENAME=/ping     REQUEST_METHOD=GET     cgi-fcgi -bind -connect 127.0.0.1:9000 || exit 1\"] \"20s\" \"10s\" \"0s\" \"0s\" '\\x03'}",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-05T04:07:34.546979721Z",
+          "created_by": "ARG TIMEZONE=Europe/London",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-05T04:07:34.546979721Z",
+          "created_by": "LABEL maintainer=tobias@neontribe.co.uk",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-05T04:07:34.546979721Z",
+          "created_by": "ENV TIMEZONE=Europe/London",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-05T04:07:35.185980177Z",
+          "created_by": "RUN |2 TIMEZONE=Europe/London TIMEZONE=Europe/London /bin/sh -c ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \u0026\u0026 echo ${TIMEZONE} \u003e /etc/timezone \u0026\u0026     mkdir /composer  \u0026\u0026     chown -R www-data:www-data /composer \u0026\u0026     echo \"echo -e This imnage is not intended to be used stand alone. It's a base image\\necho for the Kimai project. https://www.kimai.org\\n\" \u003e /entrypoint.sh \u0026\u0026     chmod 777 /entrypoint.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:07:35.335069895Z",
+          "created_by": "COPY /usr/bin/composer /usr/bin/composer # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:08:24.291376Z",
+          "created_by": "COPY /usr/local/etc/php/conf.d/docker-php-ext-xsl.ini /usr/local/etc/php/conf.d/docker-php-ext-xsl.ini # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:08:24.328263583Z",
+          "created_by": "COPY /usr/local/lib/php/extensions/no-debug-non-zts-20220829/xsl.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/xsl.so # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:08:24.385942436Z",
+          "created_by": "COPY /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:08:24.428836585Z",
+          "created_by": "COPY /usr/local/lib/php/extensions/no-debug-non-zts-20220829/pdo_mysql.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/pdo_mysql.so # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:08:27.468821653Z",
+          "created_by": "COPY /usr/local/etc/php/conf.d/docker-php-ext-zip.ini /usr/local/etc/php/conf.d/docker-php-ext-zip.ini # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:08:27.52614217Z",
+          "created_by": "COPY /usr/local/lib/php/extensions/no-debug-non-zts-20220829/zip.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/zip.so # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:08:31.265774733Z",
+          "created_by": "COPY /usr/local/etc/php/conf.d/docker-php-ext-ldap.ini /usr/local/etc/php/conf.d/docker-php-ext-ldap.ini # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:08:31.302424522Z",
+          "created_by": "COPY /usr/local/lib/php/extensions/no-debug-non-zts-20220829/ldap.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/ldap.so # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:09:15.58141975Z",
+          "created_by": "COPY /usr/local/etc/php/conf.d/docker-php-ext-gd.ini /usr/local/etc/php/conf.d/docker-php-ext-gd.ini # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:09:15.604109499Z",
+          "created_by": "COPY /usr/local/lib/php/extensions/no-debug-non-zts-20220829/gd.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/gd.so # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:10:56.629933112Z",
+          "created_by": "COPY /usr/local/etc/php/conf.d/docker-php-ext-intl.ini /usr/local/etc/php/conf.d/docker-php-ext-intl.ini # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:10:56.649785124Z",
+          "created_by": "COPY /usr/local/lib/php/extensions/no-debug-non-zts-20220829/intl.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/intl.so # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:10:56.683285273Z",
+          "created_by": "COPY /usr/local/etc/php/conf.d/docker-php-ext-redis.ini /usr/local/etc/php/conf.d/docker-php-ext-redis.ini # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:10:56.712555691Z",
+          "created_by": "COPY /usr/local/lib/php/extensions/no-debug-non-zts-20220829/redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/redis.so # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:10:56.737615255Z",
+          "created_by": "COPY /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-05T04:10:56.737615255Z",
+          "created_by": "CMD [\"/entrypoint.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.158019698Z",
+          "created_by": "ARG KIMAI=2.19.1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.158019698Z",
+          "created_by": "ARG TIMEZONE=Europe/London",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.158019698Z",
+          "created_by": "LABEL maintainer=tobias@neontribe.co.uk",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.158019698Z",
+          "created_by": "ENV KIMAI=2.19.1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.158019698Z",
+          "created_by": "ENV TIMEZONE=Europe/London",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.158019698Z",
+          "created_by": "RUN |2 KIMAI=2.19.1 TIMEZONE=Europe/London /bin/sh -c ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \u0026\u0026 echo ${TIMEZONE} \u003e /etc/timezone \u0026\u0026     mkdir -p /composer  \u0026\u0026     chown -R www-data:www-data /composer # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-28T16:06:15.207200943Z",
+          "created_by": "COPY .docker/startup.sh /startup.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-28T16:06:15.251242887Z",
+          "created_by": "COPY .docker/service.sh /service.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-28T16:06:15.270563541Z",
+          "created_by": "COPY .docker/self-test.sh /self-test.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "COPY .docker/dbtest.php /dbtest.php # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV DATABASE_URL=mysql://kimai:kimai@127.0.0.1:3306/kimai?charset=utf8mb4\u0026serverVersion=5.7.40",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV APP_SECRET=change_this_to_something_unique",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV TRUSTED_PROXIES=nginx,localhost,127.0.0.1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV TRUSTED_HOSTS=nginx,localhost,127.0.0.1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV MAILER_FROM=kimai@example.com",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV MAILER_URL=null://localhost",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV ADMINPASS=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV ADMINMAIL=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV DB_TYPE=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV DB_USER=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV DB_PASS=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV DB_HOST=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV DB_PORT=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV DB_BASE=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV COMPOSER_MEMORY_LIMIT=-1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV TEST_AND_EXIT=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV COMPOSER_ALLOW_SUPERUSER=1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV USER_ID=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "ENV GROUP_ID=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "VOLUME [/opt/kimai/var]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.286048357Z",
+          "created_by": "CMD [\"/startup.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:15.86057887Z",
+          "created_by": "COPY --chown=www-data:www-data /opt/kimai /opt/kimai # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-28T16:06:15.89259248Z",
+          "created_by": "COPY .docker /assets # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-28T16:06:53.999899135Z",
+          "created_by": "RUN |2 KIMAI=2.19.1 TIMEZONE=Europe/London /bin/sh -c export COMPOSER_HOME=/composer \u0026\u0026     composer --no-ansi install --working-dir=/opt/kimai --no-dev --optimize-autoloader \u0026\u0026     composer --no-ansi clearcache \u0026\u0026     composer --no-ansi require --working-dir=/opt/kimai laminas/laminas-ldap \u0026\u0026     cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \u0026\u0026     sed -i \"s/expose_php = On/expose_php = Off/g\" /usr/local/etc/php/php.ini \u0026\u0026     sed -i \"s/;opcache.enable=1/opcache.enable=1/g\" /usr/local/etc/php/php.ini \u0026\u0026     sed -i \"s/;opcache.memory_consumption=128/opcache.memory_consumption=256/g\" /usr/local/etc/php/php.ini \u0026\u0026     sed -i \"s/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=24/g\" /usr/local/etc/php/php.ini \u0026\u0026     sed -i \"s/;opcache.max_accelerated_files=10000/opcache.max_accelerated_files=100000/g\" /usr/local/etc/php/php.ini \u0026\u0026     sed -i \"s/opcache.validate_timestamps=1/opcache.validate_timestamps=0/g\" /usr/local/etc/php/php.ini \u0026\u0026     sed -i \"s/session.gc_maxlifetime = 1440/session.gc_maxlifetime = 604800/g\" /usr/local/etc/php/php.ini \u0026\u0026     mkdir -p /opt/kimai/var/logs \u0026\u0026 chmod 777 /opt/kimai/var/logs \u0026\u0026     sed \"s/128M/-1/g\" /usr/local/etc/php/php.ini-development \u003e /opt/kimai/php-cli.ini \u0026\u0026     chown -R www-data:www-data /opt/kimai /usr/local/etc/php/php.ini \u0026\u0026     tar -C /opt/kimai -zcvf /var/tmp/public.tgz public \u0026\u0026     /opt/kimai/bin/console kimai:version | awk '{print $2}' \u003e /opt/kimai/version.txt # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-07-28T16:06:53.999899135Z",
+          "created_by": "ENV APP_ENV=prod",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:53.999899135Z",
+          "created_by": "ENV DATABASE_URL=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-07-28T16:06:53.999899135Z",
+          "created_by": "ENV memory_limit=256M",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:94e5f06ff8e3d4441dc3cd8b090ff38dc911bfa8ebdb0dc28395bc98f82f983f",
+          "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc",
+          "sha256:0eadc0a34dab81e18351173697264a47cd3d575f1f3db808195cc9f0ec07f480",
+          "sha256:48ca8aad08f683572e54d1234ae4e5bb73c26b884c596aeb96b6a898b671aa58",
+          "sha256:1669cbdb0ecc401ff6d50d24c4933aee05ac48822e9752b4a53a748d96c5cec0",
+          "sha256:ff5aad16c00ad112b5fe81296305acaf57eff732d0f57f4644e1ac93dfd1b041",
+          "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5",
+          "sha256:505f9be9da7eb3fde4cac83f4929d6b1664045ac86d4e02f7dcdc31c54fb7621",
+          "sha256:4ea429a743bed7c6abb7fc27abceb23c03afd912685b413458355a5c4bb287e4",
+          "sha256:6c3f7ec5d5344a323e64072063955d592ad93b98cf325fba14a02bbe39865921",
+          "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78",
+          "sha256:329f5cdd28b00b5dcb182f459e9878eff4bc13199b587c0dedf1a8a95713667b",
+          "sha256:5cffd67ad6bf84daea32ee985bf2cb7ec6a0bb4f2561b8074a33ab60b6a483f3",
+          "sha256:54cd0d9c2fa0ac35c21f738d74fc4266ee5fcbb025c6bc90e4ba05cc2d6510fd",
+          "sha256:94d8d793f71d90ea2766d20c36af049a19029fe27a469543f928f42cfacfe38e",
+          "sha256:b355c523d3a6e70dca7628cf56173233a2f864e14173cc1008243e252492c07e",
+          "sha256:d146d07ec9263363bab48bdf1d1b02628ac3ad00ca5a2a703e02a705fe11e73f",
+          "sha256:e41a351735725e1578beb36ed327c866f910d3cc80e4c02f3e0da804e849a2f4",
+          "sha256:31a5427f7fb8b7740cf1405bdcade5f0c3ab50bc91d64d203d9109f0b2b9effe",
+          "sha256:869d62480f000f919a8660b5477cffb152c9f8946b6d0f083afe3909dc9af6a6",
+          "sha256:e9e001b538f86cfc2740bc2755b2a85ca6202d780ca4766a4a7543ff0655debd",
+          "sha256:d2b4a5cd22d6b16f713388900faa6aff31fcf56b9c195a0900a9c16a174a79e7",
+          "sha256:67460a14281f37c57104b94235cc3f23c2a172571c8bc3adb423584ac1cb6751",
+          "sha256:faaa0ea2f7576b3c5301319e85ddce95952609059b47c31e088e0754fba54e60",
+          "sha256:08387f5f14f5c692d0d513b73a9fd64515fc05f2d07185ac383fe14d84a1d7e0",
+          "sha256:2899d687ebecf6cd11118e5b5b51689ea4c067538e2ca9165248d63f438fd4a1",
+          "sha256:4610fe81b1ac831fc04efe2987e8eac6d5f5135b7628674477775c484d798bca",
+          "sha256:5ad253ec75d03b8777883c9c65f8e0d3f490c59049c8a4c7378e337864638d3b",
+          "sha256:26a404ba17a19e8bc515953fd69941fe9c275558491b6727847d8e71eb61360c",
+          "sha256:94ef01f88bba79f994e81b761e0f2af3d61a26b2420fe0135a6f06000eecc8c1",
+          "sha256:84ba452aacfa67f4f8bd005e61c74552617ac2efac4ef5aed0fc01ea97311674",
+          "sha256:a53712f2f0b0f7e8eeba1e607b77fbba765e55bb6be4ee452accfabbc444ab12",
+          "sha256:b78c0b0da54108ab0b58940727747a95b5fd857f00639c94253d98bce81d3bc4",
+          "sha256:be297b76f2a1650804ac42f277945693c082cc3baf9658742375402431cf71cd",
+          "sha256:61e5a689119fbdcb77580532a9ca628506c92b28a413cad739c1f596ee35fc23",
+          "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "/startup.sh"
+        ],
+        "Healthcheck": {
+          "Test": [
+            "CMD-SHELL",
+            "SCRIPT_NAME=/ping     SCRIPT_FILENAME=/ping     REQUEST_METHOD=GET     cgi-fcgi -bind -connect 127.0.0.1:9000 || exit 1"
+          ],
+          "Interval": 20000000000,
+          "Timeout": 10000000000,
+          "Retries": 3
+        },
+        "Entrypoint": [
+          "docker-php-entrypoint"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "PHPIZE_DEPS=autoconf \t\tdpkg-dev dpkg \t\tfile \t\tg++ \t\tgcc \t\tlibc-dev \t\tmake \t\tpkgconf \t\tre2c",
+          "PHP_INI_DIR=/usr/local/etc/php",
+          "PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+          "PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+          "PHP_LDFLAGS=-Wl,-O1 -pie",
+          "GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC",
+          "PHP_VERSION=8.2.20",
+          "PHP_URL=https://www.php.net/distributions/php-8.2.20.tar.xz",
+          "PHP_ASC_URL=https://www.php.net/distributions/php-8.2.20.tar.xz.asc",
+          "PHP_SHA256=4474cc430febef6de7be958f2c37253e5524d5c5331a7e1765cd2d2234881e50",
+          "TIMEZONE=Europe/London",
+          "KIMAI=2.19.1",
+          "DATABASE_URL=",
+          "APP_SECRET=change_this_to_something_unique",
+          "TRUSTED_PROXIES=nginx,localhost,127.0.0.1",
+          "TRUSTED_HOSTS=nginx,localhost,127.0.0.1",
+          "MAILER_FROM=kimai@example.com",
+          "MAILER_URL=null://localhost",
+          "ADMINPASS=",
+          "ADMINMAIL=",
+          "DB_TYPE=",
+          "DB_USER=",
+          "DB_PASS=",
+          "DB_HOST=",
+          "DB_PORT=",
+          "DB_BASE=",
+          "COMPOSER_MEMORY_LIMIT=-1",
+          "TEST_AND_EXIT=",
+          "COMPOSER_ALLOW_SUPERUSER=1",
+          "USER_ID=",
+          "GROUP_ID=",
+          "APP_ENV=prod",
+          "memory_limit=256M"
+        ],
+        "Labels": {
+          "maintainer": "tobias@neontribe.co.uk"
+        },
+        "Volumes": {
+          "/opt/kimai/var": {}
+        },
+        "WorkingDir": "/var/www/html",
+        "ExposedPorts": {
+          "9000/tcp": {}
+        },
+        "ArgsEscaped": true,
+        "StopSignal": "SIGQUIT"
+      }
+    },
+    "Layers": [
+      {
+        "Size": 8082944,
+        "Digest": "sha256:ec99f8b99825a742d50fb3ce173d291378a46ab54b8ef7dd75e5654e2a296e99",
+        "DiffID": "sha256:94e5f06ff8e3d4441dc3cd8b090ff38dc911bfa8ebdb0dc28395bc98f82f983f"
+      },
+      {
+        "Size": 7218176,
+        "Digest": "sha256:69ed43a8165048a0688eda4741a1c89e730a72a7647897adef61a18b9017f2fc",
+        "DiffID": "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc"
+      },
+      {
+        "Size": 10240,
+        "Digest": "sha256:82333a17c7c21e5bb46fbe4c79ef67474e6b016204698b266e09dc1477d55f18",
+        "DiffID": "sha256:0eadc0a34dab81e18351173697264a47cd3d575f1f3db808195cc9f0ec07f480"
+      },
+      {
+        "Size": 5120,
+        "Digest": "sha256:c6bc217d680f55bf9778238a32a4aa5b811c1e9199fbee493c57c487d7f0adf2",
+        "DiffID": "sha256:48ca8aad08f683572e54d1234ae4e5bb73c26b884c596aeb96b6a898b671aa58"
+      },
+      {
+        "Size": 12158976,
+        "Digest": "sha256:23cb4b018fda00ed927e30af20f67a15b969c6eebcbc0bd09cebd65705ef0784",
+        "DiffID": "sha256:1669cbdb0ecc401ff6d50d24c4933aee05ac48822e9752b4a53a748d96c5cec0"
+      },
+      {
+        "Size": 4096,
+        "Digest": "sha256:1ecb141a5993b567c08250610a6e6fb0e5672b76683d15c8cf67429d79242b82",
+        "DiffID": "sha256:ff5aad16c00ad112b5fe81296305acaf57eff732d0f57f4644e1ac93dfd1b041"
+      },
+      {
+        "Size": 53347840,
+        "Digest": "sha256:80274bfe1cc742f40f8d4bc6640531a3cca660cd7c7ca8ff1005cdebed8a0824",
+        "DiffID": "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5"
+      },
+      {
+        "Size": 12800,
+        "Digest": "sha256:bf1417f4d03818b1e2782497242eb3f70148acecbe0d23042dbe3b5adcbf377e",
+        "DiffID": "sha256:505f9be9da7eb3fde4cac83f4929d6b1664045ac86d4e02f7dcdc31c54fb7621"
+      },
+      {
+        "Size": 66048,
+        "Digest": "sha256:f680cf0245d50edaf480192bec99f99541e3360176452c24451fc3f97beefe16",
+        "DiffID": "sha256:4ea429a743bed7c6abb7fc27abceb23c03afd912685b413458355a5c4bb287e4"
+      },
+      {
+        "Size": 36352,
+        "Digest": "sha256:5c85be5bc15b3d1ef0a2ae889030b99c8d2e859a74658119473bdcccdc19041e",
+        "DiffID": "sha256:6c3f7ec5d5344a323e64072063955d592ad93b98cf325fba14a02bbe39865921"
+      },
+      {
+        "Size": 47280640,
+        "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+        "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:40bbe2f805648f3cf37accf6246fece75a0dbb8eb9ae2635efcfa12fe5ac4b2f",
+        "DiffID": "sha256:329f5cdd28b00b5dcb182f459e9878eff4bc13199b587c0dedf1a8a95713667b"
+      },
+      {
+        "Size": 2997248,
+        "Digest": "sha256:8127cda7fd6a7683c5f931ace79c66d160888653fc4771cb1f225f5dc9cee8e2",
+        "DiffID": "sha256:5cffd67ad6bf84daea32ee985bf2cb7ec6a0bb4f2561b8074a33ab60b6a483f3"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:fcff83ad23937b08beaad336b751ad5f7f1aabb476aabe99b173c239e70bbafa",
+        "DiffID": "sha256:54cd0d9c2fa0ac35c21f738d74fc4266ee5fcbb025c6bc90e4ba05cc2d6510fd"
+      },
+      {
+        "Size": 44032,
+        "Digest": "sha256:36fa176be376c29604155f1b93a90f9b479136fc677732578f838c70aef77cea",
+        "DiffID": "sha256:94d8d793f71d90ea2766d20c36af049a19029fe27a469543f928f42cfacfe38e"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:8f6cca2bee3e6b1ed23b7fe9e6a990cc9db0641477944fd21cdab2c391c95a48",
+        "DiffID": "sha256:b355c523d3a6e70dca7628cf56173233a2f864e14173cc1008243e252492c07e"
+      },
+      {
+        "Size": 39424,
+        "Digest": "sha256:8331dd1704c3515aba81401b60b0b4e80d5a1396a3400982f7265dbfedc381c9",
+        "DiffID": "sha256:d146d07ec9263363bab48bdf1d1b02628ac3ad00ca5a2a703e02a705fe11e73f"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:ea911cad8af7289dec8b890535d7691fa2aca2feccbe8b8e885f840aafff63b8",
+        "DiffID": "sha256:e41a351735725e1578beb36ed327c866f910d3cc80e4c02f3e0da804e849a2f4"
+      },
+      {
+        "Size": 100864,
+        "Digest": "sha256:88444bca1fb1f7fcf7fc8baf42d1524c6d0e1269b26f7afb5ccb38be0aac4bfe",
+        "DiffID": "sha256:31a5427f7fb8b7740cf1405bdcade5f0c3ab50bc91d64d203d9109f0b2b9effe"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:dd016ab7884d244cdf10d78cb5929cb61565d85579fd16198ae5c2f0636d08db",
+        "DiffID": "sha256:869d62480f000f919a8660b5477cffb152c9f8946b6d0f083afe3909dc9af6a6"
+      },
+      {
+        "Size": 105472,
+        "Digest": "sha256:f9248a93cdac4404375233f0105a48a6722f64ca4e259cd2da21083c91983837",
+        "DiffID": "sha256:e9e001b538f86cfc2740bc2755b2a85ca6202d780ca4766a4a7543ff0655debd"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:623ee568d0143747f7908633e3de6bbdecf524b34426736ad536c2e1880e1019",
+        "DiffID": "sha256:d2b4a5cd22d6b16f713388900faa6aff31fcf56b9c195a0900a9c16a174a79e7"
+      },
+      {
+        "Size": 408576,
+        "Digest": "sha256:d1b146b03c79df41fb16274959c5d4afd533ef17dd2d626dd854c087b2b0e741",
+        "DiffID": "sha256:67460a14281f37c57104b94235cc3f23c2a172571c8bc3adb423584ac1cb6751"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:85cf92bcde48f2e8777be147653b10b99fc94e0af11bb488e03738a3e277ae76",
+        "DiffID": "sha256:faaa0ea2f7576b3c5301319e85ddce95952609059b47c31e088e0754fba54e60"
+      },
+      {
+        "Size": 609280,
+        "Digest": "sha256:b774a60a245fa0fac5397d8ec7e784fec02383795c9be19c6ee3cc700f0ac889",
+        "DiffID": "sha256:08387f5f14f5c692d0d513b73a9fd64515fc05f2d07185ac383fe14d84a1d7e0"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:0f697336b7e7cf802732f1eda6c547714b74722b127f252d5d807b8b3fda8c8c",
+        "DiffID": "sha256:2899d687ebecf6cd11118e5b5b51689ea4c067538e2ca9165248d63f438fd4a1"
+      },
+      {
+        "Size": 3607040,
+        "Digest": "sha256:2e491c7617638b8d9f3ce9a75cd90636a8b9a4e6d093cf10bc420899ea2754af",
+        "DiffID": "sha256:4610fe81b1ac831fc04efe2987e8eac6d5f5135b7628674477775c484d798bca"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:93441df85c88baf7d7bf9089472521961b39c6b54c2e48ed145be130810d7e69",
+        "DiffID": "sha256:5ad253ec75d03b8777883c9c65f8e0d3f490c59049c8a4c7378e337864638d3b"
+      },
+      {
+        "Size": 3072,
+        "Digest": "sha256:d19efe42464fa73e25ab6dff753b47ca074c74cfd946d2faf10f7ecca1819db5",
+        "DiffID": "sha256:26a404ba17a19e8bc515953fd69941fe9c275558491b6727847d8e71eb61360c"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:9d00c23b8a4484a44b7f40e77c6bef1c9cf00d4e155e2e90686be1ee33ce8967",
+        "DiffID": "sha256:94ef01f88bba79f994e81b761e0f2af3d61a26b2420fe0135a6f06000eecc8c1"
+      },
+      {
+        "Size": 3584,
+        "Digest": "sha256:3588e3e661928765a393a23e424cb77c00d1d5152bfbcd26d233684807700fc6",
+        "DiffID": "sha256:84ba452aacfa67f4f8bd005e61c74552617ac2efac4ef5aed0fc01ea97311674"
+      },
+      {
+        "Size": 3072,
+        "Digest": "sha256:84b7f17dd61c135b6f3934337ed6e6603239914f5c3e0b843d1b7404bc0e7750",
+        "DiffID": "sha256:a53712f2f0b0f7e8eeba1e607b77fbba765e55bb6be4ee452accfabbc444ab12"
+      },
+      {
+        "Size": 4096,
+        "Digest": "sha256:c29c5f081f1b24ba3a101c6e73b115c60942db4e543c7018a9c7eed6685c60d0",
+        "DiffID": "sha256:b78c0b0da54108ab0b58940727747a95b5fd857f00639c94253d98bce81d3bc4"
+      },
+      {
+        "Size": 18625536,
+        "Digest": "sha256:b9974704efd729aabf9eb8da1356849b0c94463e595063d2fe8b952ada77c5c6",
+        "DiffID": "sha256:be297b76f2a1650804ac42f277945693c082cc3baf9658742375402431cf71cd"
+      },
+      {
+        "Size": 23040,
+        "Digest": "sha256:cd6775bf6bbceac347f3e709373a0222deeebe9376553b227c5a4dd5f9869115",
+        "DiffID": "sha256:61e5a689119fbdcb77580532a9ca628506c92b28a413cad739c1f596ee35fc23"
+      },
+      {
+        "Size": 322899968,
+        "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+        "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "kimai/kimai2:fpm-2.19.1-prod (alpine 3.20.1)",
+      "Class": "os-pkgs",
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-6197",
+          "PkgID": "curl@8.7.1-r0",
+          "PkgName": "curl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.7.1-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "9a0e9bea76915f17"
+          },
+          "InstalledVersion": "8.7.1-r0",
+          "FixedVersion": "8.9.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:69ed43a8165048a0688eda4741a1c89e730a72a7647897adef61a18b9017f2fc",
+            "DiffID": "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-6197",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "curl: freeing stack buffer in utf8asn1str",
+          "Description": "libcurl's ASN1 parser has this utf8asn1str() function used for parsing an ASN.1 UTF-8 string. Itcan detect an invalid field and return error. Unfortunately, when doing so it also invokes `free()` on a 4 byte localstack buffer.  Most modern malloc implementations detect this error and immediately abort. Some however accept the input pointer and add that memory to its list of available chunks. This leads to the overwriting of nearby stack memory. The content of the overwrite is decided by the `free()` implementation; likely to be memory pointers and a set of flags.  The most likely outcome of exploting this flaw is a crash, although it cannot be ruled out that more serious results can be had in special circumstances.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "azure": 3,
+            "cbl-mariner": 3,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2024/07/24/1",
+            "http://www.openwall.com/lists/oss-security/2024/07/24/5",
+            "https://access.redhat.com/security/cve/CVE-2024-6197",
+            "https://curl.se/docs/CVE-2024-6197.html",
+            "https://curl.se/docs/CVE-2024-6197.json",
+            "https://hackerone.com/reports/2559516",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-6197",
+            "https://security.netapp.com/advisory/ntap-20241129-0008/",
+            "https://www.cve.org/CVERecord?id=CVE-2024-6197"
+          ],
+          "PublishedDate": "2024-07-24T08:15:03.34Z",
+          "LastModifiedDate": "2024-11-29T12:15:08.43Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-5222",
+          "PkgID": "icu@74.2-r0",
+          "PkgName": "icu",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/icu@74.2-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "6df214bead56515e"
+          },
+          "InstalledVersion": "74.2-r0",
+          "FixedVersion": "74.2-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-5222",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "icu: Stack buffer overflow in the SRBRoot::addTag function",
+          "Description": "A stack buffer overflow was found in Internationl components for unicode (ICU ). While running the genrb binary, the 'subtag' struct overflowed at the SRBRoot::addTag function. This issue may lead to memory corruption and local arbitrary code execution.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-120"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:11888",
+            "https://access.redhat.com/errata/RHSA-2025:12083",
+            "https://access.redhat.com/errata/RHSA-2025:12331",
+            "https://access.redhat.com/errata/RHSA-2025:12332",
+            "https://access.redhat.com/errata/RHSA-2025:12333",
+            "https://access.redhat.com/security/cve/CVE-2025-5222",
+            "https://bugzilla.redhat.com/2368600",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2368600",
+            "https://errata.almalinux.org/9/ALSA-2025-12083.html",
+            "https://linux.oracle.com/cve/CVE-2025-5222.html",
+            "https://linux.oracle.com/errata/ELSA-2025-12083.html",
+            "https://lists.debian.org/debian-lts-announce/2025/06/msg00015.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-5222",
+            "https://www.cve.org/CVERecord?id=CVE-2025-5222"
+          ],
+          "PublishedDate": "2025-05-27T21:15:23.03Z",
+          "LastModifiedDate": "2025-08-08T14:55:36.747Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-5222",
+          "PkgID": "icu-data-full@74.2-r0",
+          "PkgName": "icu-data-full",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/icu-data-full@74.2-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "8d146864a559962a"
+          },
+          "InstalledVersion": "74.2-r0",
+          "FixedVersion": "74.2-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-5222",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "icu: Stack buffer overflow in the SRBRoot::addTag function",
+          "Description": "A stack buffer overflow was found in Internationl components for unicode (ICU ). While running the genrb binary, the 'subtag' struct overflowed at the SRBRoot::addTag function. This issue may lead to memory corruption and local arbitrary code execution.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-120"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:11888",
+            "https://access.redhat.com/errata/RHSA-2025:12083",
+            "https://access.redhat.com/errata/RHSA-2025:12331",
+            "https://access.redhat.com/errata/RHSA-2025:12332",
+            "https://access.redhat.com/errata/RHSA-2025:12333",
+            "https://access.redhat.com/security/cve/CVE-2025-5222",
+            "https://bugzilla.redhat.com/2368600",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2368600",
+            "https://errata.almalinux.org/9/ALSA-2025-12083.html",
+            "https://linux.oracle.com/cve/CVE-2025-5222.html",
+            "https://linux.oracle.com/errata/ELSA-2025-12083.html",
+            "https://lists.debian.org/debian-lts-announce/2025/06/msg00015.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-5222",
+            "https://www.cve.org/CVERecord?id=CVE-2025-5222"
+          ],
+          "PublishedDate": "2025-05-27T21:15:23.03Z",
+          "LastModifiedDate": "2025-08-08T14:55:36.747Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-5222",
+          "PkgID": "icu-libs@74.2-r0",
+          "PkgName": "icu-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/icu-libs@74.2-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "89284b697c4790da"
+          },
+          "InstalledVersion": "74.2-r0",
+          "FixedVersion": "74.2-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-5222",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "icu: Stack buffer overflow in the SRBRoot::addTag function",
+          "Description": "A stack buffer overflow was found in Internationl components for unicode (ICU ). While running the genrb binary, the 'subtag' struct overflowed at the SRBRoot::addTag function. This issue may lead to memory corruption and local arbitrary code execution.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-120"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:11888",
+            "https://access.redhat.com/errata/RHSA-2025:12083",
+            "https://access.redhat.com/errata/RHSA-2025:12331",
+            "https://access.redhat.com/errata/RHSA-2025:12332",
+            "https://access.redhat.com/errata/RHSA-2025:12333",
+            "https://access.redhat.com/security/cve/CVE-2025-5222",
+            "https://bugzilla.redhat.com/2368600",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2368600",
+            "https://errata.almalinux.org/9/ALSA-2025-12083.html",
+            "https://linux.oracle.com/cve/CVE-2025-5222.html",
+            "https://linux.oracle.com/errata/ELSA-2025-12083.html",
+            "https://lists.debian.org/debian-lts-announce/2025/06/msg00015.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-5222",
+            "https://www.cve.org/CVERecord?id=CVE-2025-5222"
+          ],
+          "PublishedDate": "2025-05-27T21:15:23.03Z",
+          "LastModifiedDate": "2025-08-08T14:55:36.747Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-12797",
+          "PkgID": "libcrypto3@3.3.1-r0",
+          "PkgName": "libcrypto3",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.1-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "8c8d113cd73ef973"
+          },
+          "InstalledVersion": "3.3.1-r0",
+          "FixedVersion": "3.3.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:ec99f8b99825a742d50fb3ce173d291378a46ab54b8ef7dd75e5654e2a296e99",
+            "DiffID": "sha256:94e5f06ff8e3d4441dc3cd8b090ff38dc911bfa8ebdb0dc28395bc98f82f983f"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-12797",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: RFC7250 handshakes with unauthenticated servers don't abort as expected",
+          "Description": "Issue summary: Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a\nserver may fail to notice that the server was not authenticated, because\nhandshakes don't abort as expected when the SSL_VERIFY_PEER verification mode\nis set.\n\nImpact summary: TLS and DTLS connections using raw public keys may be\nvulnerable to man-in-middle attacks when server authentication failure is not\ndetected by clients.\n\nRPKs are disabled by default in both TLS clients and TLS servers.  The issue\nonly arises when TLS clients explicitly enable RPK use by the server, and the\nserver, likewise, enables sending of an RPK instead of an X.509 certificate\nchain.  The affected clients are those that then rely on the handshake to\nfail when the server's RPK fails to match one of the expected public keys,\nby setting the verification mode to SSL_VERIFY_PEER.\n\nClients that enable server-side raw public keys can still find out that raw\npublic key verification failed by calling SSL_get_verify_result(), and those\nthat do, and take appropriate action, are not affected.  This issue was\nintroduced in the initial implementation of RPK support in OpenSSL 3.2.\n\nThe FIPS modules in 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-392"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 1,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/02/11/3",
+            "http://www.openwall.com/lists/oss-security/2025/02/11/4",
+            "https://access.redhat.com/errata/RHSA-2025:1330",
+            "https://access.redhat.com/security/cve/CVE-2024-12797",
+            "https://bugzilla.redhat.com/2342757",
+            "https://errata.almalinux.org/9/ALSA-2025-1330.html",
+            "https://github.com/openssl/openssl/commit/738d4f9fdeaad57660dcba50a619fafced3fd5e9",
+            "https://github.com/openssl/openssl/commit/798779d43494549b611233f92652f0da5328fbe7",
+            "https://github.com/openssl/openssl/commit/87ebd203feffcf92ad5889df92f90bb0ee10a699",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-79v4-65xg-pq4g",
+            "https://linux.oracle.com/cve/CVE-2024-12797.html",
+            "https://linux.oracle.com/errata/ELSA-2025-1330.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-12797",
+            "https://openssl-library.org/news/secadv/20250211.txt",
+            "https://security.netapp.com/advisory/ntap-20250214-0001/",
+            "https://ubuntu.com/security/notices/USN-7264-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-12797"
+          ],
+          "PublishedDate": "2025-02-11T16:15:38.827Z",
+          "LastModifiedDate": "2025-02-18T14:15:27.107Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-6119",
+          "PkgID": "libcrypto3@3.3.1-r0",
+          "PkgName": "libcrypto3",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.1-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "8c8d113cd73ef973"
+          },
+          "InstalledVersion": "3.3.1-r0",
+          "FixedVersion": "3.3.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:ec99f8b99825a742d50fb3ce173d291378a46ab54b8ef7dd75e5654e2a296e99",
+            "DiffID": "sha256:94e5f06ff8e3d4441dc3cd8b090ff38dc911bfa8ebdb0dc28395bc98f82f983f"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-6119",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: Possible denial of service in X.509 name checks",
+          "Description": "Issue summary: Applications performing certificate name checks (e.g., TLS\nclients checking server certificates) may attempt to read an invalid memory\naddress resulting in abnormal termination of the application process.\n\nImpact summary: Abnormal termination of an application can a cause a denial of\nservice.\n\nApplications performing certificate name checks (e.g., TLS clients checking\nserver certificates) may attempt to read an invalid memory address when\ncomparing the expected name with an `otherName` subject alternative name of an\nX.509 certificate. This may result in an exception that terminates the\napplication program.\n\nNote that basic certificate chain validation (signatures, dates, ...) is not\naffected, the denial of service can occur only when the application also\nspecifies an expected DNS name, Email address or IP address.\n\nTLS servers rarely solicit client certificates, and even when they do, they\ngenerally don't perform a name check against a reference identifier (expected\nidentity), but rather extract the presented identity after checking the\ncertificate chain.  So TLS servers are generally not affected and the severity\nof the issue is Moderate.\n\nThe FIPS modules in 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-843"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2024/09/03/4",
+            "https://access.redhat.com/errata/RHSA-2024:8935",
+            "https://access.redhat.com/security/cve/CVE-2024-6119",
+            "https://bugzilla.redhat.com/2306158",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2306158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-6119",
+            "https://errata.almalinux.org/9/ALSA-2024-8935.html",
+            "https://errata.rockylinux.org/RLSA-2024:6783",
+            "https://github.com/openssl/openssl/commit/05f360d9e849a1b277db628f1f13083a7f8dd04f",
+            "https://github.com/openssl/openssl/commit/06d1dc3fa96a2ba5a3e22735a033012aadc9f0d6",
+            "https://github.com/openssl/openssl/commit/621f3729831b05ee828a3203eddb621d014ff2b2",
+            "https://github.com/openssl/openssl/commit/7dfcee2cd2a63b2c64b9b4b0850be64cb695b0a0",
+            "https://github.com/openssl/openssl/security/advisories/GHSA-5qrj-vq78-58fj",
+            "https://linux.oracle.com/cve/CVE-2024-6119.html",
+            "https://linux.oracle.com/errata/ELSA-2024-8935.html",
+            "https://lists.freebsd.org/archives/freebsd-security/2024-September/000303.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-6119",
+            "https://openssl-library.org/news/secadv/20240903.txt",
+            "https://security.netapp.com/advisory/ntap-20240912-0001/",
+            "https://ubuntu.com/security/notices/USN-6986-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-6119"
+          ],
+          "PublishedDate": "2024-09-03T16:15:07.177Z",
+          "LastModifiedDate": "2025-06-03T10:51:54.117Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-6197",
+          "PkgID": "libcurl@8.7.1-r0",
+          "PkgName": "libcurl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.7.1-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "c7b6ede4a097e71c"
+          },
+          "InstalledVersion": "8.7.1-r0",
+          "FixedVersion": "8.9.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:69ed43a8165048a0688eda4741a1c89e730a72a7647897adef61a18b9017f2fc",
+            "DiffID": "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-6197",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "curl: freeing stack buffer in utf8asn1str",
+          "Description": "libcurl's ASN1 parser has this utf8asn1str() function used for parsing an ASN.1 UTF-8 string. Itcan detect an invalid field and return error. Unfortunately, when doing so it also invokes `free()` on a 4 byte localstack buffer.  Most modern malloc implementations detect this error and immediately abort. Some however accept the input pointer and add that memory to its list of available chunks. This leads to the overwriting of nearby stack memory. The content of the overwrite is decided by the `free()` implementation; likely to be memory pointers and a set of flags.  The most likely outcome of exploting this flaw is a crash, although it cannot be ruled out that more serious results can be had in special circumstances.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "azure": 3,
+            "cbl-mariner": 3,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2024/07/24/1",
+            "http://www.openwall.com/lists/oss-security/2024/07/24/5",
+            "https://access.redhat.com/security/cve/CVE-2024-6197",
+            "https://curl.se/docs/CVE-2024-6197.html",
+            "https://curl.se/docs/CVE-2024-6197.json",
+            "https://hackerone.com/reports/2559516",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-6197",
+            "https://security.netapp.com/advisory/ntap-20241129-0008/",
+            "https://www.cve.org/CVERecord?id=CVE-2024-6197"
+          ],
+          "PublishedDate": "2024-07-24T08:15:03.34Z",
+          "LastModifiedDate": "2024-11-29T12:15:08.43Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-12797",
+          "PkgID": "libssl3@3.3.1-r0",
+          "PkgName": "libssl3",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.1-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "15737e564d55e58d"
+          },
+          "InstalledVersion": "3.3.1-r0",
+          "FixedVersion": "3.3.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:ec99f8b99825a742d50fb3ce173d291378a46ab54b8ef7dd75e5654e2a296e99",
+            "DiffID": "sha256:94e5f06ff8e3d4441dc3cd8b090ff38dc911bfa8ebdb0dc28395bc98f82f983f"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-12797",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: RFC7250 handshakes with unauthenticated servers don't abort as expected",
+          "Description": "Issue summary: Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a\nserver may fail to notice that the server was not authenticated, because\nhandshakes don't abort as expected when the SSL_VERIFY_PEER verification mode\nis set.\n\nImpact summary: TLS and DTLS connections using raw public keys may be\nvulnerable to man-in-middle attacks when server authentication failure is not\ndetected by clients.\n\nRPKs are disabled by default in both TLS clients and TLS servers.  The issue\nonly arises when TLS clients explicitly enable RPK use by the server, and the\nserver, likewise, enables sending of an RPK instead of an X.509 certificate\nchain.  The affected clients are those that then rely on the handshake to\nfail when the server's RPK fails to match one of the expected public keys,\nby setting the verification mode to SSL_VERIFY_PEER.\n\nClients that enable server-side raw public keys can still find out that raw\npublic key verification failed by calling SSL_get_verify_result(), and those\nthat do, and take appropriate action, are not affected.  This issue was\nintroduced in the initial implementation of RPK support in OpenSSL 3.2.\n\nThe FIPS modules in 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-392"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 1,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/02/11/3",
+            "http://www.openwall.com/lists/oss-security/2025/02/11/4",
+            "https://access.redhat.com/errata/RHSA-2025:1330",
+            "https://access.redhat.com/security/cve/CVE-2024-12797",
+            "https://bugzilla.redhat.com/2342757",
+            "https://errata.almalinux.org/9/ALSA-2025-1330.html",
+            "https://github.com/openssl/openssl/commit/738d4f9fdeaad57660dcba50a619fafced3fd5e9",
+            "https://github.com/openssl/openssl/commit/798779d43494549b611233f92652f0da5328fbe7",
+            "https://github.com/openssl/openssl/commit/87ebd203feffcf92ad5889df92f90bb0ee10a699",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-79v4-65xg-pq4g",
+            "https://linux.oracle.com/cve/CVE-2024-12797.html",
+            "https://linux.oracle.com/errata/ELSA-2025-1330.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-12797",
+            "https://openssl-library.org/news/secadv/20250211.txt",
+            "https://security.netapp.com/advisory/ntap-20250214-0001/",
+            "https://ubuntu.com/security/notices/USN-7264-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-12797"
+          ],
+          "PublishedDate": "2025-02-11T16:15:38.827Z",
+          "LastModifiedDate": "2025-02-18T14:15:27.107Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-6119",
+          "PkgID": "libssl3@3.3.1-r0",
+          "PkgName": "libssl3",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.1-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "15737e564d55e58d"
+          },
+          "InstalledVersion": "3.3.1-r0",
+          "FixedVersion": "3.3.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:ec99f8b99825a742d50fb3ce173d291378a46ab54b8ef7dd75e5654e2a296e99",
+            "DiffID": "sha256:94e5f06ff8e3d4441dc3cd8b090ff38dc911bfa8ebdb0dc28395bc98f82f983f"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-6119",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: Possible denial of service in X.509 name checks",
+          "Description": "Issue summary: Applications performing certificate name checks (e.g., TLS\nclients checking server certificates) may attempt to read an invalid memory\naddress resulting in abnormal termination of the application process.\n\nImpact summary: Abnormal termination of an application can a cause a denial of\nservice.\n\nApplications performing certificate name checks (e.g., TLS clients checking\nserver certificates) may attempt to read an invalid memory address when\ncomparing the expected name with an `otherName` subject alternative name of an\nX.509 certificate. This may result in an exception that terminates the\napplication program.\n\nNote that basic certificate chain validation (signatures, dates, ...) is not\naffected, the denial of service can occur only when the application also\nspecifies an expected DNS name, Email address or IP address.\n\nTLS servers rarely solicit client certificates, and even when they do, they\ngenerally don't perform a name check against a reference identifier (expected\nidentity), but rather extract the presented identity after checking the\ncertificate chain.  So TLS servers are generally not affected and the severity\nof the issue is Moderate.\n\nThe FIPS modules in 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-843"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2024/09/03/4",
+            "https://access.redhat.com/errata/RHSA-2024:8935",
+            "https://access.redhat.com/security/cve/CVE-2024-6119",
+            "https://bugzilla.redhat.com/2306158",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2306158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-6119",
+            "https://errata.almalinux.org/9/ALSA-2024-8935.html",
+            "https://errata.rockylinux.org/RLSA-2024:6783",
+            "https://github.com/openssl/openssl/commit/05f360d9e849a1b277db628f1f13083a7f8dd04f",
+            "https://github.com/openssl/openssl/commit/06d1dc3fa96a2ba5a3e22735a033012aadc9f0d6",
+            "https://github.com/openssl/openssl/commit/621f3729831b05ee828a3203eddb621d014ff2b2",
+            "https://github.com/openssl/openssl/commit/7dfcee2cd2a63b2c64b9b4b0850be64cb695b0a0",
+            "https://github.com/openssl/openssl/security/advisories/GHSA-5qrj-vq78-58fj",
+            "https://linux.oracle.com/cve/CVE-2024-6119.html",
+            "https://linux.oracle.com/errata/ELSA-2024-8935.html",
+            "https://lists.freebsd.org/archives/freebsd-security/2024-September/000303.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-6119",
+            "https://openssl-library.org/news/secadv/20240903.txt",
+            "https://security.netapp.com/advisory/ntap-20240912-0001/",
+            "https://ubuntu.com/security/notices/USN-6986-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-6119"
+          ],
+          "PublishedDate": "2024-09-03T16:15:07.177Z",
+          "LastModifiedDate": "2025-06-03T10:51:54.117Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56171",
+          "PkgID": "libxml2@2.12.7-r0",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "55004e4ea9d90d98"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:80274bfe1cc742f40f8d4bc6640531a3cca660cd7c7ca8ff1005cdebed8a0824",
+            "DiffID": "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56171",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Use-After-Free in libxml2",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a use-after-free in xmlSchemaIDCFillNodeTables and xmlSchemaBubbleIDCNodeTables in xmlschemas.c. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:2679",
+            "https://access.redhat.com/security/cve/CVE-2024-56171",
+            "https://bugzilla.redhat.com/2346416",
+            "https://bugzilla.redhat.com/2346421",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346416",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346421",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-56171",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24928",
+            "https://errata.almalinux.org/9/ALSA-2025-2679.html",
+            "https://errata.rockylinux.org/RLSA-2025:2686",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/828",
+            "https://linux.oracle.com/cve/CVE-2024-56171.html",
+            "https://linux.oracle.com/errata/ELSA-2025-2686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56171",
+            "https://security.netapp.com/advisory/ntap-20250328-0010/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-56171",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T22:15:12.797Z",
+          "LastModifiedDate": "2025-03-28T15:15:46.003Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-24928",
+          "PkgID": "libxml2@2.12.7-r0",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "55004e4ea9d90d98"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:80274bfe1cc742f40f8d4bc6640531a3cca660cd7c7ca8ff1005cdebed8a0824",
+            "DiffID": "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-24928",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Stack-based buffer overflow in xmlSnprintfElements of libxml2",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a stack-based buffer overflow in xmlSnprintfElements in valid.c. To exploit this, DTD validation must occur for an untrusted document or untrusted DTD. NOTE: this is similar to CVE-2017-9047.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:2679",
+            "https://access.redhat.com/security/cve/CVE-2025-24928",
+            "https://bugzilla.redhat.com/2346416",
+            "https://bugzilla.redhat.com/2346421",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346416",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346421",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-56171",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24928",
+            "https://errata.almalinux.org/9/ALSA-2025-2679.html",
+            "https://errata.rockylinux.org/RLSA-2025:2686",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/847",
+            "https://issues.oss-fuzz.com/issues/392687022",
+            "https://linux.oracle.com/cve/CVE-2025-24928.html",
+            "https://linux.oracle.com/errata/ELSA-2025-2686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-24928",
+            "https://security.netapp.com/advisory/ntap-20250321-0006/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-24928",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T23:15:10.25Z",
+          "LastModifiedDate": "2025-03-21T18:15:34.86Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-27113",
+          "PkgID": "libxml2@2.12.7-r0",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "55004e4ea9d90d98"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r2",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:80274bfe1cc742f40f8d4bc6640531a3cca660cd7c7ca8ff1005cdebed8a0824",
+            "DiffID": "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-27113",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: NULL Pointer Dereference in libxml2 xmlPatMatch",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a NULL pointer dereference in xmlPatMatch in pattern.c.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 1,
+            "cbl-mariner": 1,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-27113",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/861",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-27113",
+            "https://security.netapp.com/advisory/ntap-20250306-0004/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-27113",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T23:15:10.96Z",
+          "LastModifiedDate": "2025-03-07T01:15:12.823Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32414",
+          "PkgID": "libxml2@2.12.7-r0",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "55004e4ea9d90d98"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.10-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:80274bfe1cc742f40f8d4bc6640531a3cca660cd7c7ca8ff1005cdebed8a0824",
+            "DiffID": "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32414",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Out-of-Bounds Read in libxml2",
+          "Description": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, out-of-bounds memory access can occur in the Python API (Python bindings) because of an incorrect return value. This occurs in xmlPythonFileRead and xmlPythonFileReadRaw because of a difference between bytes and characters.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-393",
+            "CWE-252"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L",
+              "V3Score": 5.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:13428",
+            "https://access.redhat.com/security/cve/CVE-2025-32414",
+            "https://bugzilla.redhat.com/2358121",
+            "https://bugzilla.redhat.com/2360768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2358121",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-32414",
+            "https://errata.almalinux.org/9/ALSA-2025-13428.html",
+            "https://errata.rockylinux.org/RLSA-2025:8958",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/889",
+            "https://linux.oracle.com/cve/CVE-2025-32414.html",
+            "https://linux.oracle.com/errata/ELSA-2025-8958.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32414",
+            "https://ubuntu.com/security/notices/USN-7467-1",
+            "https://ubuntu.com/security/notices/USN-7467-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32414"
+          ],
+          "PublishedDate": "2025-04-08T03:15:15.94Z",
+          "LastModifiedDate": "2025-04-23T19:09:35.517Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32415",
+          "PkgID": "libxml2@2.12.7-r0",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "55004e4ea9d90d98"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.10-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:80274bfe1cc742f40f8d4bc6640531a3cca660cd7c7ca8ff1005cdebed8a0824",
+            "DiffID": "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32415",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Out-of-bounds Read in xmlSchemaIDCFillNodeTables",
+          "Description": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, xmlSchemaIDCFillNodeTables in xmlschemas.c has a heap-based buffer under-read. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1284",
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 1,
+            "cbl-mariner": 1,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:13428",
+            "https://access.redhat.com/security/cve/CVE-2025-32415",
+            "https://bugzilla.redhat.com/2358121",
+            "https://bugzilla.redhat.com/2360768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2360768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-32415",
+            "https://errata.almalinux.org/9/ALSA-2025-13428.html",
+            "https://errata.rockylinux.org/RLSA-2025:13203",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/890",
+            "https://linux.oracle.com/cve/CVE-2025-32415.html",
+            "https://linux.oracle.com/errata/ELSA-2025-13789.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32415",
+            "https://ubuntu.com/security/notices/USN-7467-1",
+            "https://ubuntu.com/security/notices/USN-7467-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32415"
+          ],
+          "PublishedDate": "2025-04-17T17:15:33.733Z",
+          "LastModifiedDate": "2025-04-23T18:17:52.053Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56171",
+          "PkgID": "libxml2-dev@2.12.7-r0",
+          "PkgName": "libxml2-dev",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-dev@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "830a58e7204ec7cc"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56171",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Use-After-Free in libxml2",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a use-after-free in xmlSchemaIDCFillNodeTables and xmlSchemaBubbleIDCNodeTables in xmlschemas.c. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:2679",
+            "https://access.redhat.com/security/cve/CVE-2024-56171",
+            "https://bugzilla.redhat.com/2346416",
+            "https://bugzilla.redhat.com/2346421",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346416",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346421",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-56171",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24928",
+            "https://errata.almalinux.org/9/ALSA-2025-2679.html",
+            "https://errata.rockylinux.org/RLSA-2025:2686",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/828",
+            "https://linux.oracle.com/cve/CVE-2024-56171.html",
+            "https://linux.oracle.com/errata/ELSA-2025-2686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56171",
+            "https://security.netapp.com/advisory/ntap-20250328-0010/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-56171",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T22:15:12.797Z",
+          "LastModifiedDate": "2025-03-28T15:15:46.003Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-24928",
+          "PkgID": "libxml2-dev@2.12.7-r0",
+          "PkgName": "libxml2-dev",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-dev@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "830a58e7204ec7cc"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-24928",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Stack-based buffer overflow in xmlSnprintfElements of libxml2",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a stack-based buffer overflow in xmlSnprintfElements in valid.c. To exploit this, DTD validation must occur for an untrusted document or untrusted DTD. NOTE: this is similar to CVE-2017-9047.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:2679",
+            "https://access.redhat.com/security/cve/CVE-2025-24928",
+            "https://bugzilla.redhat.com/2346416",
+            "https://bugzilla.redhat.com/2346421",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346416",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346421",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-56171",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24928",
+            "https://errata.almalinux.org/9/ALSA-2025-2679.html",
+            "https://errata.rockylinux.org/RLSA-2025:2686",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/847",
+            "https://issues.oss-fuzz.com/issues/392687022",
+            "https://linux.oracle.com/cve/CVE-2025-24928.html",
+            "https://linux.oracle.com/errata/ELSA-2025-2686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-24928",
+            "https://security.netapp.com/advisory/ntap-20250321-0006/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-24928",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T23:15:10.25Z",
+          "LastModifiedDate": "2025-03-21T18:15:34.86Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-27113",
+          "PkgID": "libxml2-dev@2.12.7-r0",
+          "PkgName": "libxml2-dev",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-dev@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "830a58e7204ec7cc"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r2",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-27113",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: NULL Pointer Dereference in libxml2 xmlPatMatch",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a NULL pointer dereference in xmlPatMatch in pattern.c.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 1,
+            "cbl-mariner": 1,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-27113",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/861",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-27113",
+            "https://security.netapp.com/advisory/ntap-20250306-0004/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-27113",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T23:15:10.96Z",
+          "LastModifiedDate": "2025-03-07T01:15:12.823Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32414",
+          "PkgID": "libxml2-dev@2.12.7-r0",
+          "PkgName": "libxml2-dev",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-dev@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "830a58e7204ec7cc"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.10-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32414",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Out-of-Bounds Read in libxml2",
+          "Description": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, out-of-bounds memory access can occur in the Python API (Python bindings) because of an incorrect return value. This occurs in xmlPythonFileRead and xmlPythonFileReadRaw because of a difference between bytes and characters.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-393",
+            "CWE-252"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L",
+              "V3Score": 5.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:13428",
+            "https://access.redhat.com/security/cve/CVE-2025-32414",
+            "https://bugzilla.redhat.com/2358121",
+            "https://bugzilla.redhat.com/2360768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2358121",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-32414",
+            "https://errata.almalinux.org/9/ALSA-2025-13428.html",
+            "https://errata.rockylinux.org/RLSA-2025:8958",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/889",
+            "https://linux.oracle.com/cve/CVE-2025-32414.html",
+            "https://linux.oracle.com/errata/ELSA-2025-8958.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32414",
+            "https://ubuntu.com/security/notices/USN-7467-1",
+            "https://ubuntu.com/security/notices/USN-7467-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32414"
+          ],
+          "PublishedDate": "2025-04-08T03:15:15.94Z",
+          "LastModifiedDate": "2025-04-23T19:09:35.517Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32415",
+          "PkgID": "libxml2-dev@2.12.7-r0",
+          "PkgName": "libxml2-dev",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-dev@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "830a58e7204ec7cc"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.10-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32415",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Out-of-bounds Read in xmlSchemaIDCFillNodeTables",
+          "Description": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, xmlSchemaIDCFillNodeTables in xmlschemas.c has a heap-based buffer under-read. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1284",
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 1,
+            "cbl-mariner": 1,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:13428",
+            "https://access.redhat.com/security/cve/CVE-2025-32415",
+            "https://bugzilla.redhat.com/2358121",
+            "https://bugzilla.redhat.com/2360768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2360768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-32415",
+            "https://errata.almalinux.org/9/ALSA-2025-13428.html",
+            "https://errata.rockylinux.org/RLSA-2025:13203",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/890",
+            "https://linux.oracle.com/cve/CVE-2025-32415.html",
+            "https://linux.oracle.com/errata/ELSA-2025-13789.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32415",
+            "https://ubuntu.com/security/notices/USN-7467-1",
+            "https://ubuntu.com/security/notices/USN-7467-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32415"
+          ],
+          "PublishedDate": "2025-04-17T17:15:33.733Z",
+          "LastModifiedDate": "2025-04-23T18:17:52.053Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56171",
+          "PkgID": "libxml2-utils@2.12.7-r0",
+          "PkgName": "libxml2-utils",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-utils@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "14fbe7537f0d1f60"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56171",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Use-After-Free in libxml2",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a use-after-free in xmlSchemaIDCFillNodeTables and xmlSchemaBubbleIDCNodeTables in xmlschemas.c. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:2679",
+            "https://access.redhat.com/security/cve/CVE-2024-56171",
+            "https://bugzilla.redhat.com/2346416",
+            "https://bugzilla.redhat.com/2346421",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346416",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346421",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-56171",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24928",
+            "https://errata.almalinux.org/9/ALSA-2025-2679.html",
+            "https://errata.rockylinux.org/RLSA-2025:2686",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/828",
+            "https://linux.oracle.com/cve/CVE-2024-56171.html",
+            "https://linux.oracle.com/errata/ELSA-2025-2686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56171",
+            "https://security.netapp.com/advisory/ntap-20250328-0010/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-56171",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T22:15:12.797Z",
+          "LastModifiedDate": "2025-03-28T15:15:46.003Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-24928",
+          "PkgID": "libxml2-utils@2.12.7-r0",
+          "PkgName": "libxml2-utils",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-utils@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "14fbe7537f0d1f60"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-24928",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Stack-based buffer overflow in xmlSnprintfElements of libxml2",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a stack-based buffer overflow in xmlSnprintfElements in valid.c. To exploit this, DTD validation must occur for an untrusted document or untrusted DTD. NOTE: this is similar to CVE-2017-9047.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:2679",
+            "https://access.redhat.com/security/cve/CVE-2025-24928",
+            "https://bugzilla.redhat.com/2346416",
+            "https://bugzilla.redhat.com/2346421",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346416",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2346421",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-56171",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24928",
+            "https://errata.almalinux.org/9/ALSA-2025-2679.html",
+            "https://errata.rockylinux.org/RLSA-2025:2686",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/847",
+            "https://issues.oss-fuzz.com/issues/392687022",
+            "https://linux.oracle.com/cve/CVE-2025-24928.html",
+            "https://linux.oracle.com/errata/ELSA-2025-2686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-24928",
+            "https://security.netapp.com/advisory/ntap-20250321-0006/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-24928",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T23:15:10.25Z",
+          "LastModifiedDate": "2025-03-21T18:15:34.86Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-27113",
+          "PkgID": "libxml2-utils@2.12.7-r0",
+          "PkgName": "libxml2-utils",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-utils@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "14fbe7537f0d1f60"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.7-r2",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-27113",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: NULL Pointer Dereference in libxml2 xmlPatMatch",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a NULL pointer dereference in xmlPatMatch in pattern.c.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 1,
+            "cbl-mariner": 1,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-27113",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/861",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-27113",
+            "https://security.netapp.com/advisory/ntap-20250306-0004/",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-27113",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T23:15:10.96Z",
+          "LastModifiedDate": "2025-03-07T01:15:12.823Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32414",
+          "PkgID": "libxml2-utils@2.12.7-r0",
+          "PkgName": "libxml2-utils",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-utils@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "14fbe7537f0d1f60"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.10-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32414",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Out-of-Bounds Read in libxml2",
+          "Description": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, out-of-bounds memory access can occur in the Python API (Python bindings) because of an incorrect return value. This occurs in xmlPythonFileRead and xmlPythonFileReadRaw because of a difference between bytes and characters.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-393",
+            "CWE-252"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L",
+              "V3Score": 5.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:13428",
+            "https://access.redhat.com/security/cve/CVE-2025-32414",
+            "https://bugzilla.redhat.com/2358121",
+            "https://bugzilla.redhat.com/2360768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2358121",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-32414",
+            "https://errata.almalinux.org/9/ALSA-2025-13428.html",
+            "https://errata.rockylinux.org/RLSA-2025:8958",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/889",
+            "https://linux.oracle.com/cve/CVE-2025-32414.html",
+            "https://linux.oracle.com/errata/ELSA-2025-8958.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32414",
+            "https://ubuntu.com/security/notices/USN-7467-1",
+            "https://ubuntu.com/security/notices/USN-7467-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32414"
+          ],
+          "PublishedDate": "2025-04-08T03:15:15.94Z",
+          "LastModifiedDate": "2025-04-23T19:09:35.517Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32415",
+          "PkgID": "libxml2-utils@2.12.7-r0",
+          "PkgName": "libxml2-utils",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2-utils@2.12.7-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "14fbe7537f0d1f60"
+          },
+          "InstalledVersion": "2.12.7-r0",
+          "FixedVersion": "2.12.10-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32415",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxml2: Out-of-bounds Read in xmlSchemaIDCFillNodeTables",
+          "Description": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, xmlSchemaIDCFillNodeTables in xmlschemas.c has a heap-based buffer under-read. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1284",
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 1,
+            "cbl-mariner": 1,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:13428",
+            "https://access.redhat.com/security/cve/CVE-2025-32415",
+            "https://bugzilla.redhat.com/2358121",
+            "https://bugzilla.redhat.com/2360768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2360768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-32415",
+            "https://errata.almalinux.org/9/ALSA-2025-13428.html",
+            "https://errata.rockylinux.org/RLSA-2025:13203",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/890",
+            "https://linux.oracle.com/cve/CVE-2025-32415.html",
+            "https://linux.oracle.com/errata/ELSA-2025-13789.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32415",
+            "https://ubuntu.com/security/notices/USN-7467-1",
+            "https://ubuntu.com/security/notices/USN-7467-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32415"
+          ],
+          "PublishedDate": "2025-04-17T17:15:33.733Z",
+          "LastModifiedDate": "2025-04-23T18:17:52.053Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-55549",
+          "PkgID": "libxslt@1.1.39-r1",
+          "PkgName": "libxslt",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxslt@1.1.39-r1?arch=x86_64\u0026distro=3.20.1",
+            "UID": "e82ff86db36ee277"
+          },
+          "InstalledVersion": "1.1.39-r1",
+          "FixedVersion": "1.1.39-r2",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-55549",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxslt: Use-After-Free in libxslt (xsltGetInheritedNsList)",
+          "Description": "xsltGetInheritedNsList in libxslt before 1.1.43 has a use-after-free issue related to exclusion of result prefixes.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:7410",
+            "https://access.redhat.com/security/cve/CVE-2024-55549",
+            "https://bugzilla.redhat.com/2352484",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2352483",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2352484",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-55549",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24855",
+            "https://errata.almalinux.org/9/ALSA-2025-7410.html",
+            "https://errata.rockylinux.org/RLSA-2025:3615",
+            "https://gitlab.gnome.org/GNOME/libxslt/-/issues/127",
+            "https://linux.oracle.com/cve/CVE-2024-55549.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7496.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-55549",
+            "https://ubuntu.com/security/notices/USN-7357-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-55549"
+          ],
+          "PublishedDate": "2025-03-14T02:15:15.333Z",
+          "LastModifiedDate": "2025-03-14T02:15:15.333Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-24855",
+          "PkgID": "libxslt@1.1.39-r1",
+          "PkgName": "libxslt",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxslt@1.1.39-r1?arch=x86_64\u0026distro=3.20.1",
+            "UID": "e82ff86db36ee277"
+          },
+          "InstalledVersion": "1.1.39-r1",
+          "FixedVersion": "1.1.39-r2",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-24855",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxslt: Use-After-Free in libxslt numbers.c",
+          "Description": "numbers.c in libxslt before 1.1.43 has a use-after-free because, in nested XPath evaluations, an XPath context node can be modified but never restored. This is related to xsltNumberFormatGetValue, xsltEvalXPathPredicate, xsltEvalXPathStringNs, and xsltComputeSortResultInternal.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:3107",
+            "https://access.redhat.com/security/cve/CVE-2025-24855",
+            "https://bugzilla.redhat.com/2352483",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2352483",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2352484",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-55549",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24855",
+            "https://errata.almalinux.org/9/ALSA-2025-3107.html",
+            "https://errata.rockylinux.org/RLSA-2025:3615",
+            "https://gitlab.gnome.org/GNOME/libxslt/-/issues/128",
+            "https://linux.oracle.com/cve/CVE-2025-24855.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7496.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-24855",
+            "https://ubuntu.com/security/notices/USN-7361-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-24855"
+          ],
+          "PublishedDate": "2025-03-14T02:15:15.717Z",
+          "LastModifiedDate": "2025-03-14T02:15:15.717Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-55549",
+          "PkgID": "libxslt-dev@1.1.39-r1",
+          "PkgName": "libxslt-dev",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxslt-dev@1.1.39-r1?arch=x86_64\u0026distro=3.20.1",
+            "UID": "d35bef132f57bea8"
+          },
+          "InstalledVersion": "1.1.39-r1",
+          "FixedVersion": "1.1.39-r2",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-55549",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxslt: Use-After-Free in libxslt (xsltGetInheritedNsList)",
+          "Description": "xsltGetInheritedNsList in libxslt before 1.1.43 has a use-after-free issue related to exclusion of result prefixes.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:7410",
+            "https://access.redhat.com/security/cve/CVE-2024-55549",
+            "https://bugzilla.redhat.com/2352484",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2352483",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2352484",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-55549",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24855",
+            "https://errata.almalinux.org/9/ALSA-2025-7410.html",
+            "https://errata.rockylinux.org/RLSA-2025:3615",
+            "https://gitlab.gnome.org/GNOME/libxslt/-/issues/127",
+            "https://linux.oracle.com/cve/CVE-2024-55549.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7496.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-55549",
+            "https://ubuntu.com/security/notices/USN-7357-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-55549"
+          ],
+          "PublishedDate": "2025-03-14T02:15:15.333Z",
+          "LastModifiedDate": "2025-03-14T02:15:15.333Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-24855",
+          "PkgID": "libxslt-dev@1.1.39-r1",
+          "PkgName": "libxslt-dev",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxslt-dev@1.1.39-r1?arch=x86_64\u0026distro=3.20.1",
+            "UID": "d35bef132f57bea8"
+          },
+          "InstalledVersion": "1.1.39-r1",
+          "FixedVersion": "1.1.39-r2",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-24855",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "libxslt: Use-After-Free in libxslt numbers.c",
+          "Description": "numbers.c in libxslt before 1.1.43 has a use-after-free because, in nested XPath evaluations, an XPath context node can be modified but never restored. This is related to xsltNumberFormatGetValue, xsltEvalXPathPredicate, xsltEvalXPathStringNs, and xsltComputeSortResultInternal.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:3107",
+            "https://access.redhat.com/security/cve/CVE-2025-24855",
+            "https://bugzilla.redhat.com/2352483",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2352483",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2352484",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-55549",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24855",
+            "https://errata.almalinux.org/9/ALSA-2025-3107.html",
+            "https://errata.rockylinux.org/RLSA-2025:3615",
+            "https://gitlab.gnome.org/GNOME/libxslt/-/issues/128",
+            "https://linux.oracle.com/cve/CVE-2025-24855.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7496.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-24855",
+            "https://ubuntu.com/security/notices/USN-7361-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-24855"
+          ],
+          "PublishedDate": "2025-03-14T02:15:15.717Z",
+          "LastModifiedDate": "2025-03-14T02:15:15.717Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-12797",
+          "PkgID": "openssl@3.3.1-r0",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/openssl@3.3.1-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "d1829ab2fc092d24"
+          },
+          "InstalledVersion": "3.3.1-r0",
+          "FixedVersion": "3.3.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:69ed43a8165048a0688eda4741a1c89e730a72a7647897adef61a18b9017f2fc",
+            "DiffID": "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-12797",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: RFC7250 handshakes with unauthenticated servers don't abort as expected",
+          "Description": "Issue summary: Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a\nserver may fail to notice that the server was not authenticated, because\nhandshakes don't abort as expected when the SSL_VERIFY_PEER verification mode\nis set.\n\nImpact summary: TLS and DTLS connections using raw public keys may be\nvulnerable to man-in-middle attacks when server authentication failure is not\ndetected by clients.\n\nRPKs are disabled by default in both TLS clients and TLS servers.  The issue\nonly arises when TLS clients explicitly enable RPK use by the server, and the\nserver, likewise, enables sending of an RPK instead of an X.509 certificate\nchain.  The affected clients are those that then rely on the handshake to\nfail when the server's RPK fails to match one of the expected public keys,\nby setting the verification mode to SSL_VERIFY_PEER.\n\nClients that enable server-side raw public keys can still find out that raw\npublic key verification failed by calling SSL_get_verify_result(), and those\nthat do, and take appropriate action, are not affected.  This issue was\nintroduced in the initial implementation of RPK support in OpenSSL 3.2.\n\nThe FIPS modules in 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-392"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 1,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/02/11/3",
+            "http://www.openwall.com/lists/oss-security/2025/02/11/4",
+            "https://access.redhat.com/errata/RHSA-2025:1330",
+            "https://access.redhat.com/security/cve/CVE-2024-12797",
+            "https://bugzilla.redhat.com/2342757",
+            "https://errata.almalinux.org/9/ALSA-2025-1330.html",
+            "https://github.com/openssl/openssl/commit/738d4f9fdeaad57660dcba50a619fafced3fd5e9",
+            "https://github.com/openssl/openssl/commit/798779d43494549b611233f92652f0da5328fbe7",
+            "https://github.com/openssl/openssl/commit/87ebd203feffcf92ad5889df92f90bb0ee10a699",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-79v4-65xg-pq4g",
+            "https://linux.oracle.com/cve/CVE-2024-12797.html",
+            "https://linux.oracle.com/errata/ELSA-2025-1330.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-12797",
+            "https://openssl-library.org/news/secadv/20250211.txt",
+            "https://security.netapp.com/advisory/ntap-20250214-0001/",
+            "https://ubuntu.com/security/notices/USN-7264-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-12797"
+          ],
+          "PublishedDate": "2025-02-11T16:15:38.827Z",
+          "LastModifiedDate": "2025-02-18T14:15:27.107Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-6119",
+          "PkgID": "openssl@3.3.1-r0",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/openssl@3.3.1-r0?arch=x86_64\u0026distro=3.20.1",
+            "UID": "d1829ab2fc092d24"
+          },
+          "InstalledVersion": "3.3.1-r0",
+          "FixedVersion": "3.3.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:69ed43a8165048a0688eda4741a1c89e730a72a7647897adef61a18b9017f2fc",
+            "DiffID": "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-6119",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: Possible denial of service in X.509 name checks",
+          "Description": "Issue summary: Applications performing certificate name checks (e.g., TLS\nclients checking server certificates) may attempt to read an invalid memory\naddress resulting in abnormal termination of the application process.\n\nImpact summary: Abnormal termination of an application can a cause a denial of\nservice.\n\nApplications performing certificate name checks (e.g., TLS clients checking\nserver certificates) may attempt to read an invalid memory address when\ncomparing the expected name with an `otherName` subject alternative name of an\nX.509 certificate. This may result in an exception that terminates the\napplication program.\n\nNote that basic certificate chain validation (signatures, dates, ...) is not\naffected, the denial of service can occur only when the application also\nspecifies an expected DNS name, Email address or IP address.\n\nTLS servers rarely solicit client certificates, and even when they do, they\ngenerally don't perform a name check against a reference identifier (expected\nidentity), but rather extract the presented identity after checking the\ncertificate chain.  So TLS servers are generally not affected and the severity\nof the issue is Moderate.\n\nThe FIPS modules in 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-843"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2024/09/03/4",
+            "https://access.redhat.com/errata/RHSA-2024:8935",
+            "https://access.redhat.com/security/cve/CVE-2024-6119",
+            "https://bugzilla.redhat.com/2306158",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2306158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-6119",
+            "https://errata.almalinux.org/9/ALSA-2024-8935.html",
+            "https://errata.rockylinux.org/RLSA-2024:6783",
+            "https://github.com/openssl/openssl/commit/05f360d9e849a1b277db628f1f13083a7f8dd04f",
+            "https://github.com/openssl/openssl/commit/06d1dc3fa96a2ba5a3e22735a033012aadc9f0d6",
+            "https://github.com/openssl/openssl/commit/621f3729831b05ee828a3203eddb621d014ff2b2",
+            "https://github.com/openssl/openssl/commit/7dfcee2cd2a63b2c64b9b4b0850be64cb695b0a0",
+            "https://github.com/openssl/openssl/security/advisories/GHSA-5qrj-vq78-58fj",
+            "https://linux.oracle.com/cve/CVE-2024-6119.html",
+            "https://linux.oracle.com/errata/ELSA-2024-8935.html",
+            "https://lists.freebsd.org/archives/freebsd-security/2024-September/000303.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-6119",
+            "https://openssl-library.org/news/secadv/20240903.txt",
+            "https://security.netapp.com/advisory/ntap-20240912-0001/",
+            "https://ubuntu.com/security/notices/USN-6986-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-6119"
+          ],
+          "PublishedDate": "2024-09-03T16:15:07.177Z",
+          "LastModifiedDate": "2025-06-03T10:51:54.117Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-29087",
+          "PkgID": "sqlite-libs@3.45.3-r1",
+          "PkgName": "sqlite-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/sqlite-libs@3.45.3-r1?arch=x86_64\u0026distro=3.20.1",
+            "UID": "fddf461b034828d"
+          },
+          "InstalledVersion": "3.45.3-r1",
+          "FixedVersion": "3.45.3-r2",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:80274bfe1cc742f40f8d4bc6640531a3cca660cd7c7ca8ff1005cdebed8a0824",
+            "DiffID": "sha256:c6465d39c7328bfd743c33da19f5fea0609ba985e9c0f53e209f25962c7018c5"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-29087",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "sqlite: Integer Overflow in SQLite concat_ws Function",
+          "Description": "In SQLite 3.44.0 through 3.49.0 before 3.49.1, the concat_ws() SQL function can cause memory to be written beyond the end of a malloc-allocated buffer. If the separator argument is attacker-controlled and has a large string (e.g., 2MB or more), an integer overflow occurs in calculating the size of the result buffer, and thus malloc may not allocate enough memory.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "bitnami": 3,
+            "nvd": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-29087",
+            "https://gist.github.com/ylwango613/a44a29f1ef074fa783e29f04a0afd62a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-29087",
+            "https://sqlite.org/releaselog/3_49_1.html",
+            "https://ubuntu.com/security/notices/USN-7528-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-29087",
+            "https://www.sqlite.org/cves.html"
+          ],
+          "PublishedDate": "2025-04-07T20:15:20.253Z",
+          "LastModifiedDate": "2025-04-30T12:43:22.31Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-31115",
+          "PkgID": "xz@5.6.1-r3",
+          "PkgName": "xz",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/xz@5.6.1-r3?arch=x86_64\u0026distro=3.20.1",
+            "UID": "7de72f066ec6c231"
+          },
+          "InstalledVersion": "5.6.1-r3",
+          "FixedVersion": "5.6.2-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:69ed43a8165048a0688eda4741a1c89e730a72a7647897adef61a18b9017f2fc",
+            "DiffID": "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-31115",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "xz: XZ has a heap-use-after-free bug in threaded .xz decoder",
+          "Description": "XZ Utils provide a general-purpose data-compression library plus command-line tools. In XZ Utils 5.3.3alpha to 5.8.0, the multithreaded .xz decoder in liblzma has a bug where invalid input can at least result in a crash. The effects include heap use after free and writing to an address based on the null pointer plus an offset. Applications and libraries that use the lzma_stream_decoder_mt function are affected. The bug has been fixed in XZ Utils 5.8.1, and the fix has been committed to the v5.4, v5.6, v5.8, and master branches in the xz Git repository. No new release packages will be made from the old stable branches, but a standalone patch is available that applies to all affected releases.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-366",
+            "CWE-416",
+            "CWE-476",
+            "CWE-826"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/04/03/1",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/2",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/3",
+            "https://access.redhat.com/errata/RHSA-2025:7524",
+            "https://access.redhat.com/security/cve/CVE-2025-31115",
+            "https://bugzilla.redhat.com/2357249",
+            "https://errata.almalinux.org/10/ALSA-2025-7524.html",
+            "https://github.com/tukaani-project/xz/commit/d5a2ffe41bb77b918a8c96084885d4dbe4bf6480",
+            "https://github.com/tukaani-project/xz/security/advisories/GHSA-6cc8-p5mm-29w2",
+            "https://linux.oracle.com/cve/CVE-2025-31115.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7524.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-31115",
+            "https://tukaani.org/xz/xz-cve-2025-31115.patch",
+            "https://ubuntu.com/security/notices/USN-7414-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-31115"
+          ],
+          "PublishedDate": "2025-04-03T17:15:30.54Z",
+          "LastModifiedDate": "2025-04-07T14:18:34.453Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-31115",
+          "PkgID": "xz-dev@5.6.1-r3",
+          "PkgName": "xz-dev",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/xz-dev@5.6.1-r3?arch=x86_64\u0026distro=3.20.1",
+            "UID": "3ff6b7d79b146944"
+          },
+          "InstalledVersion": "5.6.1-r3",
+          "FixedVersion": "5.6.2-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:347273f07666fe83f9fe358b9e2e40c119434410b9a1a734700714c567f8dc1c",
+            "DiffID": "sha256:03b86a8dea1bc91ccb2a08136ad85f5a37776b31005877b1e3fd88b8bd73de78"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-31115",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "xz: XZ has a heap-use-after-free bug in threaded .xz decoder",
+          "Description": "XZ Utils provide a general-purpose data-compression library plus command-line tools. In XZ Utils 5.3.3alpha to 5.8.0, the multithreaded .xz decoder in liblzma has a bug where invalid input can at least result in a crash. The effects include heap use after free and writing to an address based on the null pointer plus an offset. Applications and libraries that use the lzma_stream_decoder_mt function are affected. The bug has been fixed in XZ Utils 5.8.1, and the fix has been committed to the v5.4, v5.6, v5.8, and master branches in the xz Git repository. No new release packages will be made from the old stable branches, but a standalone patch is available that applies to all affected releases.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-366",
+            "CWE-416",
+            "CWE-476",
+            "CWE-826"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/04/03/1",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/2",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/3",
+            "https://access.redhat.com/errata/RHSA-2025:7524",
+            "https://access.redhat.com/security/cve/CVE-2025-31115",
+            "https://bugzilla.redhat.com/2357249",
+            "https://errata.almalinux.org/10/ALSA-2025-7524.html",
+            "https://github.com/tukaani-project/xz/commit/d5a2ffe41bb77b918a8c96084885d4dbe4bf6480",
+            "https://github.com/tukaani-project/xz/security/advisories/GHSA-6cc8-p5mm-29w2",
+            "https://linux.oracle.com/cve/CVE-2025-31115.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7524.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-31115",
+            "https://tukaani.org/xz/xz-cve-2025-31115.patch",
+            "https://ubuntu.com/security/notices/USN-7414-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-31115"
+          ],
+          "PublishedDate": "2025-04-03T17:15:30.54Z",
+          "LastModifiedDate": "2025-04-07T14:18:34.453Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-31115",
+          "PkgID": "xz-libs@5.6.1-r3",
+          "PkgName": "xz-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/xz-libs@5.6.1-r3?arch=x86_64\u0026distro=3.20.1",
+            "UID": "c85e415718ea315b"
+          },
+          "InstalledVersion": "5.6.1-r3",
+          "FixedVersion": "5.6.2-r1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:69ed43a8165048a0688eda4741a1c89e730a72a7647897adef61a18b9017f2fc",
+            "DiffID": "sha256:921add264f406e1a64c99fa50dea6d9e4500e56e1eab1e125e30d514384151fc"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-31115",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "xz: XZ has a heap-use-after-free bug in threaded .xz decoder",
+          "Description": "XZ Utils provide a general-purpose data-compression library plus command-line tools. In XZ Utils 5.3.3alpha to 5.8.0, the multithreaded .xz decoder in liblzma has a bug where invalid input can at least result in a crash. The effects include heap use after free and writing to an address based on the null pointer plus an offset. Applications and libraries that use the lzma_stream_decoder_mt function are affected. The bug has been fixed in XZ Utils 5.8.1, and the fix has been committed to the v5.4, v5.6, v5.8, and master branches in the xz Git repository. No new release packages will be made from the old stable branches, but a standalone patch is available that applies to all affected releases.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-366",
+            "CWE-416",
+            "CWE-476",
+            "CWE-826"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/04/03/1",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/2",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/3",
+            "https://access.redhat.com/errata/RHSA-2025:7524",
+            "https://access.redhat.com/security/cve/CVE-2025-31115",
+            "https://bugzilla.redhat.com/2357249",
+            "https://errata.almalinux.org/10/ALSA-2025-7524.html",
+            "https://github.com/tukaani-project/xz/commit/d5a2ffe41bb77b918a8c96084885d4dbe4bf6480",
+            "https://github.com/tukaani-project/xz/security/advisories/GHSA-6cc8-p5mm-29w2",
+            "https://linux.oracle.com/cve/CVE-2025-31115.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7524.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-31115",
+            "https://tukaani.org/xz/xz-cve-2025-31115.patch",
+            "https://ubuntu.com/security/notices/USN-7414-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-31115"
+          ],
+          "PublishedDate": "2025-04-03T17:15:30.54Z",
+          "LastModifiedDate": "2025-04-07T14:18:34.453Z"
+        }
+      ]
+    },
+    {
+      "Target": "opt/kimai/vendor/composer/installed.json",
+      "Class": "lang-pkgs",
+      "Type": "composer-vendor",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-48882",
+          "PkgID": "phpoffice/math@0.1.0",
+          "PkgName": "phpoffice/math",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/math@0.1.0",
+            "UID": "91fc7ad34d2473a2"
+          },
+          "InstalledVersion": "0.1.0",
+          "FixedVersion": "0.3.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-48882",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "PHPOffice Math allows XXE when processing an XML file in the MathML format ",
+          "Description": "PHPOffice Math is a library that provides a set of classes to manipulate different formula file formats. Prior to version 0.3.0, loading XML data using the standard `libxml` extension and the `LIBXML_DTDLOAD` flag without additional filtration, leads to XXE. Version 0.3.0 fixes the vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-611"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "References": [
+            "https://github.com/PHPOffice/Math",
+            "https://github.com/PHPOffice/Math/commit/fc31c8f57a7a81f962cbf389fd89f4d9d06fc99a",
+            "https://github.com/PHPOffice/Math/security/advisories/GHSA-42hm-pq2f-3r7m",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-48882"
+          ],
+          "PublishedDate": "2025-05-30T20:15:43.527Z",
+          "LastModifiedDate": "2025-06-02T17:32:17.397Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-45048",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "1.29.1, 2.2.1, 2.1.1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-45048",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "XXE in PHPSpreadsheet encoding is returned",
+          "Description": "PHPSpreadsheet is a pure PHP library for reading and writing spreadsheet files. Affected versions are subject to a bypassing of a filter which allows for an XXE-attack. This in turn allows attacker to obtain contents of local files, even if error reporting is muted. This vulnerability has been addressed in release version 2.2.1. All users are advised to upgrade. There are no known workarounds for this vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-611"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/bea2d4b30f24bcc8a7712e208d1359e603b45dda",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-ghg6-32f9-2jp7",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-45048"
+          ],
+          "PublishedDate": "2024-08-28T21:15:06.817Z",
+          "LastModifiedDate": "2024-09-04T17:27:31.517Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-45290",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "2.3.0, 1.29.2, 2.1.1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-45290",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "PhpSpreadsheet allows absolute path traversal and Server-Side Request Forgery when opening XLSX file",
+          "Description": "PHPSpreadsheet is a pure PHP library for reading and writing spreadsheet files. It's possible for an attacker to construct an XLSX file which links media from external URLs. When opening the XLSX file, PhpSpreadsheet retrieves the image size and type by reading the file contents, if the provided path is a URL. By using specially crafted `php://filter` URLs an attacker can leak the contents of any file or URL. Note that this vulnerability is different from GHSA-w9xv-qf98-ccq4, and resides in a different component. An attacker can access any file on the server, or leak information form arbitrary URLs, potentially exposing sensitive information such as AWS IAM credentials. This issue has been addressed in release versions 1.29.2, 2.1.1, and 2.3.0. All users are advised to upgrade. There are no known workarounds for this vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-36",
+            "CWE-918"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+              "V3Score": 7.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/a9693d1182df6695c14bc5d74315ac71a3398e5a",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/d95bc290beb137d4118095b96f62ec47e0205cec",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/e04ed222b36fd5fd6fed0c10c765c2b68effb465",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-5gpr-w2p5-6m37",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-w9xv-qf98-ccq4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-45290"
+          ],
+          "PublishedDate": "2024-10-07T21:15:17.397Z",
+          "LastModifiedDate": "2024-10-16T19:54:53.397Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-45293",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "2.3.0, 1.29.1, 2.1.1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-45293",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "XXE in PHPSpreadsheet's XLSX reader",
+          "Description": "PHPSpreadsheet is a pure PHP library for reading and writing spreadsheet files. The security scanner responsible for preventing XXE attacks in the XLSX reader can be bypassed by slightly modifying the XML structure, utilizing white-spaces. On servers that allow users to upload their own Excel (XLSX) sheets, Server files and sensitive information can be disclosed by providing a crafted sheet. The security scan function in src/PhpSpreadsheet/Reader/Security/XmlScanner.php contains a flawed XML encoding check to retrieve the input file's XML encoding in the toUtf8 function. The function searches for the XML encoding through a defined regex which looks for `encoding=\"*\"` and/or `encoding='*'`, if not found, it defaults to the UTF-8 encoding which bypasses the conversion logic. This logic can be used to pass a UTF-7 encoded XXE payload, by utilizing a whitespace before or after the = in the attribute definition. Sensitive information disclosure through the XXE on sites that allow users to upload their own excel spreadsheets, and parse them using PHPSpreadsheet's Excel parser. This issue has been addressed in release versions 1.29.1, 2.1.1, and 2.3.0. All users are advised to upgrade. There are no known workarounds for this vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-611"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/3bcd51826b7f089d1641e756c83030c30c3bdb0c",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/7d6cb09f6e8204f65e6dd5a0490f7f45f44bb331",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/949ff63e1f6413e6485f73af012d506aa81384bf",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-6hwr-6v2f-3m88",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-45293"
+          ],
+          "PublishedDate": "2024-10-07T20:15:06.1Z",
+          "LastModifiedDate": "2025-03-07T16:48:11.15Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-47873",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "1.29.4, 2.1.3, 2.3.2, 3.4.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-47873",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "XmlScanner bypass leads to XXE",
+          "Description": "PhpSpreadsheet is a PHP library for reading and writing spreadsheet files. The XmlScanner class has a scan method which should prevent XXE attacks. However, prior to versions 1.9.4, 2.1.3, 2.3.2, and 3.4.0, the regexes used in the `scan` method and the findCharSet method can be bypassed by using UCS-4 and encoding guessing. An attacker can bypass the sanitizer and achieve an XML external entity attack. Versions 1.9.4, 2.1.3, 2.3.2, and 3.4.0 fix the issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-611"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/blob/39fc51309181e82593b06e2fa8e45ef8333a0335/src/PhpSpreadsheet/Reader/Security/XmlScanner.php",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-jw4x-v69f-hh5w",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-47873",
+            "https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing",
+            "https://www.w3.org/TR/xml/#sec-guessing-no-ext-info"
+          ],
+          "PublishedDate": "2024-11-18T17:15:11.973Z",
+          "LastModifiedDate": "2025-03-07T16:48:11.15Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-48917",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "1.29.4, 2.1.3, 2.3.2, 3.4.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-48917",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "XXE in PHPSpreadsheet's XLSX reader",
+          "Description": "PhpSpreadsheet is a PHP library for reading and writing spreadsheet files. The `XmlScanner` class has a scan method which should prevent XXE attacks. However, in a bypass of the previously reported `CVE-2024-47873`, the regexes from the `findCharSet` method, which is used for determining the current encoding can be bypassed by using a payload in the encoding UTF-7, and adding at end of the file a comment with the value `encoding=\"UTF-8\"` with `\"`, which is matched by the first regex, so that `encoding='UTF-7'` with single quotes `'` in the XML header is not matched by the second regex. An attacker can bypass the sanitizer and achieve an XML external entity attack. Versions 1.9.4, 2.1.3, 2.3.2, and 3.4.0 fix the issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-611"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/blob/39fc51309181e82593b06e2fa8e45ef8333a0335/src/PhpSpreadsheet/Reader/Security/XmlScanner.php",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-7cc9-j4mv-vcjp",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-48917",
+            "https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing"
+          ],
+          "PublishedDate": "2024-11-18T20:15:05.403Z",
+          "LastModifiedDate": "2025-03-07T16:48:11.15Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56365",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "3.7.0, 1.29.7, 2.1.6, 2.3.5",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56365",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "PhpSpreadsheet allows unauthorized Reflected XSS in the constructor of the Downloader class",
+          "Description": "PhpSpreadsheet is a PHP library for reading and writing spreadsheet files. Versions prior to 3.7.0, 2.3.5, 2.1.6, and 1.29.7 are vulnerable to unauthorized reflected cross-site scripting in the constructor of the `Downloader` class. Using the `/vendor/phpoffice/phpspreadsheet/samples/download.php` script, an attacker can perform a cross-site scripting attack. Versions  3.7.0, 2.3.5, 2.1.6, and 1.29.7 contain a patch for the issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-79"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:N",
+              "V3Score": 7.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 5.4
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/700a80346be269af668914172bc6f4521982d0b4#diff-fbb0f53a5c68eeeffaa9ab35552c0b01740396f1a4045af5d2935ec2a62a7816",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-jmpx-686v-c3wx",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56365"
+          ],
+          "PublishedDate": "2025-01-03T17:15:08.407Z",
+          "LastModifiedDate": "2025-04-21T16:57:39.707Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56366",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "3.7.0, 1.29.7, 2.1.6, 2.3.5",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56366",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "PhpSpreadsheet allows unauthorized Reflected XSS in the Accounting.php file",
+          "Description": "PhpSpreadsheet is a PHP library for reading and writing spreadsheet files. Versions prior to 3.7.0, 2.3.5, 2.1.6, and 1.29.7 are vulnerable to unauthorized reflected cross-site scripting in the `Accounting.php` file. Using the `/vendor/phpoffice/phpspreadsheet/samples/Wizards/NumberFormat/Accounting.php` script, an attacker can perform a cross-site scripting attack. Versions  3.7.0, 2.3.5, 2.1.6, and 1.29.7 contain a patch for the issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-79"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:N",
+              "V3Score": 7.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 5.4
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/700a80346be269af668914172bc6f4521982d0b4",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-c6fv-7vh8-2rhr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56366"
+          ],
+          "PublishedDate": "2025-01-03T17:15:08.55Z",
+          "LastModifiedDate": "2025-04-21T16:57:02.417Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56408",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "3.7.0, 1.29.7, 2.1.6, 2.3.5",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56408",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "PhpSpreadsheet allows unauthorized Reflected XSS in `Convert-Online.php` file",
+          "Description": "PhpSpreadsheet is a PHP library for reading and writing spreadsheet files. Versions prior to 3.7.0, 2.3.5, 2.1.6, and 1.29.7 have no sanitization in the `/vendor/phpoffice/phpspreadsheet/samples/Engineering/Convert-Online.php` file, which leads to the possibility of a cross-site scripting attack. Versions 3.7.0, 2.3.5, 2.1.6, and 1.29.7 contain a patch for the issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-79"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:N",
+              "V3Score": 7.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 5.4
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/700a80346be269af668914172bc6f4521982d0b4",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/9b9a55c7154daa7cd4095f618933c240508ba3c1",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/a50ebfe118b3ae0ddaea1c48ac19dc38692f4abc",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/b8fac55aa5cb7a3d514c7308378bb37bb711b25e",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-x88g-h956-m5xg",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56408"
+          ],
+          "PublishedDate": "2025-01-03T16:15:26.773Z",
+          "LastModifiedDate": "2025-05-20T19:15:49.067Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56409",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "3.7.0, 1.29.7, 2.1.6, 2.3.5",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56409",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Composer",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Acomposer"
+          },
+          "Title": "PhpSpreadsheet allows unauthorized Reflected XSS in Currency.php file",
+          "Description": "PhpSpreadsheet is a PHP library for reading and writing spreadsheet files. Versions prior to 3.7.0, 2.3.5, 2.1.6, and 1.29.7 are vulnerable to unauthorized reflected cross-site scripting in the `Currency.php` file. Using the `/vendor/phpoffice/phpspreadsheet/samples/Wizards/NumberFormat/Currency.php` script, an attacker can perform a cross-site scripting attack. Versions  3.7.0, 2.3.5, 2.1.6, and 1.29.7 contain a patch for the issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-79"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:N",
+              "V3Score": 7.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 5.4
+            }
+          },
+          "References": [
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/700a80346be269af668914172bc6f4521982d0b4",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-j2xg-cjcx-4677",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56409"
+          ],
+          "PublishedDate": "2025-01-03T17:15:08.687Z",
+          "LastModifiedDate": "2025-04-21T17:14:40.833Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-54370",
+          "PkgID": "phpoffice/phpspreadsheet@1.29.0",
+          "PkgName": "phpoffice/phpspreadsheet",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/phpoffice/phpspreadsheet@1.29.0",
+            "UID": "9bead17ad5b6616d"
+          },
+          "InstalledVersion": "1.29.0",
+          "FixedVersion": "3.10.0, 5.0.0, 1.30.0, 2.1.0, 2.1.12, 2.3.0, 2.4.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-54370",
+          "DataSource": {
+            "ID": "php-security-advisories",
+            "Name": "PHP Security Advisories Database",
+            "URL": "https://github.com/FriendsOfPHP/security-advisories"
+          },
+          "Title": "PhpSpreadsheet vulnerable to SSRF when reading and displaying a processed HTML document in the browser",
+          "Description": "PhpOffice/PhpSpreadsheet is a pure PHP library for reading and writing spreadsheet files. Prior to versions 1.30.0, 2.1.12, 2.4.0, 3.10.0, and 5.0.0, SSRF can occur when a processed HTML document is read and displayed in the browser. The vulnerability lies in the setPath method of the PhpOffice\\PhpSpreadsheet\\Worksheet\\Drawing class, where a crafted string from the user is passed to the HTML reader. This issue has been patched in versions 1.30.0, 2.1.12, 2.4.0, 3.10.0, and 5.0.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-918"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "References": [
+            "https://github.com/FriendsOfPHP/security-advisories/blob/master/phpoffice/phpspreadsheet/CVE-2025-54370.yaml",
+            "https://github.com/PHPOffice/PhpSpreadsheet",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/334a67797ace574d1d37c0992ffe283b7415471a",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/4050f14521d70634c3320b170236574a6106eb39",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/81a0de2261f698404587a6421a5c6eb263c40b31",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/ac4befd2f7ccc21a59daef606a02a3d1828ade09",
+            "https://github.com/PHPOffice/PhpSpreadsheet/commit/c2cd0e64392438e4c6af082796eb65c1d629a266",
+            "https://github.com/PHPOffice/PhpSpreadsheet/security/advisories/GHSA-rx7m-68vc-ppxh",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-54370"
+          ],
+          "PublishedDate": "2025-08-25T14:15:33.117Z",
+          "LastModifiedDate": "2025-08-25T20:24:45.327Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-51736",
+          "PkgID": "symfony/process@v6.4.8",
+          "PkgName": "symfony/process",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/symfony/process@v6.4.8",
+            "UID": "f4c8533124063d2b"
+          },
+          "InstalledVersion": "v6.4.8",
+          "FixedVersion": "5.2.0, 5.4.0, 6.1.0, 4.0.0, 5.4.46, 6.2.0, 6.3.0, 6.4.14, 7.1.7, 3.0.0, 5.0.0, 5.1.0, 5.3.0, 6.4.0, 7.1.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-51736",
+          "DataSource": {
+            "ID": "php-security-advisories",
+            "Name": "PHP Security Advisories Database",
+            "URL": "https://github.com/FriendsOfPHP/security-advisories"
+          },
+          "Title": "CVE-2024-51736: Command execution hijack on Windows with Process class",
+          "Description": "Symphony process is a module for the Symphony PHP framework which executes commands in sub-processes. On Windows, when an executable file named `cmd.exe` is located in the current working directory it will be called by the `Process` class when preparing command arguments, leading to possible hijacking. This issue has been addressed in release versions 5.4.46, 6.4.14, and 7.1.7. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-77"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 4
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.4
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/process/CVE-2024-51736.yaml",
+            "https://github.com/FriendsOfPHP/security-advisories/blob/master/symfony/symfony/CVE-2024-51736.yaml",
+            "https://github.com/symfony/symfony",
+            "https://github.com/symfony/symfony/commit/18ecd03eda3917fdf901a48e72518f911c64a1c9",
+            "https://github.com/symfony/symfony/security/advisories/GHSA-qq5c-677p-737q",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-51736",
+            "https://symfony.com/cve-2024-51736"
+          ],
+          "PublishedDate": "2024-11-06T21:15:06.6Z",
+          "LastModifiedDate": "2025-09-04T16:08:00.42Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-45411",
+          "PkgID": "twig/twig@v3.10.3",
+          "PkgName": "twig/twig",
+          "PkgIdentifier": {
+            "PURL": "pkg:composer/twig/twig@v3.10.3",
+            "UID": "fa16b81187a7d852"
+          },
+          "InstalledVersion": "v3.10.3",
+          "FixedVersion": "3.11.0, 3.14.0, 1.44.7, 2.16.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:509a9738625ec23877e5497ef74c2541ff40a9a71ea3db449c52031add1ee8aa",
+            "DiffID": "sha256:f7e7a56c19e73db2ca6e51218c5663c893965fae12cf4142a8338869f3ce5973"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-45411",
+          "DataSource": {
+            "ID": "php-security-advisories",
+            "Name": "PHP Security Advisories Database",
+            "URL": "https://github.com/FriendsOfPHP/security-advisories"
+          },
+          "Title": "Twig is a template language for PHP. Under some circumstances, the san ...",
+          "Description": "Twig is a template language for PHP. Under some circumstances, the sandbox security checks are not run which allows user-contributed templates to bypass the sandbox restrictions. This vulnerability is fixed in 1.44.8, 2.16.1, and 3.14.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-693"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "nvd": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+              "V3Score": 8.6
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+              "V3Score": 8.6
+            }
+          },
+          "References": [
+            "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2024-45411.yaml",
+            "https://github.com/twigphp/Twig",
+            "https://github.com/twigphp/Twig/commit/11f68e2aeb526bfaf638e30d4420d8a710f3f7c6",
+            "https://github.com/twigphp/Twig/commit/11f68e2aeb526bfaf638e30d4420d8a710f3f7c6 (v3.14.0)",
+            "https://github.com/twigphp/Twig/commit/2102dd135986db79192d26fb5f5817a566e0a7de",
+            "https://github.com/twigphp/Twig/commit/2102dd135986db79192d26fb5f5817a566e0a7de (v2.16.1)",
+            "https://github.com/twigphp/Twig/commit/41103dcdc2daab4c83cdd05b5b4fde5b7e41e635",
+            "https://github.com/twigphp/Twig/commit/7afa198603de49d147e90d18062e7b9addcf5233",
+            "https://github.com/twigphp/Twig/commit/7afa198603de49d147e90d18062e7b9addcf5233 (v1.44.8)",
+            "https://github.com/twigphp/Twig/security/advisories/GHSA-6j75-5wfj-gh66",
+            "https://lists.debian.org/debian-lts-announce/2024/09/msg00031.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-45411",
+            "https://symfony.com/blog/twig-security-release-possible-sandbox-bypass",
+            "https://ubuntu.com/security/notices/USN-7456-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-45411"
+          ],
+          "PublishedDate": "2024-09-09T19:15:13.543Z",
+          "LastModifiedDate": "2024-11-21T09:37:44.68Z"
+        }
+      ]
+    }
+  ]
+}

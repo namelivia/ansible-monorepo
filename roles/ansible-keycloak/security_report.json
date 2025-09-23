@@ -1,0 +1,746 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-23T09:31:38.687684295Z",
+  "ArtifactName": "quay.io/keycloak/keycloak:26.2.4",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 454729728,
+    "OS": {
+      "Family": "redhat",
+      "Name": "9.5"
+    },
+    "ImageID": "sha256:0623d5dd8cc6a4e3f025ece753e876c7db9a10b35e5df77b4680876a6e0d2d03",
+    "DiffIDs": [
+      "sha256:a6399e0a94a1ed56fe71fb594eadaaa197719016105dbd4145706120a92e8b32",
+      "sha256:c4e828513218b2e748cbb5efe99ad1baec8b823c3427191b58a4cafe26224298",
+      "sha256:0f4b06142b81c34ed1b544b009749b34181c842142447d71b14d2e8e2b1142cb",
+      "sha256:f30dd38a421b437bb8f87edbd412feb4c573c4407df0ff3642638f39cff2432f"
+    ],
+    "RepoTags": [
+      "quay.io/keycloak/keycloak:26.2.4"
+    ],
+    "RepoDigests": [
+      "quay.io/keycloak/keycloak@sha256:4a81762677f8911c6266e3dea57a2d78fa17bd63408debbf23afd8cc46fe256e"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-05-08T09:10:55.748891612Z",
+      "history": [
+        {
+          "created": "2025-04-30T08:49:51.29162647Z",
+          "created_by": "/bin/sh -c #(nop) LABEL maintainer=\"Red Hat, Inc.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.307474779Z",
+          "created_by": "/bin/sh -c #(nop) LABEL vendor=\"Red Hat, Inc.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.323763113Z",
+          "created_by": "/bin/sh -c #(nop) LABEL url=\"https://www.redhat.com\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.340282189Z",
+          "created_by": "/bin/sh -c #(nop) LABEL com.redhat.component=\"ubi9-micro-container\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.356759263Z",
+          "created_by": "/bin/sh -c #(nop) LABEL name=\"ubi9/ubi-micro\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.372040741Z",
+          "created_by": "/bin/sh -c #(nop) LABEL version=\"9.5\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.387341259Z",
+          "created_by": "/bin/sh -c #(nop) LABEL distribution-scope=\"public\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.402152681Z",
+          "created_by": "/bin/sh -c #(nop) LABEL com.redhat.license_terms=\"https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.417266519Z",
+          "created_by": "/bin/sh -c #(nop) LABEL summary=\"ubi9 micro image\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.431367161Z",
+          "created_by": "/bin/sh -c #(nop) LABEL description=\"Very small image which doesn't install the package manager.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.445783571Z",
+          "created_by": "/bin/sh -c #(nop) LABEL io.k8s.description=\"Very small image which doesn't install the package manager.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.461100241Z",
+          "created_by": "/bin/sh -c #(nop) LABEL io.k8s.display-name=\"Red Hat Universal Base Image 9 Micro\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.475756324Z",
+          "created_by": "/bin/sh -c #(nop) LABEL io.openshift.expose-services=\"\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.657780161Z",
+          "created_by": "/bin/sh -c #(nop) COPY dir:30f4bf8730188756f7ddfeab2e88ca0e14a6f3b6e52ed6e38d79b2d08458c224 in / ",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.739571618Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:b37d593713ee21ad52a4cd1424dc019a24f7966f85df0ac4b86d234302695328 in /etc/yum.repos.d/ ",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.754439533Z",
+          "created_by": "/bin/sh -c #(nop) CMD /bin/sh",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.836078651Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:bc4e5ea7c9bb48901dc62121f094109ad85c0ae2bf4169dee234618cf6b9bd60 in /usr/share/buildinfo/content-sets.json ",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-30T08:49:51.923514701Z",
+          "created_by": "/bin/sh -c #(nop) LABEL \"build-date\"=\"2025-04-30T08:49:38\" \"architecture\"=\"x86_64\" \"vcs-type\"=\"git\" \"vcs-ref\"=\"b90d9fb02b3a7b280f0ffe16e69bbd67c0134c4a\" \"release\"=\"1746002938\""
+        },
+        {
+          "created": "2025-05-08T09:10:55.251177428Z",
+          "created_by": "ENV LANG=en_US.UTF-8",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.251177428Z",
+          "created_by": "ENV KC_RUN_IN_CONTAINER=true",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.251177428Z",
+          "created_by": "COPY /tmp/null/rootfs/ / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-05-08T09:10:55.690856463Z",
+          "created_by": "COPY --chown=1000:0 /opt/keycloak /opt/keycloak # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "RUN /bin/sh -c echo \"keycloak:x:0:root\" \u003e\u003e /etc/group \u0026\u0026     echo \"keycloak:x:1000:0:keycloak user:/opt/keycloak:/sbin/nologin\" \u003e\u003e /etc/passwd # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "USER 1000",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "EXPOSE map[8080/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "EXPOSE map[8443/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "EXPOSE map[9000/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ENTRYPOINT [\"/opt/keycloak/bin/kc.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_VERSION=26.2.4",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_URL=https://www.keycloak.org/",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_TAGS=keycloak security identity",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_MAINTAINER=https://www.keycloak.org/",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_VENDOR=https://www.keycloak.org/",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "LABEL maintainer=https://www.keycloak.org/ vendor=https://www.keycloak.org/ version=26.2.4 url=https://www.keycloak.org/ io.openshift.tags=keycloak security identity release= vcs-ref= com.redhat.build-host= com.redhat.component= com.redhat.license_terms=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_SERVER_DISPLAY_NAME=Keycloak Server",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_SERVER_IMAGE_NAME=keycloak",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_SERVER_DESCRIPTION=Keycloak Server Image",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "LABEL name=keycloak description=Keycloak Server Image summary=Keycloak Server Image io.k8s.display-name=Keycloak Server io.k8s.description=Keycloak Server Image",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_SOURCE=https://github.com/keycloak/keycloak",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "ARG KEYCLOAK_DOCS=https://www.keycloak.org/documentation",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-05-08T09:10:55.748891612Z",
+          "created_by": "LABEL org.opencontainers.image.title=Keycloak Server org.opencontainers.image.url=https://www.keycloak.org/ org.opencontainers.image.source=https://github.com/keycloak/keycloak org.opencontainers.image.description= org.opencontainers.image.documentation=https://www.keycloak.org/documentation",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:a6399e0a94a1ed56fe71fb594eadaaa197719016105dbd4145706120a92e8b32",
+          "sha256:c4e828513218b2e748cbb5efe99ad1baec8b823c3427191b58a4cafe26224298",
+          "sha256:0f4b06142b81c34ed1b544b009749b34181c842142447d71b14d2e8e2b1142cb",
+          "sha256:f30dd38a421b437bb8f87edbd412feb4c573c4407df0ff3642638f39cff2432f"
+        ]
+      },
+      "config": {
+        "Entrypoint": [
+          "/opt/keycloak/bin/kc.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "LANG=en_US.UTF-8",
+          "KC_RUN_IN_CONTAINER=true"
+        ],
+        "Labels": {
+          "architecture": "x86_64",
+          "build-date": "2025-04-30T08:49:38",
+          "com.redhat.build-host": "",
+          "com.redhat.component": "",
+          "com.redhat.license_terms": "",
+          "description": "Keycloak Server Image",
+          "distribution-scope": "public",
+          "io.buildah.version": "1.39.0-dev",
+          "io.k8s.description": "Keycloak Server Image",
+          "io.k8s.display-name": "Keycloak Server",
+          "io.openshift.expose-services": "",
+          "io.openshift.tags": "keycloak security identity",
+          "maintainer": "https://www.keycloak.org/",
+          "name": "keycloak",
+          "org.opencontainers.image.created": "2025-05-08T09:10:23.039Z",
+          "org.opencontainers.image.description": "",
+          "org.opencontainers.image.documentation": "https://www.keycloak.org/documentation",
+          "org.opencontainers.image.licenses": "Apache-2.0",
+          "org.opencontainers.image.revision": "3eec13667499cd98dfc252c5f8f83f3b46a8a3ce",
+          "org.opencontainers.image.source": "https://github.com/keycloak-rel/keycloak-rel",
+          "org.opencontainers.image.title": "keycloak-rel",
+          "org.opencontainers.image.url": "https://github.com/keycloak-rel/keycloak-rel",
+          "org.opencontainers.image.version": "26.2.4",
+          "release": "",
+          "summary": "Keycloak Server Image",
+          "url": "https://www.keycloak.org/",
+          "vcs-ref": "",
+          "vcs-type": "git",
+          "vendor": "https://www.keycloak.org/",
+          "version": "26.2.4"
+        },
+        "User": "1000",
+        "WorkingDir": "/",
+        "ExposedPorts": {
+          "8080/tcp": {},
+          "8443/tcp": {},
+          "9000/tcp": {}
+        }
+      }
+    },
+    "Layers": [
+      {
+        "Size": 23504896,
+        "Digest": "sha256:22ac1dbcbc6a95a5548f56a4d02c8cf20043add48c7cd42bd5ed0dbebc3830be",
+        "DiffID": "sha256:a6399e0a94a1ed56fe71fb594eadaaa197719016105dbd4145706120a92e8b32"
+      },
+      {
+        "Size": 258988544,
+        "Digest": "sha256:a1131ce86d9d6f700a8cd4444866125714a6d500e770e69735e2ae4c8af9fad8",
+        "DiffID": "sha256:c4e828513218b2e748cbb5efe99ad1baec8b823c3427191b58a4cafe26224298"
+      },
+      {
+        "Size": 172232192,
+        "Digest": "sha256:8774b4093b894007a110abbfc9b6e7fd3ab725cb131986e9570978aaf0381d91",
+        "DiffID": "sha256:0f4b06142b81c34ed1b544b009749b34181c842142447d71b14d2e8e2b1142cb"
+      },
+      {
+        "Size": 4096,
+        "Digest": "sha256:29d2c43aa9617fd50d04ebce53a85a4d72d3da327efa379b1a5af29f23e9c9e6",
+        "DiffID": "sha256:f30dd38a421b437bb8f87edbd412feb4c573c4407df0ff3642638f39cff2432f"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "quay.io/keycloak/keycloak:26.2.4 (redhat 9.5)",
+      "Class": "os-pkgs",
+      "Type": "redhat",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-30749",
+          "VendorIDs": [
+            "RHSA-2025:10873"
+          ],
+          "PkgID": "java-21-openjdk-headless@21.0.7.0.6-1.el9.x86_64",
+          "PkgName": "java-21-openjdk-headless",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64\u0026distro=redhat-9.5\u0026epoch=1",
+            "UID": "28167a136b5e7fb0"
+          },
+          "InstalledVersion": "1:21.0.7.0.6-1.el9",
+          "FixedVersion": "1:21.0.8.0.9-1.el9",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:a1131ce86d9d6f700a8cd4444866125714a6d500e770e69735e2ae4c8af9fad8",
+            "DiffID": "sha256:c4e828513218b2e748cbb5efe99ad1baec8b823c3427191b58a4cafe26224298"
+          },
+          "SeveritySource": "redhat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-30749",
+          "Title": "openjdk: Better Glyph drawing (Oracle CPU 2025-07)",
+          "Description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u451, 8u451-perf, 11.0.27, 17.0.15, 21.0.7, 24.0.1; Oracle GraalVM for JDK: 17.0.15, 21.0.7 and  24.0.1; Oracle GraalVM Enterprise Edition: 21.3.14. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 8.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:10873",
+            "https://access.redhat.com/security/cve/CVE-2025-30749",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376783",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376784",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376785",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2379031",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30749",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30754",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-50059",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-50106",
+            "https://errata.almalinux.org/9/ALSA-2025-10873.html",
+            "https://errata.rockylinux.org/RLSA-2025:10867",
+            "https://linux.oracle.com/cve/CVE-2025-30749.html",
+            "https://linux.oracle.com/errata/ELSA-2025-10873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-30749",
+            "https://ubuntu.com/security/notices/USN-7667-1",
+            "https://ubuntu.com/security/notices/USN-7668-1",
+            "https://ubuntu.com/security/notices/USN-7669-1",
+            "https://ubuntu.com/security/notices/USN-7672-1",
+            "https://ubuntu.com/security/notices/USN-7673-1",
+            "https://ubuntu.com/security/notices/USN-7674-1",
+            "https://ubuntu.com/security/notices/USN-7690-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-30749",
+            "https://www.oracle.com/security-alerts/cpujul2025.html",
+            "https://www.oracle.com/security-alerts/cpujul2025.html#AppendixJAVA"
+          ],
+          "PublishedDate": "2025-07-15T20:15:29.313Z",
+          "LastModifiedDate": "2025-08-04T21:05:34.533Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-50059",
+          "VendorIDs": [
+            "RHSA-2025:10873"
+          ],
+          "PkgID": "java-21-openjdk-headless@21.0.7.0.6-1.el9.x86_64",
+          "PkgName": "java-21-openjdk-headless",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64\u0026distro=redhat-9.5\u0026epoch=1",
+            "UID": "28167a136b5e7fb0"
+          },
+          "InstalledVersion": "1:21.0.7.0.6-1.el9",
+          "FixedVersion": "1:21.0.8.0.9-1.el9",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:a1131ce86d9d6f700a8cd4444866125714a6d500e770e69735e2ae4c8af9fad8",
+            "DiffID": "sha256:c4e828513218b2e748cbb5efe99ad1baec8b823c3427191b58a4cafe26224298"
+          },
+          "SeveritySource": "redhat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-50059",
+          "Title": "openjdk: Improve HTTP client header handling (Oracle CPU 2025-07)",
+          "Description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u451-perf, 11.0.27, 17.0.15, 21.0.7, 24.0.1; Oracle GraalVM for JDK: 17.0.15, 21.0.7 and  24.0.1; Oracle GraalVM Enterprise Edition: 21.3.14. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  While the vulnerability is in Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 8.6 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-284"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "V3Score": 8.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:10873",
+            "https://access.redhat.com/security/cve/CVE-2025-50059",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376783",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376784",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376785",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2379031",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30749",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30754",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-50059",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-50106",
+            "https://errata.almalinux.org/9/ALSA-2025-10873.html",
+            "https://errata.rockylinux.org/RLSA-2025:10867",
+            "https://linux.oracle.com/cve/CVE-2025-50059.html",
+            "https://linux.oracle.com/errata/ELSA-2025-10873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-50059",
+            "https://ubuntu.com/security/notices/USN-7668-1",
+            "https://ubuntu.com/security/notices/USN-7669-1",
+            "https://ubuntu.com/security/notices/USN-7672-1",
+            "https://ubuntu.com/security/notices/USN-7673-1",
+            "https://ubuntu.com/security/notices/USN-7674-1",
+            "https://ubuntu.com/security/notices/USN-7690-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-50059",
+            "https://www.oracle.com/security-alerts/cpujul2025.html",
+            "https://www.oracle.com/security-alerts/cpujul2025.html#AppendixJAVA"
+          ],
+          "PublishedDate": "2025-07-15T20:15:40.367Z",
+          "LastModifiedDate": "2025-08-04T21:17:16.467Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-50106",
+          "VendorIDs": [
+            "RHSA-2025:10873"
+          ],
+          "PkgID": "java-21-openjdk-headless@21.0.7.0.6-1.el9.x86_64",
+          "PkgName": "java-21-openjdk-headless",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64\u0026distro=redhat-9.5\u0026epoch=1",
+            "UID": "28167a136b5e7fb0"
+          },
+          "InstalledVersion": "1:21.0.7.0.6-1.el9",
+          "FixedVersion": "1:21.0.8.0.9-1.el9",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:a1131ce86d9d6f700a8cd4444866125714a6d500e770e69735e2ae4c8af9fad8",
+            "DiffID": "sha256:c4e828513218b2e748cbb5efe99ad1baec8b823c3427191b58a4cafe26224298"
+          },
+          "SeveritySource": "redhat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-50106",
+          "Title": "openjdk: Glyph out-of-memory access and crash (Oracle CPU 2025-07)",
+          "Description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u451, 8u451-perf, 11.0.27, 17.0.15, 21.0.7, 24.0.1; Oracle GraalVM for JDK: 17.0.15, 21.0.7 and  24.0.1; Oracle GraalVM Enterprise Edition: 21.3.14. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 8.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:10873",
+            "https://access.redhat.com/security/cve/CVE-2025-50106",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376783",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376784",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2376785",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2379031",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30749",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30754",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-50059",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-50106",
+            "https://errata.almalinux.org/9/ALSA-2025-10873.html",
+            "https://errata.rockylinux.org/RLSA-2025:10867",
+            "https://linux.oracle.com/cve/CVE-2025-50106.html",
+            "https://linux.oracle.com/errata/ELSA-2025-10873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-50106",
+            "https://ubuntu.com/security/notices/USN-7667-1",
+            "https://ubuntu.com/security/notices/USN-7668-1",
+            "https://ubuntu.com/security/notices/USN-7669-1",
+            "https://ubuntu.com/security/notices/USN-7672-1",
+            "https://ubuntu.com/security/notices/USN-7673-1",
+            "https://ubuntu.com/security/notices/USN-7674-1",
+            "https://ubuntu.com/security/notices/USN-7690-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-50106",
+            "https://www.oracle.com/security-alerts/cpujul2025.html",
+            "https://www.oracle.com/security-alerts/cpujul2025.html#AppendixJAVA"
+          ],
+          "PublishedDate": "2025-07-15T20:15:47.013Z",
+          "LastModifiedDate": "2025-08-04T21:20:26.203Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-6965",
+          "VendorIDs": [
+            "RHSA-2025:11992"
+          ],
+          "PkgID": "sqlite-libs@3.34.1-7.el9_3.x86_64",
+          "PkgName": "sqlite-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/redhat/sqlite-libs@3.34.1-7.el9_3?arch=x86_64\u0026distro=redhat-9.5",
+            "UID": "8a5638a990a9b825"
+          },
+          "InstalledVersion": "3.34.1-7.el9_3",
+          "FixedVersion": "3.34.1-8.el9_6",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:a1131ce86d9d6f700a8cd4444866125714a6d500e770e69735e2ae4c8af9fad8",
+            "DiffID": "sha256:c4e828513218b2e748cbb5efe99ad1baec8b823c3427191b58a4cafe26224298"
+          },
+          "SeveritySource": "redhat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-6965",
+          "Title": "sqlite: Integer Truncation in SQLite",
+          "Description": "There exists a vulnerability in SQLite versions before 3.50.2 where the number of aggregate terms could exceed the number of columns available. This could lead to a memory corruption issue. We recommend upgrading to version 3.50.2 or above.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-197"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 3,
+            "bitnami": 3,
+            "cbl-mariner": 3,
+            "nvd": 4,
+            "oracle-oval": 3,
+            "photon": 4,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:H/A:L",
+              "V3Score": 7.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:11992",
+            "https://access.redhat.com/security/cve/CVE-2025-6965",
+            "https://bugzilla.redhat.com/2380149",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2380149",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-6965",
+            "https://errata.almalinux.org/9/ALSA-2025-11992.html",
+            "https://errata.rockylinux.org/RLSA-2025:12010",
+            "https://linux.oracle.com/cve/CVE-2025-6965.html",
+            "https://linux.oracle.com/errata/ELSA-2025-14101.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-6965",
+            "https://ubuntu.com/security/notices/USN-7676-1",
+            "https://ubuntu.com/security/notices/USN-7679-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-6965",
+            "https://www.sqlite.org/src/info/5508b56fd24016c13981ec280ecdd833007c9d8dd595edb295b984c2b487b5c8"
+          ],
+          "PublishedDate": "2025-07-15T14:15:31.08Z",
+          "LastModifiedDate": "2025-07-22T17:06:21.51Z"
+        }
+      ]
+    },
+    {
+      "Target": "Java",
+      "Class": "lang-pkgs",
+      "Type": "jar",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-55163",
+          "PkgName": "io.netty:netty-codec-http2",
+          "PkgPath": "opt/keycloak/lib/lib/main/io.netty.netty-codec-http2-4.1.118.Final.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/io.netty/netty-codec-http2@4.1.118.Final",
+            "UID": "36bfd135d9156abe"
+          },
+          "InstalledVersion": "4.1.118.Final",
+          "FixedVersion": "4.2.4.Final, 4.1.124.Final",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:8774b4093b894007a110abbfc9b6e7fd3ab725cb131986e9570978aaf0381d91",
+            "DiffID": "sha256:0f4b06142b81c34ed1b544b009749b34181c842142447d71b14d2e8e2b1142cb"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-55163",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "netty: netty-codec-http2: Netty MadeYouReset HTTP/2 DDoS Vulnerability",
+          "Description": "Netty is an asynchronous, event-driven network application framework. Prior to versions 4.1.124.Final and 4.2.4.Final, Netty is vulnerable to MadeYouReset DDoS. This is a logical vulnerability in the HTTP/2 protocol, that uses malformed HTTP/2 control frames in order to break the max concurrent streams limit - which results in resource exhaustion and distributed denial of service. This issue has been patched in versions 4.1.124.Final and 4.2.4.Final.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-55163",
+            "https://github.com/netty/netty",
+            "https://github.com/netty/netty/security/advisories/GHSA-prj3-ccx8-p6x4",
+            "https://kb.cert.org/vuls/id/767506",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-55163",
+            "https://www.cve.org/CVERecord?id=CVE-2025-55163"
+          ],
+          "PublishedDate": "2025-08-13T15:15:39.39Z",
+          "LastModifiedDate": "2025-09-10T14:48:03.603Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-49146",
+          "PkgName": "org.postgresql:postgresql",
+          "PkgPath": "opt/keycloak/lib/lib/main/org.postgresql.postgresql-42.7.5.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.postgresql/postgresql@42.7.5",
+            "UID": "3de3361e7bd87214"
+          },
+          "InstalledVersion": "42.7.5",
+          "FixedVersion": "42.7.7",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:8774b4093b894007a110abbfc9b6e7fd3ab725cb131986e9570978aaf0381d91",
+            "DiffID": "sha256:0f4b06142b81c34ed1b544b009749b34181c842142447d71b14d2e8e2b1142cb"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-49146",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "pgjdbc: pgjdbc insecure authentication in channel binding",
+          "Description": "pgjdbc is an open source postgresql JDBC Driver. From 42.7.4 and until 42.7.7, when the PostgreSQL JDBC driver is configured with channel binding set to required (default value is prefer), the driver would incorrectly allow connections to proceed with authentication methods that do not support channel binding (such as password, MD5, GSS, or SSPI authentication). This could allow a man-in-the-middle attacker to intercept connections that users believed were protected by channel binding requirements. This vulnerability is fixed in 42.7.7.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "VendorSeverity": {
+            "bitnami": 3,
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+              "V3Score": 8.2
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+              "V3Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+              "V3Score": 8.2
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-49146",
+            "https://datatracker.ietf.org/doc/html/rfc5802",
+            "https://datatracker.ietf.org/doc/html/rfc7677",
+            "https://github.com/pgjdbc/pgjdbc",
+            "https://github.com/pgjdbc/pgjdbc/commit/9217ed16cb2918ab1b6b9258ae97e6ede244d8a0",
+            "https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-hq9p-pm7w-8p54",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-49146",
+            "https://www.cve.org/CVERecord?id=CVE-2025-49146",
+            "https://www.postgresql.org/docs/current/sasl-authentication.html#SASL-SCRAM-SHA-256"
+          ],
+          "PublishedDate": "2025-06-11T15:15:42.85Z",
+          "LastModifiedDate": "2025-06-12T16:06:20.18Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,33 +1,36 @@
-#!/bin/bash
-
-# Create a named Docker volume for the Trivy database cache if it doesn't exist.
-docker volume create trivy-cache-db || true
-
-# Define an output directory
-OUTPUT_DIR="trivy_reports"
-mkdir -p "$OUTPUT_DIR"
-
 # Loop through each image and scan it
 grep -R 'image:' **/**/tasks/main.yml | sort | uniq | while read -r line; do
   image=$(echo "$line" | sed -n 's/.*image: "\(.*\)"/\1/p' | sed 's/ //g')
 
-  if [[ -n "$image" && ! "$line" =~ "# ignore-updates" ]]; then
-    echo "---------------------------------------------------"
-    echo "Scanning image: $image"
-    echo "---------------------------------------------------"
+  # Add validation for the image variable
+  # This regex checks for a valid image format (e.g., 'repo/image:tag')
+  if [[ "$image" =~ ^[a-z0-9\._\-]+([\/][a-z0-9\._\-]+)*(:[a-z0-9\._\-]+)?$ ]]; then
 
-    # Define the output file name based on the image name
-    output_file="$OUTPUT_DIR/$(echo "$image" | sed 's/[\/:]/-/g').json"
+    if [[ -n "$image" && ! "$line" =~ "# ignore-updates" ]]; then
+      echo "---------------------------------------------------"
+      echo "Scanning image: $image"
+      echo "---------------------------------------------------"
 
-    docker run --rm \
-      -v trivy-cache-db:/root/.cache/trivy \
-      -v /var/run/docker.sock:/var/run/docker.sock \
-      aquasec/trivy image \
-      --scanners vuln \
-      --format json \
-      --ignore-unfixed \
-      --severity=HIGH,CRITICAL \
-      "$image" > "$output_file"
+      # Determine the parent directory of the 'tasks' folder
+      parent_dir=$(echo "$line" | sed 's|/tasks/main.yml.*||')
+
+      # Ensure the parent directory exists
+      mkdir -p "$parent_dir"
+
+      # Define the output file name based on the parent directory and image name
+      output_file="$parent_dir/security_report.json"
+
+      docker run --rm \
+        -v trivy-cache-db:/root/.cache/trivy \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        aquasec/trivy image \
+        --scanners vuln \
+        --ignore-unfixed \
+        --severity=HIGH,CRITICAL \
+        --format json \
+        "$image" > "$output_file"
+    fi
+  else
+    echo "Skipping invalid image name: $image"
   fi
 done
-

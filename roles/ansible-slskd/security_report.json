@@ -1,0 +1,619 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-23T09:32:09.45758508Z",
+  "ArtifactName": "slskd/slskd:0.23.2",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 244876800,
+    "OS": {
+      "Family": "debian",
+      "Name": "12.11"
+    },
+    "ImageID": "sha256:fe214b39229397a9c59205b0cf390ec6c656806c6b2ad7ba13108f30b7067e2f",
+    "DiffIDs": [
+      "sha256:7cc7fe68eff66f19872441a51938eecc4ad33746d2baa3abc081c1e6fe25988e",
+      "sha256:0bf603c4b9a2eaefc6e6b419102a0de12499d102ec4a64da555fc7f3a171b903",
+      "sha256:08f5a23a0fb0b72ed435afd30e9737626b3c68b1065977db83478e28554ae6e3",
+      "sha256:b145e9fc227a6c9240a53aed262a823fecc44e514cbd4afc3090966031ed5cf4",
+      "sha256:afb690fe4ba3b930582202af9fc9bb35f9b7a14cae8044658304e42bf647d226",
+      "sha256:1ab508059e92c9fb61c9dfc9f0df4809570911bd564c76c79b2e1ca73bee35c4",
+      "sha256:2fd5f9ea559a2280dceee53fbba2a7365d4feef44e6505a5a71d78c4b0d87bcd",
+      "sha256:4f70e6d90398cb875944bab71d9f2306dae92a3d48a5ffa87103c9da9937b53e"
+    ],
+    "RepoTags": [
+      "slskd/slskd:0.23.2"
+    ],
+    "RepoDigests": [
+      "slskd/slskd@sha256:28df5325f301537ea8669b2ef90112a30cc9f2efd3eb714c9a778460b5dc6288"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-08-10T23:41:00.381459305Z",
+      "history": [
+        {
+          "created": "2025-07-21T00:00:00Z",
+          "created_by": "# debian.sh --arch 'amd64' out/ 'bookworm' '@1753056000'",
+          "comment": "debuerreotype 0.15"
+        },
+        {
+          "created": "2025-08-05T20:12:08.224488254Z",
+          "created_by": "ENV APP_UID=1654 ASPNETCORE_HTTP_PORTS=8080 DOTNET_RUNNING_IN_CONTAINER=true",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-05T20:12:08.224488254Z",
+          "created_by": "RUN /bin/sh -c apt-get update     \u0026\u0026 apt-get install -y --no-install-recommends         ca-certificates                 libc6         libgcc-s1         libicu72         libssl3         libstdc++6         tzdata         zlib1g     \u0026\u0026 rm -rf /var/lib/apt/lists/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-05T20:12:10.317679806Z",
+          "created_by": "RUN /bin/sh -c groupadd         --gid=$APP_UID         app     \u0026\u0026 useradd --no-log-init         --uid=$APP_UID         --gid=$APP_UID         --create-home         app # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-10T23:37:40.576840705Z",
+          "created_by": "ARG TARGETPLATFORM=linux/amd64",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.576840705Z",
+          "created_by": "ARG TAG=0.0.1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.576840705Z",
+          "created_by": "ARG VERSION=0.23.2.0+0b7cf179",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.576840705Z",
+          "created_by": "ARG REVISION=0",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.576840705Z",
+          "created_by": "ARG BUILD_DATE",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.576840705Z",
+          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c apt-get update \u0026\u0026 apt-get install --no-install-recommends -y   jq   wget   tini   \u0026\u0026   rm -rf   /tmp/*   /var/lib/apt/lists/*   /var/cache/apt/*   /var/tmp/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-10T23:37:40.719245272Z",
+          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c bash -c 'mkdir -p /app/{incomplete,downloads}   \u0026\u0026 chmod -R 777 /app   \u0026\u0026 mkdir -p /.net   \u0026\u0026 chmod 777 /.net' # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-10T23:37:40.719245272Z",
+          "created_by": "VOLUME [/app]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.719245272Z",
+          "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"wget -q -O - http://localhost:${SLSKD_HTTP_PORT}/health\"] \"1m0s\" \"3s\" \"1h0m0s\" \"0s\" '\\x03'}",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.719245272Z",
+          "created_by": "ENV SHELL=/usr/bin/bash DOTNET_EnableDiagnostics=0 DOTNET_BUNDLE_EXTRACT_BASE_DIR=/.net DOTNET_gcServer=0 DOTNET_gcConcurrent=1 DOTNET_GCHeapHardLimit=0x80000000 DOTNET_GCConserveMemory=9 SLSKD_UMASK=0022 SLSKD_HTTP_PORT=5030 SLSKD_HTTPS_PORT=5031 SLSKD_SLSK_LISTEN_PORT=50300 SLSKD_APP_DIR=/app SLSKD_DOCKER_TAG=0.0.1 SLSKD_DOCKER_VERSION=0.23.2.0+0b7cf179 SLSKD_DOCKER_REVISON=0 SLSKD_DOCKER_BUILD_DATE=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.719245272Z",
+          "created_by": "LABEL org.opencontainers.image.title=slskd org.opencontainers.image.description=A modern client-server application for the Soulseek file sharing network org.opencontainers.image.authors=slskd Team org.opencontainers.image.vendor=slskd Team org.opencontainers.image.licenses=AGPL-3.0 org.opencontainers.image.url=https://slskd.org org.opencontainers.image.source=https://github.com/slskd/slskd org.opencontainers.image.documentation=https://github.com/slskd/slskd org.opencontainers.image.version=0.23.2.0+0b7cf179 org.opencontainers.image.revision=0 org.opencontainers.image.created=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-10T23:37:40.742527574Z",
+          "created_by": "WORKDIR /slskd",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-10T23:41:00.030675947Z",
+          "created_by": "COPY /slskd/dist/linux/amd64 . # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-10T23:41:00.381459305Z",
+          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c echo \"umask \\$SLSKD_UMASK \u0026\u0026 ./slskd\" \u003e start.sh   \u0026\u0026 chmod +x start.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-10T23:41:00.381459305Z",
+          "created_by": "ENTRYPOINT [\"/usr/bin/tini\" \"--\" \"./start.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:7cc7fe68eff66f19872441a51938eecc4ad33746d2baa3abc081c1e6fe25988e",
+          "sha256:0bf603c4b9a2eaefc6e6b419102a0de12499d102ec4a64da555fc7f3a171b903",
+          "sha256:08f5a23a0fb0b72ed435afd30e9737626b3c68b1065977db83478e28554ae6e3",
+          "sha256:b145e9fc227a6c9240a53aed262a823fecc44e514cbd4afc3090966031ed5cf4",
+          "sha256:afb690fe4ba3b930582202af9fc9bb35f9b7a14cae8044658304e42bf647d226",
+          "sha256:1ab508059e92c9fb61c9dfc9f0df4809570911bd564c76c79b2e1ca73bee35c4",
+          "sha256:2fd5f9ea559a2280dceee53fbba2a7365d4feef44e6505a5a71d78c4b0d87bcd",
+          "sha256:4f70e6d90398cb875944bab71d9f2306dae92a3d48a5ffa87103c9da9937b53e"
+        ]
+      },
+      "config": {
+        "Healthcheck": {
+          "Test": [
+            "CMD-SHELL",
+            "wget -q -O - http://localhost:${SLSKD_HTTP_PORT}/health"
+          ],
+          "Interval": 60000000000,
+          "Timeout": 3000000000,
+          "StartPeriod": 3600000000000,
+          "Retries": 3
+        },
+        "Entrypoint": [
+          "/usr/bin/tini",
+          "--",
+          "./start.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "APP_UID=1654",
+          "ASPNETCORE_HTTP_PORTS=8080",
+          "DOTNET_RUNNING_IN_CONTAINER=true",
+          "SHELL=/usr/bin/bash",
+          "DOTNET_EnableDiagnostics=0",
+          "DOTNET_BUNDLE_EXTRACT_BASE_DIR=/.net",
+          "DOTNET_gcServer=0",
+          "DOTNET_gcConcurrent=1",
+          "DOTNET_GCHeapHardLimit=0x80000000",
+          "DOTNET_GCConserveMemory=9",
+          "SLSKD_UMASK=0022",
+          "SLSKD_HTTP_PORT=5030",
+          "SLSKD_HTTPS_PORT=5031",
+          "SLSKD_SLSK_LISTEN_PORT=50300",
+          "SLSKD_APP_DIR=/app",
+          "SLSKD_DOCKER_TAG=0.0.1",
+          "SLSKD_DOCKER_VERSION=0.23.2.0+0b7cf179",
+          "SLSKD_DOCKER_REVISON=0",
+          "SLSKD_DOCKER_BUILD_DATE="
+        ],
+        "Labels": {
+          "org.opencontainers.image.authors": "slskd Team",
+          "org.opencontainers.image.created": "",
+          "org.opencontainers.image.description": "A modern client-server application for the Soulseek file sharing network",
+          "org.opencontainers.image.documentation": "https://github.com/slskd/slskd",
+          "org.opencontainers.image.licenses": "AGPL-3.0",
+          "org.opencontainers.image.revision": "0",
+          "org.opencontainers.image.source": "https://github.com/slskd/slskd",
+          "org.opencontainers.image.title": "slskd",
+          "org.opencontainers.image.url": "https://slskd.org",
+          "org.opencontainers.image.vendor": "slskd Team",
+          "org.opencontainers.image.version": "0.23.2.0+0b7cf179"
+        },
+        "Volumes": {
+          "/app": {}
+        },
+        "WorkingDir": "/slskd"
+      }
+    },
+    "Layers": [
+      {
+        "Size": 77875200,
+        "Digest": "sha256:59e22667830bf04fb35e15ed9c70023e9d121719bb87f0db7f3159ee7c7e0b8d",
+        "DiffID": "sha256:7cc7fe68eff66f19872441a51938eecc4ad33746d2baa3abc081c1e6fe25988e"
+      },
+      {
+        "Size": 46560256,
+        "Digest": "sha256:136759efcfb5603c87f72a83028d7d00bf31b19d473d019002ddc7bba125d351",
+        "DiffID": "sha256:0bf603c4b9a2eaefc6e6b419102a0de12499d102ec4a64da555fc7f3a171b903"
+      },
+      {
+        "Size": 20480,
+        "Digest": "sha256:267fb3c0707c99f25f12a430419a44fe276af84f863a869111124cee4c0e878d",
+        "DiffID": "sha256:08f5a23a0fb0b72ed435afd30e9737626b3c68b1065977db83478e28554ae6e3"
+      },
+      {
+        "Size": 2613760,
+        "Digest": "sha256:5184cacb1bcbadd152f8d8126d849404db6afaca0acbd3178b11b848d3d34a27",
+        "DiffID": "sha256:b145e9fc227a6c9240a53aed262a823fecc44e514cbd4afc3090966031ed5cf4"
+      },
+      {
+        "Size": 3072,
+        "Digest": "sha256:bfcb12ff416df682e71b0867bc34fe16973340aae945d94c6b6a3c41d7f4f0a9",
+        "DiffID": "sha256:afb690fe4ba3b930582202af9fc9bb35f9b7a14cae8044658304e42bf647d226"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:73cca5d288ffc822100722df7c4b5a8304c7e7b2414d3b368a6db24bdc8b7409",
+        "DiffID": "sha256:1ab508059e92c9fb61c9dfc9f0df4809570911bd564c76c79b2e1ca73bee35c4"
+      },
+      {
+        "Size": 117799936,
+        "Digest": "sha256:1deec0f995cc88b0d38ae771f649888b88f8bd96e4af26d9d00a5e0a90206903",
+        "DiffID": "sha256:2fd5f9ea559a2280dceee53fbba2a7365d4feef44e6505a5a71d78c4b0d87bcd"
+      },
+      {
+        "Size": 2560,
+        "Digest": "sha256:179e4e3ba9ec33e675bf0c57db8d3acc1d9e20227fb629acc90af27786a37b8d",
+        "DiffID": "sha256:4f70e6d90398cb875944bab71d9f2306dae92a3d48a5ffa87103c9da9937b53e"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "slskd/slskd:0.23.2 (debian 12.11)",
+      "Class": "os-pkgs",
+      "Type": "debian",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-48060",
+          "PkgID": "jq@1.6-2.1",
+          "PkgName": "jq",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/jq@1.6-2.1?arch=amd64\u0026distro=debian-12.11",
+            "UID": "32226c537fcc8b79"
+          },
+          "InstalledVersion": "1.6-2.1",
+          "FixedVersion": "1.6-2.1+deb12u1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:5184cacb1bcbadd152f8d8126d849404db6afaca0acbd3178b11b848d3d34a27",
+            "DiffID": "sha256:b145e9fc227a6c9240a53aed262a823fecc44e514cbd4afc3090966031ed5cf4"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-48060",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "jq: AddressSanitizer: stack-buffer-overflow in jq_fuzz_execute (jv_string_vfmt)",
+          "Description": "jq is a command-line JSON processor. In versions up to and including 1.7.1, a heap-buffer-overflow is present in function `jv_string_vfmt` in the jq_fuzz_execute harness from oss-fuzz. This crash happens on file jv.c, line 1456 `void* p = malloc(sz);`. As of time of publication, no patched versions are available.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-121",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:10585",
+            "https://access.redhat.com/security/cve/CVE-2025-48060",
+            "https://bugzilla.redhat.com/2367807",
+            "https://bugzilla.redhat.com/2367842",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2367807",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2367842",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-23337",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48060",
+            "https://errata.almalinux.org/9/ALSA-2025-10585.html",
+            "https://errata.rockylinux.org/RLSA-2025:10618",
+            "https://github.com/jqlang/jq/security/advisories/GHSA-p7rr-28xf-3m5w",
+            "https://linux.oracle.com/cve/CVE-2025-48060.html",
+            "https://linux.oracle.com/errata/ELSA-2025-12882.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-48060",
+            "https://ubuntu.com/security/notices/USN-7657-1",
+            "https://ubuntu.com/security/notices/USN-7657-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-48060"
+          ],
+          "PublishedDate": "2025-05-21T18:15:53.037Z",
+          "LastModifiedDate": "2025-06-20T17:39:13.377Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-4802",
+          "PkgID": "libc-bin@2.36-9+deb12u10",
+          "PkgName": "libc-bin",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+            "UID": "205f0e4a1d969bcb"
+          },
+          "InstalledVersion": "2.36-9+deb12u10",
+          "FixedVersion": "2.36-9+deb12u11",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:59e22667830bf04fb35e15ed9c70023e9d121719bb87f0db7f3159ee7c7e0b8d",
+            "DiffID": "sha256:7cc7fe68eff66f19872441a51938eecc4ad33746d2baa3abc081c1e6fe25988e"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-4802",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "glibc: static setuid binary dlopen may incorrectly search LD_LIBRARY_PATH",
+          "Description": "Untrusted LD_LIBRARY_PATH environment variable vulnerability in the GNU C Library version 2.27 to 2.38 allows attacker controlled loading of dynamically shared library in statically compiled setuid binaries that call dlopen (including internal dlopen calls after setlocale or calls to NSS functions such as getaddrinfo).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-426"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "azure": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/05/16/7",
+            "http://www.openwall.com/lists/oss-security/2025/05/17/2",
+            "https://access.redhat.com/errata/RHSA-2025:8655",
+            "https://access.redhat.com/security/cve/CVE-2025-4802",
+            "https://bugzilla.redhat.com/2367468",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2367468",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-4802",
+            "https://errata.almalinux.org/9/ALSA-2025-8655.html",
+            "https://errata.rockylinux.org/RLSA-2025:8686",
+            "https://linux.oracle.com/cve/CVE-2025-4802.html",
+            "https://linux.oracle.com/errata/ELSA-2025-8686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-4802",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=32976",
+            "https://sourceware.org/cgit/glibc/commit/?id=1e18586c5820e329f741d5c710275e165581380e",
+            "https://sourceware.org/cgit/glibc/commit/?id=5451fa962cd0a90a0e2ec1d8910a559ace02bba0",
+            "https://ubuntu.com/security/notices/USN-7541-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-4802",
+            "https://www.openwall.com/lists/oss-security/2025/05/16/7",
+            "https://www.openwall.com/lists/oss-security/2025/05/17/2"
+          ],
+          "PublishedDate": "2025-05-16T20:15:22.28Z",
+          "LastModifiedDate": "2025-06-17T14:09:23.137Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-4802",
+          "PkgID": "libc6@2.36-9+deb12u10",
+          "PkgName": "libc6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+            "UID": "a311111c5d474127"
+          },
+          "InstalledVersion": "2.36-9+deb12u10",
+          "FixedVersion": "2.36-9+deb12u11",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:59e22667830bf04fb35e15ed9c70023e9d121719bb87f0db7f3159ee7c7e0b8d",
+            "DiffID": "sha256:7cc7fe68eff66f19872441a51938eecc4ad33746d2baa3abc081c1e6fe25988e"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-4802",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "glibc: static setuid binary dlopen may incorrectly search LD_LIBRARY_PATH",
+          "Description": "Untrusted LD_LIBRARY_PATH environment variable vulnerability in the GNU C Library version 2.27 to 2.38 allows attacker controlled loading of dynamically shared library in statically compiled setuid binaries that call dlopen (including internal dlopen calls after setlocale or calls to NSS functions such as getaddrinfo).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-426"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "azure": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/05/16/7",
+            "http://www.openwall.com/lists/oss-security/2025/05/17/2",
+            "https://access.redhat.com/errata/RHSA-2025:8655",
+            "https://access.redhat.com/security/cve/CVE-2025-4802",
+            "https://bugzilla.redhat.com/2367468",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2367468",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-4802",
+            "https://errata.almalinux.org/9/ALSA-2025-8655.html",
+            "https://errata.rockylinux.org/RLSA-2025:8686",
+            "https://linux.oracle.com/cve/CVE-2025-4802.html",
+            "https://linux.oracle.com/errata/ELSA-2025-8686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-4802",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=32976",
+            "https://sourceware.org/cgit/glibc/commit/?id=1e18586c5820e329f741d5c710275e165581380e",
+            "https://sourceware.org/cgit/glibc/commit/?id=5451fa962cd0a90a0e2ec1d8910a559ace02bba0",
+            "https://ubuntu.com/security/notices/USN-7541-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-4802",
+            "https://www.openwall.com/lists/oss-security/2025/05/16/7",
+            "https://www.openwall.com/lists/oss-security/2025/05/17/2"
+          ],
+          "PublishedDate": "2025-05-16T20:15:22.28Z",
+          "LastModifiedDate": "2025-06-17T14:09:23.137Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-48060",
+          "PkgID": "libjq1@1.6-2.1",
+          "PkgName": "libjq1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libjq1@1.6-2.1?arch=amd64\u0026distro=debian-12.11",
+            "UID": "a63a858e11a4d3a8"
+          },
+          "InstalledVersion": "1.6-2.1",
+          "FixedVersion": "1.6-2.1+deb12u1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:5184cacb1bcbadd152f8d8126d849404db6afaca0acbd3178b11b848d3d34a27",
+            "DiffID": "sha256:b145e9fc227a6c9240a53aed262a823fecc44e514cbd4afc3090966031ed5cf4"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-48060",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "jq: AddressSanitizer: stack-buffer-overflow in jq_fuzz_execute (jv_string_vfmt)",
+          "Description": "jq is a command-line JSON processor. In versions up to and including 1.7.1, a heap-buffer-overflow is present in function `jv_string_vfmt` in the jq_fuzz_execute harness from oss-fuzz. This crash happens on file jv.c, line 1456 `void* p = malloc(sz);`. As of time of publication, no patched versions are available.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-121",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:10585",
+            "https://access.redhat.com/security/cve/CVE-2025-48060",
+            "https://bugzilla.redhat.com/2367807",
+            "https://bugzilla.redhat.com/2367842",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2367807",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2367842",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-23337",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48060",
+            "https://errata.almalinux.org/9/ALSA-2025-10585.html",
+            "https://errata.rockylinux.org/RLSA-2025:10618",
+            "https://github.com/jqlang/jq/security/advisories/GHSA-p7rr-28xf-3m5w",
+            "https://linux.oracle.com/cve/CVE-2025-48060.html",
+            "https://linux.oracle.com/errata/ELSA-2025-12882.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-48060",
+            "https://ubuntu.com/security/notices/USN-7657-1",
+            "https://ubuntu.com/security/notices/USN-7657-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-48060"
+          ],
+          "PublishedDate": "2025-05-21T18:15:53.037Z",
+          "LastModifiedDate": "2025-06-20T17:39:13.377Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-31484",
+          "PkgID": "perl-base@5.36.0-7+deb12u2",
+          "PkgName": "perl-base",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u2?arch=amd64\u0026distro=debian-12.11",
+            "UID": "170e64dcedbd4508"
+          },
+          "InstalledVersion": "5.36.0-7+deb12u2",
+          "FixedVersion": "5.36.0-7+deb12u3",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:59e22667830bf04fb35e15ed9c70023e9d121719bb87f0db7f3159ee7c7e0b8d",
+            "DiffID": "sha256:7cc7fe68eff66f19872441a51938eecc4ad33746d2baa3abc081c1e6fe25988e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31484",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "perl: CPAN.pm does not verify TLS certificates when downloading distributions over HTTPS",
+          "Description": "CPAN.pm before 2.35 does not verify TLS certificates when downloading distributions over HTTPS.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "cbl-mariner": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2023/04/29/1",
+            "http://www.openwall.com/lists/oss-security/2023/05/03/3",
+            "http://www.openwall.com/lists/oss-security/2023/05/03/5",
+            "http://www.openwall.com/lists/oss-security/2023/05/07/2",
+            "https://access.redhat.com/errata/RHSA-2023:6539",
+            "https://access.redhat.com/security/cve/CVE-2023-31484",
+            "https://blog.hackeriet.no/perl-http-tiny-insecure-tls-default-affects-cpan-modules/",
+            "https://bugzilla.redhat.com/2218667",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2218667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-31484",
+            "https://errata.almalinux.org/9/ALSA-2023-6539.html",
+            "https://errata.rockylinux.org/RLSA-2023:6539",
+            "https://github.com/andk/cpanpm/commit/9c98370287f4e709924aee7c58ef21c85289a7f0 (2.35-TRIAL)",
+            "https://github.com/andk/cpanpm/pull/175",
+            "https://linux.oracle.com/cve/CVE-2023-31484.html",
+            "https://linux.oracle.com/errata/ELSA-2024-3094.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BM6UW55CNFUTNGD5ZRKGUKKKFDJGMFHL/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/LEGCEOKFJVBJ2QQ6S2H4NAEWTUERC7SB/",
+            "https://metacpan.org/dist/CPAN/changes",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-31484",
+            "https://security.netapp.com/advisory/ntap-20240621-0007/",
+            "https://ubuntu.com/security/notices/USN-6112-1",
+            "https://ubuntu.com/security/notices/USN-6112-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-31484",
+            "https://www.openwall.com/lists/oss-security/2023/04/18/14"
+          ],
+          "PublishedDate": "2023-04-29T00:15:09Z",
+          "LastModifiedDate": "2024-11-21T08:01:57.707Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,891 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-09-23T09:31:47.169726599Z",
+  "ArtifactName": "ghcr.io/mealie-recipes/mealie:v3.2.1",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 505714176,
+    "OS": {
+      "Family": "debian",
+      "Name": "13.0"
+    },
+    "ImageID": "sha256:0b9b2a3b82c14f45b0b232999f182fbb655addf51b13e2af249359f3b70d5490",
+    "DiffIDs": [
+      "sha256:e6a3842ebc7f5e41d8a38f19a0aa5ea56c255475695ac6682882420800cf5465",
+      "sha256:11a4ec4d004ee80b6bafe5fd768555452fab73668d41514eb1c278938244b737",
+      "sha256:07cd4433de3265004b555c5ef47c3906c0696f5858a0567fa02978f9d3b6c155",
+      "sha256:e33228fe7708a5ede4373fd2d9b7231e5fa0e89294e7689ba1b67b91fe40d007",
+      "sha256:fa2168776a7ccfd5c61827c675f6fdb4d72228b63ef46247fa20ee8931a271cf",
+      "sha256:27f5864415a0ebb399a0c0ee8aec0686200ed3565d0d8d6596e464e480406a34",
+      "sha256:afe3b1db0d5198cfe73d6efca6bc462b65a384c1933f6851114d70d231aa43fb",
+      "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf",
+      "sha256:d86a9f8c768cd22719354ab40cdbb123f097d0855b0a200dfecd404320b23559",
+      "sha256:f27cad594f3d136fb78ac5c27ceb596ee57810045aae4184f9ce16a5fffdc659",
+      "sha256:4df883f36ed3d00c9383e36b11005092169927c781d9a7662e8aa7f25b89ba1d",
+      "sha256:424895c7836457c9a7fef9bee3f9d54439ab79f5a857d7f0368c68edb00660a1"
+    ],
+    "RepoTags": [
+      "ghcr.io/mealie-recipes/mealie:v3.2.1"
+    ],
+    "RepoDigests": [
+      "ghcr.io/mealie-recipes/mealie@sha256:322369a5b748eddb091417e708f0667d21994e6119278d1b8c509900ba41e54b"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-09-15T03:56:28.767969003Z",
+      "history": [
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "# debian.sh --arch 'amd64' out/ 'trixie' '@1754870400'",
+          "comment": "debuerreotype 0.15"
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "ENV LANG=C.UTF-8",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "RUN /bin/sh -c set -eux; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tca-certificates \t\tnetbase \t\ttzdata \t; \tapt-get dist-clean # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "ENV GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "ENV PYTHON_VERSION=3.12.11",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "ENV PYTHON_SHA256=c30bb24b7f1e9a19b11b55a546434f74e739bb4c271a3e3a80ff4380d49f7adb",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "RUN /bin/sh -c set -eux; \t\tsavedAptMark=\"$(apt-mark showmanual)\"; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tdpkg-dev \t\tgcc \t\tgnupg \t\tlibbluetooth-dev \t\tlibbz2-dev \t\tlibc6-dev \t\tlibdb-dev \t\tlibffi-dev \t\tlibgdbm-dev \t\tliblzma-dev \t\tlibncursesw5-dev \t\tlibreadline-dev \t\tlibsqlite3-dev \t\tlibssl-dev \t\tmake \t\ttk-dev \t\tuuid-dev \t\twget \t\txz-utils \t\tzlib1g-dev \t; \t\twget -O python.tar.xz \"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz\"; \techo \"$PYTHON_SHA256 *python.tar.xz\" | sha256sum -c -; \twget -O python.tar.xz.asc \"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc\"; \tGNUPGHOME=\"$(mktemp -d)\"; export GNUPGHOME; \tgpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$GPG_KEY\"; \tgpg --batch --verify python.tar.xz.asc python.tar.xz; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\" python.tar.xz.asc; \tmkdir -p /usr/src/python; \ttar --extract --directory /usr/src/python --strip-components=1 --file python.tar.xz; \trm python.tar.xz; \t\tcd /usr/src/python; \tgnuArch=\"$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)\"; \t./configure \t\t--build=\"$gnuArch\" \t\t--enable-loadable-sqlite-extensions \t\t--enable-optimizations \t\t--enable-option-checking=fatal \t\t--enable-shared \t\t$(test \"${gnuArch%%-*}\" != 'riscv64' \u0026\u0026 echo '--with-lto') \t\t--with-ensurepip \t; \tnproc=\"$(nproc)\"; \tEXTRA_CFLAGS=\"$(dpkg-buildflags --get CFLAGS)\"; \tLDFLAGS=\"$(dpkg-buildflags --get LDFLAGS)\"; \tLDFLAGS=\"${LDFLAGS:--Wl},--strip-all\"; \t\tarch=\"$(dpkg --print-architecture)\"; arch=\"${arch##*-}\"; \t\tcase \"$arch\" in \t\t\tamd64|arm64) \t\t\t\tEXTRA_CFLAGS=\"${EXTRA_CFLAGS:-} -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer\"; \t\t\t\t;; \t\t\ti386) \t\t\t\t;; \t\t\t*) \t\t\t\tEXTRA_CFLAGS=\"${EXTRA_CFLAGS:-} -fno-omit-frame-pointer\"; \t\t\t\t;; \t\tesac; \tmake -j \"$nproc\" \t\t\"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}\" \t\t\"LDFLAGS=${LDFLAGS:-}\" \t; \trm python; \tmake -j \"$nproc\" \t\t\"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}\" \t\t\"LDFLAGS=${LDFLAGS:--Wl},-rpath='\\$\\$ORIGIN/../lib'\" \t\tpython \t; \tmake install; \t\tcd /; \trm -rf /usr/src/python; \t\tfind /usr/local -depth \t\t\\( \t\t\t\\( -type d -a \\( -name test -o -name tests -o -name idle_test \\) \\) \t\t\t-o \\( -type f -a \\( -name '*.pyc' -o -name '*.pyo' -o -name 'libpython*.a' \\) \\) \t\t\\) -exec rm -rf '{}' + \t; \t\tldconfig; \t\tapt-mark auto '.*' \u003e /dev/null; \tapt-mark manual $savedAptMark; \tfind /usr/local -type f -executable -not \\( -name '*tkinter*' \\) -exec ldd '{}' ';' \t\t| awk '/=\u003e/ { so = $(NF-1); if (index(so, \"/usr/local/\") == 1) { next }; gsub(\"^/(usr/)?\", \"\", so); printf \"*%s\\n\", so }' \t\t| sort -u \t\t| xargs -rt dpkg-query --search \t\t| awk 'sub(\":$\", \"\", $1) { print $1 }' \t\t| sort -u \t\t| xargs -r apt-mark manual \t; \tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \tapt-get dist-clean; \t\texport PYTHONDONTWRITEBYTECODE=1; \tpython3 --version; \tpip3 --version # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "RUN /bin/sh -c set -eux; \tfor src in idle3 pip3 pydoc3 python3 python3-config; do \t\tdst=\"$(echo \"$src\" | tr -d 3)\"; \t\t[ -s \"/usr/local/bin/$src\" ]; \t\t[ ! -e \"/usr/local/bin/$dst\" ]; \t\tln -svT \"$src\" \"/usr/local/bin/$dst\"; \tdone # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-08T18:20:34Z",
+          "created_by": "CMD [\"python3\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "ENV MEALIE_HOME=/app",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=off PIP_DISABLE_PIP_VERSION_CHECK=on PIP_DEFAULT_TIMEOUT=100 VENV_PATH=/opt/mealie",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "ENV PATH=/opt/mealie/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "RUN /bin/sh -c useradd -u 911 -U -d $MEALIE_HOME -s /bin/bash abc     \u0026\u0026 usermod -G users abc     \u0026\u0026 mkdir $MEALIE_HOME # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "LABEL org.opencontainers.image.source=https://github.com/mealie-recipes/mealie",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "ENV PRODUCTION=true",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "ENV TESTING=false",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "ARG COMMIT",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-08-13T14:32:37.055724269Z",
+          "created_by": "ENV GIT_COMMIT_HASH=db2c14093da1dc2ea8825ef6dea7b86bdd6ae2c2",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-15T03:38:47.526685804Z",
+          "created_by": "RUN |1 COMMIT=db2c14093da1dc2ea8825ef6dea7b86bdd6ae2c2 /bin/sh -c apt-get update     \u0026\u0026 apt-get install --no-install-recommends -y     gosu     iproute2     libldap-common     libldap2     \u0026\u0026 rm -rf /var/lib/apt/lists/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-15T03:38:47.690338972Z",
+          "created_by": "RUN |1 COMMIT=db2c14093da1dc2ea8825ef6dea7b86bdd6ae2c2 /bin/sh -c mkdir -p /run/secrets # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-15T03:56:27.234425906Z",
+          "created_by": "COPY /opt/mealie /opt/mealie # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-15T03:56:27.234425906Z",
+          "created_by": "ENV NLTK_DATA=/nltk_data/",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-15T03:56:27.527936048Z",
+          "created_by": "RUN |1 COMMIT=db2c14093da1dc2ea8825ef6dea7b86bdd6ae2c2 /bin/sh -c mkdir -p $NLTK_DATA # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-15T03:56:28.411274681Z",
+          "created_by": "RUN |1 COMMIT=db2c14093da1dc2ea8825ef6dea7b86bdd6ae2c2 /bin/sh -c python -m nltk.downloader -d $NLTK_DATA averaged_perceptron_tagger_eng # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-15T03:56:28.411274681Z",
+          "created_by": "VOLUME [/app/data/]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-15T03:56:28.411274681Z",
+          "created_by": "ENV APP_PORT=9000",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-15T03:56:28.411274681Z",
+          "created_by": "EXPOSE map[9000/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-15T03:56:28.411274681Z",
+          "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"python -m mealie.scripts.healthcheck || exit 1\"] \"0s\" \"0s\" \"0s\" \"0s\" '\\x00'}",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-15T03:56:28.411274681Z",
+          "created_by": "ENV HOST=0.0.0.0",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-15T03:56:28.411274681Z",
+          "created_by": "EXPOSE map[9000/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-09-15T03:56:28.598770011Z",
+          "created_by": "COPY ./docker/entry.sh /app/run.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-15T03:56:28.767969003Z",
+          "created_by": "RUN |1 COMMIT=db2c14093da1dc2ea8825ef6dea7b86bdd6ae2c2 /bin/sh -c chmod +x $MEALIE_HOME/run.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-09-15T03:56:28.767969003Z",
+          "created_by": "ENTRYPOINT [\"/app/run.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:e6a3842ebc7f5e41d8a38f19a0aa5ea56c255475695ac6682882420800cf5465",
+          "sha256:11a4ec4d004ee80b6bafe5fd768555452fab73668d41514eb1c278938244b737",
+          "sha256:07cd4433de3265004b555c5ef47c3906c0696f5858a0567fa02978f9d3b6c155",
+          "sha256:e33228fe7708a5ede4373fd2d9b7231e5fa0e89294e7689ba1b67b91fe40d007",
+          "sha256:fa2168776a7ccfd5c61827c675f6fdb4d72228b63ef46247fa20ee8931a271cf",
+          "sha256:27f5864415a0ebb399a0c0ee8aec0686200ed3565d0d8d6596e464e480406a34",
+          "sha256:afe3b1db0d5198cfe73d6efca6bc462b65a384c1933f6851114d70d231aa43fb",
+          "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf",
+          "sha256:d86a9f8c768cd22719354ab40cdbb123f097d0855b0a200dfecd404320b23559",
+          "sha256:f27cad594f3d136fb78ac5c27ceb596ee57810045aae4184f9ce16a5fffdc659",
+          "sha256:4df883f36ed3d00c9383e36b11005092169927c781d9a7662e8aa7f25b89ba1d",
+          "sha256:424895c7836457c9a7fef9bee3f9d54439ab79f5a857d7f0368c68edb00660a1"
+        ]
+      },
+      "config": {
+        "Healthcheck": {
+          "Test": [
+            "CMD-SHELL",
+            "python -m mealie.scripts.healthcheck || exit 1"
+          ]
+        },
+        "Entrypoint": [
+          "/app/run.sh"
+        ],
+        "Env": [
+          "PATH=/opt/mealie/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "LANG=C.UTF-8",
+          "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+          "PYTHON_VERSION=3.12.11",
+          "PYTHON_SHA256=c30bb24b7f1e9a19b11b55a546434f74e739bb4c271a3e3a80ff4380d49f7adb",
+          "MEALIE_HOME=/app",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONDONTWRITEBYTECODE=1",
+          "PIP_NO_CACHE_DIR=off",
+          "PIP_DISABLE_PIP_VERSION_CHECK=on",
+          "PIP_DEFAULT_TIMEOUT=100",
+          "VENV_PATH=/opt/mealie",
+          "PRODUCTION=true",
+          "TESTING=false",
+          "GIT_COMMIT_HASH=db2c14093da1dc2ea8825ef6dea7b86bdd6ae2c2",
+          "NLTK_DATA=/nltk_data/",
+          "APP_PORT=9000",
+          "HOST=0.0.0.0"
+        ],
+        "Labels": {
+          "org.opencontainers.image.source": "https://github.com/mealie-recipes/mealie"
+        },
+        "Volumes": {
+          "/app/data/": {}
+        },
+        "ExposedPorts": {
+          "9000/tcp": {}
+        }
+      }
+    },
+    "Layers": [
+      {
+        "Size": 81029120,
+        "Digest": "sha256:396b1da7636e2dcd10565cb4f2f952cbb4a8a38b58d3b86a2cacb172fb70117c",
+        "DiffID": "sha256:e6a3842ebc7f5e41d8a38f19a0aa5ea56c255475695ac6682882420800cf5465"
+      },
+      {
+        "Size": 4120064,
+        "Digest": "sha256:5d587318e932a89b94608393c99dd30ee5092a6991c1656f717bd4f4e13d60df",
+        "DiffID": "sha256:11a4ec4d004ee80b6bafe5fd768555452fab73668d41514eb1c278938244b737"
+      },
+      {
+        "Size": 38095872,
+        "Digest": "sha256:e5c05dcf47fbdb2f18dc242ad1b7f48fbd3813c0027ffcfb8e81e4aa7e0965f4",
+        "DiffID": "sha256:07cd4433de3265004b555c5ef47c3906c0696f5858a0567fa02978f9d3b6c155"
+      },
+      {
+        "Size": 5120,
+        "Digest": "sha256:d76206d463c08ba2a3f7bbab2de2a933ad73f33ab4ab813eafe50c9dff9edc12",
+        "DiffID": "sha256:e33228fe7708a5ede4373fd2d9b7231e5fa0e89294e7689ba1b67b91fe40d007"
+      },
+      {
+        "Size": 11264,
+        "Digest": "sha256:00713d7384c77ad9c004f457d51c3e3c20d245f9cb78a33288b43a7e1daf2fa3",
+        "DiffID": "sha256:fa2168776a7ccfd5c61827c675f6fdb4d72228b63ef46247fa20ee8931a271cf"
+      },
+      {
+        "Size": 12447744,
+        "Digest": "sha256:2b1e185f44cf3fa0da4e300163dfbda09d307594aae577e22d80760d464f3056",
+        "DiffID": "sha256:27f5864415a0ebb399a0c0ee8aec0686200ed3565d0d8d6596e464e480406a34"
+      },
+      {
+        "Size": 2048,
+        "Digest": "sha256:23dcaf65651a137adfe1b494fabb8c67f376d2e8ecc1483cce145efa4bb603fb",
+        "DiffID": "sha256:afe3b1db0d5198cfe73d6efca6bc462b65a384c1933f6851114d70d231aa43fb"
+      },
+      {
+        "Size": 362744320,
+        "Digest": "sha256:770aee08d452d4cd15506eacbaae9d48a1abd870925ee9178deb85b48a8020a8",
+        "DiffID": "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:7638112d3bd05e5ca6f59103f2bb2ed3c733008fb3fee5d39f44dfe13c471266",
+        "DiffID": "sha256:d86a9f8c768cd22719354ab40cdbb123f097d0855b0a200dfecd404320b23559"
+      },
+      {
+        "Size": 7248896,
+        "Digest": "sha256:8604ba423117c03b2c84737e2c231e3cbbc9ddcf281be9763e724654060bba5d",
+        "DiffID": "sha256:f27cad594f3d136fb78ac5c27ceb596ee57810045aae4184f9ce16a5fffdc659"
+      },
+      {
+        "Size": 4096,
+        "Digest": "sha256:7315d99f8d79061d263504555384d01f373822ed77128d7bff41e111e10e18f4",
+        "DiffID": "sha256:4df883f36ed3d00c9383e36b11005092169927c781d9a7662e8aa7f25b89ba1d"
+      },
+      {
+        "Size": 4096,
+        "Digest": "sha256:b27c05d0555d7b7a1e00813678f6799178a29992c1b8774efde4f90df109eaef",
+        "DiffID": "sha256:424895c7836457c9a7fef9bee3f9d54439ab79f5a857d7f0368c68edb00660a1"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "ghcr.io/mealie-recipes/mealie:v3.2.1 (debian 13.0)",
+      "Class": "os-pkgs",
+      "Type": "debian",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-58050",
+          "PkgID": "libpcre2-8-0@10.45-1",
+          "PkgName": "libpcre2-8-0",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libpcre2-8-0@10.45-1?arch=amd64\u0026distro=debian-13.0",
+            "UID": "e651c76691de19cd"
+          },
+          "InstalledVersion": "10.45-1",
+          "FixedVersion": "10.46-1~deb13u1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:396b1da7636e2dcd10565cb4f2f952cbb4a8a38b58d3b86a2cacb172fb70117c",
+            "DiffID": "sha256:e6a3842ebc7f5e41d8a38f19a0aa5ea56c255475695ac6682882420800cf5465"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-58050",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "pcre2: PCRE2: heap-buffer-overflow read in match_ref due to missing boundary restoration in SCS",
+          "Description": "The PCRE2 library is a set of C functions that implement regular expression pattern matching. In version 10.45, a heap-buffer-overflow read vulnerability exists in the PCRE2 regular expression matching engine, specifically within the handling of the (*scs:...) (Scan SubString) verb when combined with (*ACCEPT) in src/pcre2_match.c. This vulnerability may potentially lead to information disclosure if the out-of-bounds data read during the memcmp affects the final match result in a way observable by the attacker. This issue has been resolved in version 10.46.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-122",
+            "CWE-125",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "nvd": 4,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-58050",
+            "https://github.com/PCRE2Project/pcre2/commit/a141712e5967d448c7ce13090ab530c8e3d82254",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.46",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-c2gv-xgf5-5cc2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-58050",
+            "https://www.cve.org/CVERecord?id=CVE-2025-58050"
+          ],
+          "PublishedDate": "2025-08-27T19:15:37.56Z",
+          "LastModifiedDate": "2025-09-09T15:27:39.573Z"
+        }
+      ]
+    },
+    {
+      "Target": "Python",
+      "Class": "lang-pkgs",
+      "Type": "python-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-59420",
+          "PkgName": "Authlib",
+          "PkgPath": "opt/mealie/lib/python3.12/site-packages/authlib-1.6.3.dist-info/METADATA",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/authlib@1.6.3",
+            "UID": "1159cf91f76bb5d6"
+          },
+          "InstalledVersion": "1.6.3",
+          "FixedVersion": "1.6.4",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:770aee08d452d4cd15506eacbaae9d48a1abd870925ee9178deb85b48a8020a8",
+            "DiffID": "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-59420",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "authlib: Authlib RFC violation",
+          "Description": "Authlib is a Python library which builds OAuth and OpenID Connect servers. Prior to version 1.6.4, Authlib’s JWS verification accepts tokens that declare unknown critical header parameters (crit), violating RFC 7515 “must‑understand” semantics. An attacker can craft a signed token with a critical header (for example, bork or cnf) that strict verifiers reject but Authlib accepts. In mixed‑language fleets, this enables split‑brain verification and can lead to policy bypass, replay, or privilege escalation. This issue has been patched in version 1.6.4.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-345",
+            "CWE-863"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-59420",
+            "https://github.com/authlib/authlib",
+            "https://github.com/authlib/authlib/commit/6b1813e4392eb7c168c276099ff7783b176479df",
+            "https://github.com/authlib/authlib/security/advisories/GHSA-9ggr-2464-2j32",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-59420",
+            "https://www.cve.org/CVERecord?id=CVE-2025-59420"
+          ],
+          "PublishedDate": "2025-09-22T18:15:46.91Z",
+          "LastModifiedDate": "2025-09-22T21:22:33.59Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-37920",
+          "PkgName": "certifi",
+          "PkgPath": "opt/mealie/lib/python3.12/site-packages/certifi-2022.12.7.dist-info/METADATA",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/certifi@2022.12.7",
+            "UID": "c2130ff1887573a7"
+          },
+          "InstalledVersion": "2022.12.7",
+          "FixedVersion": "2023.7.22",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:770aee08d452d4cd15506eacbaae9d48a1abd870925ee9178deb85b48a8020a8",
+            "DiffID": "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-37920",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "python-certifi: Removal of e-Tugra root certificate",
+          "Description": "Certifi is a curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. Certifi prior to version 2023.07.22 recognizes \"e-Tugra\" root certificates. e-Tugra's root certificates were subject to an investigation prompted by reporting of security issues in their systems. Certifi 2023.07.22 removes root certificates from \"e-Tugra\" from the root store.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-345"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "azure": 4,
+            "ghsa": 3,
+            "nvd": 4,
+            "oracle-oval": 2,
+            "photon": 4,
+            "redhat": 1
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 9.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:7753",
+            "https://access.redhat.com/security/cve/CVE-2023-37920",
+            "https://bugzilla.redhat.com/2226586",
+            "https://bugzilla.redhat.com/2242493",
+            "https://errata.almalinux.org/9/ALSA-2023-7753.html",
+            "https://github.com/certifi/python-certifi",
+            "https://github.com/certifi/python-certifi/commit/8fb96ed81f71e7097ed11bc4d9b19afd7ea5c909",
+            "https://github.com/certifi/python-certifi/security/advisories/GHSA-xqr8-7jwr-rhp7",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/certifi/PYSEC-2023-135.yaml",
+            "https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/C-HrP1SEq1A",
+            "https://linux.oracle.com/cve/CVE-2023-37920.html",
+            "https://linux.oracle.com/errata/ELSA-2024-0133.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5EX6NG7WUFNUKGFHLM35KHHU3GAKXRTG",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5EX6NG7WUFNUKGFHLM35KHHU3GAKXRTG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-37920",
+            "https://security.netapp.com/advisory/ntap-20240912-0002",
+            "https://security.netapp.com/advisory/ntap-20240912-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2023-37920"
+          ],
+          "PublishedDate": "2023-07-25T21:15:10.827Z",
+          "LastModifiedDate": "2025-02-13T13:50:15.813Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-50782",
+          "PkgName": "cryptography",
+          "PkgPath": "opt/mealie/lib/python3.12/site-packages/cryptography-41.0.7.dist-info/METADATA",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/cryptography@41.0.7",
+            "UID": "a47a0c8854345f33"
+          },
+          "InstalledVersion": "41.0.7",
+          "FixedVersion": "42.0.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:770aee08d452d4cd15506eacbaae9d48a1abd870925ee9178deb85b48a8020a8",
+            "DiffID": "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-50782",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "python-cryptography: Bleichenbacher timing oracle attack against RSA decryption - incomplete fix for CVE-2020-25659",
+          "Description": "A flaw was found in the python-cryptography package. This issue may allow a remote attacker to decrypt captured messages in TLS servers that use RSA key exchanges, which may lead to exposure of confidential or sensitive data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-208",
+            "CWE-203"
+          ],
+          "VendorSeverity": {
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-50782",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2254432",
+            "https://github.com/openssl/openssl/pull/13817",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/issues/9785",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-50782",
+            "https://people.redhat.com/~hkario/marvin/",
+            "https://ubuntu.com/security/notices/USN-6663-1",
+            "https://ubuntu.com/security/notices/USN-6673-1",
+            "https://ubuntu.com/security/notices/USN-6673-2",
+            "https://www.couchbase.com/alerts/",
+            "https://www.cve.org/CVERecord?id=CVE-2023-50782"
+          ],
+          "PublishedDate": "2024-02-05T21:15:11.183Z",
+          "LastModifiedDate": "2024-11-21T08:37:18.337Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-26130",
+          "PkgName": "cryptography",
+          "PkgPath": "opt/mealie/lib/python3.12/site-packages/cryptography-41.0.7.dist-info/METADATA",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/cryptography@41.0.7",
+            "UID": "a47a0c8854345f33"
+          },
+          "InstalledVersion": "41.0.7",
+          "FixedVersion": "42.0.4",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:770aee08d452d4cd15506eacbaae9d48a1abd870925ee9178deb85b48a8020a8",
+            "DiffID": "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-26130",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "python-cryptography: NULL pointer dereference with pkcs12.serialize_key_and_certificates when called with a non-matching certificate and private key and an hmac_hash override",
+          "Description": "cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. Starting in version 38.0.0 and prior to version 42.0.4, if `pkcs12.serialize_key_and_certificates` is called with both a certificate whose public key did not match the provided private key and an `encryption_algorithm` with `hmac_hash` set (via `PrivateFormat.PKCS12.encryption_builder().hmac_hash(...)`, then a NULL pointer dereference would occur, crashing the Python process. This has been resolved in version 42.0.4, the first version in which a `ValueError` is properly raised.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:15608",
+            "https://access.redhat.com/security/cve/CVE-2024-26130",
+            "https://bugzilla.redhat.com/2269617",
+            "https://errata.almalinux.org/9/ALSA-2025-15608.html",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/commit/97d231672763cdb5959a3b191e692a362f1b9e55",
+            "https://github.com/pyca/cryptography/pull/10423",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-6vqw-3v5j-54x4",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/cryptography/PYSEC-2024-225.yaml",
+            "https://linux.oracle.com/cve/CVE-2024-26130.html",
+            "https://linux.oracle.com/errata/ELSA-2025-20364.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-26130",
+            "https://ubuntu.com/security/notices/USN-6673-1",
+            "https://ubuntu.com/security/notices/USN-6673-3",
+            "https://www.cve.org/CVERecord?id=CVE-2024-26130"
+          ],
+          "PublishedDate": "2024-02-21T17:15:09.863Z",
+          "LastModifiedDate": "2025-02-05T22:09:20.427Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-43859",
+          "PkgName": "h11",
+          "PkgPath": "opt/mealie/lib/python3.12/site-packages/h11-0.14.0.dist-info/METADATA",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/h11@0.14.0",
+            "UID": "715d2c6886146316"
+          },
+          "InstalledVersion": "0.14.0",
+          "FixedVersion": "0.16.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:770aee08d452d4cd15506eacbaae9d48a1abd870925ee9178deb85b48a8020a8",
+            "DiffID": "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-43859",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "h11: h11 accepts some malformed Chunked-Encoding bodies",
+          "Description": "h11 is a Python implementation of HTTP/1.1. Prior to version 0.16.0, a leniency in h11's parsing of line terminators in chunked-coding message bodies can lead to request smuggling vulnerabilities under certain conditions. This issue has been patched in version 0.16.0. Since exploitation requires the combination of buggy h11 with a buggy (reverse) proxy, fixing either component is sufficient to mitigate this issue.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-444"
+          ],
+          "VendorSeverity": {
+            "ghsa": 4,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-43859",
+            "https://github.com/python-hyper/h11",
+            "https://github.com/python-hyper/h11/commit/114803a29ce50116dc47951c690ad4892b1a36ed",
+            "https://github.com/python-hyper/h11/security/advisories/GHSA-vqfr-h8mv-ghfj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-43859",
+            "https://ubuntu.com/security/notices/USN-7503-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-43859"
+          ],
+          "PublishedDate": "2025-04-24T19:15:47.06Z",
+          "LastModifiedDate": "2025-04-29T13:52:28.49Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-52595",
+          "PkgName": "lxml_html_clean",
+          "PkgPath": "opt/mealie/lib/python3.12/site-packages/lxml_html_clean-0.1.1.dist-info/METADATA",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/lxml-html-clean@0.1.1",
+            "UID": "bd63287c2b75e754"
+          },
+          "InstalledVersion": "0.1.1",
+          "FixedVersion": "0.4.0",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:770aee08d452d4cd15506eacbaae9d48a1abd870925ee9178deb85b48a8020a8",
+            "DiffID": "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-52595",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "lxml_html_clean is a project for HTML cleaning functionalities copied  ...",
+          "Description": "lxml_html_clean is a project for HTML cleaning functionalities copied from `lxml.html.clean`. Prior to version 0.4.0, the HTML Parser in lxml does not properly handle context-switching for special HTML tags such as `\u003csvg\u003e`, `\u003cmath\u003e` and `\u003cnoscript\u003e`. This behavior deviates from how web browsers parse and interpret such tags. Specifically, content in CSS comments is ignored by lxml_html_clean but may be interpreted differently by web browsers, enabling malicious scripts to bypass the cleaning process. This vulnerability could lead to Cross-Site Scripting (XSS) attacks, compromising the security of users relying on lxml_html_clean in default configuration for sanitizing untrusted HTML content. Users employing the HTML cleaner in a security-sensitive context should upgrade to lxml 0.4.0, which addresses this issue. As a temporary mitigation, users can configure lxml_html_clean with the following settings to prevent the exploitation of this vulnerability. Via `remove_tags`, one may specify tags to remove - their content is moved to their parents' tags. Via `kill_tags`, one may specify tags to be removed completely. Via `allow_tags`, one may restrict the set of permissible tags, excluding context-switching tags like `\u003csvg\u003e`, `\u003cmath\u003e` and `\u003cnoscript\u003e`.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-79",
+            "CWE-83",
+            "CWE-184"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:H",
+              "V3Score": 7.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 6.1
+            }
+          },
+          "References": [
+            "https://github.com/fedora-python/lxml_html_clean",
+            "https://github.com/fedora-python/lxml_html_clean/commit/c5d816f86eb3707d72a8ecf5f3823e0daa1b3808",
+            "https://github.com/fedora-python/lxml_html_clean/pull/19",
+            "https://github.com/fedora-python/lxml_html_clean/security/advisories/GHSA-5jfw-gq64-q45f",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/lxml-html-clean/PYSEC-2024-160.yaml",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-52595"
+          ],
+          "PublishedDate": "2024-11-19T22:15:21.12Z",
+          "LastModifiedDate": "2024-11-25T14:27:38.087Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-43804",
+          "PkgName": "urllib3",
+          "PkgPath": "opt/mealie/lib/python3.12/site-packages/urllib3-1.26.14.dist-info/METADATA",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/urllib3@1.26.14",
+            "UID": "3de338851c46ae44"
+          },
+          "InstalledVersion": "1.26.14",
+          "FixedVersion": "2.0.6, 1.26.17",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:770aee08d452d4cd15506eacbaae9d48a1abd870925ee9178deb85b48a8020a8",
+            "DiffID": "sha256:ab70e7be25ab2e8b59a664eeb2fa798f793b68b68f268fd1d4de1b0c6a907aaf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-43804",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "python-urllib3: Cookie request header isn't stripped during cross-origin redirects",
+          "Description": "urllib3 is a user-friendly HTTP client library for Python. urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak information via HTTP redirects to a different origin if that user doesn't disable redirects explicitly. This issue has been patched in urllib3 version 1.26.17 or 2.0.5.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-200"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 3,
+            "cbl-mariner": 2,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 2,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 5.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2024:2159",
+            "https://access.redhat.com/security/cve/CVE-2023-43804",
+            "https://bugzilla.redhat.com/2242493",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2242493",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-43804",
+            "https://errata.almalinux.org/9/ALSA-2024-2159.html",
+            "https://errata.rockylinux.org/RLSA-2024:2986",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/urllib3/PYSEC-2023-192.yaml",
+            "https://github.com/urllib3/urllib3",
+            "https://github.com/urllib3/urllib3/commit/01220354d389cd05474713f8c982d05c9b17aafb",
+            "https://github.com/urllib3/urllib3/commit/644124ecd0b6e417c527191f866daa05a5a2056d",
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-v845-jxx5-vc9f",
+            "https://linux.oracle.com/cve/CVE-2023-43804.html",
+            "https://linux.oracle.com/errata/ELSA-2024-2987.html",
+            "https://lists.debian.org/debian-lts-announce/2023/10/msg00012.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5F5CUBAN5XMEBVBZPHFITBLMJV5FIJJ5",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5F5CUBAN5XMEBVBZPHFITBLMJV5FIJJ5/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I3PR7C6RJ6JUBQKIJ644DMIJSUP36VDY",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I3PR7C6RJ6JUBQKIJ644DMIJSUP36VDY/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NDAGZXYJ7H2G3SB47M453VQVNAWKAEJJ",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NDAGZXYJ7H2G3SB47M453VQVNAWKAEJJ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-43804",
+            "https://security.netapp.com/advisory/ntap-20241213-0007",
+            "https://security.netapp.com/advisory/ntap-20241213-0007/",
+            "https://ubuntu.com/security/notices/USN-6473-1",
+            "https://ubuntu.com/security/notices/USN-6473-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-43804",
+            "https://www.vicarius.io/vsociety/posts/cve-2023-43804-urllib3-vulnerability-3"
+          ],
+          "PublishedDate": "2023-10-04T17:15:10.163Z",
+          "LastModifiedDate": "2024-12-13T14:15:20.57Z"
+        }
+      ]
+    }
+  ]
+}
