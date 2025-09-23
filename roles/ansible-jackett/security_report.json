@@ -1,14 +1,14 @@
 {
   "SchemaVersion": 2,
-  "ArtifactName": "linuxserver/jackett:0.23.52",
+  "ArtifactName": "linuxserver/jackett:0.23.56",
   "ArtifactType": "container_image",
   "Metadata": {
-    "Size": 183075328,
+    "Size": 183077376,
     "OS": {
       "Family": "alpine",
       "Name": "3.22.1"
     },
-    "ImageID": "sha256:d7e7161bb404b0150315eb60667ae6cdf1bd357e23dae34d29d6cfba353e0120",
+    "ImageID": "sha256:6df732573ffe609c658d7b9db73877bd4341a25f9f4459f6f17565c861c5d6ca",
     "DiffIDs": [
       "sha256:dc92c16044e333c5b96de0754c326fb5d11110d555b3f68e73501ee12b91f1a0",
       "sha256:4237b4abe0c583f84633de1da55c1e716dbf60660634932965955c149a90929c",
@@ -17,18 +17,18 @@
       "sha256:552c2aa51bac39e83bf12e583b07a44021163fe0eca7cc029c452227465d7fbf",
       "sha256:b85bec4b217904bcf4be4b686e18ad65528ee288a9f6541159d2d457d0330f33",
       "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf",
-      "sha256:142b06b574e23ba885691cdf0df3b914e99555a868fa91765e6c4d27922df761",
-      "sha256:618a773638fa5dddcde49f8166ab989223856d96692f3d7d4126161459d36ddb"
+      "sha256:3e43f5a7298039a3a5c64008756703347c1eb5eb47bddea310d78cd989b2cf6f",
+      "sha256:f64affda031c9f80ad35ff8fe30d90e63fe965b9ecb9effcabed58fa2d559ce1"
     ],
     "RepoTags": [
-      "linuxserver/jackett:0.23.52"
+      "linuxserver/jackett:0.23.56"
     ],
     "RepoDigests": [
-      "linuxserver/jackett@sha256:56eb74796ec0964991a3c79b05ec38d756086ab8baab9339b502b3b42c8e83a0"
+      "linuxserver/jackett@sha256:6321433b0efa76742c927262598d3c2bef3f74ad52cea83a44098df09f5c8e9f"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-09-22T06:58:42.854564571Z",
+      "created": "2025-09-23T06:56:20.400083587Z",
       "history": [
         {
           "created": "2025-09-13T13:35:29.863151704Z",
@@ -126,66 +126,66 @@
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.261669409Z",
+          "created": "2025-09-23T06:56:20.372890602Z",
           "created_by": "ENV LSIO_FIRST_PARTY=true",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.261669409Z",
-          "created_by": "ARG BUILD_DATE=2025-09-22T06:56:15+00:00",
+          "created": "2025-09-23T06:56:20.372890602Z",
+          "created_by": "ARG BUILD_DATE=2025-09-23T06:54:15+00:00",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.261669409Z",
-          "created_by": "ARG VERSION=v0.23.52-ls161",
+          "created": "2025-09-23T06:56:20.372890602Z",
+          "created_by": "ARG VERSION=v0.23.56-ls162",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.261669409Z",
-          "created_by": "ARG JACKETT_RELEASE=v0.23.52",
+          "created": "2025-09-23T06:56:20.372890602Z",
+          "created_by": "ARG JACKETT_RELEASE=v0.23.56",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.261669409Z",
-          "created_by": "LABEL build_version=Linuxserver.io version:- v0.23.52-ls161 Build-date:- 2025-09-22T06:56:15+00:00",
+          "created": "2025-09-23T06:56:20.372890602Z",
+          "created_by": "LABEL build_version=Linuxserver.io version:- v0.23.56-ls162 Build-date:- 2025-09-23T06:54:15+00:00",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.261669409Z",
+          "created": "2025-09-23T06:56:20.372890602Z",
           "created_by": "LABEL maintainer=thelamer",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.261669409Z",
+          "created": "2025-09-23T06:56:20.372890602Z",
           "created_by": "ENV XDG_DATA_HOME=/config XDG_CONFIG_HOME=/config TMPDIR=/run/jackett-temp",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.261669409Z",
-          "created_by": "RUN |3 BUILD_DATE=2025-09-22T06:56:15+00:00 VERSION=v0.23.52-ls161 JACKETT_RELEASE=v0.23.52 /bin/sh -c echo \"**** install packages ****\" &&   apk --no-cache add     icu-data-full     icu-libs &&   echo \"**** install jackett ****\" &&   mkdir -p     /app/Jackett &&   if [ -z ${JACKETT_RELEASE+x} ]; then     JACKETT_RELEASE=$(curl -sX GET \"https://api.github.com/repos/Jackett/Jackett/releases/latest\"     | jq -r .tag_name);   fi &&   curl -o     /tmp/jacket.tar.gz -L     \"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.LinuxMuslAMDx64.tar.gz\" &&   tar xf     /tmp/jacket.tar.gz -C     /app/Jackett --strip-components=1 &&   echo \"**** fix for host id mapping error ****\" &&   chown -R root:root /app/Jackett &&   echo \"**** save docker image version ****\" &&   echo \"${VERSION}\" > /etc/docker-image &&   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" > /build_version &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
+          "created": "2025-09-23T06:56:20.372890602Z",
+          "created_by": "RUN |3 BUILD_DATE=2025-09-23T06:54:15+00:00 VERSION=v0.23.56-ls162 JACKETT_RELEASE=v0.23.56 /bin/sh -c echo \"**** install packages ****\" &&   apk --no-cache add     icu-data-full     icu-libs &&   echo \"**** install jackett ****\" &&   mkdir -p     /app/Jackett &&   if [ -z ${JACKETT_RELEASE+x} ]; then     JACKETT_RELEASE=$(curl -sX GET \"https://api.github.com/repos/Jackett/Jackett/releases/latest\"     | jq -r .tag_name);   fi &&   curl -o     /tmp/jacket.tar.gz -L     \"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.LinuxMuslAMDx64.tar.gz\" &&   tar xf     /tmp/jacket.tar.gz -C     /app/Jackett --strip-components=1 &&   echo \"**** fix for host id mapping error ****\" &&   chown -R root:root /app/Jackett &&   echo \"**** save docker image version ****\" &&   echo \"${VERSION}\" > /etc/docker-image &&   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" > /build_version &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-09-22T06:58:42.854564571Z",
+          "created": "2025-09-23T06:56:20.400083587Z",
           "created_by": "COPY root/ / # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-09-22T06:58:42.854564571Z",
+          "created": "2025-09-23T06:56:20.400083587Z",
           "created_by": "VOLUME [/config]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-09-22T06:58:42.854564571Z",
-          "created_by": "EXPOSE &{[{{52 0} {52 0}}] 0xc0003bad80}",
+          "created": "2025-09-23T06:56:20.400083587Z",
+          "created_by": "EXPOSE &{[{{52 0} {52 0}}] 0xc0004766c0}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         }
@@ -201,8 +201,8 @@
           "sha256:552c2aa51bac39e83bf12e583b07a44021163fe0eca7cc029c452227465d7fbf",
           "sha256:b85bec4b217904bcf4be4b686e18ad65528ee288a9f6541159d2d457d0330f33",
           "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf",
-          "sha256:142b06b574e23ba885691cdf0df3b914e99555a868fa91765e6c4d27922df761",
-          "sha256:618a773638fa5dddcde49f8166ab989223856d96692f3d7d4126161459d36ddb"
+          "sha256:3e43f5a7298039a3a5c64008756703347c1eb5eb47bddea310d78cd989b2cf6f",
+          "sha256:f64affda031c9f80ad35ff8fe30d90e63fe965b9ecb9effcabed58fa2d559ce1"
         ]
       },
       "config": {
@@ -224,20 +224,20 @@
           "TMPDIR=/run/jackett-temp"
         ],
         "Labels": {
-          "build_version": "Linuxserver.io version:- v0.23.52-ls161 Build-date:- 2025-09-22T06:56:15+00:00",
+          "build_version": "Linuxserver.io version:- v0.23.56-ls162 Build-date:- 2025-09-23T06:54:15+00:00",
           "maintainer": "thelamer",
           "org.opencontainers.image.authors": "linuxserver.io",
-          "org.opencontainers.image.created": "2025-09-22T06:56:15+00:00",
+          "org.opencontainers.image.created": "2025-09-23T06:54:15+00:00",
           "org.opencontainers.image.description": "[Jackett](https://github.com/Jackett/Jackett) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.",
           "org.opencontainers.image.documentation": "https://docs.linuxserver.io/images/docker-jackett",
           "org.opencontainers.image.licenses": "GPL-3.0-only",
-          "org.opencontainers.image.ref.name": "fb3f7d38ae074acc3ae341c04a271f1ffc193850",
-          "org.opencontainers.image.revision": "fb3f7d38ae074acc3ae341c04a271f1ffc193850",
+          "org.opencontainers.image.ref.name": "ef73697dd1cb59e69c40f1cf941ae489086759e8",
+          "org.opencontainers.image.revision": "ef73697dd1cb59e69c40f1cf941ae489086759e8",
           "org.opencontainers.image.source": "https://github.com/linuxserver/docker-jackett",
           "org.opencontainers.image.title": "Jackett",
           "org.opencontainers.image.url": "https://github.com/linuxserver/docker-jackett/packages",
           "org.opencontainers.image.vendor": "linuxserver.io",
-          "org.opencontainers.image.version": "v0.23.52-ls161"
+          "org.opencontainers.image.version": "v0.23.56-ls162"
         },
         "Volumes": {
           "/config": {}
@@ -285,20 +285,20 @@
         "DiffID": "sha256:f04bd2e2a7921fea228470308fbd908211d87707f67cdda05db061f160ff55bf"
       },
       {
-        "Size": 153624576,
-        "Digest": "sha256:db143129d22cd0e28c646a7bfd97454573fc442cb9f4c8f1c619f73b964f3d11",
-        "DiffID": "sha256:142b06b574e23ba885691cdf0df3b914e99555a868fa91765e6c4d27922df761"
+        "Size": 153626624,
+        "Digest": "sha256:a800c12d4bf5a4f5f6b57c8d715ff153f54e9a38f5489d3083fd45f740bdb794",
+        "DiffID": "sha256:3e43f5a7298039a3a5c64008756703347c1eb5eb47bddea310d78cd989b2cf6f"
       },
       {
         "Size": 15872,
-        "Digest": "sha256:017c32bf675d7c4bd57aaed4cc1b24512951d5b35d90e0d1c6f2b43eecf8cca0",
-        "DiffID": "sha256:618a773638fa5dddcde49f8166ab989223856d96692f3d7d4126161459d36ddb"
+        "Digest": "sha256:78a9fa79a8aaac0cf355be140670f510c3bc951627b10e0c852332a459475624",
+        "DiffID": "sha256:f64affda031c9f80ad35ff8fe30d90e63fe965b9ecb9effcabed58fa2d559ce1"
       }
     ]
   },
   "Results": [
     {
-      "Target": "linuxserver/jackett:0.23.52 (alpine 3.22.1)",
+      "Target": "linuxserver/jackett:0.23.56 (alpine 3.22.1)",
       "Class": "os-pkgs",
       "Type": "alpine"
     },
