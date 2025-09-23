@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:58.538497023Z",
   "ArtifactName": "pleroma:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -54,7 +53,7 @@
         },
         {
           "created": "2023-05-23T06:36:49Z",
-          "created_by": "RUN /bin/sh -c set -xe \t\u0026\u0026 OTP_DOWNLOAD_URL=\"https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz\" \t\u0026\u0026 OTP_DOWNLOAD_SHA256=\"2eef7aac690a6cedfe0e6a20fc2d700db3490b4e4249683c0e5b812ad71304ed\" \t\u0026\u0026 REBAR3_DOWNLOAD_SHA256=\"391b0eaa2825bb427fef1e55a0d166493059175f57a33b00346b84a20398216c\" \t\u0026\u0026 apk add --no-cache --virtual .fetch-deps \t\tcurl \t\tca-certificates \t\u0026\u0026 curl -fSL -o otp-src.tar.gz \"$OTP_DOWNLOAD_URL\" \t\u0026\u0026 echo \"$OTP_DOWNLOAD_SHA256  otp-src.tar.gz\" | sha256sum -c - \t\u0026\u0026 apk add --no-cache --virtual .build-deps \t\tdpkg-dev dpkg \t\tgcc \t\tg++ \t\tlibc-dev \t\tlinux-headers \t\tmake \t\tautoconf \t\tncurses-dev \t\topenssl-dev \t\tunixodbc-dev \t\tlksctp-tools-dev \t\ttar \t\u0026\u0026 export ERL_TOP=\"/usr/src/otp_src_${OTP_VERSION%%@*}\" \t\u0026\u0026 mkdir -vp $ERL_TOP \t\u0026\u0026 tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 \t\u0026\u0026 rm otp-src.tar.gz \t\u0026\u0026 ( cd $ERL_TOP \t  \u0026\u0026 ./otp_build autoconf \t  \u0026\u0026 gnuArch=\"$(dpkg-architecture --query DEB_HOST_GNU_TYPE)\" \t  \u0026\u0026 ./configure --build=\"$gnuArch\" \t  \u0026\u0026 make -j$(getconf _NPROCESSORS_ONLN) \t  \u0026\u0026 make install ) \t\u0026\u0026 rm -rf $ERL_TOP \t\u0026\u0026 find /usr/local -regex '/usr/local/lib/erlang/\\(lib/\\|erts-\\).*/\\(man\\|doc\\|obj\\|c_src\\|emacs\\|info\\|examples\\)' | xargs rm -rf \t\u0026\u0026 find /usr/local -name src | xargs -r find | grep -v '\\.hrl$' | xargs rm -v || true \t\u0026\u0026 find /usr/local -name src | xargs -r find | xargs rmdir -vp || true \t\u0026\u0026 scanelf --nobanner -E ET_EXEC -BF '%F' --recursive /usr/local | xargs -r strip --strip-all \t\u0026\u0026 scanelf --nobanner -E ET_DYN -BF '%F' --recursive /usr/local | xargs -r strip --strip-unneeded \t\u0026\u0026 runDeps=\"$( \t\tscanelf --needed --nobanner --format '%n#p' --recursive /usr/local \t\t\t| tr ',' '\\n' \t\t\t| sort -u \t\t\t| awk 'system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }' \t)\" \t\u0026\u0026 REBAR3_DOWNLOAD_URL=\"https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz\" \t\u0026\u0026 curl -fSL -o rebar3-src.tar.gz \"$REBAR3_DOWNLOAD_URL\" \t\u0026\u0026 echo \"${REBAR3_DOWNLOAD_SHA256}  rebar3-src.tar.gz\" | sha256sum -c - \t\u0026\u0026 mkdir -p /usr/src/rebar3-src \t\u0026\u0026 tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 \t\u0026\u0026 rm rebar3-src.tar.gz \t\u0026\u0026 cd /usr/src/rebar3-src \t\u0026\u0026 HOME=$PWD ./bootstrap \t\u0026\u0026 install -v ./rebar3 /usr/local/bin/ \t\u0026\u0026 rm -rf /usr/src/rebar3-src \t\u0026\u0026 apk add --virtual .erlang-rundeps \t\t$runDeps \t\tlksctp-tools \t\tca-certificates \t\u0026\u0026 apk del .fetch-deps .build-deps # buildkit",
+          "created_by": "RUN /bin/sh -c set -xe \t&& OTP_DOWNLOAD_URL=\"https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz\" \t&& OTP_DOWNLOAD_SHA256=\"2eef7aac690a6cedfe0e6a20fc2d700db3490b4e4249683c0e5b812ad71304ed\" \t&& REBAR3_DOWNLOAD_SHA256=\"391b0eaa2825bb427fef1e55a0d166493059175f57a33b00346b84a20398216c\" \t&& apk add --no-cache --virtual .fetch-deps \t\tcurl \t\tca-certificates \t&& curl -fSL -o otp-src.tar.gz \"$OTP_DOWNLOAD_URL\" \t&& echo \"$OTP_DOWNLOAD_SHA256  otp-src.tar.gz\" | sha256sum -c - \t&& apk add --no-cache --virtual .build-deps \t\tdpkg-dev dpkg \t\tgcc \t\tg++ \t\tlibc-dev \t\tlinux-headers \t\tmake \t\tautoconf \t\tncurses-dev \t\topenssl-dev \t\tunixodbc-dev \t\tlksctp-tools-dev \t\ttar \t&& export ERL_TOP=\"/usr/src/otp_src_${OTP_VERSION%%@*}\" \t&& mkdir -vp $ERL_TOP \t&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 \t&& rm otp-src.tar.gz \t&& ( cd $ERL_TOP \t  && ./otp_build autoconf \t  && gnuArch=\"$(dpkg-architecture --query DEB_HOST_GNU_TYPE)\" \t  && ./configure --build=\"$gnuArch\" \t  && make -j$(getconf _NPROCESSORS_ONLN) \t  && make install ) \t&& rm -rf $ERL_TOP \t&& find /usr/local -regex '/usr/local/lib/erlang/\\(lib/\\|erts-\\).*/\\(man\\|doc\\|obj\\|c_src\\|emacs\\|info\\|examples\\)' | xargs rm -rf \t&& find /usr/local -name src | xargs -r find | grep -v '\\.hrl$' | xargs rm -v || true \t&& find /usr/local -name src | xargs -r find | xargs rmdir -vp || true \t&& scanelf --nobanner -E ET_EXEC -BF '%F' --recursive /usr/local | xargs -r strip --strip-all \t&& scanelf --nobanner -E ET_DYN -BF '%F' --recursive /usr/local | xargs -r strip --strip-unneeded \t&& runDeps=\"$( \t\tscanelf --needed --nobanner --format '%n#p' --recursive /usr/local \t\t\t| tr ',' '\\n' \t\t\t| sort -u \t\t\t| awk 'system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }' \t)\" \t&& REBAR3_DOWNLOAD_URL=\"https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz\" \t&& curl -fSL -o rebar3-src.tar.gz \"$REBAR3_DOWNLOAD_URL\" \t&& echo \"${REBAR3_DOWNLOAD_SHA256}  rebar3-src.tar.gz\" | sha256sum -c - \t&& mkdir -p /usr/src/rebar3-src \t&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 \t&& rm rebar3-src.tar.gz \t&& cd /usr/src/rebar3-src \t&& HOME=$PWD ./bootstrap \t&& install -v ./rebar3 /usr/local/bin/ \t&& rm -rf /usr/src/rebar3-src \t&& apk add --virtual .erlang-rundeps \t\t$runDeps \t\tlksctp-tools \t\tca-certificates \t&& apk del .fetch-deps .build-deps # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -71,7 +70,7 @@
         },
         {
           "created": "2023-05-23T06:36:49Z",
-          "created_by": "RUN /bin/sh -c set -xe \t\u0026\u0026 ELIXIR_DOWNLOAD_URL=\"https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz\" \t\u0026\u0026 ELIXIR_DOWNLOAD_SHA256=\"2ea249566c67e57f8365ecdcd0efd9b6c375f57609b3ac2de326488ac37c8ebd\" \t\u0026\u0026 buildDeps=' \t\tca-certificates \t\tcurl \t\tmake \t' \t\u0026\u0026 apk add --no-cache --virtual .build-deps $buildDeps \t\u0026\u0026 curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL \t\u0026\u0026 echo \"$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz\" | sha256sum -c - \t\u0026\u0026 mkdir -p /usr/local/src/elixir \t\u0026\u0026 tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz \t\u0026\u0026 rm elixir-src.tar.gz \t\u0026\u0026 cd /usr/local/src/elixir \t\u0026\u0026 make install clean \t\u0026\u0026 find /usr/local/src/elixir/ -type f -not -regex \"/usr/local/src/elixir/lib/[^\\/]*/lib.*\" -exec rm -rf {} + \t\u0026\u0026 find /usr/local/src/elixir/ -type d -depth -empty -delete \t\u0026\u0026 apk del .build-deps # buildkit",
+          "created_by": "RUN /bin/sh -c set -xe \t&& ELIXIR_DOWNLOAD_URL=\"https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz\" \t&& ELIXIR_DOWNLOAD_SHA256=\"2ea249566c67e57f8365ecdcd0efd9b6c375f57609b3ac2de326488ac37c8ebd\" \t&& buildDeps=' \t\tca-certificates \t\tcurl \t\tmake \t' \t&& apk add --no-cache --virtual .build-deps $buildDeps \t&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL \t&& echo \"$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz\" | sha256sum -c - \t&& mkdir -p /usr/local/src/elixir \t&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz \t&& rm elixir-src.tar.gz \t&& cd /usr/local/src/elixir \t&& make install clean \t&& find /usr/local/src/elixir/ -type f -not -regex \"/usr/local/src/elixir/lib/[^\\/]*/lib.*\" -exec rm -rf {} + \t&& find /usr/local/src/elixir/ -type d -depth -empty -delete \t&& apk del .build-deps # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -112,12 +111,12 @@
         },
         {
           "created": "2025-06-11T09:18:28Z",
-          "created_by": "RUN |3 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 /bin/sh -c apk update     \u0026\u0026 apk add git gcc g++ musl-dev make cmake file-dev vips-dev     exiftool imagemagick vips libmagic ncurses postgresql-client ffmpeg     openssl-dev # buildkit",
+          "created_by": "RUN |3 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 /bin/sh -c apk update     && apk add git gcc g++ musl-dev make cmake file-dev vips-dev     exiftool imagemagick vips libmagic ncurses postgresql-client ffmpeg     openssl-dev # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
           "created": "2025-06-11T09:18:28Z",
-          "created_by": "RUN |3 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 /bin/sh -c addgroup -g ${GID} pleroma     \u0026\u0026 adduser -h /pleroma -s /bin/false -D -G pleroma -u ${UID} pleroma # buildkit",
+          "created_by": "RUN |3 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 /bin/sh -c addgroup -g ${GID} pleroma     && adduser -h /pleroma -s /bin/false -D -G pleroma -u ${UID} pleroma # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -128,7 +127,7 @@
         },
         {
           "created": "2025-06-11T09:18:28Z",
-          "created_by": "RUN |4 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 DATA=/var/lib/pleroma /bin/sh -c mkdir -p /etc/pleroma     \u0026\u0026 chown -R pleroma /etc/pleroma     \u0026\u0026 mkdir -p ${DATA}/uploads     \u0026\u0026 mkdir -p ${DATA}/static     \u0026\u0026 chown -R pleroma ${DATA} # buildkit",
+          "created_by": "RUN |4 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 DATA=/var/lib/pleroma /bin/sh -c mkdir -p /etc/pleroma     && chown -R pleroma /etc/pleroma     && mkdir -p ${DATA}/uploads     && mkdir -p ${DATA}/static     && chown -R pleroma ${DATA} # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -144,12 +143,12 @@
         },
         {
           "created": "2025-06-11T09:19:23Z",
-          "created_by": "RUN |4 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 DATA=/var/lib/pleroma /bin/sh -c git clone -b develop https://git.pleroma.social/pleroma/pleroma.git /pleroma     \u0026\u0026 git checkout ${PLEROMA_VER} # buildkit",
+          "created_by": "RUN |4 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 DATA=/var/lib/pleroma /bin/sh -c git clone -b develop https://git.pleroma.social/pleroma/pleroma.git /pleroma     && git checkout ${PLEROMA_VER} # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
           "created": "2025-06-11T09:21:30Z",
-          "created_by": "RUN |4 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 DATA=/var/lib/pleroma /bin/sh -c echo \"import Mix.Config\" \u003e config/prod.secret.exs     \u0026\u0026 mix local.hex --force     \u0026\u0026 mix local.rebar --force     \u0026\u0026 mix deps.get --only prod     \u0026\u0026 mkdir release     \u0026\u0026 mix release --path /pleroma # buildkit",
+          "created_by": "RUN |4 PLEROMA_VER=v2.9.1 UID=1001 GID=1001 DATA=/var/lib/pleroma /bin/sh -c echo \"import Mix.Config\" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -264,7 +263,7 @@
           "PkgID": "expat@2.7.0-r0",
           "PkgName": "expat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/expat@2.7.0-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/expat@2.7.0-r0?arch=x86_64&distro=3.20.6",
             "UID": "6932c414efaf09a8"
           },
           "InstalledVersion": "2.7.0-r0",
@@ -312,7 +311,7 @@
           "PkgID": "expat-dev@2.7.0-r0",
           "PkgName": "expat-dev",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/expat-dev@2.7.0-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/expat-dev@2.7.0-r0?arch=x86_64&distro=3.20.6",
             "UID": "90453c6b37be038a"
           },
           "InstalledVersion": "2.7.0-r0",
@@ -360,7 +359,7 @@
           "PkgID": "git@2.45.3-r0",
           "PkgName": "git",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "15eed53158ae3ddb"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -395,7 +394,7 @@
           "PkgID": "git@2.45.3-r0",
           "PkgName": "git",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "15eed53158ae3ddb"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -484,7 +483,7 @@
           "PkgID": "git@2.45.3-r0",
           "PkgName": "git",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "15eed53158ae3ddb"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -566,7 +565,7 @@
           "PkgID": "git-init-template@2.45.3-r0",
           "PkgName": "git-init-template",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git-init-template@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git-init-template@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "df0dca7500fe66bc"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -601,7 +600,7 @@
           "PkgID": "git-init-template@2.45.3-r0",
           "PkgName": "git-init-template",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git-init-template@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git-init-template@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "df0dca7500fe66bc"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -690,7 +689,7 @@
           "PkgID": "git-init-template@2.45.3-r0",
           "PkgName": "git-init-template",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git-init-template@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git-init-template@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "df0dca7500fe66bc"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -772,7 +771,7 @@
           "PkgID": "git-perl@2.45.3-r0",
           "PkgName": "git-perl",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git-perl@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git-perl@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "a1d30f820e70367b"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -807,7 +806,7 @@
           "PkgID": "git-perl@2.45.3-r0",
           "PkgName": "git-perl",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git-perl@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git-perl@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "a1d30f820e70367b"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -896,7 +895,7 @@
           "PkgID": "git-perl@2.45.3-r0",
           "PkgName": "git-perl",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/git-perl@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/git-perl@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "a1d30f820e70367b"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -978,7 +977,7 @@
           "PkgID": "icu@74.2-r0",
           "PkgName": "icu",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/icu@74.2-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/icu@74.2-r0?arch=x86_64&distro=3.20.6",
             "UID": "a7145770ad26ee84"
           },
           "InstalledVersion": "74.2-r0",
@@ -1039,7 +1038,7 @@
           "PkgID": "icu-data-en@74.2-r0",
           "PkgName": "icu-data-en",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/icu-data-en@74.2-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/icu-data-en@74.2-r0?arch=x86_64&distro=3.20.6",
             "UID": "b4629aa321fd911d"
           },
           "InstalledVersion": "74.2-r0",
@@ -1100,7 +1099,7 @@
           "PkgID": "icu-dev@74.2-r0",
           "PkgName": "icu-dev",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/icu-dev@74.2-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/icu-dev@74.2-r0?arch=x86_64&distro=3.20.6",
             "UID": "9f51e05d91f74180"
           },
           "InstalledVersion": "74.2-r0",
@@ -1161,7 +1160,7 @@
           "PkgID": "icu-libs@74.2-r0",
           "PkgName": "icu-libs",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/icu-libs@74.2-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/icu-libs@74.2-r0?arch=x86_64&distro=3.20.6",
             "UID": "76f906720ccc069"
           },
           "InstalledVersion": "74.2-r0",
@@ -1222,7 +1221,7 @@
           "PkgID": "libexpat@2.7.0-r0",
           "PkgName": "libexpat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.7.0-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/libexpat@2.7.0-r0?arch=x86_64&distro=3.20.6",
             "UID": "8455cae8f18dcb98"
           },
           "InstalledVersion": "2.7.0-r0",
@@ -1270,7 +1269,7 @@
           "PkgID": "libpq@16.9-r0",
           "PkgName": "libpq",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libpq@16.9-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/libpq@16.9-r0?arch=x86_64&distro=3.20.6",
             "UID": "ad400d1ee3a126f4"
           },
           "InstalledVersion": "16.9-r0",
@@ -1334,7 +1333,7 @@
           "PkgID": "libpq@16.9-r0",
           "PkgName": "libpq",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libpq@16.9-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/libpq@16.9-r0?arch=x86_64&distro=3.20.6",
             "UID": "ad400d1ee3a126f4"
           },
           "InstalledVersion": "16.9-r0",
@@ -1398,7 +1397,7 @@
           "PkgID": "mbedtls@3.6.3-r0",
           "PkgName": "mbedtls",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/mbedtls@3.6.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/mbedtls@3.6.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "6e44acc99cde1d69"
           },
           "InstalledVersion": "3.6.3-r0",
@@ -1441,7 +1440,7 @@
           "PkgID": "mbedtls@3.6.3-r0",
           "PkgName": "mbedtls",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/mbedtls@3.6.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/mbedtls@3.6.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "6e44acc99cde1d69"
           },
           "InstalledVersion": "3.6.3-r0",
@@ -1485,7 +1484,7 @@
           "PkgID": "mbedtls@3.6.3-r0",
           "PkgName": "mbedtls",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/mbedtls@3.6.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/mbedtls@3.6.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "6e44acc99cde1d69"
           },
           "InstalledVersion": "3.6.3-r0",
@@ -1527,7 +1526,7 @@
           "PkgID": "perl-git@2.45.3-r0",
           "PkgName": "perl-git",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/perl-git@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/perl-git@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "1d66cb3fc3eb2d67"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -1562,7 +1561,7 @@
           "PkgID": "perl-git@2.45.3-r0",
           "PkgName": "perl-git",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/perl-git@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/perl-git@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "1d66cb3fc3eb2d67"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -1651,7 +1650,7 @@
           "PkgID": "perl-git@2.45.3-r0",
           "PkgName": "perl-git",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/perl-git@2.45.3-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/perl-git@2.45.3-r0?arch=x86_64&distro=3.20.6",
             "UID": "1d66cb3fc3eb2d67"
           },
           "InstalledVersion": "2.45.3-r0",
@@ -1733,7 +1732,7 @@
           "PkgID": "postgresql16-client@16.9-r0",
           "PkgName": "postgresql16-client",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/postgresql16-client@16.9-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/postgresql16-client@16.9-r0?arch=x86_64&distro=3.20.6",
             "UID": "a8ca32e8ef313bf0"
           },
           "InstalledVersion": "16.9-r0",
@@ -1797,7 +1796,7 @@
           "PkgID": "postgresql16-client@16.9-r0",
           "PkgName": "postgresql16-client",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/postgresql16-client@16.9-r0?arch=x86_64\u0026distro=3.20.6",
+            "PURL": "pkg:apk/alpine/postgresql16-client@16.9-r0?arch=x86_64&distro=3.20.6",
             "UID": "a8ca32e8ef313bf0"
           },
           "InstalledVersion": "16.9-r0",

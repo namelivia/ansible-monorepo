@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:32:02.132822828Z",
   "ArtifactName": "linuxserver/radarr:6.0.1-nightly",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -112,7 +111,7 @@
         },
         {
           "created": "2025-09-13T13:35:31.367904524Z",
-          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" \u0026\u0026   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata \u0026\u0026   echo \"**** create abc user and make our folders ****\" \u0026\u0026   groupmod -g 1000 users \u0026\u0026   useradd -u 911 -U -d /config -s /bin/false abc \u0026\u0026   usermod -G users abc \u0026\u0026   mkdir -p     /app     /config     /defaults     /lsiopy \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /tmp/* # buildkit",
+          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" &&   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata &&   echo \"**** create abc user and make our folders ****\" &&   groupmod -g 1000 users &&   useradd -u 911 -U -d /config -s /bin/false abc &&   usermod -G users abc &&   mkdir -p     /app     /config     /defaults     /lsiopy &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -176,7 +175,7 @@
         },
         {
           "created": "2025-09-21T20:23:55.570431779Z",
-          "created_by": "RUN |4 BUILD_DATE=2025-09-21T20:21:54+00:00 VERSION=6.0.1.10220-ls13 RADARR_RELEASE=6.0.1.10220 RADARR_BRANCH=nightly /bin/sh -c echo \"**** install packages ****\" \u0026\u0026   apk add -U --upgrade --no-cache     icu-libs     sqlite-libs     xmlstarlet \u0026\u0026   echo \"**** install radarr ****\" \u0026\u0026   mkdir -p /app/radarr/bin \u0026\u0026   if [ -z ${RADARR_RELEASE+x} ]; then     RADARR_RELEASE=$(curl -sL \"https://radarr.servarr.com/v1/update/${RADARR_BRANCH}/changes?runtime=netcore\u0026os=linuxmusl\"     | jq -r '.[0].version');   fi \u0026\u0026   curl -o     /tmp/radarr.tar.gz -L     \"https://radarr.servarr.com/v1/update/${RADARR_BRANCH}/updatefile?version=${RADARR_RELEASE}\u0026os=linuxmusl\u0026runtime=netcore\u0026arch=x64\" \u0026\u0026   tar xzf   /tmp/radarr.tar.gz -C     /app/radarr/bin --strip-components=1 \u0026\u0026   echo -e \"UpdateMethod=docker\\nBranch=${RADARR_BRANCH}\\nPackageVersion=${VERSION}\\nPackageAuthor=[linuxserver.io](https://www.linuxserver.io/)\" \u003e /app/radarr/package_info \u0026\u0026   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" \u003e /build_version \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /app/radarr/bin/Radarr.Update     /tmp/* # buildkit",
+          "created_by": "RUN |4 BUILD_DATE=2025-09-21T20:21:54+00:00 VERSION=6.0.1.10220-ls13 RADARR_RELEASE=6.0.1.10220 RADARR_BRANCH=nightly /bin/sh -c echo \"**** install packages ****\" &&   apk add -U --upgrade --no-cache     icu-libs     sqlite-libs     xmlstarlet &&   echo \"**** install radarr ****\" &&   mkdir -p /app/radarr/bin &&   if [ -z ${RADARR_RELEASE+x} ]; then     RADARR_RELEASE=$(curl -sL \"https://radarr.servarr.com/v1/update/${RADARR_BRANCH}/changes?runtime=netcore&os=linuxmusl\"     | jq -r '.[0].version');   fi &&   curl -o     /tmp/radarr.tar.gz -L     \"https://radarr.servarr.com/v1/update/${RADARR_BRANCH}/updatefile?version=${RADARR_RELEASE}&os=linuxmusl&runtime=netcore&arch=x64\" &&   tar xzf   /tmp/radarr.tar.gz -C     /app/radarr/bin --strip-components=1 &&   echo -e \"UpdateMethod=docker\\nBranch=${RADARR_BRANCH}\\nPackageVersion=${VERSION}\\nPackageAuthor=[linuxserver.io](https://www.linuxserver.io/)\" > /app/radarr/package_info &&   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" > /build_version &&   echo \"**** cleanup ****\" &&   rm -rf     /app/radarr/bin/Radarr.Update     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -186,7 +185,7 @@
         },
         {
           "created": "2025-09-21T20:23:55.597344724Z",
-          "created_by": "EXPOSE \u0026{[{{49 0} {49 0}}] 0xc00015ea00}",
+          "created_by": "EXPOSE &{[{{49 0} {49 0}}] 0xc00015ea00}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },

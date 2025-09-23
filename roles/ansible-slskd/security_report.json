@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:32:09.45758508Z",
   "ArtifactName": "slskd/slskd:0.23.2",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -43,12 +42,12 @@
         },
         {
           "created": "2025-08-05T20:12:08.224488254Z",
-          "created_by": "RUN /bin/sh -c apt-get update     \u0026\u0026 apt-get install -y --no-install-recommends         ca-certificates                 libc6         libgcc-s1         libicu72         libssl3         libstdc++6         tzdata         zlib1g     \u0026\u0026 rm -rf /var/lib/apt/lists/* # buildkit",
+          "created_by": "RUN /bin/sh -c apt-get update     && apt-get install -y --no-install-recommends         ca-certificates                 libc6         libgcc-s1         libicu72         libssl3         libstdc++6         tzdata         zlib1g     && rm -rf /var/lib/apt/lists/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
           "created": "2025-08-05T20:12:10.317679806Z",
-          "created_by": "RUN /bin/sh -c groupadd         --gid=$APP_UID         app     \u0026\u0026 useradd --no-log-init         --uid=$APP_UID         --gid=$APP_UID         --create-home         app # buildkit",
+          "created_by": "RUN /bin/sh -c groupadd         --gid=$APP_UID         app     && useradd --no-log-init         --uid=$APP_UID         --gid=$APP_UID         --create-home         app # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -83,12 +82,12 @@
         },
         {
           "created": "2025-08-10T23:37:40.576840705Z",
-          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c apt-get update \u0026\u0026 apt-get install --no-install-recommends -y   jq   wget   tini   \u0026\u0026   rm -rf   /tmp/*   /var/lib/apt/lists/*   /var/cache/apt/*   /var/tmp/* # buildkit",
+          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c apt-get update && apt-get install --no-install-recommends -y   jq   wget   tini   &&   rm -rf   /tmp/*   /var/lib/apt/lists/*   /var/cache/apt/*   /var/tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
           "created": "2025-08-10T23:37:40.719245272Z",
-          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c bash -c 'mkdir -p /app/{incomplete,downloads}   \u0026\u0026 chmod -R 777 /app   \u0026\u0026 mkdir -p /.net   \u0026\u0026 chmod 777 /.net' # buildkit",
+          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c bash -c 'mkdir -p /app/{incomplete,downloads}   && chmod -R 777 /app   && mkdir -p /.net   && chmod 777 /.net' # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -99,7 +98,7 @@
         },
         {
           "created": "2025-08-10T23:37:40.719245272Z",
-          "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"wget -q -O - http://localhost:${SLSKD_HTTP_PORT}/health\"] \"1m0s\" \"3s\" \"1h0m0s\" \"0s\" '\\x03'}",
+          "created_by": "HEALTHCHECK &{[\"CMD-SHELL\" \"wget -q -O - http://localhost:${SLSKD_HTTP_PORT}/health\"] \"1m0s\" \"3s\" \"1h0m0s\" \"0s\" '\\x03'}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
@@ -127,7 +126,7 @@
         },
         {
           "created": "2025-08-10T23:41:00.381459305Z",
-          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c echo \"umask \\$SLSKD_UMASK \u0026\u0026 ./slskd\" \u003e start.sh   \u0026\u0026 chmod +x start.sh # buildkit",
+          "created_by": "RUN |5 TARGETPLATFORM=linux/amd64 TAG=0.0.1 VERSION=0.23.2.0+0b7cf179 REVISION=0 BUILD_DATE= /bin/sh -c echo \"umask \\$SLSKD_UMASK && ./slskd\" > start.sh   && chmod +x start.sh # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -262,7 +261,7 @@
           "PkgID": "jq@1.6-2.1",
           "PkgName": "jq",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/jq@1.6-2.1?arch=amd64\u0026distro=debian-12.11",
+            "PURL": "pkg:deb/debian/jq@1.6-2.1?arch=amd64&distro=debian-12.11",
             "UID": "32226c537fcc8b79"
           },
           "InstalledVersion": "1.6-2.1",
@@ -334,7 +333,7 @@
           "PkgID": "libc-bin@2.36-9+deb12u10",
           "PkgName": "libc-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64&distro=debian-12.11",
             "UID": "205f0e4a1d969bcb"
           },
           "InstalledVersion": "2.36-9+deb12u10",
@@ -401,7 +400,7 @@
           "PkgID": "libc6@2.36-9+deb12u10",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.11",
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64&distro=debian-12.11",
             "UID": "a311111c5d474127"
           },
           "InstalledVersion": "2.36-9+deb12u10",
@@ -468,7 +467,7 @@
           "PkgID": "libjq1@1.6-2.1",
           "PkgName": "libjq1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libjq1@1.6-2.1?arch=amd64\u0026distro=debian-12.11",
+            "PURL": "pkg:deb/debian/libjq1@1.6-2.1?arch=amd64&distro=debian-12.11",
             "UID": "a63a858e11a4d3a8"
           },
           "InstalledVersion": "1.6-2.1",
@@ -540,7 +539,7 @@
           "PkgID": "perl-base@5.36.0-7+deb12u2",
           "PkgName": "perl-base",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u2?arch=amd64\u0026distro=debian-12.11",
+            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u2?arch=amd64&distro=debian-12.11",
             "UID": "170e64dcedbd4508"
           },
           "InstalledVersion": "5.36.0-7+deb12u2",

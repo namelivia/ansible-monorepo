@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:04.788897695Z",
   "ArtifactName": "gcr.io/cadvisor/cadvisor:v0.52.1",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -48,7 +47,7 @@
         },
         {
           "created": "2025-03-20T03:39:13.464105521Z",
-          "created_by": "RUN /bin/sh -c apk --no-cache add libc6-compat device-mapper findutils ndctl zfs \u0026\u0026     apk --no-cache add thin-provisioning-tools --repository http://dl-3.alpinelinux.org/alpine/edge/main/ \u0026\u0026     echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' \u003e\u003e /etc/nsswitch.conf \u0026\u0026     rm -rf /var/cache/apk/* # buildkit",
+          "created_by": "RUN /bin/sh -c apk --no-cache add libc6-compat device-mapper findutils ndctl zfs &&     apk --no-cache add thin-provisioning-tools --repository http://dl-3.alpinelinux.org/alpine/edge/main/ &&     echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf &&     rm -rf /var/cache/apk/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -80,7 +79,7 @@
         },
         {
           "created": "2025-03-20T03:40:27.066380444Z",
-          "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"wget --quiet --tries=1 --spider $CADVISOR_HEALTHCHECK_URL || exit 1\"] \"30s\" \"3s\" \"0s\" \"0s\" '\\x00'}",
+          "created_by": "HEALTHCHECK &{[\"CMD-SHELL\" \"wget --quiet --tries=1 --spider $CADVISOR_HEALTHCHECK_URL || exit 1\"] \"30s\" \"3s\" \"0s\" \"0s\" '\\x00'}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
@@ -164,7 +163,7 @@
           "PkgID": "xz-libs@5.4.3-r0",
           "PkgName": "xz-libs",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/xz-libs@5.4.3-r0?arch=x86_64\u0026distro=3.18.12",
+            "PURL": "pkg:apk/alpine/xz-libs@5.4.3-r0?arch=x86_64&distro=3.18.12",
             "UID": "f8b49c31cb37c3db"
           },
           "InstalledVersion": "5.4.3-r0",

@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:07.790241122Z",
   "ArtifactName": "linuxserver/deluge:2.2.0",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -113,7 +112,7 @@
         },
         {
           "created": "2025-09-20T13:37:24.212858466Z",
-          "created_by": "RUN |6 BUILD_DATE=2025-09-20T13:35:45+00:00 VERSION=3701857a-ls200 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" \u0026\u0026   apk add --no-cache     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata \u0026\u0026   echo \"**** create abc user and make our folders ****\" \u0026\u0026   groupmod -g 1000 users \u0026\u0026   useradd -u 911 -U -d /config -s /bin/false abc \u0026\u0026   usermod -G users abc \u0026\u0026   mkdir -p     /app     /config     /defaults     /lsiopy \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /tmp/* # buildkit",
+          "created_by": "RUN |6 BUILD_DATE=2025-09-20T13:35:45+00:00 VERSION=3701857a-ls200 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" &&   apk add --no-cache     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata &&   echo \"**** create abc user and make our folders ****\" &&   groupmod -g 1000 users &&   useradd -u 911 -U -d /config -s /bin/false abc &&   usermod -G users abc &&   mkdir -p     /app     /config     /defaults     /lsiopy &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -171,7 +170,7 @@
         },
         {
           "created": "2025-09-22T15:44:03.039222357Z",
-          "created_by": "RUN |3 BUILD_DATE=2025-09-22T15:41:24+00:00 VERSION=2.2.0-r1-ls347 DELUGE_VERSION=2.2.0-r1 /bin/sh -c echo \"**** install build packages ****\" \u0026\u0026   apk add --no-cache --upgrade --virtual=build-dependencies     build-base \u0026\u0026   echo \"**** install packages ****\" \u0026\u0026   if [ -z ${DELUGE_VERSION+x} ]; then     DELUGE_VERSION=$(curl -sL \"http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz\" | tar -xz -C /tmp     \u0026\u0026 awk '/^P:deluge$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');   fi \u0026\u0026   apk add --no-cache --upgrade --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing     deluge==${DELUGE_VERSION}     python3     py3-future     py3-geoip     py3-requests     p7zip \u0026\u0026   echo \"**** grab GeoIP database ****\" \u0026\u0026   curl -L --retry 10 --retry-max-time 60 --retry-all-errors     \"https://geo.el0.org/GeoIP.dat.gz\"     | gunzip \u003e /usr/share/GeoIP/GeoIP.dat \u0026\u0026   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" \u003e /build_version \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   apk del --purge     build-dependencies \u0026\u0026   rm -rf     $HOME/.cache     /tmp/* # buildkit",
+          "created_by": "RUN |3 BUILD_DATE=2025-09-22T15:41:24+00:00 VERSION=2.2.0-r1-ls347 DELUGE_VERSION=2.2.0-r1 /bin/sh -c echo \"**** install build packages ****\" &&   apk add --no-cache --upgrade --virtual=build-dependencies     build-base &&   echo \"**** install packages ****\" &&   if [ -z ${DELUGE_VERSION+x} ]; then     DELUGE_VERSION=$(curl -sL \"http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz\" | tar -xz -C /tmp     && awk '/^P:deluge$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');   fi &&   apk add --no-cache --upgrade --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing     deluge==${DELUGE_VERSION}     python3     py3-future     py3-geoip     py3-requests     p7zip &&   echo \"**** grab GeoIP database ****\" &&   curl -L --retry 10 --retry-max-time 60 --retry-all-errors     \"https://geo.el0.org/GeoIP.dat.gz\"     | gunzip > /usr/share/GeoIP/GeoIP.dat &&   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" > /build_version &&   echo \"**** cleanup ****\" &&   apk del --purge     build-dependencies &&   rm -rf     $HOME/.cache     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -186,7 +185,7 @@
         },
         {
           "created": "2025-09-22T15:44:03.239098587Z",
-          "created_by": "EXPOSE \u0026{[{{58 0} {58 0}}] 0xc00036dd00}",
+          "created_by": "EXPOSE &{[{{58 0} {58 0}}] 0xc00036dd00}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },

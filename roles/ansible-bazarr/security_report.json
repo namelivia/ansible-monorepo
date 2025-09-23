@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:03.285075177Z",
   "ArtifactName": "linuxserver/bazarr:1.5.3",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -113,7 +112,7 @@
         },
         {
           "created": "2025-09-13T13:35:31.367904524Z",
-          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" \u0026\u0026   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata \u0026\u0026   echo \"**** create abc user and make our folders ****\" \u0026\u0026   groupmod -g 1000 users \u0026\u0026   useradd -u 911 -U -d /config -s /bin/false abc \u0026\u0026   usermod -G users abc \u0026\u0026   mkdir -p     /app     /config     /defaults     /lsiopy \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /tmp/* # buildkit",
+          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" &&   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata &&   echo \"**** create abc user and make our folders ****\" &&   groupmod -g 1000 users &&   useradd -u 911 -U -d /config -s /bin/false abc &&   usermod -G users abc &&   mkdir -p     /app     /config     /defaults     /lsiopy &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -171,7 +170,7 @@
         },
         {
           "created": "2025-09-20T12:55:19.636422382Z",
-          "created_by": "RUN |3 BUILD_DATE=2025-09-20T12:52:55+00:00 VERSION=v1.5.3-ls318 BAZARR_VERSION=v1.5.3 /bin/sh -c echo \"**** install build packages ****\" \u0026\u0026   apk add --no-cache --virtual=build-dependencies     build-base     cargo     libffi-dev     libpq-dev     libxml2-dev     libxslt-dev     python3-dev \u0026\u0026   echo \"**** install packages ****\" \u0026\u0026   apk add --no-cache     ffmpeg     libxml2     libxslt     mediainfo     python3 \u0026\u0026   echo \"**** install bazarr ****\" \u0026\u0026   mkdir -p     /app/bazarr/bin \u0026\u0026   if [ -z ${BAZARR_VERSION+x} ]; then     BAZARR_VERSION=$(curl -sX GET \"https://api.github.com/repos/morpheus65535/bazarr/releases/latest\"     | awk '/tag_name/{print $4;exit}' FS='[\"\"]');   fi \u0026\u0026   curl -o     /tmp/bazarr.zip -L     \"https://github.com/morpheus65535/bazarr/releases/download/${BAZARR_VERSION}/bazarr.zip\" \u0026\u0026   unzip     /tmp/bazarr.zip -d     /app/bazarr/bin \u0026\u0026   rm -Rf /app/bazarr/bin/bin \u0026\u0026   echo \"UpdateMethod=docker\\nBranch=master\\nPackageVersion=${VERSION}\\nPackageAuthor=linuxserver.io\" \u003e /app/bazarr/package_info \u0026\u0026   curl -o     /app/bazarr/bin/postgres-requirements.txt -L     \"https://raw.githubusercontent.com/morpheus65535/bazarr/${BAZARR_VERSION}/postgres-requirements.txt\" \u0026\u0026   echo \"**** Install requirements ****\" \u0026\u0026   python3 -m venv /lsiopy \u0026\u0026   pip install -U --no-cache-dir     pip     wheel \u0026\u0026   pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.22/     -r /app/bazarr/bin/requirements.txt     -r /app/bazarr/bin/postgres-requirements.txt \u0026\u0026   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" \u003e /build_version \u0026\u0026   echo \"**** clean up ****\" \u0026\u0026   apk del --purge     build-dependencies \u0026\u0026   rm -rf     $HOME/.cache     $HOME/.cargo     /tmp/* # buildkit",
+          "created_by": "RUN |3 BUILD_DATE=2025-09-20T12:52:55+00:00 VERSION=v1.5.3-ls318 BAZARR_VERSION=v1.5.3 /bin/sh -c echo \"**** install build packages ****\" &&   apk add --no-cache --virtual=build-dependencies     build-base     cargo     libffi-dev     libpq-dev     libxml2-dev     libxslt-dev     python3-dev &&   echo \"**** install packages ****\" &&   apk add --no-cache     ffmpeg     libxml2     libxslt     mediainfo     python3 &&   echo \"**** install bazarr ****\" &&   mkdir -p     /app/bazarr/bin &&   if [ -z ${BAZARR_VERSION+x} ]; then     BAZARR_VERSION=$(curl -sX GET \"https://api.github.com/repos/morpheus65535/bazarr/releases/latest\"     | awk '/tag_name/{print $4;exit}' FS='[\"\"]');   fi &&   curl -o     /tmp/bazarr.zip -L     \"https://github.com/morpheus65535/bazarr/releases/download/${BAZARR_VERSION}/bazarr.zip\" &&   unzip     /tmp/bazarr.zip -d     /app/bazarr/bin &&   rm -Rf /app/bazarr/bin/bin &&   echo \"UpdateMethod=docker\\nBranch=master\\nPackageVersion=${VERSION}\\nPackageAuthor=linuxserver.io\" > /app/bazarr/package_info &&   curl -o     /app/bazarr/bin/postgres-requirements.txt -L     \"https://raw.githubusercontent.com/morpheus65535/bazarr/${BAZARR_VERSION}/postgres-requirements.txt\" &&   echo \"**** Install requirements ****\" &&   python3 -m venv /lsiopy &&   pip install -U --no-cache-dir     pip     wheel &&   pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.22/     -r /app/bazarr/bin/requirements.txt     -r /app/bazarr/bin/postgres-requirements.txt &&   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" > /build_version &&   echo \"**** clean up ****\" &&   apk del --purge     build-dependencies &&   rm -rf     $HOME/.cache     $HOME/.cargo     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -186,7 +185,7 @@
         },
         {
           "created": "2025-09-20T12:55:19.797173519Z",
-          "created_by": "EXPOSE \u0026{[{{79 0} {79 0}}] 0xc0003baa40}",
+          "created_by": "EXPOSE &{[{{79 0} {79 0}}] 0xc0003baa40}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
@@ -318,7 +317,7 @@
           "PkgID": "libexpat@2.7.1-r0",
           "PkgName": "libexpat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.7.1-r0?arch=x86_64\u0026distro=3.22.1",
+            "PURL": "pkg:apk/alpine/libexpat@2.7.1-r0?arch=x86_64&distro=3.22.1",
             "UID": "91a0eaab833dbcf2"
           },
           "InstalledVersion": "2.7.1-r0",

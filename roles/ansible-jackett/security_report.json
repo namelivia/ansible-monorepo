@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:32.256738833Z",
   "ArtifactName": "linuxserver/jackett:0.23.52",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -112,7 +111,7 @@
         },
         {
           "created": "2025-09-13T13:35:31.367904524Z",
-          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" \u0026\u0026   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata \u0026\u0026   echo \"**** create abc user and make our folders ****\" \u0026\u0026   groupmod -g 1000 users \u0026\u0026   useradd -u 911 -U -d /config -s /bin/false abc \u0026\u0026   usermod -G users abc \u0026\u0026   mkdir -p     /app     /config     /defaults     /lsiopy \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /tmp/* # buildkit",
+          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" &&   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata &&   echo \"**** create abc user and make our folders ****\" &&   groupmod -g 1000 users &&   useradd -u 911 -U -d /config -s /bin/false abc &&   usermod -G users abc &&   mkdir -p     /app     /config     /defaults     /lsiopy &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -170,7 +169,7 @@
         },
         {
           "created": "2025-09-22T06:58:42.261669409Z",
-          "created_by": "RUN |3 BUILD_DATE=2025-09-22T06:56:15+00:00 VERSION=v0.23.52-ls161 JACKETT_RELEASE=v0.23.52 /bin/sh -c echo \"**** install packages ****\" \u0026\u0026   apk --no-cache add     icu-data-full     icu-libs \u0026\u0026   echo \"**** install jackett ****\" \u0026\u0026   mkdir -p     /app/Jackett \u0026\u0026   if [ -z ${JACKETT_RELEASE+x} ]; then     JACKETT_RELEASE=$(curl -sX GET \"https://api.github.com/repos/Jackett/Jackett/releases/latest\"     | jq -r .tag_name);   fi \u0026\u0026   curl -o     /tmp/jacket.tar.gz -L     \"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.LinuxMuslAMDx64.tar.gz\" \u0026\u0026   tar xf     /tmp/jacket.tar.gz -C     /app/Jackett --strip-components=1 \u0026\u0026   echo \"**** fix for host id mapping error ****\" \u0026\u0026   chown -R root:root /app/Jackett \u0026\u0026   echo \"**** save docker image version ****\" \u0026\u0026   echo \"${VERSION}\" \u003e /etc/docker-image \u0026\u0026   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" \u003e /build_version \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /tmp/* # buildkit",
+          "created_by": "RUN |3 BUILD_DATE=2025-09-22T06:56:15+00:00 VERSION=v0.23.52-ls161 JACKETT_RELEASE=v0.23.52 /bin/sh -c echo \"**** install packages ****\" &&   apk --no-cache add     icu-data-full     icu-libs &&   echo \"**** install jackett ****\" &&   mkdir -p     /app/Jackett &&   if [ -z ${JACKETT_RELEASE+x} ]; then     JACKETT_RELEASE=$(curl -sX GET \"https://api.github.com/repos/Jackett/Jackett/releases/latest\"     | jq -r .tag_name);   fi &&   curl -o     /tmp/jacket.tar.gz -L     \"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.LinuxMuslAMDx64.tar.gz\" &&   tar xf     /tmp/jacket.tar.gz -C     /app/Jackett --strip-components=1 &&   echo \"**** fix for host id mapping error ****\" &&   chown -R root:root /app/Jackett &&   echo \"**** save docker image version ****\" &&   echo \"${VERSION}\" > /etc/docker-image &&   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" > /build_version &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -186,7 +185,7 @@
         },
         {
           "created": "2025-09-22T06:58:42.854564571Z",
-          "created_by": "EXPOSE \u0026{[{{52 0} {52 0}}] 0xc0003bad80}",
+          "created_by": "EXPOSE &{[{{52 0} {52 0}}] 0xc0003bad80}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         }
@@ -229,7 +228,7 @@
           "maintainer": "thelamer",
           "org.opencontainers.image.authors": "linuxserver.io",
           "org.opencontainers.image.created": "2025-09-22T06:56:15+00:00",
-          "org.opencontainers.image.description": "[Jackett](https://github.com/Jackett/Jackett) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping \u0026 translation logic - removing the burden from other apps.",
+          "org.opencontainers.image.description": "[Jackett](https://github.com/Jackett/Jackett) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.",
           "org.opencontainers.image.documentation": "https://docs.linuxserver.io/images/docker-jackett",
           "org.opencontainers.image.licenses": "GPL-3.0-only",
           "org.opencontainers.image.ref.name": "fb3f7d38ae074acc3ae341c04a271f1ffc193850",

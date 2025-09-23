@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:30:53.282422957Z",
   "ArtifactName": "grafana/alloy:v1.10.2",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -82,7 +81,7 @@
         },
         {
           "created": "2025-08-19T15:20:00.138548989Z",
-          "created_by": "RUN |3 UID=473 USERNAME=alloy DEBIAN_FRONTEND=noninteractive /bin/sh -c apt-get update     \u0026\u0026 apt-get upgrade -y     \u0026\u0026 apt-get install -qy --no-install-recommends         ca-certificates         libsystemd0         tzdata     \u0026\u0026 apt-get clean     \u0026\u0026 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* # buildkit",
+          "created_by": "RUN |3 UID=473 USERNAME=alloy DEBIAN_FRONTEND=noninteractive /bin/sh -c apt-get update     && apt-get upgrade -y     && apt-get install -qy --no-install-recommends         ca-certificates         libsystemd0         tzdata     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -97,7 +96,7 @@
         },
         {
           "created": "2025-08-19T15:37:57.92543979Z",
-          "created_by": "RUN |3 UID=473 USERNAME=alloy DEBIAN_FRONTEND=noninteractive /bin/sh -c groupadd --gid $UID $USERNAME     \u0026\u0026 useradd -m -u $UID -g $UID $USERNAME     \u0026\u0026 mkdir -p /var/lib/alloy/data     \u0026\u0026 chown -R $USERNAME:$USERNAME /var/lib/alloy     \u0026\u0026 chmod -R 770 /var/lib/alloy # buildkit",
+          "created_by": "RUN |3 UID=473 USERNAME=alloy DEBIAN_FRONTEND=noninteractive /bin/sh -c groupadd --gid $UID $USERNAME     && useradd -m -u $UID -g $UID $USERNAME     && mkdir -p /var/lib/alloy/data     && chown -R $USERNAME:$USERNAME /var/lib/alloy     && chmod -R 770 /var/lib/alloy # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {

@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:38.687684295Z",
   "ArtifactName": "quay.io/keycloak/keycloak:26.2.4",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -139,7 +138,7 @@
         },
         {
           "created": "2025-05-08T09:10:55.748891612Z",
-          "created_by": "RUN /bin/sh -c echo \"keycloak:x:0:root\" \u003e\u003e /etc/group \u0026\u0026     echo \"keycloak:x:1000:0:keycloak user:/opt/keycloak:/sbin/nologin\" \u003e\u003e /etc/passwd # buildkit",
+          "created_by": "RUN /bin/sh -c echo \"keycloak:x:0:root\" >> /etc/group &&     echo \"keycloak:x:1000:0:keycloak user:/opt/keycloak:/sbin/nologin\" >> /etc/passwd # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -348,7 +347,7 @@
           "PkgID": "java-21-openjdk-headless@21.0.7.0.6-1.el9.x86_64",
           "PkgName": "java-21-openjdk-headless",
           "PkgIdentifier": {
-            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64\u0026distro=redhat-9.5\u0026epoch=1",
+            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64&distro=redhat-9.5&epoch=1",
             "UID": "28167a136b5e7fb0"
           },
           "InstalledVersion": "1:21.0.7.0.6-1.el9",
@@ -416,7 +415,7 @@
           "PkgID": "java-21-openjdk-headless@21.0.7.0.6-1.el9.x86_64",
           "PkgName": "java-21-openjdk-headless",
           "PkgIdentifier": {
-            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64\u0026distro=redhat-9.5\u0026epoch=1",
+            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64&distro=redhat-9.5&epoch=1",
             "UID": "28167a136b5e7fb0"
           },
           "InstalledVersion": "1:21.0.7.0.6-1.el9",
@@ -486,7 +485,7 @@
           "PkgID": "java-21-openjdk-headless@21.0.7.0.6-1.el9.x86_64",
           "PkgName": "java-21-openjdk-headless",
           "PkgIdentifier": {
-            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64\u0026distro=redhat-9.5\u0026epoch=1",
+            "PURL": "pkg:rpm/redhat/java-21-openjdk-headless@21.0.7.0.6-1.el9?arch=x86_64&distro=redhat-9.5&epoch=1",
             "UID": "28167a136b5e7fb0"
           },
           "InstalledVersion": "1:21.0.7.0.6-1.el9",
@@ -554,7 +553,7 @@
           "PkgID": "sqlite-libs@3.34.1-7.el9_3.x86_64",
           "PkgName": "sqlite-libs",
           "PkgIdentifier": {
-            "PURL": "pkg:rpm/redhat/sqlite-libs@3.34.1-7.el9_3?arch=x86_64\u0026distro=redhat-9.5",
+            "PURL": "pkg:rpm/redhat/sqlite-libs@3.34.1-7.el9_3?arch=x86_64&distro=redhat-9.5",
             "UID": "8a5638a990a9b825"
           },
           "InstalledVersion": "3.34.1-7.el9_3",

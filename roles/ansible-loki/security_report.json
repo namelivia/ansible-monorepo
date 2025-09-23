@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:44.772477584Z",
   "ArtifactName": "grafana/loki:3.5.5",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -96,12 +95,12 @@
         },
         {
           "created": "2025-09-11T08:10:36.325932333Z",
-          "created_by": "RUN /busybox/sh -c addgroup -g 10001 -S loki \u0026\u0026     adduser -u 10001 -S loki -G loki # buildkit",
+          "created_by": "RUN /busybox/sh -c addgroup -g 10001 -S loki &&     adduser -u 10001 -S loki -G loki # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
           "created": "2025-09-11T08:10:36.385008929Z",
-          "created_by": "RUN /busybox/sh -c mkdir -p /loki/rules \u0026\u0026     mkdir -p /loki/rules-temp \u0026\u0026     chown -R loki:loki /etc/loki /loki \u0026\u0026     ln -s /busybox/sh /bin/sh # buildkit",
+          "created_by": "RUN /busybox/sh -c mkdir -p /loki/rules &&     mkdir -p /loki/rules-temp &&     chown -R loki:loki /etc/loki /loki &&     ln -s /busybox/sh /bin/sh # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {

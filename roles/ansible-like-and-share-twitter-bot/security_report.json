@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:43.257518163Z",
   "ArtifactName": "namelivia/like-and-share-twitter-bot:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -249,7 +248,7 @@
           "PkgID": "binutils@2.40-r7",
           "PkgName": "binutils",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/binutils@2.40-r7?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/binutils@2.40-r7?arch=x86_64&distro=3.18.2",
             "UID": "e11225e0381cd527"
           },
           "InstalledVersion": "2.40-r7",
@@ -315,7 +314,7 @@
           "PkgID": "busybox@1.36.1-r0",
           "PkgName": "busybox",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/busybox@1.36.1-r0?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/busybox@1.36.1-r0?arch=x86_64&distro=3.18.2",
             "UID": "a4df3c9c8356ea9"
           },
           "InstalledVersion": "1.36.1-r0",
@@ -376,7 +375,7 @@
           "PkgID": "busybox-binsh@1.36.1-r0",
           "PkgName": "busybox-binsh",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/busybox-binsh@1.36.1-r0?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/busybox-binsh@1.36.1-r0?arch=x86_64&distro=3.18.2",
             "UID": "b1aaee90be1f5c9f"
           },
           "InstalledVersion": "1.36.1-r0",
@@ -437,7 +436,7 @@
           "PkgID": "krb5-libs@1.20.1-r1",
           "PkgName": "krb5-libs",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/krb5-libs@1.20.1-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/krb5-libs@1.20.1-r1?arch=x86_64&distro=3.18.2",
             "UID": "8d0773d3c16b905d"
           },
           "InstalledVersion": "1.20.1-r1",
@@ -559,7 +558,7 @@
           "PkgID": "krb5-libs@1.20.1-r1",
           "PkgName": "krb5-libs",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/krb5-libs@1.20.1-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/krb5-libs@1.20.1-r1?arch=x86_64&distro=3.18.2",
             "UID": "8d0773d3c16b905d"
           },
           "InstalledVersion": "1.20.1-r1",
@@ -633,7 +632,7 @@
           "PkgID": "libcrypto3@3.1.1-r1",
           "PkgName": "libcrypto3",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcrypto3@3.1.1-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libcrypto3@3.1.1-r1?arch=x86_64&distro=3.18.2",
             "UID": "15a350a62a57ea9c"
           },
           "InstalledVersion": "3.1.1-r1",
@@ -704,7 +703,7 @@
           "PkgID": "libcrypto3@3.1.1-r1",
           "PkgName": "libcrypto3",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcrypto3@3.1.1-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libcrypto3@3.1.1-r1?arch=x86_64&distro=3.18.2",
             "UID": "15a350a62a57ea9c"
           },
           "InstalledVersion": "3.1.1-r1",
@@ -780,7 +779,7 @@
           "PkgID": "libexpat@2.5.0-r1",
           "PkgName": "libexpat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64&distro=3.18.2",
             "UID": "52c504738aed8fed"
           },
           "InstalledVersion": "2.5.0-r1",
@@ -859,7 +858,7 @@
           "PkgID": "libexpat@2.5.0-r1",
           "PkgName": "libexpat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64&distro=3.18.2",
             "UID": "52c504738aed8fed"
           },
           "InstalledVersion": "2.5.0-r1",
@@ -936,7 +935,7 @@
           "PkgID": "libexpat@2.5.0-r1",
           "PkgName": "libexpat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64&distro=3.18.2",
             "UID": "52c504738aed8fed"
           },
           "InstalledVersion": "2.5.0-r1",
@@ -1010,7 +1009,7 @@
           "PkgID": "libexpat@2.5.0-r1",
           "PkgName": "libexpat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64&distro=3.18.2",
             "UID": "52c504738aed8fed"
           },
           "InstalledVersion": "2.5.0-r1",
@@ -1081,7 +1080,7 @@
           "PkgID": "libexpat@2.5.0-r1",
           "PkgName": "libexpat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64&distro=3.18.2",
             "UID": "52c504738aed8fed"
           },
           "InstalledVersion": "2.5.0-r1",
@@ -1162,7 +1161,7 @@
           "PkgID": "libexpat@2.5.0-r1",
           "PkgName": "libexpat",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libexpat@2.5.0-r1?arch=x86_64&distro=3.18.2",
             "UID": "52c504738aed8fed"
           },
           "InstalledVersion": "2.5.0-r1",
@@ -1243,7 +1242,7 @@
           "PkgID": "libssl3@3.1.1-r1",
           "PkgName": "libssl3",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libssl3@3.1.1-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libssl3@3.1.1-r1?arch=x86_64&distro=3.18.2",
             "UID": "1f546d0850661534"
           },
           "InstalledVersion": "3.1.1-r1",
@@ -1314,7 +1313,7 @@
           "PkgID": "libssl3@3.1.1-r1",
           "PkgName": "libssl3",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libssl3@3.1.1-r1?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/libssl3@3.1.1-r1?arch=x86_64&distro=3.18.2",
             "UID": "1f546d0850661534"
           },
           "InstalledVersion": "3.1.1-r1",
@@ -1390,7 +1389,7 @@
           "PkgID": "sqlite-libs@3.41.2-r2",
           "PkgName": "sqlite-libs",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/sqlite-libs@3.41.2-r2?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/sqlite-libs@3.41.2-r2?arch=x86_64&distro=3.18.2",
             "UID": "96051f548b6df5e4"
           },
           "InstalledVersion": "3.41.2-r2",
@@ -1470,7 +1469,7 @@
           "PkgID": "ssl_client@1.36.1-r0",
           "PkgName": "ssl_client",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/ssl_client@1.36.1-r0?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/ssl_client@1.36.1-r0?arch=x86_64&distro=3.18.2",
             "UID": "582fb58b08117b88"
           },
           "InstalledVersion": "1.36.1-r0",
@@ -1531,7 +1530,7 @@
           "PkgID": "xz-libs@5.4.3-r0",
           "PkgName": "xz-libs",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/xz-libs@5.4.3-r0?arch=x86_64\u0026distro=3.18.2",
+            "PURL": "pkg:apk/alpine/xz-libs@5.4.3-r0?arch=x86_64&distro=3.18.2",
             "UID": "bfe5d1a66098ff1a"
           },
           "InstalledVersion": "5.4.3-r0",

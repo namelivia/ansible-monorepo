@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:31:18.578121721Z",
   "ArtifactName": "mariadb:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -61,7 +60,7 @@
         },
         {
           "created": "2025-08-08T08:15:27Z",
-          "created_by": "RUN /bin/sh -c groupadd -r mysql \u0026\u0026 useradd -r -g mysql mysql --home-dir /var/lib/mysql \u0026\u0026 userdel --remove ubuntu # buildkit",
+          "created_by": "RUN /bin/sh -c groupadd -r mysql && useradd -r -g mysql mysql --home-dir /var/lib/mysql && userdel --remove ubuntu # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -78,7 +77,7 @@
         },
         {
           "created": "2025-08-08T08:15:27Z",
-          "created_by": "RUN |1 GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 /bin/sh -c set -eux; \tapt-get update; \tDEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \t\tca-certificates \t\tgpg \t\tgpgv \t\tlibjemalloc2 \t\tpwgen \t\ttzdata \t\txz-utils \t\tzstd ; \tsavedAptMark=\"$(apt-mark showmanual)\"; \tapt-get install -y --no-install-recommends \t\tdirmngr \t\tgpg-agent \t\twget; \trm -rf /var/lib/apt/lists/*; \tdpkgArch=\"$(dpkg --print-architecture | awk -F- '{ print $NF }')\"; \twget -q -O /usr/local/bin/gosu \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch\"; \twget -q -O /usr/local/bin/gosu.asc \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc\"; \tGNUPGHOME=\"$(mktemp -d)\"; \texport GNUPGHOME; \tgpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; \tfor key in $GPG_KEYS; do \t\tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \tdone; \tgpg --batch --export \"$GPG_KEYS\" \u003e /etc/apt/trusted.gpg.d/mariadb.gpg; \tif command -v gpgconf \u003e/dev/null; then \t\tgpgconf --kill all; \tfi; \tgpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\" /usr/local/bin/gosu.asc; \tapt-mark auto '.*' \u003e /dev/null; \t[ -z \"$savedAptMark\" ] ||\tapt-mark manual $savedAptMark \u003e/dev/null; \tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \tchmod +x /usr/local/bin/gosu; \tgosu --version; \tgosu nobody true # buildkit",
+          "created_by": "RUN |1 GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 /bin/sh -c set -eux; \tapt-get update; \tDEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \t\tca-certificates \t\tgpg \t\tgpgv \t\tlibjemalloc2 \t\tpwgen \t\ttzdata \t\txz-utils \t\tzstd ; \tsavedAptMark=\"$(apt-mark showmanual)\"; \tapt-get install -y --no-install-recommends \t\tdirmngr \t\tgpg-agent \t\twget; \trm -rf /var/lib/apt/lists/*; \tdpkgArch=\"$(dpkg --print-architecture | awk -F- '{ print $NF }')\"; \twget -q -O /usr/local/bin/gosu \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch\"; \twget -q -O /usr/local/bin/gosu.asc \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc\"; \tGNUPGHOME=\"$(mktemp -d)\"; \texport GNUPGHOME; \tgpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; \tfor key in $GPG_KEYS; do \t\tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \tdone; \tgpg --batch --export \"$GPG_KEYS\" > /etc/apt/trusted.gpg.d/mariadb.gpg; \tif command -v gpgconf >/dev/null; then \t\tgpgconf --kill all; \tfi; \tgpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\" /usr/local/bin/gosu.asc; \tapt-mark auto '.*' > /dev/null; \t[ -z \"$savedAptMark\" ] ||\tapt-mark manual $savedAptMark >/dev/null; \tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \tchmod +x /usr/local/bin/gosu; \tgosu --version; \tgosu nobody true # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -118,12 +117,12 @@
         },
         {
           "created": "2025-08-08T08:15:27Z",
-          "created_by": "RUN |3 GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 MARIADB_VERSION=1:12.0.2+maria~ubu2404 REPOSITORY=http://archive.mariadb.org/mariadb-12.0.2/repo/ubuntu/ noble main main/debug /bin/sh -c set -e;\techo \"deb ${REPOSITORY}\" \u003e /etc/apt/sources.list.d/mariadb.list; \t{ \t\techo 'Package: *'; \t\techo 'Pin: release o=MariaDB'; \t\techo 'Pin-Priority: 999'; \t} \u003e /etc/apt/preferences.d/mariadb # buildkit",
+          "created_by": "RUN |3 GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 MARIADB_VERSION=1:12.0.2+maria~ubu2404 REPOSITORY=http://archive.mariadb.org/mariadb-12.0.2/repo/ubuntu/ noble main main/debug /bin/sh -c set -e;\techo \"deb ${REPOSITORY}\" > /etc/apt/sources.list.d/mariadb.list; \t{ \t\techo 'Package: *'; \t\techo 'Pin: release o=MariaDB'; \t\techo 'Pin-Priority: 999'; \t} > /etc/apt/preferences.d/mariadb # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
           "created": "2025-08-08T08:15:27Z",
-          "created_by": "RUN |3 GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 MARIADB_VERSION=1:12.0.2+maria~ubu2404 REPOSITORY=http://archive.mariadb.org/mariadb-12.0.2/repo/ubuntu/ noble main main/debug /bin/sh -c set -ex; \t{ \t\techo \"mariadb-server\" mysql-server/root_password password 'unused'; \t\techo \"mariadb-server\" mysql-server/root_password_again password 'unused'; \t} | debconf-set-selections; \tapt-get update; \tmkdir -p /var/lib/mysql/mysql ; touch /var/lib/mysql/mysql/user.frm ; \tapt-get install -y --no-install-recommends mariadb-server=\"$MARIADB_VERSION\" mariadb-backup socat \t; \trm -rf /var/lib/apt/lists/*; \trm -rf /var/lib/mysql; \tmkdir -p /var/lib/mysql /run/mysqld; \tchown -R mysql:mysql /var/lib/mysql /run/mysqld; \tchmod 1777 /run/mysqld; \tfind /etc/mysql/ -name '*.cnf' -print0 \t\t| xargs -0 grep -lZE '^(bind-address|log|user\\s)' \t\t| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\\s)/#\u0026/'; \tprintf \"[mariadb]\\nhost-cache-size=0\\nskip-name-resolve\\n\" \u003e /etc/mysql/mariadb.conf.d/05-skipcache.cnf; \tif [ -L /etc/mysql/my.cnf ]; then \t\tsed -i -e '/includedir/ {N;s/\\(.*\\)\\n\\(.*\\)/\\n\\2\\n\\1/}' /etc/mysql/mariadb.cnf; \tfi # buildkit",
+          "created_by": "RUN |3 GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8 MARIADB_VERSION=1:12.0.2+maria~ubu2404 REPOSITORY=http://archive.mariadb.org/mariadb-12.0.2/repo/ubuntu/ noble main main/debug /bin/sh -c set -ex; \t{ \t\techo \"mariadb-server\" mysql-server/root_password password 'unused'; \t\techo \"mariadb-server\" mysql-server/root_password_again password 'unused'; \t} | debconf-set-selections; \tapt-get update; \tmkdir -p /var/lib/mysql/mysql ; touch /var/lib/mysql/mysql/user.frm ; \tapt-get install -y --no-install-recommends mariadb-server=\"$MARIADB_VERSION\" mariadb-backup socat \t; \trm -rf /var/lib/apt/lists/*; \trm -rf /var/lib/mysql; \tmkdir -p /var/lib/mysql /run/mysqld; \tchown -R mysql:mysql /var/lib/mysql /run/mysqld; \tchmod 1777 /run/mysqld; \tfind /etc/mysql/ -name '*.cnf' -print0 \t\t| xargs -0 grep -lZE '^(bind-address|log|user\\s)' \t\t| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\\s)/#&/'; \tprintf \"[mariadb]\\nhost-cache-size=0\\nskip-name-resolve\\n\" > /etc/mysql/mariadb.conf.d/05-skipcache.cnf; \tif [ -L /etc/mysql/my.cnf ]; then \t\tsed -i -e '/includedir/ {N;s/\\(.*\\)\\n\\(.*\\)/\\n\\2\\n\\1/}' /etc/mysql/mariadb.cnf; \tfi # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -1495,7 +1494,7 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Title": "ELSA-2022-17957: ol8addon security update (IMPORTANT)",
-          "Description": "Infinite loop in Read in crypto/rand before Go 1.17.11 and Go 1.18.3 on Windows allows attacker to cause an indefinite hang by passing a buffer larger than 1 \u003c\u003c 32 - 1 bytes.",
+          "Description": "Infinite loop in Read in crypto/rand before Go 1.17.11 and Go 1.18.3 on Windows allows attacker to cause an indefinite hang by passing a buffer larger than 1 << 32 - 1 bytes.",
           "Severity": "HIGH",
           "CweIDs": [
             "CWE-835"
@@ -2117,7 +2116,7 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Title": "golang: crypto/tls: large handshake records may cause panics",
-          "Description": "Large handshake records may cause panics in crypto/tls. Both clients and servers may send large TLS handshake records which cause servers and clients, respectively, to panic when attempting to construct responses. This affects all TLS 1.3 clients, TLS 1.2 clients which explicitly enable session resumption (by setting Config.ClientSessionCache to a non-nil value), and TLS 1.3 servers which request client certificates (by setting Config.ClientAuth \u003e= RequestClientCert).",
+          "Description": "Large handshake records may cause panics in crypto/tls. Both clients and servers may send large TLS handshake records which cause servers and clients, respectively, to panic when attempting to construct responses. This affects all TLS 1.3 clients, TLS 1.2 clients which explicitly enable session resumption (by setting Config.ClientSessionCache to a non-nil value), and TLS 1.3 servers which request client certificates (by setting Config.ClientAuth >= RequestClientCert).",
           "Severity": "HIGH",
           "CweIDs": [
             "CWE-400"
@@ -2563,7 +2562,7 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Title": "golang: html/template: improper sanitization of CSS values",
-          "Description": "Angle brackets (\u003c\u003e) are not considered dangerous characters when inserted into CSS contexts. Templates containing multiple actions separated by a '/' character can result in unexpectedly closing the CSS context and allowing for injection of unexpected HTML, if executed with untrusted input.",
+          "Description": "Angle brackets (<>) are not considered dangerous characters when inserted into CSS contexts. Templates containing multiple actions separated by a '/' character can result in unexpectedly closing the CSS context and allowing for injection of unexpected HTML, if executed with untrusted input.",
           "Severity": "HIGH",
           "CweIDs": [
             "CWE-74",

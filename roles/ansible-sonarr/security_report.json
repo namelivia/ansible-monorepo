@@ -1,6 +1,5 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-23T09:32:10.936666312Z",
   "ArtifactName": "linuxserver/sonarr:4.0.15",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -112,7 +111,7 @@
         },
         {
           "created": "2025-09-13T13:35:31.367904524Z",
-          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" \u0026\u0026   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata \u0026\u0026   echo \"**** create abc user and make our folders ****\" \u0026\u0026   groupmod -g 1000 users \u0026\u0026   useradd -u 911 -U -d /config -s /bin/false abc \u0026\u0026   usermod -G users abc \u0026\u0026   mkdir -p     /app     /config     /defaults     /lsiopy \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /tmp/* # buildkit",
+          "created_by": "RUN |6 BUILD_DATE=2025-09-13T13:33:56+00:00 VERSION=25712cc1-ls9 MODS_VERSION=v3 PKG_INST_VERSION=v1 LSIOWN_VERSION=v1 WITHCONTENV_VERSION=v1 /bin/sh -c echo \"**** install runtime packages ****\" &&   apk add --no-cache     alpine-release     bash     ca-certificates     catatonit     coreutils     curl     findutils     jq     netcat-openbsd     procps-ng     shadow     tzdata &&   echo \"**** create abc user and make our folders ****\" &&   groupmod -g 1000 users &&   useradd -u 911 -U -d /config -s /bin/false abc &&   usermod -G users abc &&   mkdir -p     /app     /config     /defaults     /lsiopy &&   echo \"**** cleanup ****\" &&   rm -rf     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -170,7 +169,7 @@
         },
         {
           "created": "2025-09-19T23:35:00.469173806Z",
-          "created_by": "RUN |3 BUILD_DATE=2025-09-19T23:33:20+00:00 VERSION=4.0.15.2941-ls292 SONARR_VERSION=4.0.15.2941 /bin/sh -c echo \"**** install packages ****\" \u0026\u0026   apk add --no-cache     icu-libs     sqlite-libs     xmlstarlet \u0026\u0026   echo \"**** install sonarr ****\" \u0026\u0026   mkdir -p /app/sonarr/bin \u0026\u0026   if [ -z ${SONARR_VERSION+x} ]; then     SONARR_VERSION=$(curl -sX GET http://services.sonarr.tv/v1/releases     | jq -r \"first(.[] | select(.releaseChannel==\\\"${SONARR_CHANNEL}\\\") | .version)\");   fi \u0026\u0026   curl -o     /tmp/sonarr.tar.gz -L     \"https://services.sonarr.tv/v1/update/${SONARR_BRANCH}/download?version=${SONARR_VERSION}\u0026os=linuxmusl\u0026runtime=netcore\u0026arch=x64\" \u0026\u0026   tar xzf     /tmp/sonarr.tar.gz -C     /app/sonarr/bin --strip-components=1 \u0026\u0026   echo -e \"UpdateMethod=docker\\nBranch=${SONARR_BRANCH}\\nPackageVersion=${VERSION:-LocalBuild}\\nPackageAuthor=[linuxserver.io](https://linuxserver.io)\" \u003e /app/sonarr/package_info \u0026\u0026   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" \u003e /build_version \u0026\u0026   echo \"**** cleanup ****\" \u0026\u0026   rm -rf     /app/sonarr/bin/Sonarr.Update     /tmp/* # buildkit",
+          "created_by": "RUN |3 BUILD_DATE=2025-09-19T23:33:20+00:00 VERSION=4.0.15.2941-ls292 SONARR_VERSION=4.0.15.2941 /bin/sh -c echo \"**** install packages ****\" &&   apk add --no-cache     icu-libs     sqlite-libs     xmlstarlet &&   echo \"**** install sonarr ****\" &&   mkdir -p /app/sonarr/bin &&   if [ -z ${SONARR_VERSION+x} ]; then     SONARR_VERSION=$(curl -sX GET http://services.sonarr.tv/v1/releases     | jq -r \"first(.[] | select(.releaseChannel==\\\"${SONARR_CHANNEL}\\\") | .version)\");   fi &&   curl -o     /tmp/sonarr.tar.gz -L     \"https://services.sonarr.tv/v1/update/${SONARR_BRANCH}/download?version=${SONARR_VERSION}&os=linuxmusl&runtime=netcore&arch=x64\" &&   tar xzf     /tmp/sonarr.tar.gz -C     /app/sonarr/bin --strip-components=1 &&   echo -e \"UpdateMethod=docker\\nBranch=${SONARR_BRANCH}\\nPackageVersion=${VERSION:-LocalBuild}\\nPackageAuthor=[linuxserver.io](https://linuxserver.io)\" > /app/sonarr/package_info &&   printf \"Linuxserver.io version: ${VERSION}\\nBuild-date: ${BUILD_DATE}\" > /build_version &&   echo \"**** cleanup ****\" &&   rm -rf     /app/sonarr/bin/Sonarr.Update     /tmp/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
@@ -180,7 +179,7 @@
         },
         {
           "created": "2025-09-19T23:35:00.492055632Z",
-          "created_by": "EXPOSE \u0026{[{{50 0} {50 0}}] 0xc00069e600}",
+          "created_by": "EXPOSE &{[{{50 0} {50 0}}] 0xc00069e600}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
