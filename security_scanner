@@ -32,7 +32,7 @@ for file_path in $FILES; do
           --ignore-unfixed \
           --severity=HIGH,CRITICAL \
           --format json \
-          "$image" > "$output_file"
+          "$image" | jq 'del(.CreatedAt)' > "$output_file"
       fi
     else
       echo "Skipping invalid image name: $image"
