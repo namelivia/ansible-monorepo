@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.334.0] - 2025-09-24
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.23.52 to 0.23.56
+ - Upgrade ghcr.io/immich-app/immich-server from 1.142.1 to 1.143.1
+ - Upgrade ghcr.io/immich-app/immich-machine-learning from 1.142.1 to 1.143.1
+ - Upgrade library/ghost from 6.0.9 to 6.0.10
+
 ## [2.333.0] - 2025-09-22
 
 ### Changed
