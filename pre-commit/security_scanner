@@ -22,17 +22,19 @@ for file_path in $FILES; do
         # Determine the parent directory and output file
         parent_dir=$(dirname "$file_path" | sed 's|/tasks||')
         mkdir -p "$parent_dir"
-        output_file="$parent_dir/security_report.json"
+        output_file="$parent_dir/security_report.md"
 
         docker run --rm \
           -v trivy-cache-db:/root/.cache/trivy \
           -v /var/run/docker.sock:/var/run/docker.sock \
+          -v "$(dirname "$0")":/templates \
           aquasec/trivy image \
           --scanners vuln \
           --ignore-unfixed \
           --severity=HIGH,CRITICAL \
-          --format json \
-          "$image" | jq 'del(.CreatedAt)' > "$output_file"
+          --format template \
+          --template "@/templates/markdown.tpl" \
+          "$image" > "$output_file"
       fi
     else
       echo "Skipping invalid image name: $image"
