@@ -1,5 +1,5 @@
 
-### Target `linuxserver/jackett:0.23.56 (alpine 3.22.1)`
+### Target `linuxserver/jackett:0.23.71 (alpine 3.22.1)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `app/Jackett/JackettUpdater.deps.json`
