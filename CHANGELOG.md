@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.335.0] - 2025-09-29
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.23.56 to 0.23.87
+ - Upgrade ghcr.io/mealie-recipes/mealie from 3.2.1 to 3.3.0
+ - Upgrade linuxserver/radarr from 6.0.1 to 6.0.2
+ - Upgrade grafana/grafana from 12.3.0-17900959199 to 12.3.0-18081912450
+ - Upgrade mcuadros/ofelia from 0.3.18 to 0.3.19
+
 ## [2.334.0] - 2025-09-24
 
 ### Changed
