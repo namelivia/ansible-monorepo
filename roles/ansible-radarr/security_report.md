@@ -1,5 +1,5 @@
 
-### Target `linuxserver/radarr:6.0.1-nightly (alpine 3.22.1)`
+### Target `linuxserver/radarr:6.0.2-nightly (alpine 3.22.1)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `app/radarr/bin/Radarr.Api.V3.deps.json`

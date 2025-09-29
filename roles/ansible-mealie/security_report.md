@@ -1,5 +1,5 @@
 
-### Target `ghcr.io/mealie-recipes/mealie:v3.2.1 (debian 13.0)`
+### Target `ghcr.io/mealie-recipes/mealie:v3.3.0 (debian 13.0)`
 #### Vulnerabilities (1)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
@@ -7,11 +7,10 @@
 | `libpcre2-8-0` | CVE-2025-58050 | CRITICAL | 10.45-1 | 10.46-1~deb13u1 |
 #### No Misconfigurations found
 ### Target `Python`
-#### Vulnerabilities (7)
+#### Vulnerabilities (6)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
 | :--- | :--- | :--- | :--- | :--- |
-| `Authlib` | CVE-2025-59420 | HIGH | 1.6.3 | 1.6.4 |
 | `certifi` | CVE-2023-37920 | HIGH | 2022.12.7 | 2023.7.22 |
 | `cryptography` | CVE-2023-50782 | HIGH | 41.0.7 | 42.0.0 |
 | `cryptography` | CVE-2024-26130 | HIGH | 41.0.7 | 42.0.4 |
