@@ -1,5 +1,5 @@
 
-### Target `grafana/grafana:12.3.0-18081912450-ubuntu (ubuntu 22.04)`
+### Target `grafana/grafana:12.3.0-18147126998-ubuntu (ubuntu 22.04)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `Node.js`
