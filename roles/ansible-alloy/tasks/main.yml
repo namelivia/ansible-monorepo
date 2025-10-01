@@ -36,7 +36,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "grafana/alloy:v1.10.2"
+    image: "grafana/alloy:v1.11.0"
     restart_policy: "always"
     cleanup: true
     pull: true

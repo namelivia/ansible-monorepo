@@ -1,5 +1,5 @@
 
-### Target `ghcr.io/immich-app/immich-machine-learning:v1.143.1 (debian 12.12)`
+### Target `ghcr.io/immich-app/immich-machine-learning:v1.144.1 (debian 12.12)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `Python`
