@@ -1,5 +1,5 @@
 
-### Target `ghcr.io/mealie-recipes/mealie:v3.3.0 (debian 13.0)`
+### Target `ghcr.io/mealie-recipes/mealie:v3.3.1 (debian 13.0)`
 #### Vulnerabilities (1)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
