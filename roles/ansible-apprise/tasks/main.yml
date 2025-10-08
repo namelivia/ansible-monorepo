@@ -27,7 +27,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "caronc/apprise:1.2.1"
+    image: "caronc/apprise:1.2.2"
     pull: true
     cleanup: true
     networks:
