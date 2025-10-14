@@ -1,5 +1,5 @@
 
-### Target `grafana/loki:3.5.6 (debian 12.12)`
+### Target `grafana/loki:3.5.7 (debian 12.12)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `usr/bin/loki`
