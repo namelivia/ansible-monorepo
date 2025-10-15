@@ -13,7 +13,7 @@
 - name: Create container
   community.docker.docker_container:
     name: "redis"
-    image: "redis:8.2.1-alpine"
+    image: "redis:8.2.2-alpine"
     restart_policy: "always"
     cleanup: true
     memory: "100MB"
