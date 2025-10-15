@@ -1,4 +1,4 @@
 
-### Target `redis:8.2.1-alpine (alpine 3.22.1)`
+### Target `redis:8.2.2-alpine (alpine 3.22.2)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
