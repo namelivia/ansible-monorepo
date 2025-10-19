@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.348.0] - 2025-10-19
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.24.141 to 0.24.156
+ - Upgrade prom/prometheus from 3.7.0 to 3.7.1
+ - Upgrade library/ghost from 6.3.1 to 6.4.0
+
 ## [2.347.0] - 2025-10-16
 
 ### Changed
