@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.349.0] - 2025-10-23
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.24.156 to 0.24.175
+ - Upgrade grafana/grafana from 12.3.0-18546308611 to 12.3.0-18733571275
+ - Upgrade prom/prometheus from 3.7.1 to 3.7.2
+ - Upgrade miniflux/miniflux from 2.2.13 to 2.2.14
+ - Upgrade library/ghost from 6.4.0 to 6.5.0
+
 ## [2.348.0] - 2025-10-19
 
 ### Changed
