@@ -1,5 +1,5 @@
 
-### Target `ghost:6.4.0-alpine (alpine 3.22.2)`
+### Target `ghost:6.5.0-alpine (alpine 3.22.2)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `Node.js`

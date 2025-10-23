@@ -42,7 +42,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "prom/prometheus:v3.7.1"
+    image: "prom/prometheus:v3.7.2"
     restart_policy: "always"
     cleanup: true
     user: "{{ uid }}:{{ gid }}"

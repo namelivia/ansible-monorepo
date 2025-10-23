@@ -1,5 +1,5 @@
 
-### Target `miniflux/miniflux:2.2.13 (alpine 3.22.1)`
+### Target `miniflux/miniflux:2.2.14 (alpine 3.22.2)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `usr/bin/miniflux`
