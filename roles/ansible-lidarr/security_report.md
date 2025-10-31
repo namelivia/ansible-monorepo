@@ -1,13 +1,6 @@
 
-### Target `linuxserver/lidarr:2.14.5 (alpine 3.22.1)`
-#### Vulnerabilities (4)
-
-| Package | ID | Severity | Installed Version | Fixed Version |
-| :--- | :--- | :--- | :--- | :--- |
-| `libxml2` | CVE-2025-49794 | CRITICAL | 2.13.8-r0 | 2.13.9-r0 |
-| `libxml2` | CVE-2025-49796 | CRITICAL | 2.13.8-r0 | 2.13.9-r0 |
-| `libxml2` | CVE-2025-49795 | HIGH | 2.13.8-r0 | 2.13.9-r0 |
-| `libxml2` | CVE-2025-6021 | HIGH | 2.13.8-r0 | 2.13.9-r0 |
+### Target `linuxserver/lidarr:3.0.1 (alpine 3.22.2)`
+#### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `app/lidarr/bin/Lidarr.Api.V1.deps.json`
 #### No Vulnerabilities found
