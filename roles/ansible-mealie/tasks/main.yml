@@ -30,7 +30,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}"
-    image: "ghcr.io/mealie-recipes/mealie:v3.3.2"
+    image: "ghcr.io/mealie-recipes/mealie:v3.4.0"
     restart_policy: "always"
     cleanup: true
     pull: true

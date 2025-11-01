@@ -1,5 +1,5 @@
 
-### Target `fireflyiii/core:version-6.4.3 (debian 13.1)`
+### Target `fireflyiii/core:version-6.4.4 (debian 13.1)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `var/www/html/vendor/composer/installed.json`
