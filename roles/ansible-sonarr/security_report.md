@@ -1,5 +1,5 @@
 
-### Target `linuxserver/sonarr:4.0.15 (alpine 3.22.1)`
+### Target `linuxserver/sonarr:4.0.16 (alpine 3.22.2)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `app/sonarr/bin/Sonarr.Api.V3.deps.json`

@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.357.0] - 2025-11-05
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.24.247 to 0.24.250
+ - Upgrade slskd/slskd from 0.23.2 to 0.24.0
+ - Upgrade linuxserver/sonarr from 4.0.15 to 4.0.16
+
+## [2.356.0] - 2025-11-04
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.24.241 to 0.24.247
+ - Upgrade grafana/grafana from 12.3.0-18925857539 to 12.3.0-19020365962
+ - Upgrade ghcr.io/immich-app/immich-server from 2.2.1 to 2.2.2
+ - Upgrade ghcr.io/immich-app/immich-machine-learning from 2.2.1 to 2.2.2
+ - Upgrade library/ghost from 6.5.3 to 6.6.0
+
 ## [2.355.0] - 2025-11-01
 
 ### Changed
