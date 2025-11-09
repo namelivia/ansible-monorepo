@@ -4,11 +4,11 @@
 
 | Package | ID | Severity | Installed Version | Fixed Version |
 | :--- | :--- | :--- | :--- | :--- |
+| `cjson` | CVE-2025-57052 | HIGH | 1.7.17-r0 | 1.7.19-r0 |
 | `icu-data-full` | CVE-2025-5222 | HIGH | 74.1-r0 | 74.1-r1 |
 | `icu-libs` | CVE-2025-5222 | HIGH | 74.1-r0 | 74.1-r1 |
 | `libexpat` | CVE-2024-8176 | HIGH | 2.6.3-r0 | 2.7.0-r0 |
-| `libexpat` | CVE-2025-59375 | HIGH | 2.6.3-r0 | 2.7.2-r0 |
-| `libxml2` | CVE-2024-56171 | HIGH | 2.11.8-r0 | 2.11.8-r1 |
+| `libxml2` | CVE-2024-56171 | CRITICAL | 2.11.8-r0 | 2.11.8-r1 |
 | `libxml2` | CVE-2025-24928 | HIGH | 2.11.8-r0 | 2.11.8-r1 |
 | `libxml2` | CVE-2025-27113 | HIGH | 2.11.8-r0 | 2.11.8-r2 |
 | `libxml2` | CVE-2025-32414 | HIGH | 2.11.8-r0 | 2.11.8-r3 |
