@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.360.0] - 2025-11-09
+
+### Changed
+
+ - Upgrade ghcr.io/karakeep-app/karakeep from 0.27.1 to 0.28.0
+ - Upgrade linuxserver/jackett from 0.24.262 to 0.24.268
+ - Upgrade fireflyiii/core from 6.4.5 to 6.4.6
+ - Upgrade deluan/navidrome from 0.58.0 to 0.58.5
+
 ## [2.359.0] - 2025-11-08
 
 ### Changed
