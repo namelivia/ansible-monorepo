@@ -51,7 +51,7 @@
 - name: Create app container
   community.docker.docker_container:
     name: "{{ application_name }}-app"
-    image: "linuxserver/lidarr:3.0.1"
+    image: "linuxserver/lidarr:3.1.0"
     restart_policy: "always"
     pull: true
     log_driver: "syslog"

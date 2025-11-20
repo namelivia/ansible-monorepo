@@ -1,5 +1,5 @@
 
-### Target `linuxserver/lidarr:3.0.1 (alpine 3.22.2)`
+### Target `linuxserver/lidarr:3.1.0 (alpine 3.22.2)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `app/lidarr/bin/Lidarr.Api.V1.deps.json`

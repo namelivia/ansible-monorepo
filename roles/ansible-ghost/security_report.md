@@ -1,9 +1,9 @@
 
-### Target `ghost:6.7.0-alpine (alpine 3.22.2)`
+### Target `ghost:6.8.1-alpine (alpine 3.22.2)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `Node.js`
-#### Vulnerabilities (24)
+#### Vulnerabilities (26)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
 | :--- | :--- | :--- | :--- | :--- |
@@ -13,6 +13,8 @@
 | `decode-uri-component` | CVE-2022-38900 | HIGH | 0.2.0 | 0.2.1 |
 | `form-data` | CVE-2025-7783 | CRITICAL | 2.3.3 | 2.5.4, 3.0.4, 4.0.4 |
 | `form-data` | CVE-2025-7783 | CRITICAL | 3.0.1 | 2.5.4, 3.0.4, 4.0.4 |
+| `glob` | CVE-2025-64756 | HIGH | 10.4.5 | 11.1.0, 10.5.0 |
+| `glob` | CVE-2025-64756 | HIGH | 10.4.5 | 11.1.0, 10.5.0 |
 | `http-cache-semantics` | CVE-2022-25881 | HIGH | 3.8.1 | 4.1.1 |
 | `jsonwebtoken` | CVE-2022-23539 | HIGH | 8.5.1 | 9.0.0 |
 | `knex` | CVE-2016-20018 | HIGH | 0.20.15 | 2.4.0 |
@@ -33,14 +35,12 @@
 | `underscore` | CVE-2021-23358 | CRITICAL | 1.8.3 | 1.12.1 |
 #### No Misconfigurations found
 ### Target `usr/local/bin/gosu`
-#### Vulnerabilities (6)
+#### Vulnerabilities (4)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
 | :--- | :--- | :--- | :--- | :--- |
-| `stdlib` | CVE-2025-47912 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 | `stdlib` | CVE-2025-58183 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 | `stdlib` | CVE-2025-58186 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 | `stdlib` | CVE-2025-58187 | HIGH | v1.24.6 | 1.24.9, 1.25.3 |
 | `stdlib` | CVE-2025-58188 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
-| `stdlib` | CVE-2025-61724 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 #### No Misconfigurations found
