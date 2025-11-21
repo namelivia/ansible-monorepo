@@ -1,5 +1,5 @@
 
-### Target `nextcloud:32.0.1 (debian 13.1)`
+### Target `nextcloud:32.0.2 (debian 13.2)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `Node.js`
