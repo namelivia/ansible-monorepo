@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.366.0] - 2025-11-25
+
+### Changed
+
+ - Upgrade caronc/apprise from 1.2.2 to 1.2.6
+ - Upgrade linuxserver/jackett from 0.24.338 to 0.24.356
+ - Upgrade library/ghost from 6.8.1 to 6.9.1
+
 ## [2.365.0] - 2025-11-21
 
 ### Changed
