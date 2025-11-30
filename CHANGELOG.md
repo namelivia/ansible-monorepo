@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+ - Upgrade caronc/apprise from 1.2.5 to 1.2.6
+
+## [2.367.0] - 2025-11-30
+
+### Changed
+
  - Upgrade ghcr.io/karakeep-app/karakeep from 0.28.0 to 0.29.0
  - Upgrade linuxserver/jackett from 0.24.348 to 0.24.383
  - Upgrade fireflyiii/core from 6.4.8 to 6.4.9
