@@ -1,9 +1,9 @@
 
-### Target `ghost:6.8.1-alpine (alpine 3.22.2)`
+### Target `ghost:6.9.3-alpine (alpine 3.22.2)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `Node.js`
-#### Vulnerabilities (26)
+#### Vulnerabilities (28)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
 | :--- | :--- | :--- | :--- | :--- |
@@ -26,6 +26,8 @@
 | `mysql2` | CVE-2024-21508 | CRITICAL | 2.3.3 | 3.9.4 |
 | `mysql2` | CVE-2024-21511 | CRITICAL | 2.3.3 | 3.9.7 |
 | `mysql2` | CVE-2024-21512 | HIGH | 2.3.3 | 3.9.8 |
+| `node-forge` | CVE-2025-12816 | HIGH | 1.3.1 | 1.3.2 |
+| `node-forge` | CVE-2025-66031 | HIGH | 1.3.1 | 1.3.2 |
 | `nth-check` | CVE-2021-3803 | HIGH | 1.0.2 | 2.0.1 |
 | `path-to-regexp` | CVE-2024-45296 | HIGH | 1.8.0 | 1.9.0, 0.1.10, 8.0.0, 3.3.0, 6.3.0 |
 | `semver` | CVE-2022-25883 | HIGH | 5.7.1 | 7.5.2, 6.3.1, 5.7.2 |
@@ -35,12 +37,11 @@
 | `underscore` | CVE-2021-23358 | CRITICAL | 1.8.3 | 1.12.1 |
 #### No Misconfigurations found
 ### Target `usr/local/bin/gosu`
-#### Vulnerabilities (4)
+#### Vulnerabilities (3)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
 | :--- | :--- | :--- | :--- | :--- |
 | `stdlib` | CVE-2025-58183 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 | `stdlib` | CVE-2025-58186 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 | `stdlib` | CVE-2025-58187 | HIGH | v1.24.6 | 1.24.9, 1.25.3 |
-| `stdlib` | CVE-2025-58188 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 #### No Misconfigurations found

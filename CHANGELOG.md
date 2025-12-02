@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.369.0] - 2025-12-02
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.24.383 to 0.24.394
+ - Upgrade ghcr.io/mealie-recipes/mealie from 3.5.0 to 3.6.0
+ - Upgrade grafana/alloy from 1.11.3 to 1.12.0
+ - Upgrade grafana/grafana from 12.4.0-19274378403 to 12.4.0-19842126546
+ - Upgrade slskd/slskd from 0.24.0 to 0.24.1
+ - Upgrade library/ghost from 6.8.1 to 6.9.3
+
 ## [2.367.0] - 2025-11-30
 
 ### Changed
