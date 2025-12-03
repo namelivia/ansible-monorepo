@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.370.0] - 2025-12-03
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.24.394 to 0.24.399
+ - Upgrade ghcr.io/mealie-recipes/mealie from 3.6.0 to 3.6.1
+ - Upgrade grafana/grafana from 12.4.0-19842126546 to 12.4.0-19877932531
+ - Upgrade prom/prometheus from 3.7.3 to 3.8.0
+
 ## [2.369.0] - 2025-12-02
 
 ### Changed
