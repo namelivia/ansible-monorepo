@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.373.0] - 2025-12-06
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.24.404 to 0.24.408
+ - Upgrade library/ghost from 6.9.3 to 6.10.0
+
 ## [2.372.0] - 2025-12-05
 
 ### Changed
