@@ -1,14 +1,13 @@
 
-### Target `ghost:6.9.3-alpine (alpine 3.22.2)`
+### Target `ghost:6.10.0-alpine (alpine 3.23.0)`
 #### No Vulnerabilities found
 #### No Misconfigurations found
 ### Target `Node.js`
-#### Vulnerabilities (28)
+#### Vulnerabilities (31)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
 | :--- | :--- | :--- | :--- | :--- |
 | `@tryghost/members-csv` | CVE-2024-34448 | HIGH | 2.0.3 | 5.82.0 |
-| `axios` | CVE-2025-58754 | HIGH | 1.11.0 | 1.12.0, 0.30.2 |
 | `braces` | CVE-2024-4068 | HIGH | 2.3.2 | 3.0.3 |
 | `decode-uri-component` | CVE-2022-38900 | HIGH | 0.2.0 | 0.2.1 |
 | `form-data` | CVE-2025-7783 | CRITICAL | 2.3.3 | 2.5.4, 3.0.4, 4.0.4 |
@@ -17,6 +16,7 @@
 | `glob` | CVE-2025-64756 | HIGH | 10.4.5 | 11.1.0, 10.5.0 |
 | `http-cache-semantics` | CVE-2022-25881 | HIGH | 3.8.1 | 4.1.1 |
 | `jsonwebtoken` | CVE-2022-23539 | HIGH | 8.5.1 | 9.0.0 |
+| `jws` | CVE-2025-65945 | HIGH | 3.2.2 | 3.2.3, 4.0.1 |
 | `knex` | CVE-2016-20018 | HIGH | 0.20.15 | 2.4.0 |
 | `luxon` | CVE-2023-22467 | HIGH | 1.28.0 | 1.28.1, 2.5.2, 3.2.1 |
 | `moment` | CVE-2022-24785 | HIGH | 2.24.0 | 2.29.2 |
@@ -35,13 +35,17 @@
 | `trim` | CVE-2020-7753 | HIGH | 0.0.1 | 0.0.3 |
 | `underscore` | CVE-2021-23358 | CRITICAL | 1.7.0 | 1.12.1 |
 | `underscore` | CVE-2021-23358 | CRITICAL | 1.8.3 | 1.12.1 |
+| `validator` | CVE-2025-12758 | HIGH | 13.12.0 | 13.15.22 |
+| `validator` | CVE-2025-12758 | HIGH | 7.2.0 | 13.15.22 |
+| `validator` | CVE-2025-12758 | HIGH | 7.2.0 | 13.15.22 |
 #### No Misconfigurations found
 ### Target `usr/local/bin/gosu`
-#### Vulnerabilities (3)
+#### Vulnerabilities (4)
 
 | Package | ID | Severity | Installed Version | Fixed Version |
 | :--- | :--- | :--- | :--- | :--- |
 | `stdlib` | CVE-2025-58183 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 | `stdlib` | CVE-2025-58186 | HIGH | v1.24.6 | 1.24.8, 1.25.2 |
 | `stdlib` | CVE-2025-58187 | HIGH | v1.24.6 | 1.24.9, 1.25.3 |
+| `stdlib` | CVE-2025-61729 | HIGH | v1.24.6 | 1.24.11, 1.25.5 |
 #### No Misconfigurations found
