@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.374.0] - 2025-12-07
+
+### Changed
+
+ - Upgrade linuxserver/jackett from 0.24.408 to 0.24.415
+ - Upgrade deluan/navidrome from 0.58.5 to 0.59.0
+
 ## [2.373.0] - 2025-12-06
 
 ### Changed
