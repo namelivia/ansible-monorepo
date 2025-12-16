@@ -1,5 +1,0 @@
-#!/bin/bash
-eval "$(sentry-cli bash-hook)"
-cd {{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/backup && aws s3 cp `ls -1t *files*|head -n 1` s3://{{backups_bucket_name}} || true
-cd {{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/backup && aws s3 cp `ls -1t *dump*|head -n 1` s3://{{backups_bucket_name}} || true
-curl -X POST -d '{"body":"{{ application_name }} backups sent to S3"}' -H "Content-Type: application/json" {{ backups_notifications_endpoint }}

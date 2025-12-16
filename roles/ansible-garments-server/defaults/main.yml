@@ -1,3 +1,0 @@
----
-application_name: garments-server
-docker_network_name: garments_server_network

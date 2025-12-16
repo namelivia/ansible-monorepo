@@ -1,4 +1,0 @@
----
-application_name: anki
-backup_day: 1
-docker_network_name: anki_network

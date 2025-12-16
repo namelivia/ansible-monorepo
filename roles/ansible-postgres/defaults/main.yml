@@ -1,4 +1,0 @@
----
-application_name: postgres
-docker_network_name: database_network
-should_publish_ports: false

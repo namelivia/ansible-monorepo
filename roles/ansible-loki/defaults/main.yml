@@ -1,3 +1,0 @@
----
-application_name: loki
-docker_network_name: loki_network

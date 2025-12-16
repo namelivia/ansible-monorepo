@@ -1,3 +1,0 @@
----
-application_name: openvpn
-docker_network_name: openvpn_network

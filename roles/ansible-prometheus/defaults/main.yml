@@ -1,3 +1,0 @@
----
-application_name: prometheus
-docker_network_name: prometheus_network

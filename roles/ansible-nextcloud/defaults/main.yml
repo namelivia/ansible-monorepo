@@ -1,3 +1,0 @@
----
-application_name: nextcloud
-docker_network_name: nextcloud_network

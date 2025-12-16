@@ -1,3 +1,0 @@
----
-application_name: ghost
-docker_network_name: ghost_network

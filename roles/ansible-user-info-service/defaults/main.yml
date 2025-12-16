@@ -1,3 +1,0 @@
----
-application_name: user-info-service
-docker_network_name: user_info_service_network

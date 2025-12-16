@@ -1,3 +1,0 @@
----
-application_name: pleroma
-docker_network_name: pleroma_network

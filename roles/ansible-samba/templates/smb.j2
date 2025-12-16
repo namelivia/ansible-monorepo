@@ -1,9 +1,0 @@
-{% for share in shares %}
-[{{ share.name }}]
-path = {{ share.target_path }}
-writeable=Yes
-create mask=0664
-directory mask=0775
-valid_users={{ samba_username }}
-public=no
-{% endfor %}

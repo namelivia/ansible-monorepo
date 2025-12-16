@@ -1,3 +1,0 @@
----
-application_name: redis
-docker_network_name: redis_network

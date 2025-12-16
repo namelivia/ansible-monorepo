@@ -1,4 +1,0 @@
----
-docker_network_name: mealie_network
-application_name: mealie
-log_level: INFO

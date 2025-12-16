@@ -1,3 +1,0 @@
----
-application_name: grafana
-docker_network_name: grafana_network

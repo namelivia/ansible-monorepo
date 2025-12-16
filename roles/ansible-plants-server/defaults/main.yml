@@ -1,3 +1,0 @@
----
-application_name: plants-server
-docker_network_name: plants_server_network

@@ -1,3 +1,0 @@
----
-application_name: itemtree-server
-docker_network_name: itemtree_server_network

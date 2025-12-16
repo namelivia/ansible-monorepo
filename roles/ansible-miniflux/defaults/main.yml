@@ -1,3 +1,0 @@
----
-application_name: miniflux
-docker_network_name: miniflux_network

@@ -1,7 +1,0 @@
-#!/bin/bash
-eval "$(sentry-cli bash-hook)"
-tar -cf - {{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files |
-	xz -c - |
-	gpg --always-trust --recipient {{gpg_recipient}} --encrypt -o {{ hostvars[inventory_hostname].working_directory}}{{ application_name }}/backup/{{ application_name }}_"$(date '+%Y%m%d%H%M%S')"_files.tgz.xz
-cd {{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/backup && rm `ls -t | awk 'NR>5'`
-curl -X POST -d '{"body":"{{ application_name }} files backed up"}' -H "Content-Type: application/json" {{ backups_notifications_endpoint }}
